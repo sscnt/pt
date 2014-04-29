@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBB190FFFED0010C13A /* Default-568h@2x.png */; };
+		5805FCC0190FFFED0010C13A /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBC190FFFED0010C13A /* Default-Landscape.png */; };
+		5805FCC1190FFFED0010C13A /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBD190FFFED0010C13A /* Default-Landscape@2x.png */; };
+		5805FCC2190FFFED0010C13A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBE190FFFED0010C13A /* Default@2x.png */; };
 		58F73B0F190F942A0056D7D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B0E190F942A0056D7D6 /* Foundation.framework */; };
 		58F73B11190F942A0056D7D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B10190F942A0056D7D6 /* CoreGraphics.framework */; };
 		58F73B13190F942A0056D7D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B12190F942A0056D7D6 /* UIKit.framework */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5805FCBB190FFFED0010C13A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5805FCBC190FFFED0010C13A /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		5805FCBD190FFFED0010C13A /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
+		5805FCBE190FFFED0010C13A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		58F73B0B190F942A0056D7D6 /* Pastel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pastel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F73B0E190F942A0056D7D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58F73B10190F942A0056D7D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +89,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58F5A56E190FFB4E0019E92B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5805FCBE190FFFED0010C13A /* Default@2x.png */,
+				5805FCBB190FFFED0010C13A /* Default-568h@2x.png */,
+				5805FCBC190FFFED0010C13A /* Default-Landscape.png */,
+				5805FCBD190FFFED0010C13A /* Default-Landscape@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		58F73B02190F942A0056D7D6 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +133,7 @@
 		58F73B14190F942A0056D7D6 /* Pastel */ = {
 			isa = PBXGroup;
 			children = (
+				58F5A56E190FFB4E0019E92B /* Images */,
 				58F73B1D190F942A0056D7D6 /* AppDelegate.h */,
 				58F73B1E190F942A0056D7D6 /* AppDelegate.m */,
 				58F73B20190F942A0056D7D6 /* Main_iPhone.storyboard */,
@@ -234,10 +254,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5805FCC2190FFFED0010C13A /* Default@2x.png in Resources */,
 				58F73B25190F942A0056D7D6 /* Main_iPad.storyboard in Resources */,
 				58F73B2A190F942A0056D7D6 /* Images.xcassets in Resources */,
+				5805FCC1190FFFED0010C13A /* Default-Landscape@2x.png in Resources */,
 				58F73B22190F942A0056D7D6 /* Main_iPhone.storyboard in Resources */,
+				5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */,
 				58F73B19190F942A0056D7D6 /* InfoPlist.strings in Resources */,
+				5805FCC0190FFFED0010C13A /* Default-Landscape.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
