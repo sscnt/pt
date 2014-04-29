@@ -202,6 +202,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = SSC;
 				TargetAttributes = {
+					58F73B0A190F942A0056D7D6 = {
+						DevelopmentTeam = 7FY9ETDU35;
+					};
 					58F73B2E190F942A0056D7D6 = {
 						TestTargetID = 58F73B0A190F942A0056D7D6;
 					};
@@ -390,10 +393,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Toshiki Nakanishi (WRHUFP3254)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pastel/Pastel-Prefix.pch";
 				INFOPLIST_FILE = "Pastel/Pastel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "164371D5-6894-4574-B588-403C4105174D";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -403,10 +409,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Toshiki Nakanishi (7FY9ETDU35)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pastel/Pastel-Prefix.pch";
 				INFOPLIST_FILE = "Pastel/Pastel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0E8EA514-87EB-4D7C-8E40-4A60A6499384";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -470,6 +479,7 @@
 				58F73B42190F942A0056D7D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		58F73B43190F942A0056D7D6 /* Build configuration list for PBXNativeTarget "PastelTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +488,7 @@
 				58F73B45190F942A0056D7D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
