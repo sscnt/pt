@@ -14,7 +14,7 @@
 {
     self = [super init];
     if(self){
-        self.effectId = VnEffectIdColorBronze;
+        self.effectId = VnEffectIdColorPotion9;
     }
     return self;
 }

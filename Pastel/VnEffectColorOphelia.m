@@ -14,7 +14,7 @@
 {
     self = [super init];
     if(self){
-        self.effectId = VnEffectIdColorBronze;
+        self.effectId = VnEffectIdColorOphelia;
     }
     return self;
 }
@@ -27,7 +27,7 @@
     // Gradient Map
     @autoreleasepool {
         VnAdjustmentLayerGradientMap* gradientMap = [[VnAdjustmentLayerGradientMap alloc] init];
-        [gradientMap addColorRed:149.0f Green:23.0f Blue:112.0f Opacity:126.0f Location:0 Midpoint:50];
+        [gradientMap addColorRed:149.0f Green:23.0f Blue:112.0f Opacity:100.0f Location:0 Midpoint:50];
         [gradientMap addColorRed:234.0f Green:201.0f Blue:175.0f Opacity:100.0f Location:3829 Midpoint:50];
         [gradientMap addColorRed:234.0f Green:201.0f Blue:175.0f Opacity:100.0f Location:4096 Midpoint:50];
         
@@ -37,7 +37,7 @@
     // Gradient Map
     @autoreleasepool {
         VnAdjustmentLayerGradientMap* gradientMap = [[VnAdjustmentLayerGradientMap alloc] init];
-        [gradientMap addColorRed:149.0f Green:23.0f Blue:112.0f Opacity:126.0f Location:0 Midpoint:50];
+        [gradientMap addColorRed:149.0f Green:23.0f Blue:112.0f Opacity:100.0f Location:0 Midpoint:50];
         [gradientMap addColorRed:234.0f Green:201.0f Blue:175.0f Opacity:100.0f Location:3829 Midpoint:50];
         [gradientMap addColorRed:234.0f Green:201.0f Blue:175.0f Opacity:100.0f Location:4096 Midpoint:50];
         
@@ -47,7 +47,7 @@
     // Gradient Map
     @autoreleasepool {
         VnAdjustmentLayerGradientMap* gradientMap = [[VnAdjustmentLayerGradientMap alloc] init];
-        [gradientMap addColorRed:149.0f Green:23.0f Blue:112.0f Opacity:126.0f Location:0 Midpoint:50];
+        [gradientMap addColorRed:149.0f Green:23.0f Blue:112.0f Opacity:100.0f Location:0 Midpoint:50];
         [gradientMap addColorRed:234.0f Green:201.0f Blue:175.0f Opacity:100.0f Location:3829 Midpoint:50];
         [gradientMap addColorRed:234.0f Green:201.0f Blue:175.0f Opacity:100.0f Location:4096 Midpoint:50];
         

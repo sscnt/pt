@@ -16,7 +16,7 @@
     if(self){
         self.faceOpacity = 0.50f;
         self.defaultOpacity = 0.50f;
-        self.effectId = VnEffectIdColorBronze;
+        self.effectId = VnEffectIdColorPinkMilk;
     }
     return self;
 }

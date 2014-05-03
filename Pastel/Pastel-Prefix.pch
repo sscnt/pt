@@ -78,7 +78,8 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdColorOphelia,
     VnEffectIdColorPinkMilk,
     VnEffectIdColorPotion9,
-    VnEffectIdColorPurePeach
+    VnEffectIdColorPurePeach,
+    VnEffectIdColorPurrr
 };
 
 typedef NS_ENUM(NSInteger, VnBlendingMode){
@@ -137,6 +138,7 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectColorPinkMilk.h"
 #import "VnEffectColorPotion9.h"
 #import "VnEffectColorPurePeach.h"
+#import "VnEffectColorPurrr.h"
 
 #import "UIDevice+extend.h"
 #import "UIScreen+extend.h"
