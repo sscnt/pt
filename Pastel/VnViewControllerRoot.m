@@ -6,18 +6,20 @@
 //  Copyright (c) 2014年 SSC. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "VnViewControllerRoot.h"
 
-@interface ViewController ()
+@interface VnViewControllerRoot ()
 
 @end
 
-@implementation ViewController
+@implementation VnViewControllerRoot
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self.navigationBar setHidden:YES];
+    VnViewControllerHome* controller = [[VnViewControllerHome alloc] init];
+    [self pushViewController:controller animated:NO];
 }
 
 - (void)didReceiveMemoryWarning

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Pastel
+
+  Created by SSC on 2014/05/03.
+  Copyright (c) 2014年 SSC. All rights reserved.
+*/
+
+
+"no_access_to_your_photos" = "写真およびビデオへのアクセス権がありません。iPhoneの「設定」から、「プライバシー」→「写真」→「Vintage 2」をオンにしてください。";
+"no_access_due_to_parental_controls" = "写真およびビデオへのアクセス権がありません。ペアレンタルコントロールによりブロックされている可能性があります。";

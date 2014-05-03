@@ -14,3 +14,140 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#ifdef DEBUG
+#define LOG(...) NSLog(__VA_ARGS__)
+#define LOG_PRINTF(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define LOG_METHOD NSLog(@"%s", __func__)
+#define LOG_METHOD_AND_ABORT LOG_METHOD; abort()
+#else
+#define LOG(...)
+#define LOG_PRINTF(FORMAT, ...)
+#define LOG_METHOD
+#define LOG_METHOD_AND_ABORT
+#endif
+
+#ifdef DEBUG
+#define LOG_POINT(p) NSLog(@"%f, %f", p.x, p.y)
+#define LOG_SIZE(p) NSLog(@"%f, %f", p.width, p.height)
+#define LOG_RECT(p) NSLog(@"%f, %f - %f, %f", p.origin.x, p.origin.y, p.size.width, p.size.height)
+#else
+#define LOG_POINT(p)
+#define LOG_SIZE(p)
+#define LOG_RECT(p)
+#endif
+
+#define s255(v) v/255.0
+
+#define MAX_IMAGE_LENGTH 4096
+#define MAX_IMAGE_LENGTH_FOR_IPHONE_5S 4096
+#define MAX_IMAGE_LENGTH_FOR_IPHONE_5 4096
+#define MAX_IMAGE_LENGTH_FOR_IPHONE_4S 2160
+#define MAX_IMAGE_LENGTH_FOR_IPHONE_4 1920
+
+typedef NS_ENUM(NSInteger, VnAdjustmentToolId){
+    VnAdjustmentToolIdEffects = 1,
+    VnAdjustmentToolIdEffectOpacity,
+    VnAdjustmentToolIdEffectHistory,
+    VnAdjustmentToolIdTextures,
+    VnAdjustmentToolIdTextureOpacity,
+    VnAdjustmentToolIdTextureHistory,
+    VnAdjustmentToolIdPhotoFilters,
+    VnAdjustmentToolIdPhotoFilterOpacity,
+    VnAdjustmentToolIdPhotoFilterHistory,
+    VnAdjustmentToolIdBrightness,
+    VnAdjustmentToolIdVignette,
+    VnAdjustmentToolIdLevels,
+    VnAdjustmentToolIdContrast,
+    VnAdjustmentToolIdLocalContrast,
+    VnAdjustmentToolIdSharpness,
+    VnAdjustmentToolIdSaturation,
+    VnAdjustmentToolIdVibrance,
+    VnAdjustmentToolIdTemperature,
+    VnAdjustmentToolIdTint,
+    VnAdjustmentToolIdHue,
+    VnAdjustmentToolIdLightness,
+    VnAdjustmentToolIdShadowAndHighlight,
+    VnAdjustmentToolIdBlacksAndWhites
+};
+
+typedef NS_ENUM(NSInteger, VnEffectId){
+    VnEffectIdNone = 0,
+    VnEffectIdColorBronze,
+    VnEffectIdColorLittleBlueSecret,
+    VnEffectIdColorOphelia
+};
+
+typedef NS_ENUM(NSInteger, VnBlendingMode){
+    VnBlendingModeNormal = 1,
+    VnBlendingModeDarken,
+    VnBlendingModeScreen,
+    VnBlendingModeMultiply,
+    VnBlendingModeDarkerColor,
+    VnBlendingModeLighten,
+    VnBlendingModeSoftLight,
+    VnBlendingModeHardLight,
+    VnBlendingModeVividLight,
+    VnBlendingModeOverlay,
+    VnBlendingModeExclusion,
+    VnBlendingModeColorBurn,
+    VnBlendingModeColor,
+    VnBlendingModeColorDodge,
+    VnBlendingModeLinearDodge,
+    VnBlendingModeLinearLight,
+    VnBlendingModeHue,
+    VnBlendingModeSaturation,
+    VnBlendingModeDifference
+};
+
+#import "VnBlendingNormal.h"
+#import "VnBlendingDarken.h"
+#import "VnBlendingMultiply.h"
+#import "VnBlendingScreen.h"
+#import "VnBlendingSoftLight.h"
+#import "VnBlendingLighten.h"
+#import "VnBlendingHardLight.h"
+#import "VnBlendingVividLight.h"
+#import "VnBlendingOverlay.h"
+#import "VnBlendingColorDodge.h"
+#import "VnBlendingDifference.h"
+#import "VnBlendingLinearDodge.h"
+#import "VnBlendingColor.h"
+#import "VnBlendingDarkerColor.h"
+#import "VnBlendingExclusion.h"
+#import "VnBlendingHue.h"
+#import "VnBlendingColorBurn.h"
+#import "VnBlendingSaturation.h"
+#import "VnBlendingLinearLight.h"
+
+#import "VnAdjustmentLayerGradientColorFill.h"
+#import "VnAdjustmentLayerColorBalance.h"
+#import "VnAdjustmentLayerSelectiveColor.h"
+#import "VnAdjustmentLayerGradientMap.h"
+#import "VnAdjustmentLayerChannelMixerFilter.h"
+#import "VnAdjustmentLayerHueSaturation.h"
+#import "VnAdjustmentLayerPhotoFilter.h"
+
+#import "VnEffectColorBronze.h"
+#import "VnEffectColorLittleBlueSecret.h"
+#import "VnEffectColorOphelia.h"
+
+#import "UIDevice+extend.h"
+#import "UIScreen+extend.h"
+#import "UIView+extend.h"
+#import "UIScrollView+extend.h"
+#import "UIViewController+extend.h"
+#import "UIImagePickerController+extend.h"
+#import "UIImage+extend.h"
+
+#import "VnCurrentImage.h"
+#import "VnCurrentSettings.h"
+#import "VnProcessor.h"
+#import "VnBoolean.h"
+#import "VnObjectEffect.h"
+#import "VnDataEffects.h"
+#import "VnEditorSliderManager.h"
+#import "VnEditorViewManager.h"
+#import "VnEditorButtonManager.h"
+#import "VnEditorProgressManager.h"
+#import "VnProcessingQueueManager.h"

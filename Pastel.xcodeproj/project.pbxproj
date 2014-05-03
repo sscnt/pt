@@ -7,10 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		580434E319148F6300B84896 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 580434E519148F6300B84896 /* Localizable.strings */; };
+		580434E91914985E00B84896 /* VnEffectColorBronze.m in Sources */ = {isa = PBXBuildFile; fileRef = 580434E81914985E00B84896 /* VnEffectColorBronze.m */; };
+		580434ED19149CC400B84896 /* clbs.acv in Resources */ = {isa = PBXBuildFile; fileRef = 580434EC19149CC400B84896 /* clbs.acv */; };
+		580434F019149D0100B84896 /* VnEffectColorLittleBlueSecret.m in Sources */ = {isa = PBXBuildFile; fileRef = 580434EF19149D0100B84896 /* VnEffectColorLittleBlueSecret.m */; };
+		580434F31914A15100B84896 /* VnEffectColorOphelia.m in Sources */ = {isa = PBXBuildFile; fileRef = 580434F21914A15100B84896 /* VnEffectColorOphelia.m */; };
 		5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBB190FFFED0010C13A /* Default-568h@2x.png */; };
 		5805FCC0190FFFED0010C13A /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBC190FFFED0010C13A /* Default-Landscape.png */; };
 		5805FCC1190FFFED0010C13A /* Default-Landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBD190FFFED0010C13A /* Default-Landscape@2x.png */; };
 		5805FCC2190FFFED0010C13A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5805FCBE190FFFED0010C13A /* Default@2x.png */; };
+		5805FCC7191002350010C13A /* VnViewControllerHome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCC6191002350010C13A /* VnViewControllerHome.m */; };
+		5805FCD7191002690010C13A /* UIDevice+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCCA191002690010C13A /* UIDevice+extend.m */; };
+		5805FCD8191002690010C13A /* UIScreen+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCCC191002690010C13A /* UIScreen+extend.m */; };
+		5805FCD9191002690010C13A /* UIView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCCE191002690010C13A /* UIView+extend.m */; };
+		5805FCDA191002690010C13A /* UIScrollView+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCD0191002690010C13A /* UIScrollView+extend.m */; };
+		5805FCDB191002690010C13A /* UIImage+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCD2191002690010C13A /* UIImage+extend.m */; };
+		5805FCDC191002690010C13A /* UIViewController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCD4191002690010C13A /* UIViewController+extend.m */; };
+		5805FCDD191002690010C13A /* UIImagePickerController+extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCD6191002690010C13A /* UIImagePickerController+extend.m */; };
+		5805FCED191003C60010C13A /* VnAdjustmentLayerPhotoFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCE0191003C60010C13A /* VnAdjustmentLayerPhotoFilter.m */; };
+		5805FCEE191003C60010C13A /* VnAdjustmentLayerHueSaturation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCE2191003C60010C13A /* VnAdjustmentLayerHueSaturation.m */; };
+		5805FCEF191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCE4191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.m */; };
+		5805FCF0191003C60010C13A /* VnAdjustmentLayerGradientMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCE6191003C60010C13A /* VnAdjustmentLayerGradientMap.m */; };
+		5805FCF1191003C60010C13A /* VnAdjustmentLayerSelectiveColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCE8191003C60010C13A /* VnAdjustmentLayerSelectiveColor.m */; };
+		5805FCF2191003C60010C13A /* VnAdjustmentLayerColorBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCEA191003C60010C13A /* VnAdjustmentLayerColorBalance.m */; };
+		5805FCF3191003C60010C13A /* VnAdjustmentLayerGradientColorFill.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCEC191003C60010C13A /* VnAdjustmentLayerGradientColorFill.m */; };
+		5805FCFB191003FF0010C13A /* VnFilterBrightness.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCF6191003FF0010C13A /* VnFilterBrightness.m */; };
+		5805FCFC191003FF0010C13A /* VnFilterLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCF8191003FF0010C13A /* VnFilterLevels.m */; };
+		5805FCFD191003FF0010C13A /* VnFilterTemperature.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FCFA191003FF0010C13A /* VnFilterTemperature.m */; };
+		5805FD251910044C0010C13A /* VnBlendingNormal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD001910044C0010C13A /* VnBlendingNormal.m */; };
+		5805FD261910044C0010C13A /* VnBlendingDarken.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD021910044C0010C13A /* VnBlendingDarken.m */; };
+		5805FD271910044C0010C13A /* VnBlendingMultiply.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD041910044C0010C13A /* VnBlendingMultiply.m */; };
+		5805FD281910044C0010C13A /* VnBlendingScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD061910044C0010C13A /* VnBlendingScreen.m */; };
+		5805FD291910044C0010C13A /* VnBlendingSoftLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD081910044C0010C13A /* VnBlendingSoftLight.m */; };
+		5805FD2A1910044C0010C13A /* VnBlendingLighten.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD0A1910044C0010C13A /* VnBlendingLighten.m */; };
+		5805FD2B1910044C0010C13A /* VnBlendingHardLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD0C1910044C0010C13A /* VnBlendingHardLight.m */; };
+		5805FD2C1910044C0010C13A /* VnBlendingVividLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD0E1910044C0010C13A /* VnBlendingVividLight.m */; };
+		5805FD2D1910044C0010C13A /* VnBlendingOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD101910044C0010C13A /* VnBlendingOverlay.m */; };
+		5805FD2E1910044C0010C13A /* VnBlendingColorDodge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD121910044C0010C13A /* VnBlendingColorDodge.m */; };
+		5805FD2F1910044C0010C13A /* VnBlendingDifference.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD141910044C0010C13A /* VnBlendingDifference.m */; };
+		5805FD301910044C0010C13A /* VnBlendingLinearDodge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD161910044C0010C13A /* VnBlendingLinearDodge.m */; };
+		5805FD311910044C0010C13A /* VnBlendingLinearLight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD181910044C0010C13A /* VnBlendingLinearLight.m */; };
+		5805FD321910044C0010C13A /* VnBlendingColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD1A1910044C0010C13A /* VnBlendingColor.m */; };
+		5805FD331910044C0010C13A /* VnBlendingDarkerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD1C1910044C0010C13A /* VnBlendingDarkerColor.m */; };
+		5805FD341910044C0010C13A /* VnBlendingExclusion.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD1E1910044C0010C13A /* VnBlendingExclusion.m */; };
+		5805FD351910044C0010C13A /* VnBlendingHue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD201910044C0010C13A /* VnBlendingHue.m */; };
+		5805FD361910044C0010C13A /* VnBlendingColorBurn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD221910044C0010C13A /* VnBlendingColorBurn.m */; };
+		5805FD371910044C0010C13A /* VnBlendingSaturation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD241910044C0010C13A /* VnBlendingSaturation.m */; };
+		5805FD3C191004870010C13A /* VnEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD3B191004870010C13A /* VnEffect.m */; };
+		5805FD48191006A10010C13A /* libGPUImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805FD45191005B50010C13A /* libGPUImage.a */; };
+		5805FD4A1910070E0010C13A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805FD491910070E0010C13A /* CoreMedia.framework */; };
+		5805FD4C191007190010C13A /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805FD4B191007190010C13A /* CoreVideo.framework */; };
+		5805FD4E191007240010C13A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805FD4D191007240010C13A /* OpenGLES.framework */; };
+		5805FD50191007540010C13A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805FD4F191007540010C13A /* AVFoundation.framework */; };
+		5805FD521910077F0010C13A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805FD511910077F0010C13A /* QuartzCore.framework */; };
+		5805FD541910078D0010C13A /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5805FD531910078D0010C13A /* AssetsLibrary.framework */; };
+		5805FD62191009760010C13A /* VnProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD57191009760010C13A /* VnProcessor.m */; };
+		5805FD63191009760010C13A /* VnProcessingQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD59191009760010C13A /* VnProcessingQueueManager.m */; };
+		5805FD64191009760010C13A /* VnCurrentImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD5B191009760010C13A /* VnCurrentImage.m */; };
+		5805FD65191009760010C13A /* VnBoolean.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD5D191009760010C13A /* VnBoolean.m */; };
+		5805FD66191009760010C13A /* VnCurrentSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD5F191009760010C13A /* VnCurrentSettings.m */; };
+		5805FD67191009760010C13A /* VnDataEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD61191009760010C13A /* VnDataEffects.m */; };
+		5805FD711910098B0010C13A /* VnEditorSliderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD6A1910098B0010C13A /* VnEditorSliderManager.m */; };
+		5805FD721910098B0010C13A /* VnEditorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD6C1910098B0010C13A /* VnEditorViewManager.m */; };
+		5805FD731910098B0010C13A /* VnEditorButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD6E1910098B0010C13A /* VnEditorButtonManager.m */; };
+		5805FD741910098B0010C13A /* VnEditorProgressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD701910098B0010C13A /* VnEditorProgressManager.m */; };
+		5805FD78191009AF0010C13A /* VnObjectProcessingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD77191009AF0010C13A /* VnObjectProcessingQueue.m */; };
+		5805FD7B191009C10010C13A /* VnObjectEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD7A191009C10010C13A /* VnObjectEffect.m */; };
+		582919FB1913DF80007052B3 /* VnButtonHomeSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 582919FA1913DF80007052B3 /* VnButtonHomeSource.m */; };
+		582919FE1913E4B3007052B3 /* VnViewHomeBg.m in Sources */ = {isa = PBXBuildFile; fileRef = 582919FD1913E4B3007052B3 /* VnViewHomeBg.m */; };
+		58291A011913F816007052B3 /* VnViewControllerEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58291A001913F816007052B3 /* VnViewControllerEditor.m */; };
+		584F06551912739C00C3467C /* EVCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06521912739C00C3467C /* EVCircularProgressView.m */; };
+		584F06561912739C00C3467C /* VnViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06541912739C00C3467C /* VnViewProgress.m */; };
+		584F0659191273AC00C3467C /* VnViewLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F0658191273AC00C3467C /* VnViewLabel.m */; };
+		584F065F1912752600C3467C /* VnViewEditorLayerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F065E1912752600C3467C /* VnViewEditorLayerBar.m */; };
+		584F06651912756800C3467C /* VnViewEditorLayerBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06641912756800C3467C /* VnViewEditorLayerBarButton.m */; };
+		584F06681912771C00C3467C /* VnViewEditorPhotoPreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06671912771C00C3467C /* VnViewEditorPhotoPreview.m */; };
 		58F73B0F190F942A0056D7D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B0E190F942A0056D7D6 /* Foundation.framework */; };
 		58F73B11190F942A0056D7D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B10190F942A0056D7D6 /* CoreGraphics.framework */; };
 		58F73B13190F942A0056D7D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B12190F942A0056D7D6 /* UIKit.framework */; };
@@ -19,16 +90,31 @@
 		58F73B1F190F942A0056D7D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F73B1E190F942A0056D7D6 /* AppDelegate.m */; };
 		58F73B22190F942A0056D7D6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F73B20190F942A0056D7D6 /* Main_iPhone.storyboard */; };
 		58F73B25190F942A0056D7D6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F73B23190F942A0056D7D6 /* Main_iPad.storyboard */; };
-		58F73B28190F942A0056D7D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F73B27190F942A0056D7D6 /* ViewController.m */; };
+		58F73B28190F942A0056D7D6 /* VnViewControllerRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F73B27190F942A0056D7D6 /* VnViewControllerRoot.m */; };
 		58F73B2A190F942A0056D7D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F73B29190F942A0056D7D6 /* Images.xcassets */; };
 		58F73B31190F942A0056D7D6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B30190F942A0056D7D6 /* XCTest.framework */; };
 		58F73B32190F942A0056D7D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B0E190F942A0056D7D6 /* Foundation.framework */; };
 		58F73B33190F942A0056D7D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B12190F942A0056D7D6 /* UIKit.framework */; };
 		58F73B3B190F942A0056D7D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F73B39190F942A0056D7D6 /* InfoPlist.strings */; };
 		58F73B3D190F942A0056D7D6 /* PastelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F73B3C190F942A0056D7D6 /* PastelTests.m */; };
+		58F89D3A19129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5805FD44191005B50010C13A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5805FD3E191005B50010C13A /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		5805FD46191005B50010C13A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5805FD3E191005B50010C13A /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A34414DDB1EC00852800;
+			remoteInfo = GPUImageTests;
+		};
 		58F73B34190F942A0056D7D6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58F73B03190F942A0056D7D6 /* Project object */;
@@ -39,10 +125,148 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580434DE19148F3800B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
+		580434DF19148F3800B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
+		580434E019148F3800B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		580434E119148F3800B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		580434E419148F6300B84896 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		580434E619148F6E00B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		580434E71914985E00B84896 /* VnEffectColorBronze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectColorBronze.h; sourceTree = "<group>"; };
+		580434E81914985E00B84896 /* VnEffectColorBronze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectColorBronze.m; sourceTree = "<group>"; };
+		580434EC19149CC400B84896 /* clbs.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = clbs.acv; sourceTree = "<group>"; };
+		580434EE19149D0100B84896 /* VnEffectColorLittleBlueSecret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectColorLittleBlueSecret.h; sourceTree = "<group>"; };
+		580434EF19149D0100B84896 /* VnEffectColorLittleBlueSecret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectColorLittleBlueSecret.m; sourceTree = "<group>"; };
+		580434F11914A15100B84896 /* VnEffectColorOphelia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectColorOphelia.h; sourceTree = "<group>"; };
+		580434F21914A15100B84896 /* VnEffectColorOphelia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectColorOphelia.m; sourceTree = "<group>"; };
 		5805FCBB190FFFED0010C13A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5805FCBC190FFFED0010C13A /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		5805FCBD190FFFED0010C13A /* Default-Landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x.png"; sourceTree = "<group>"; };
 		5805FCBE190FFFED0010C13A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5805FCC5191002350010C13A /* VnViewControllerHome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewControllerHome.h; sourceTree = "<group>"; };
+		5805FCC6191002350010C13A /* VnViewControllerHome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewControllerHome.m; sourceTree = "<group>"; };
+		5805FCC9191002690010C13A /* UIDevice+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+extend.h"; sourceTree = "<group>"; };
+		5805FCCA191002690010C13A /* UIDevice+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+extend.m"; sourceTree = "<group>"; };
+		5805FCCB191002690010C13A /* UIScreen+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+extend.h"; sourceTree = "<group>"; };
+		5805FCCC191002690010C13A /* UIScreen+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+extend.m"; sourceTree = "<group>"; };
+		5805FCCD191002690010C13A /* UIView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+extend.h"; sourceTree = "<group>"; };
+		5805FCCE191002690010C13A /* UIView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+extend.m"; sourceTree = "<group>"; };
+		5805FCCF191002690010C13A /* UIScrollView+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+extend.h"; sourceTree = "<group>"; };
+		5805FCD0191002690010C13A /* UIScrollView+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+extend.m"; sourceTree = "<group>"; };
+		5805FCD1191002690010C13A /* UIImage+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+extend.h"; sourceTree = "<group>"; };
+		5805FCD2191002690010C13A /* UIImage+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+extend.m"; sourceTree = "<group>"; };
+		5805FCD3191002690010C13A /* UIViewController+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+extend.h"; sourceTree = "<group>"; };
+		5805FCD4191002690010C13A /* UIViewController+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+extend.m"; sourceTree = "<group>"; };
+		5805FCD5191002690010C13A /* UIImagePickerController+extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImagePickerController+extend.h"; sourceTree = "<group>"; };
+		5805FCD6191002690010C13A /* UIImagePickerController+extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImagePickerController+extend.m"; sourceTree = "<group>"; };
+		5805FCDF191003C60010C13A /* VnAdjustmentLayerPhotoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnAdjustmentLayerPhotoFilter.h; sourceTree = "<group>"; };
+		5805FCE0191003C60010C13A /* VnAdjustmentLayerPhotoFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnAdjustmentLayerPhotoFilter.m; sourceTree = "<group>"; };
+		5805FCE1191003C60010C13A /* VnAdjustmentLayerHueSaturation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnAdjustmentLayerHueSaturation.h; sourceTree = "<group>"; };
+		5805FCE2191003C60010C13A /* VnAdjustmentLayerHueSaturation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnAdjustmentLayerHueSaturation.m; sourceTree = "<group>"; };
+		5805FCE3191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnAdjustmentLayerChannelMixerFilter.h; sourceTree = "<group>"; };
+		5805FCE4191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnAdjustmentLayerChannelMixerFilter.m; sourceTree = "<group>"; };
+		5805FCE5191003C60010C13A /* VnAdjustmentLayerGradientMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnAdjustmentLayerGradientMap.h; sourceTree = "<group>"; };
+		5805FCE6191003C60010C13A /* VnAdjustmentLayerGradientMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnAdjustmentLayerGradientMap.m; sourceTree = "<group>"; };
+		5805FCE7191003C60010C13A /* VnAdjustmentLayerSelectiveColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnAdjustmentLayerSelectiveColor.h; sourceTree = "<group>"; };
+		5805FCE8191003C60010C13A /* VnAdjustmentLayerSelectiveColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnAdjustmentLayerSelectiveColor.m; sourceTree = "<group>"; };
+		5805FCE9191003C60010C13A /* VnAdjustmentLayerColorBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnAdjustmentLayerColorBalance.h; sourceTree = "<group>"; };
+		5805FCEA191003C60010C13A /* VnAdjustmentLayerColorBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnAdjustmentLayerColorBalance.m; sourceTree = "<group>"; };
+		5805FCEB191003C60010C13A /* VnAdjustmentLayerGradientColorFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnAdjustmentLayerGradientColorFill.h; sourceTree = "<group>"; };
+		5805FCEC191003C60010C13A /* VnAdjustmentLayerGradientColorFill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnAdjustmentLayerGradientColorFill.m; sourceTree = "<group>"; };
+		5805FCF5191003FF0010C13A /* VnFilterBrightness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnFilterBrightness.h; sourceTree = "<group>"; };
+		5805FCF6191003FF0010C13A /* VnFilterBrightness.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnFilterBrightness.m; sourceTree = "<group>"; };
+		5805FCF7191003FF0010C13A /* VnFilterLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnFilterLevels.h; sourceTree = "<group>"; };
+		5805FCF8191003FF0010C13A /* VnFilterLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnFilterLevels.m; sourceTree = "<group>"; };
+		5805FCF9191003FF0010C13A /* VnFilterTemperature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnFilterTemperature.h; sourceTree = "<group>"; };
+		5805FCFA191003FF0010C13A /* VnFilterTemperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnFilterTemperature.m; sourceTree = "<group>"; };
+		5805FCFF1910044C0010C13A /* VnBlendingNormal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingNormal.h; sourceTree = "<group>"; };
+		5805FD001910044C0010C13A /* VnBlendingNormal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingNormal.m; sourceTree = "<group>"; };
+		5805FD011910044C0010C13A /* VnBlendingDarken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingDarken.h; sourceTree = "<group>"; };
+		5805FD021910044C0010C13A /* VnBlendingDarken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingDarken.m; sourceTree = "<group>"; };
+		5805FD031910044C0010C13A /* VnBlendingMultiply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingMultiply.h; sourceTree = "<group>"; };
+		5805FD041910044C0010C13A /* VnBlendingMultiply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingMultiply.m; sourceTree = "<group>"; };
+		5805FD051910044C0010C13A /* VnBlendingScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingScreen.h; sourceTree = "<group>"; };
+		5805FD061910044C0010C13A /* VnBlendingScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingScreen.m; sourceTree = "<group>"; };
+		5805FD071910044C0010C13A /* VnBlendingSoftLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingSoftLight.h; sourceTree = "<group>"; };
+		5805FD081910044C0010C13A /* VnBlendingSoftLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingSoftLight.m; sourceTree = "<group>"; };
+		5805FD091910044C0010C13A /* VnBlendingLighten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingLighten.h; sourceTree = "<group>"; };
+		5805FD0A1910044C0010C13A /* VnBlendingLighten.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingLighten.m; sourceTree = "<group>"; };
+		5805FD0B1910044C0010C13A /* VnBlendingHardLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingHardLight.h; sourceTree = "<group>"; };
+		5805FD0C1910044C0010C13A /* VnBlendingHardLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingHardLight.m; sourceTree = "<group>"; };
+		5805FD0D1910044C0010C13A /* VnBlendingVividLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingVividLight.h; sourceTree = "<group>"; };
+		5805FD0E1910044C0010C13A /* VnBlendingVividLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingVividLight.m; sourceTree = "<group>"; };
+		5805FD0F1910044C0010C13A /* VnBlendingOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingOverlay.h; sourceTree = "<group>"; };
+		5805FD101910044C0010C13A /* VnBlendingOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingOverlay.m; sourceTree = "<group>"; };
+		5805FD111910044C0010C13A /* VnBlendingColorDodge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingColorDodge.h; sourceTree = "<group>"; };
+		5805FD121910044C0010C13A /* VnBlendingColorDodge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingColorDodge.m; sourceTree = "<group>"; };
+		5805FD131910044C0010C13A /* VnBlendingDifference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingDifference.h; sourceTree = "<group>"; };
+		5805FD141910044C0010C13A /* VnBlendingDifference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingDifference.m; sourceTree = "<group>"; };
+		5805FD151910044C0010C13A /* VnBlendingLinearDodge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingLinearDodge.h; sourceTree = "<group>"; };
+		5805FD161910044C0010C13A /* VnBlendingLinearDodge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingLinearDodge.m; sourceTree = "<group>"; };
+		5805FD171910044C0010C13A /* VnBlendingLinearLight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingLinearLight.h; sourceTree = "<group>"; };
+		5805FD181910044C0010C13A /* VnBlendingLinearLight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingLinearLight.m; sourceTree = "<group>"; };
+		5805FD191910044C0010C13A /* VnBlendingColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingColor.h; sourceTree = "<group>"; };
+		5805FD1A1910044C0010C13A /* VnBlendingColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingColor.m; sourceTree = "<group>"; };
+		5805FD1B1910044C0010C13A /* VnBlendingDarkerColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingDarkerColor.h; sourceTree = "<group>"; };
+		5805FD1C1910044C0010C13A /* VnBlendingDarkerColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingDarkerColor.m; sourceTree = "<group>"; };
+		5805FD1D1910044C0010C13A /* VnBlendingExclusion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingExclusion.h; sourceTree = "<group>"; };
+		5805FD1E1910044C0010C13A /* VnBlendingExclusion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingExclusion.m; sourceTree = "<group>"; };
+		5805FD1F1910044C0010C13A /* VnBlendingHue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingHue.h; sourceTree = "<group>"; };
+		5805FD201910044C0010C13A /* VnBlendingHue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingHue.m; sourceTree = "<group>"; };
+		5805FD211910044C0010C13A /* VnBlendingColorBurn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingColorBurn.h; sourceTree = "<group>"; };
+		5805FD221910044C0010C13A /* VnBlendingColorBurn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingColorBurn.m; sourceTree = "<group>"; };
+		5805FD231910044C0010C13A /* VnBlendingSaturation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBlendingSaturation.h; sourceTree = "<group>"; };
+		5805FD241910044C0010C13A /* VnBlendingSaturation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBlendingSaturation.m; sourceTree = "<group>"; };
+		5805FD3A191004870010C13A /* VnEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffect.h; sourceTree = "<group>"; };
+		5805FD3B191004870010C13A /* VnEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffect.m; sourceTree = "<group>"; };
+		5805FD3E191005B50010C13A /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = GPUImage/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		5805FD491910070E0010C13A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		5805FD4B191007190010C13A /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		5805FD4D191007240010C13A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		5805FD4F191007540010C13A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5805FD511910077F0010C13A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5805FD531910078D0010C13A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		5805FD56191009760010C13A /* VnProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnProcessor.h; sourceTree = "<group>"; };
+		5805FD57191009760010C13A /* VnProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnProcessor.m; sourceTree = "<group>"; };
+		5805FD58191009760010C13A /* VnProcessingQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnProcessingQueueManager.h; sourceTree = "<group>"; };
+		5805FD59191009760010C13A /* VnProcessingQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnProcessingQueueManager.m; sourceTree = "<group>"; };
+		5805FD5A191009760010C13A /* VnCurrentImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnCurrentImage.h; sourceTree = "<group>"; };
+		5805FD5B191009760010C13A /* VnCurrentImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnCurrentImage.m; sourceTree = "<group>"; };
+		5805FD5C191009760010C13A /* VnBoolean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnBoolean.h; sourceTree = "<group>"; };
+		5805FD5D191009760010C13A /* VnBoolean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnBoolean.m; sourceTree = "<group>"; };
+		5805FD5E191009760010C13A /* VnCurrentSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnCurrentSettings.h; sourceTree = "<group>"; };
+		5805FD5F191009760010C13A /* VnCurrentSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnCurrentSettings.m; sourceTree = "<group>"; };
+		5805FD60191009760010C13A /* VnDataEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnDataEffects.h; sourceTree = "<group>"; };
+		5805FD61191009760010C13A /* VnDataEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnDataEffects.m; sourceTree = "<group>"; };
+		5805FD691910098B0010C13A /* VnEditorSliderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEditorSliderManager.h; sourceTree = "<group>"; };
+		5805FD6A1910098B0010C13A /* VnEditorSliderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEditorSliderManager.m; sourceTree = "<group>"; };
+		5805FD6B1910098B0010C13A /* VnEditorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEditorViewManager.h; sourceTree = "<group>"; };
+		5805FD6C1910098B0010C13A /* VnEditorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEditorViewManager.m; sourceTree = "<group>"; };
+		5805FD6D1910098B0010C13A /* VnEditorButtonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEditorButtonManager.h; sourceTree = "<group>"; };
+		5805FD6E1910098B0010C13A /* VnEditorButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEditorButtonManager.m; sourceTree = "<group>"; };
+		5805FD6F1910098B0010C13A /* VnEditorProgressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEditorProgressManager.h; sourceTree = "<group>"; };
+		5805FD701910098B0010C13A /* VnEditorProgressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEditorProgressManager.m; sourceTree = "<group>"; };
+		5805FD76191009AF0010C13A /* VnObjectProcessingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnObjectProcessingQueue.h; sourceTree = "<group>"; };
+		5805FD77191009AF0010C13A /* VnObjectProcessingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnObjectProcessingQueue.m; sourceTree = "<group>"; };
+		5805FD79191009C10010C13A /* VnObjectEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnObjectEffect.h; sourceTree = "<group>"; };
+		5805FD7A191009C10010C13A /* VnObjectEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnObjectEffect.m; sourceTree = "<group>"; };
+		582919F91913DF80007052B3 /* VnButtonHomeSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnButtonHomeSource.h; sourceTree = "<group>"; };
+		582919FA1913DF80007052B3 /* VnButtonHomeSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnButtonHomeSource.m; sourceTree = "<group>"; };
+		582919FC1913E4B3007052B3 /* VnViewHomeBg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewHomeBg.h; sourceTree = "<group>"; };
+		582919FD1913E4B3007052B3 /* VnViewHomeBg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewHomeBg.m; sourceTree = "<group>"; };
+		582919FF1913F816007052B3 /* VnViewControllerEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewControllerEditor.h; sourceTree = "<group>"; };
+		58291A001913F816007052B3 /* VnViewControllerEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewControllerEditor.m; sourceTree = "<group>"; };
+		584F06511912739C00C3467C /* EVCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCircularProgressView.h; sourceTree = "<group>"; };
+		584F06521912739C00C3467C /* EVCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EVCircularProgressView.m; sourceTree = "<group>"; };
+		584F06531912739C00C3467C /* VnViewProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewProgress.h; sourceTree = "<group>"; };
+		584F06541912739C00C3467C /* VnViewProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewProgress.m; sourceTree = "<group>"; };
+		584F0657191273AC00C3467C /* VnViewLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewLabel.h; sourceTree = "<group>"; };
+		584F0658191273AC00C3467C /* VnViewLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewLabel.m; sourceTree = "<group>"; };
+		584F065D1912752600C3467C /* VnViewEditorLayerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBar.h; sourceTree = "<group>"; };
+		584F065E1912752600C3467C /* VnViewEditorLayerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBar.m; sourceTree = "<group>"; };
+		584F06631912756800C3467C /* VnViewEditorLayerBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBarButton.h; sourceTree = "<group>"; };
+		584F06641912756800C3467C /* VnViewEditorLayerBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBarButton.m; sourceTree = "<group>"; };
+		584F06661912771C00C3467C /* VnViewEditorPhotoPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorPhotoPreview.h; sourceTree = "<group>"; };
+		584F06671912771C00C3467C /* VnViewEditorPhotoPreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorPhotoPreview.m; sourceTree = "<group>"; };
 		58F73B0B190F942A0056D7D6 /* Pastel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pastel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F73B0E190F942A0056D7D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58F73B10190F942A0056D7D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,14 +279,16 @@
 		58F73B1E190F942A0056D7D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		58F73B21190F942A0056D7D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		58F73B24190F942A0056D7D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		58F73B26190F942A0056D7D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		58F73B27190F942A0056D7D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		58F73B26190F942A0056D7D6 /* VnViewControllerRoot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VnViewControllerRoot.h; sourceTree = "<group>"; };
+		58F73B27190F942A0056D7D6 /* VnViewControllerRoot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VnViewControllerRoot.m; sourceTree = "<group>"; };
 		58F73B29190F942A0056D7D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		58F73B2F190F942A0056D7D6 /* PastelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PastelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F73B30190F942A0056D7D6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		58F73B38190F942A0056D7D6 /* PastelTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PastelTests-Info.plist"; sourceTree = "<group>"; };
 		58F73B3A190F942A0056D7D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		58F73B3C190F942A0056D7D6 /* PastelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PastelTests.m; sourceTree = "<group>"; };
+		58F89D3819129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBarButtonMaskView.h; sourceTree = "<group>"; };
+		58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBarButtonMaskView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +296,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5805FD541910078D0010C13A /* AssetsLibrary.framework in Frameworks */,
+				5805FD521910077F0010C13A /* QuartzCore.framework in Frameworks */,
+				5805FD50191007540010C13A /* AVFoundation.framework in Frameworks */,
+				5805FD4E191007240010C13A /* OpenGLES.framework in Frameworks */,
+				5805FD4C191007190010C13A /* CoreVideo.framework in Frameworks */,
+				5805FD4A1910070E0010C13A /* CoreMedia.framework in Frameworks */,
+				5805FD48191006A10010C13A /* libGPUImage.a in Frameworks */,
 				58F73B11190F942A0056D7D6 /* CoreGraphics.framework in Frameworks */,
 				58F73B13190F942A0056D7D6 /* UIKit.framework in Frameworks */,
 				58F73B0F190F942A0056D7D6 /* Foundation.framework in Frameworks */,
@@ -89,6 +322,287 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		580434DA19148D5E00B84896 /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Effects;
+			sourceTree = "<group>";
+		};
+		580434DB19148D6300B84896 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Overlay;
+			sourceTree = "<group>";
+		};
+		580434EB19149CA800B84896 /* Curves */ = {
+			isa = PBXGroup;
+			children = (
+				580434EC19149CC400B84896 /* clbs.acv */,
+			);
+			name = Curves;
+			sourceTree = "<group>";
+		};
+		5805FCC4191001BD0010C13A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				58F73B26190F942A0056D7D6 /* VnViewControllerRoot.h */,
+				58F73B27190F942A0056D7D6 /* VnViewControllerRoot.m */,
+				5805FCC5191002350010C13A /* VnViewControllerHome.h */,
+				5805FCC6191002350010C13A /* VnViewControllerHome.m */,
+				582919FF1913F816007052B3 /* VnViewControllerEditor.h */,
+				58291A001913F816007052B3 /* VnViewControllerEditor.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5805FCC8191002490010C13A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				5805FCC9191002690010C13A /* UIDevice+extend.h */,
+				5805FCCA191002690010C13A /* UIDevice+extend.m */,
+				5805FCCB191002690010C13A /* UIScreen+extend.h */,
+				5805FCCC191002690010C13A /* UIScreen+extend.m */,
+				5805FCCD191002690010C13A /* UIView+extend.h */,
+				5805FCCE191002690010C13A /* UIView+extend.m */,
+				5805FCCF191002690010C13A /* UIScrollView+extend.h */,
+				5805FCD0191002690010C13A /* UIScrollView+extend.m */,
+				5805FCD1191002690010C13A /* UIImage+extend.h */,
+				5805FCD2191002690010C13A /* UIImage+extend.m */,
+				5805FCD3191002690010C13A /* UIViewController+extend.h */,
+				5805FCD4191002690010C13A /* UIViewController+extend.m */,
+				5805FCD5191002690010C13A /* UIImagePickerController+extend.h */,
+				5805FCD6191002690010C13A /* UIImagePickerController+extend.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		5805FCDE191003A20010C13A /* VnAdjustmentLayers */ = {
+			isa = PBXGroup;
+			children = (
+				5805FCDF191003C60010C13A /* VnAdjustmentLayerPhotoFilter.h */,
+				5805FCE0191003C60010C13A /* VnAdjustmentLayerPhotoFilter.m */,
+				5805FCE1191003C60010C13A /* VnAdjustmentLayerHueSaturation.h */,
+				5805FCE2191003C60010C13A /* VnAdjustmentLayerHueSaturation.m */,
+				5805FCE3191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.h */,
+				5805FCE4191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.m */,
+				5805FCE5191003C60010C13A /* VnAdjustmentLayerGradientMap.h */,
+				5805FCE6191003C60010C13A /* VnAdjustmentLayerGradientMap.m */,
+				5805FCE7191003C60010C13A /* VnAdjustmentLayerSelectiveColor.h */,
+				5805FCE8191003C60010C13A /* VnAdjustmentLayerSelectiveColor.m */,
+				5805FCE9191003C60010C13A /* VnAdjustmentLayerColorBalance.h */,
+				5805FCEA191003C60010C13A /* VnAdjustmentLayerColorBalance.m */,
+				5805FCEB191003C60010C13A /* VnAdjustmentLayerGradientColorFill.h */,
+				5805FCEC191003C60010C13A /* VnAdjustmentLayerGradientColorFill.m */,
+			);
+			name = VnAdjustmentLayers;
+			sourceTree = "<group>";
+		};
+		5805FCF4191003DB0010C13A /* VnFilters */ = {
+			isa = PBXGroup;
+			children = (
+				5805FCF5191003FF0010C13A /* VnFilterBrightness.h */,
+				5805FCF6191003FF0010C13A /* VnFilterBrightness.m */,
+				5805FCF7191003FF0010C13A /* VnFilterLevels.h */,
+				5805FCF8191003FF0010C13A /* VnFilterLevels.m */,
+				5805FCF9191003FF0010C13A /* VnFilterTemperature.h */,
+				5805FCFA191003FF0010C13A /* VnFilterTemperature.m */,
+			);
+			name = VnFilters;
+			sourceTree = "<group>";
+		};
+		5805FCFE1910043B0010C13A /* VnBlendings */ = {
+			isa = PBXGroup;
+			children = (
+				5805FCFF1910044C0010C13A /* VnBlendingNormal.h */,
+				5805FD001910044C0010C13A /* VnBlendingNormal.m */,
+				5805FD011910044C0010C13A /* VnBlendingDarken.h */,
+				5805FD021910044C0010C13A /* VnBlendingDarken.m */,
+				5805FD031910044C0010C13A /* VnBlendingMultiply.h */,
+				5805FD041910044C0010C13A /* VnBlendingMultiply.m */,
+				5805FD051910044C0010C13A /* VnBlendingScreen.h */,
+				5805FD061910044C0010C13A /* VnBlendingScreen.m */,
+				5805FD071910044C0010C13A /* VnBlendingSoftLight.h */,
+				5805FD081910044C0010C13A /* VnBlendingSoftLight.m */,
+				5805FD091910044C0010C13A /* VnBlendingLighten.h */,
+				5805FD0A1910044C0010C13A /* VnBlendingLighten.m */,
+				5805FD0B1910044C0010C13A /* VnBlendingHardLight.h */,
+				5805FD0C1910044C0010C13A /* VnBlendingHardLight.m */,
+				5805FD0D1910044C0010C13A /* VnBlendingVividLight.h */,
+				5805FD0E1910044C0010C13A /* VnBlendingVividLight.m */,
+				5805FD0F1910044C0010C13A /* VnBlendingOverlay.h */,
+				5805FD101910044C0010C13A /* VnBlendingOverlay.m */,
+				5805FD111910044C0010C13A /* VnBlendingColorDodge.h */,
+				5805FD121910044C0010C13A /* VnBlendingColorDodge.m */,
+				5805FD131910044C0010C13A /* VnBlendingDifference.h */,
+				5805FD141910044C0010C13A /* VnBlendingDifference.m */,
+				5805FD151910044C0010C13A /* VnBlendingLinearDodge.h */,
+				5805FD161910044C0010C13A /* VnBlendingLinearDodge.m */,
+				5805FD171910044C0010C13A /* VnBlendingLinearLight.h */,
+				5805FD181910044C0010C13A /* VnBlendingLinearLight.m */,
+				5805FD191910044C0010C13A /* VnBlendingColor.h */,
+				5805FD1A1910044C0010C13A /* VnBlendingColor.m */,
+				5805FD1B1910044C0010C13A /* VnBlendingDarkerColor.h */,
+				5805FD1C1910044C0010C13A /* VnBlendingDarkerColor.m */,
+				5805FD1D1910044C0010C13A /* VnBlendingExclusion.h */,
+				5805FD1E1910044C0010C13A /* VnBlendingExclusion.m */,
+				5805FD1F1910044C0010C13A /* VnBlendingHue.h */,
+				5805FD201910044C0010C13A /* VnBlendingHue.m */,
+				5805FD211910044C0010C13A /* VnBlendingColorBurn.h */,
+				5805FD221910044C0010C13A /* VnBlendingColorBurn.m */,
+				5805FD231910044C0010C13A /* VnBlendingSaturation.h */,
+				5805FD241910044C0010C13A /* VnBlendingSaturation.m */,
+			);
+			name = VnBlendings;
+			sourceTree = "<group>";
+		};
+		5805FD381910045B0010C13A /* VnEffects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = VnEffects;
+			path = ../Pastel;
+			sourceTree = "<group>";
+		};
+		5805FD391910046D0010C13A /* VnEffects */ = {
+			isa = PBXGroup;
+			children = (
+				580434EB19149CA800B84896 /* Curves */,
+				5805FD3A191004870010C13A /* VnEffect.h */,
+				5805FD3B191004870010C13A /* VnEffect.m */,
+				5805FD3D1910048A0010C13A /* Color */,
+				580434DA19148D5E00B84896 /* Effects */,
+				580434DB19148D6300B84896 /* Overlay */,
+			);
+			name = VnEffects;
+			sourceTree = "<group>";
+		};
+		5805FD3D1910048A0010C13A /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				580434E71914985E00B84896 /* VnEffectColorBronze.h */,
+				580434E81914985E00B84896 /* VnEffectColorBronze.m */,
+				580434EE19149D0100B84896 /* VnEffectColorLittleBlueSecret.h */,
+				580434EF19149D0100B84896 /* VnEffectColorLittleBlueSecret.m */,
+				580434F11914A15100B84896 /* VnEffectColorOphelia.h */,
+				580434F21914A15100B84896 /* VnEffectColorOphelia.m */,
+			);
+			name = Color;
+			sourceTree = "<group>";
+		};
+		5805FD3F191005B50010C13A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5805FD45191005B50010C13A /* libGPUImage.a */,
+				5805FD47191005B50010C13A /* GPUImageTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5805FD55191009540010C13A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5805FD681910097B0010C13A /* Editor */,
+				5805FD56191009760010C13A /* VnProcessor.h */,
+				5805FD57191009760010C13A /* VnProcessor.m */,
+				5805FD58191009760010C13A /* VnProcessingQueueManager.h */,
+				5805FD59191009760010C13A /* VnProcessingQueueManager.m */,
+				5805FD5A191009760010C13A /* VnCurrentImage.h */,
+				5805FD5B191009760010C13A /* VnCurrentImage.m */,
+				5805FD5C191009760010C13A /* VnBoolean.h */,
+				5805FD5D191009760010C13A /* VnBoolean.m */,
+				5805FD5E191009760010C13A /* VnCurrentSettings.h */,
+				5805FD5F191009760010C13A /* VnCurrentSettings.m */,
+				5805FD60191009760010C13A /* VnDataEffects.h */,
+				5805FD61191009760010C13A /* VnDataEffects.m */,
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		5805FD681910097B0010C13A /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				5805FD691910098B0010C13A /* VnEditorSliderManager.h */,
+				5805FD6A1910098B0010C13A /* VnEditorSliderManager.m */,
+				5805FD6B1910098B0010C13A /* VnEditorViewManager.h */,
+				5805FD6C1910098B0010C13A /* VnEditorViewManager.m */,
+				5805FD6D1910098B0010C13A /* VnEditorButtonManager.h */,
+				5805FD6E1910098B0010C13A /* VnEditorButtonManager.m */,
+				5805FD6F1910098B0010C13A /* VnEditorProgressManager.h */,
+				5805FD701910098B0010C13A /* VnEditorProgressManager.m */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
+		5805FD75191009970010C13A /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				5805FD79191009C10010C13A /* VnObjectEffect.h */,
+				5805FD7A191009C10010C13A /* VnObjectEffect.m */,
+				5805FD76191009AF0010C13A /* VnObjectProcessingQueue.h */,
+				5805FD77191009AF0010C13A /* VnObjectProcessingQueue.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		582919F41913DF5C007052B3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				582919FC1913E4B3007052B3 /* VnViewHomeBg.h */,
+				582919FD1913E4B3007052B3 /* VnViewHomeBg.m */,
+				582919F91913DF80007052B3 /* VnButtonHomeSource.h */,
+				582919FA1913DF80007052B3 /* VnButtonHomeSource.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		584F064D1912737200C3467C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				584F06511912739C00C3467C /* EVCircularProgressView.h */,
+				584F06521912739C00C3467C /* EVCircularProgressView.m */,
+				584F06531912739C00C3467C /* VnViewProgress.h */,
+				584F06541912739C00C3467C /* VnViewProgress.m */,
+				584F0657191273AC00C3467C /* VnViewLabel.h */,
+				584F0658191273AC00C3467C /* VnViewLabel.m */,
+				582919F41913DF5C007052B3 /* Home */,
+				584F065A191274D900C3467C /* Editor */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		584F065A191274D900C3467C /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				584F06661912771C00C3467C /* VnViewEditorPhotoPreview.h */,
+				584F06671912771C00C3467C /* VnViewEditorPhotoPreview.m */,
+				584F065C1912750500C3467C /* Button */,
+				584F065B191274E600C3467C /* Toolbar */,
+			);
+			name = Editor;
+			sourceTree = "<group>";
+		};
+		584F065B191274E600C3467C /* Toolbar */ = {
+			isa = PBXGroup;
+			children = (
+				584F065D1912752600C3467C /* VnViewEditorLayerBar.h */,
+				584F065E1912752600C3467C /* VnViewEditorLayerBar.m */,
+			);
+			name = Toolbar;
+			sourceTree = "<group>";
+		};
+		584F065C1912750500C3467C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				584F06631912756800C3467C /* VnViewEditorLayerBarButton.h */,
+				584F06641912756800C3467C /* VnViewEditorLayerBarButton.m */,
+				58F89D3819129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.h */,
+				58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
 		58F5A56E190FFB4E0019E92B /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +636,13 @@
 		58F73B0D190F942A0056D7D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5805FD531910078D0010C13A /* AssetsLibrary.framework */,
+				5805FD511910077F0010C13A /* QuartzCore.framework */,
+				5805FD4F191007540010C13A /* AVFoundation.framework */,
+				5805FD4D191007240010C13A /* OpenGLES.framework */,
+				5805FD4B191007190010C13A /* CoreVideo.framework */,
+				5805FD491910070E0010C13A /* CoreMedia.framework */,
+				5805FD3E191005B50010C13A /* GPUImage.xcodeproj */,
 				58F73B0E190F942A0056D7D6 /* Foundation.framework */,
 				58F73B10190F942A0056D7D6 /* CoreGraphics.framework */,
 				58F73B12190F942A0056D7D6 /* UIKit.framework */,
@@ -133,13 +654,20 @@
 		58F73B14190F942A0056D7D6 /* Pastel */ = {
 			isa = PBXGroup;
 			children = (
+				5805FCFE1910043B0010C13A /* VnBlendings */,
+				5805FCF4191003DB0010C13A /* VnFilters */,
+				5805FCDE191003A20010C13A /* VnAdjustmentLayers */,
+				5805FCC8191002490010C13A /* Categories */,
+				5805FD391910046D0010C13A /* VnEffects */,
+				5805FD55191009540010C13A /* Shared */,
+				5805FD75191009970010C13A /* Objects */,
+				5805FCC4191001BD0010C13A /* ViewControllers */,
+				584F064D1912737200C3467C /* Views */,
 				58F5A56E190FFB4E0019E92B /* Images */,
 				58F73B1D190F942A0056D7D6 /* AppDelegate.h */,
 				58F73B1E190F942A0056D7D6 /* AppDelegate.m */,
 				58F73B20190F942A0056D7D6 /* Main_iPhone.storyboard */,
 				58F73B23190F942A0056D7D6 /* Main_iPad.storyboard */,
-				58F73B26190F942A0056D7D6 /* ViewController.h */,
-				58F73B27190F942A0056D7D6 /* ViewController.m */,
 				58F73B29190F942A0056D7D6 /* Images.xcassets */,
 				58F73B15190F942A0056D7D6 /* Supporting Files */,
 			);
@@ -153,6 +681,7 @@
 				58F73B17190F942A0056D7D6 /* InfoPlist.strings */,
 				58F73B1A190F942A0056D7D6 /* main.m */,
 				58F73B1C190F942A0056D7D6 /* Pastel-Prefix.pch */,
+				580434E519148F6300B84896 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -160,6 +689,7 @@
 		58F73B36190F942A0056D7D6 /* PastelTests */ = {
 			isa = PBXGroup;
 			children = (
+				5805FD381910045B0010C13A /* VnEffects */,
 				58F73B3C190F942A0056D7D6 /* PastelTests.m */,
 				58F73B37190F942A0056D7D6 /* Supporting Files */,
 			);
@@ -237,10 +767,17 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 58F73B02190F942A0056D7D6;
 			productRefGroup = 58F73B0C190F942A0056D7D6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5805FD3F191005B50010C13A /* Products */;
+					ProjectRef = 5805FD3E191005B50010C13A /* GPUImage.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58F73B0A190F942A0056D7D6 /* Pastel */,
@@ -249,6 +786,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		5805FD45191005B50010C13A /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = 5805FD44191005B50010C13A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5805FD47191005B50010C13A /* GPUImageTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = GPUImageTests.octest;
+			remoteRef = 5805FD46191005B50010C13A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		58F73B09190F942A0056D7D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -256,8 +810,10 @@
 			files = (
 				5805FCC2190FFFED0010C13A /* Default@2x.png in Resources */,
 				58F73B25190F942A0056D7D6 /* Main_iPad.storyboard in Resources */,
+				580434ED19149CC400B84896 /* clbs.acv in Resources */,
 				58F73B2A190F942A0056D7D6 /* Images.xcassets in Resources */,
 				5805FCC1190FFFED0010C13A /* Default-Landscape@2x.png in Resources */,
+				580434E319148F6300B84896 /* Localizable.strings in Resources */,
 				58F73B22190F942A0056D7D6 /* Main_iPhone.storyboard in Resources */,
 				5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */,
 				58F73B19190F942A0056D7D6 /* InfoPlist.strings in Resources */,
@@ -280,9 +836,72 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58F73B28190F942A0056D7D6 /* ViewController.m in Sources */,
+				58291A011913F816007052B3 /* VnViewControllerEditor.m in Sources */,
+				5805FD63191009760010C13A /* VnProcessingQueueManager.m in Sources */,
+				5805FD2E1910044C0010C13A /* VnBlendingColorDodge.m in Sources */,
+				5805FCFC191003FF0010C13A /* VnFilterLevels.m in Sources */,
+				5805FCD7191002690010C13A /* UIDevice+extend.m in Sources */,
+				5805FD301910044C0010C13A /* VnBlendingLinearDodge.m in Sources */,
+				582919FB1913DF80007052B3 /* VnButtonHomeSource.m in Sources */,
+				584F06651912756800C3467C /* VnViewEditorLayerBarButton.m in Sources */,
+				5805FD721910098B0010C13A /* VnEditorViewManager.m in Sources */,
+				5805FD361910044C0010C13A /* VnBlendingColorBurn.m in Sources */,
+				5805FD2F1910044C0010C13A /* VnBlendingDifference.m in Sources */,
+				580434F019149D0100B84896 /* VnEffectColorLittleBlueSecret.m in Sources */,
+				5805FD331910044C0010C13A /* VnBlendingDarkerColor.m in Sources */,
+				584F06561912739C00C3467C /* VnViewProgress.m in Sources */,
+				584F06681912771C00C3467C /* VnViewEditorPhotoPreview.m in Sources */,
+				5805FD78191009AF0010C13A /* VnObjectProcessingQueue.m in Sources */,
+				5805FCF0191003C60010C13A /* VnAdjustmentLayerGradientMap.m in Sources */,
+				5805FCF2191003C60010C13A /* VnAdjustmentLayerColorBalance.m in Sources */,
+				5805FCD9191002690010C13A /* UIView+extend.m in Sources */,
+				5805FD711910098B0010C13A /* VnEditorSliderManager.m in Sources */,
+				5805FD3C191004870010C13A /* VnEffect.m in Sources */,
+				5805FD2C1910044C0010C13A /* VnBlendingVividLight.m in Sources */,
+				5805FD64191009760010C13A /* VnCurrentImage.m in Sources */,
+				5805FD62191009760010C13A /* VnProcessor.m in Sources */,
+				5805FCDC191002690010C13A /* UIViewController+extend.m in Sources */,
+				5805FD2B1910044C0010C13A /* VnBlendingHardLight.m in Sources */,
+				5805FCD8191002690010C13A /* UIScreen+extend.m in Sources */,
+				5805FD65191009760010C13A /* VnBoolean.m in Sources */,
+				584F0659191273AC00C3467C /* VnViewLabel.m in Sources */,
+				5805FD2D1910044C0010C13A /* VnBlendingOverlay.m in Sources */,
+				5805FD251910044C0010C13A /* VnBlendingNormal.m in Sources */,
+				5805FD341910044C0010C13A /* VnBlendingExclusion.m in Sources */,
+				5805FCDB191002690010C13A /* UIImage+extend.m in Sources */,
+				5805FD371910044C0010C13A /* VnBlendingSaturation.m in Sources */,
+				5805FD261910044C0010C13A /* VnBlendingDarken.m in Sources */,
+				5805FCED191003C60010C13A /* VnAdjustmentLayerPhotoFilter.m in Sources */,
+				584F06551912739C00C3467C /* EVCircularProgressView.m in Sources */,
+				5805FD281910044C0010C13A /* VnBlendingScreen.m in Sources */,
+				5805FCEE191003C60010C13A /* VnAdjustmentLayerHueSaturation.m in Sources */,
+				5805FD67191009760010C13A /* VnDataEffects.m in Sources */,
+				5805FCDA191002690010C13A /* UIScrollView+extend.m in Sources */,
+				5805FCFB191003FF0010C13A /* VnFilterBrightness.m in Sources */,
+				5805FD271910044C0010C13A /* VnBlendingMultiply.m in Sources */,
+				5805FD731910098B0010C13A /* VnEditorButtonManager.m in Sources */,
+				58F73B28190F942A0056D7D6 /* VnViewControllerRoot.m in Sources */,
+				5805FCFD191003FF0010C13A /* VnFilterTemperature.m in Sources */,
+				5805FD311910044C0010C13A /* VnBlendingLinearLight.m in Sources */,
+				5805FCDD191002690010C13A /* UIImagePickerController+extend.m in Sources */,
+				5805FCC7191002350010C13A /* VnViewControllerHome.m in Sources */,
+				580434F31914A15100B84896 /* VnEffectColorOphelia.m in Sources */,
+				580434E91914985E00B84896 /* VnEffectColorBronze.m in Sources */,
+				5805FD741910098B0010C13A /* VnEditorProgressManager.m in Sources */,
 				58F73B1F190F942A0056D7D6 /* AppDelegate.m in Sources */,
+				5805FD321910044C0010C13A /* VnBlendingColor.m in Sources */,
+				582919FE1913E4B3007052B3 /* VnViewHomeBg.m in Sources */,
+				5805FD351910044C0010C13A /* VnBlendingHue.m in Sources */,
+				5805FCF1191003C60010C13A /* VnAdjustmentLayerSelectiveColor.m in Sources */,
+				5805FD2A1910044C0010C13A /* VnBlendingLighten.m in Sources */,
+				5805FCEF191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.m in Sources */,
+				5805FD291910044C0010C13A /* VnBlendingSoftLight.m in Sources */,
+				58F89D3A19129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m in Sources */,
 				58F73B1B190F942A0056D7D6 /* main.m in Sources */,
+				5805FD66191009760010C13A /* VnCurrentSettings.m in Sources */,
+				5805FD7B191009C10010C13A /* VnObjectEffect.m in Sources */,
+				5805FCF3191003C60010C13A /* VnAdjustmentLayerGradientColorFill.m in Sources */,
+				584F065F1912752600C3467C /* VnViewEditorLayerBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,10 +924,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		580434E519148F6300B84896 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				580434E419148F6300B84896 /* en */,
+				580434E619148F6E00B84896 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		58F73B17190F942A0056D7D6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				58F73B18190F942A0056D7D6 /* en */,
+				580434E019148F3800B84896 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -317,6 +946,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58F73B21190F942A0056D7D6 /* Base */,
+				580434DE19148F3800B84896 /* ja */,
 			);
 			name = Main_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -325,6 +955,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58F73B24190F942A0056D7D6 /* Base */,
+				580434DF19148F3800B84896 /* ja */,
 			);
 			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
@@ -333,6 +964,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				58F73B3A190F942A0056D7D6 /* en */,
+				580434E119148F3800B84896 /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -422,8 +1054,10 @@
 				GCC_PREFIX_HEADER = "Pastel/Pastel-Prefix.pch";
 				INFOPLIST_FILE = "Pastel/Pastel-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "164371D5-6894-4574-B588-403C4105174D";
+				USER_HEADER_SEARCH_PATHS = "GPUImage/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -438,8 +1072,10 @@
 				GCC_PREFIX_HEADER = "Pastel/Pastel-Prefix.pch";
 				INFOPLIST_FILE = "Pastel/Pastel-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0E8EA514-87EB-4D7C-8E40-4A60A6499384";
+				USER_HEADER_SEARCH_PATHS = "GPUImage/framework/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
