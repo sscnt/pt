@@ -157,6 +157,21 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
+    if (effectId == VnEffectIdColorSummerSkin) {
+        VnEffectColorSummerSkin* effect = [[VnEffectColorSummerSkin alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdColorSunnyLight) {
+        VnEffectColorSunnyLight* effect = [[VnEffectColorSunnyLight alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdColorWildHoney) {
+        VnEffectColorWildHoney* effect = [[VnEffectColorWildHoney alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
     return nil;
 }
 
