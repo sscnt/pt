@@ -84,7 +84,9 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdColorSerenity,
     VnEffectIdColorSummerSkin,
     VnEffectIdColorSunnyLight,
-    VnEffectIdColorWildHoney
+    VnEffectIdColorWildHoney,
+    VnEffectIdColorUrbanCandy,
+    VnEffectIdColorVintageMatte
 };
 
 typedef NS_ENUM(NSInteger, VnBlendingMode){
@@ -106,6 +108,7 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
     VnBlendingModeLinearLight,
     VnBlendingModeHue,
     VnBlendingModeSaturation,
+    VnBlendingModeLuminotisy,
     VnBlendingModeDifference
 };
 
@@ -127,6 +130,7 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnBlendingHue.h"
 #import "VnBlendingColorBurn.h"
 #import "VnBlendingSaturation.h"
+#import "VnBlendingLuminosity.h"
 #import "VnBlendingLinearLight.h"
 
 #import "VnAdjustmentLayerGradientColorFill.h"
@@ -149,6 +153,8 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectColorSummerSkin.h"
 #import "VnEffectColorSunnyLight.h"
 #import "VnEffectColorWildHoney.h"
+#import "VnEffectColorUrbanCandy.h"
+#import "VnEffectColorVintageMatte.h"
 
 #import "UIDevice+extend.h"
 #import "UIScreen+extend.h"

@@ -172,6 +172,16 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
+    if (effectId == VnEffectIdColorUrbanCandy) {
+        VnEffectColorUrbanCandy* effect = [[VnEffectColorUrbanCandy alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdColorVintageMatte) {
+        VnEffectColorVintageMatte* effect = [[VnEffectColorVintageMatte alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
     return nil;
 }
 
@@ -288,6 +298,9 @@ static VnProcessor* sharedVnProcessor = nil;
     }
     if(mode == VnBlendingModeSaturation){
         blending = [[VnBlendingSaturation alloc] init];
+    }
+    if(mode == VnBlendingModeLuminotisy){
+        blending = [[VnBlendingLuminosity alloc] init];
     }
     if(mode == VnBlendingModeDifference){
         blending = [[VnBlendingDifference alloc] init];
