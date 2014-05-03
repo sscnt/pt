@@ -87,6 +87,8 @@
 		58F444F91914ACBD00A1E3E7 /* cpt.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F444F81914ACBD00A1E3E7 /* cpt.acv */; };
 		58F444FE1914B35400A1E3E7 /* VnEffectColorPurePeach.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F444FD1914B35400A1E3E7 /* VnEffectColorPurePeach.m */; };
 		58F445011914C30800A1E3E7 /* VnEffectColorPurrr.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F445001914C30800A1E3E7 /* VnEffectColorPurrr.m */; };
+		58F445041914C7BB00A1E3E7 /* VnEffectColorRosyVintage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F445031914C7BB00A1E3E7 /* VnEffectColorRosyVintage.m */; };
+		58F445071914CB6300A1E3E7 /* VnEffectColorSerenity.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F445061914CB6300A1E3E7 /* VnEffectColorSerenity.m */; };
 		58F73B0F190F942A0056D7D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B0E190F942A0056D7D6 /* Foundation.framework */; };
 		58F73B11190F942A0056D7D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B10190F942A0056D7D6 /* CoreGraphics.framework */; };
 		58F73B13190F942A0056D7D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B12190F942A0056D7D6 /* UIKit.framework */; };
@@ -281,6 +283,10 @@
 		58F444FD1914B35400A1E3E7 /* VnEffectColorPurePeach.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectColorPurePeach.m; sourceTree = "<group>"; };
 		58F444FF1914C30800A1E3E7 /* VnEffectColorPurrr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectColorPurrr.h; sourceTree = "<group>"; };
 		58F445001914C30800A1E3E7 /* VnEffectColorPurrr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectColorPurrr.m; sourceTree = "<group>"; };
+		58F445021914C7BB00A1E3E7 /* VnEffectColorRosyVintage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectColorRosyVintage.h; sourceTree = "<group>"; };
+		58F445031914C7BB00A1E3E7 /* VnEffectColorRosyVintage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectColorRosyVintage.m; sourceTree = "<group>"; };
+		58F445051914CB6300A1E3E7 /* VnEffectColorSerenity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectColorSerenity.h; sourceTree = "<group>"; };
+		58F445061914CB6300A1E3E7 /* VnEffectColorSerenity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectColorSerenity.m; sourceTree = "<group>"; };
 		58F73B0B190F942A0056D7D6 /* Pastel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pastel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F73B0E190F942A0056D7D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58F73B10190F942A0056D7D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -510,6 +516,10 @@
 				58F444FD1914B35400A1E3E7 /* VnEffectColorPurePeach.m */,
 				58F444FF1914C30800A1E3E7 /* VnEffectColorPurrr.h */,
 				58F445001914C30800A1E3E7 /* VnEffectColorPurrr.m */,
+				58F445021914C7BB00A1E3E7 /* VnEffectColorRosyVintage.h */,
+				58F445031914C7BB00A1E3E7 /* VnEffectColorRosyVintage.m */,
+				58F445051914CB6300A1E3E7 /* VnEffectColorSerenity.h */,
+				58F445061914CB6300A1E3E7 /* VnEffectColorSerenity.m */,
 			);
 			name = Color;
 			sourceTree = "<group>";
@@ -890,6 +900,7 @@
 				5805FCD8191002690010C13A /* UIScreen+extend.m in Sources */,
 				5805FD65191009760010C13A /* VnBoolean.m in Sources */,
 				584F0659191273AC00C3467C /* VnViewLabel.m in Sources */,
+				58F445041914C7BB00A1E3E7 /* VnEffectColorRosyVintage.m in Sources */,
 				5805FD2D1910044C0010C13A /* VnBlendingOverlay.m in Sources */,
 				5805FD251910044C0010C13A /* VnBlendingNormal.m in Sources */,
 				5805FD341910044C0010C13A /* VnBlendingExclusion.m in Sources */,
@@ -904,6 +915,7 @@
 				5805FD67191009760010C13A /* VnDataEffects.m in Sources */,
 				5805FCDA191002690010C13A /* UIScrollView+extend.m in Sources */,
 				5805FCFB191003FF0010C13A /* VnFilterBrightness.m in Sources */,
+				58F445071914CB6300A1E3E7 /* VnEffectColorSerenity.m in Sources */,
 				58F444F41914AC7100A1E3E7 /* VnEffectColorPotion9.m in Sources */,
 				5805FD271910044C0010C13A /* VnBlendingMultiply.m in Sources */,
 				5805FD731910098B0010C13A /* VnEditorButtonManager.m in Sources */,
