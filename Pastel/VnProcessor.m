@@ -182,6 +182,11 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
+    if (effectId == VnEffectIdWarmHaze) {
+        VnEffectColorWarmHaze* effect = [[VnEffectColorWarmHaze alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
     return nil;
 }
 

@@ -14,7 +14,7 @@
 {
     self = [super init];
     if(self){
-        self.effectId = VnEffectIdColorBronze;
+        self.effectId = VnEffectIdColorSunnyLight;
         self.faceOpacity = 0.50f;
         self.defaultOpacity = 0.50f;
     }
