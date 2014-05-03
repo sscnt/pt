@@ -10,9 +10,9 @@
 
 @implementation VnViewEditorLayerBar
 
-- (id)init
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         _right = 0.0f;
         self.backgroundColor = [UIColor clearColor];

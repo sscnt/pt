@@ -66,6 +66,23 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
     return 50.0f;
 }
 
+#pragma mark bar colo
+
++ (UIColor *)colorBarBgColor
+{
+    return [UIColor colorWithRed:s255(37.0f) green:s255(37.0f) blue:s255(37.0f) alpha:1.0f];
+}
+
++ (UIColor *)effectsBarBgColor
+{
+    return [UIColor colorWithRed:s255(245.0f) green:s255(245.0f) blue:s255(245.0f) alpha:1.0f];
+}
+
++ (UIColor *)overlayBarBgColor
+{
+    return [UIColor colorWithRed:s255(51.0f) green:s255(51.0f) blue:s255(51.0f) alpha:1.0f];
+}
+
 #pragma mark progress
 
 + (float)previewProgressRadius

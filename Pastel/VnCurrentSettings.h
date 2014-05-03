@@ -26,6 +26,10 @@ typedef NS_ENUM(NSInteger, VnCurrentSettingsWorkspaceOrientation){
 + (UIColor*)homeBgColor;
 + (UIColor*)homeSourceButtonColor;
 
++ (UIColor*)colorBarBgColor;
++ (UIColor*)effectsBarBgColor;
++ (UIColor*)overlayBarBgColor;
+
 + (VnCurrentSettingsWorkspaceOrientation)workspaceOrientation;
 
 @end

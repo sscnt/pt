@@ -21,6 +21,9 @@
 
 @property (nonatomic, weak) id<VnEditorViewManagerDelegate> delegate;
 @property (nonatomic, weak) UIView* view;
+@property (nonatomic, strong) VnViewEditorLayerBar* colorBar;
+@property (nonatomic, strong) VnViewEditorLayerBar* effectBar;
+@property (nonatomic, strong) VnViewEditorLayerBar* overlayBar;
 
 + (VnEditorViewManager*)instance;
 
@@ -33,5 +36,6 @@
 - (void)initButtons;
 
 - (void)layout;
+- (void)layoutLayerBars;
 
 @end

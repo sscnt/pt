@@ -74,7 +74,26 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 - (void)layout
 {
+    self.view.backgroundColor = [UIColor colorWithRed:s255(37.0f) green:s255(37.0f) blue:s255(37.0f) alpha:1.0f];
+    [self layoutLayerBars];
+}
+
+- (void)layoutLayerBars
+{
+    float y = [UIScreen height] - [VnCurrentSettings colorBarHeight];
+    _colorBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings colorBarHeight])];
+    _colorBar.backgroundColor = [VnCurrentSettings colorBarBgColor];
+    [self.view addSubview:_colorBar];
     
+    y = _colorBar.frame.origin.y - [VnCurrentSettings effectsBarHeight];
+    _effectBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings effectsBarHeight])];
+    _effectBar.backgroundColor = [VnCurrentSettings effectsBarBgColor];
+    [self.view addSubview:_effectBar];
+    
+    y = _effectBar.frame.origin.y - [VnCurrentSettings overlayBarHeight];
+    _overlayBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings overlayBarHeight])];
+    _overlayBar.backgroundColor = [VnCurrentSettings overlayBarBgColor];
+    [self.view addSubview:_overlayBar];
 }
 
 + (void)clean
