@@ -194,6 +194,23 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
+    if (effectId == VnEffectIdVelvetColor) {
+        VnEffectVelvetColor* effect = [[VnEffectVelvetColor alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    
+    //// Overlay
+    if (effectId == VnEffectIdOverlayLightBrightMatte) {
+        VnEffectOverlayLightBrightMatte* effect = [[VnEffectOverlayLightBrightMatte alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdOverlayRetroSun) {
+        VnEffectOverlayRetroSun* effect = [[VnEffectOverlayRetroSun alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
     
     return nil;
 }

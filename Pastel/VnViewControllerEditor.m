@@ -29,7 +29,7 @@
     [VnEditorProgressManager setResizingProgress:1.0f];
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     
-    UIImage* image = [VnProcessor applyEffect:VnEffectIdGentleColor ToImage:[VnCurrentImage originalImage]];
+    UIImage* image = [VnProcessor applyEffect:VnEffectIdOverlayRetroSun ToImage:[VnCurrentImage originalImage]];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 

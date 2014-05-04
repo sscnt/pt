@@ -29,6 +29,7 @@
 + (UIImage*)lastSavedImage;
 + (UIImage*)dialogBgImage;
 + (UIImage*)presetBaseImage;
++ (BOOL)saveImage:(UIImage*)image AtPath:(NSString*)path;
 + (BOOL)saveTmpImage:(UIImage*)image;
 + (BOOL)saveTmpImage2:(UIImage*)image;
 + (BOOL)saveOriginalImage:(UIImage*)image;

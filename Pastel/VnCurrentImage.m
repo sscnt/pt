@@ -113,69 +113,56 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [self imageAtPath:filePath];
 }
 
++ (BOOL)saveImage:(UIImage *)image AtPath:(NSString *)path
+{
+    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
+    return [imageData writeToFile:filePath atomically:YES];
+}
+
 + (BOOL)saveOriginalImage:(UIImage*)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForOriginalImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForOriginalImage];
 }
 
 + (BOOL)saveOriginalPreviewImage:(UIImage*)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPreviewImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForPreviewImage];
 }
 
 + (BOOL)saveLastSavedImage:(UIImage*)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForLastSavedImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForLastSavedImage];
 }
 
 + (BOOL)savePrestBaseImage:(UIImage *)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPresetBaseImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForPresetBaseImage];
 }
 
 + (BOOL)saveDialogBgImage:(UIImage *)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForDialogBgImage];
 }
 
 + (BOOL)saveTmpImage:(UIImage *)image
 {
-    [VnCurrentImage instance].tmpImageSize = image.size;
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForTmpImage];
 }
 
 + (BOOL)saveTmpImage2:(UIImage *)image
 {
-    [VnCurrentImage instance].tmpImage2Size = image.size;
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForTmpImage2];
 }
 
 + (BOOL)saveBlurredPreviewImage:(UIImage *)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForBlurredPreviewImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForBlurredPreviewImage];
 }
 
 + (BOOL)saveProcessedPreviewImage:(UIImage *)image
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedPreviewImage];
-    return [imageData writeToFile:filePath atomically:YES];
+    return [self saveImage:image AtPath:pathForProcessedPreviewImage];
 }
 
 + (CGSize)originalImageSize

@@ -1,20 +1,20 @@
 //
-//  VnEffectGentleColor.m
+//  VnEffectVelvetColor.m
 //  Pastel
 //
 //  Created by SSC on 2014/05/04.
 //  Copyright (c) 2014年 SSC. All rights reserved.
 //
 
-#import "VnEffectGentleColor.h"
+#import "VnEffectVelvetColor.h"
 
-@implementation VnEffectGentleColor
+@implementation VnEffectVelvetColor
 
 - (id)init
 {
     self = [super init];
     if(self){
-        self.effectId = VnEffectIdGentleColor;
+        self.effectId = VnEffectIdVelvetColor;
     }
     return self;
 }
@@ -35,9 +35,9 @@
     // Levels
     {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
-        [levelsFilter setMin:s255(0.0f) gamma:0.92f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
+        [levelsFilter setMin:s255(0.0f) gamma:1.65f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
-        [self mergeAndSaveTmpImageWithOverlayFilter:levelsFilter opacity:0.60f blendingMode:VnBlendingModeSoftLight];
+        [self mergeAndSaveTmpImageWithOverlayFilter:levelsFilter opacity:0.70f blendingMode:VnBlendingModeSoftLight];
     }
     
     // Photo Filter
@@ -47,7 +47,7 @@
         filter.density = 0.50f;
         filter.preserveLuminosity = YES;
         
-        [self mergeAndSaveTmpImageWithOverlayFilter:filter opacity:0.05f blendingMode:VnBlendingModeNormal];
+        [self mergeAndSaveTmpImageWithOverlayFilter:filter opacity:0.25f blendingMode:VnBlendingModeNormal];
     }
     
     // Hue/Saturation
@@ -58,8 +58,18 @@
         hueSaturation.lightness = 0.0f;
         hueSaturation.colorize = NO;
         
-        [self mergeAndSaveTmpImageWithOverlayFilter:hueSaturation opacity:0.30f blendingMode:VnBlendingModeSoftLight];
+        [self mergeAndSaveTmpImageWithOverlayFilter:hueSaturation opacity:0.20f blendingMode:VnBlendingModeNormal];
     }
+    
+    // Gradient Map
+    @autoreleasepool {
+        VnAdjustmentLayerGradientMap* gradientMap = [[VnAdjustmentLayerGradientMap alloc] init];
+        [gradientMap addColorRed:10.0f Green:5.0f Blue:0.0f Opacity:100.0f Location:0 Midpoint:50];
+        [gradientMap addColorRed:251.0f Green:245.0f Blue:245.0f Opacity:100.0f Location:4096 Midpoint:50];
+        
+        [self mergeAndSaveTmpImageWithOverlayFilter:gradientMap opacity:0.15f blendingMode:VnBlendingModeSoftLight];
+    }
+    
     
     return [VnCurrentImage tmpImage];
 }
