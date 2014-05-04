@@ -40,6 +40,10 @@ static VnEditorProgressManager* sharedVnEditorProgressManager = nil;
 
 + (void)setResizingProgress:(float)progress
 {
+    VnEditorViewManager* manager = [VnEditorViewManager instance];
+    if (manager.resizingProgressView) {
+        [manager.resizingProgressView setProgress:progress animated:YES];
+    }
 
 }
 

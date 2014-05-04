@@ -13,6 +13,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([UIDevice isIOS6]) {
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    }else{
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     vm.view = self.view;
     vm.delegate = self;
@@ -28,9 +34,10 @@
 {
     [VnEditorProgressManager setResizingProgress:1.0f];
     VnEditorViewManager* vm = [VnEditorViewManager instance];
+    [vm setPreviewImage:[VnCurrentImage originalPreviewImage]];
     
-    UIImage* image = [VnProcessor applyEffect:VnEffectIdOverlayRetroSun ToImage:[VnCurrentImage originalImage]];
-    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    //UIImage* image = [VnProcessor applyEffect:VnEffectIdOverlayRetroSun ToImage:[VnCurrentImage originalImage]];
+    //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 
 #pragma mark view delegate

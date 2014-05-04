@@ -76,6 +76,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 {
     self.view.backgroundColor = [UIColor colorWithRed:s255(37.0f) green:s255(37.0f) blue:s255(37.0f) alpha:1.0f];
     [self layoutLayerBars];
+    [self layoutPreview];
 }
 
 - (void)layoutLayerBars
@@ -94,6 +95,28 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _overlayBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings overlayBarHeight])];
     _overlayBar.backgroundColor = [VnCurrentSettings overlayBarBgColor];
     [self.view addSubview:_overlayBar];
+}
+
+- (void)layoutPreview
+{
+    //// Preview
+    _photoPreview = [[VnViewEditorPhotoPreview alloc] initWithFrame:[VnEditorViewManager previewBounds]];
+    [_photoPreview setY:[VnCurrentSettings topBarHeight]];
+    [self.view addSubview:_photoPreview];
+    
+    //// Progress
+    _resizingProgressView = [[VnViewProgress alloc] initWithFrame:[VnEditorViewManager previewBounds] Radius:[VnCurrentSettings previewProgressRadius]];
+    [_resizingProgressView setY:[VnCurrentSettings topBarHeight]];
+    [self.view addSubview:_resizingProgressView];
+}
+
+#pragma mark set
+
+- (void)setPreviewImage:(UIImage *)image
+{
+    _photoPreview.image = image;
+    [_resizingProgressView removeFromSuperview];
+    _resizingProgressView = nil;
 }
 
 + (void)clean

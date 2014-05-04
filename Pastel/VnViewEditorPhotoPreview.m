@@ -19,12 +19,13 @@
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.delegate = self;
-        _scrollView.bounces = NO;
+        _scrollView.bounces = YES;
         _scrollView.maximumZoomScale = 1.0f;
         _scrollView.minimumZoomScale = MIN(1.0, MIN(frame.size.width / [VnCurrentImage previewImageViewSize].width, frame.size.height / [VnCurrentImage previewImageViewSize].height));
+        
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
         [_scrollView addSubview:_imageView];
-        [_scrollView setContentOffset:CGPointMake(([VnCurrentImage previewImageViewSize].width - frame.size.width) / 2.0f, ([VnCurrentImage previewImageViewSize].height - frame.size.height) / 2.0f)];
+        _scrollView.zoomScale = _scrollView.minimumZoomScale;
         [self addSubview:_scrollView];
     }
     return self;

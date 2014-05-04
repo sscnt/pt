@@ -24,6 +24,9 @@
 @property (nonatomic, strong) VnViewEditorLayerBar* colorBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* effectBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* overlayBar;
+@property (nonatomic, strong) VnViewEditorPhotoPreview* photoPreview;
+@property (nonatomic, strong) VnViewProgress* resizingProgressView;
+
 
 + (VnEditorViewManager*)instance;
 
@@ -37,5 +40,8 @@
 
 - (void)layout;
 - (void)layoutLayerBars;
+- (void)layoutPreview;
+
+- (void)setPreviewImage:(UIImage*)image;
 
 @end

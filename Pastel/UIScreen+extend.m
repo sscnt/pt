@@ -14,7 +14,12 @@
 {
     CGSize size = [[self mainScreen] bounds].size;
     if ([UIDevice isiPad]) {
-        return CGSizeMake(MAX(size.width, size.height), MIN(size.width, size.height));
+        size = CGSizeMake(MAX(size.width, size.height), MIN(size.width, size.height));
+    }
+    if ([UIDevice underIOS7]) {
+        
+    }else{
+        size = CGSizeMake(size.width, size.height - 20.0f);
     }
     return size;
 }
