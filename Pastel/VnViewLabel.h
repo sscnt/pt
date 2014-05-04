@@ -10,4 +10,6 @@
 
 @interface VnViewLabel : UILabel
 
+@property (nonatomic, assign) float fontSize;
+
 @end

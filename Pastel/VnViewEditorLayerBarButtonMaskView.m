@@ -14,18 +14,52 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+- (void)setMaskColor:(UIColor *)maskColor
+{
+    _maskColor = maskColor;
+    [self setNeedsDisplay];
+}
+
+- (void)setRadius:(float)radius
+{
+    _radius = radius;
+    [self setNeedsDisplay];
+}
+
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextClearRect(context, rect);
+    
+    //マスクするパスを作成。
+    CGContextBeginPath(context);
+    CGContextMoveToPoint(context, 0.0f, 0.0f);
+    CGContextAddLineToPoint(context, rect.size.width, 0.0f);
+    CGContextAddLineToPoint(context, rect.size.width, rect.size.height);
+    CGContextAddLineToPoint(context, 0.0f, rect.size.height);
+    CGContextClosePath(context);
+    
+    float p = (rect.size.width - _radius * 2.0f) / 2.0f;
+    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(p, p, _radius * 2.0f, _radius * 2.0f)];
+    ovalPath = [ovalPath bezierPathByReversingPath];
+    [ovalPath addClip];
+    
+    CGContextClip(context);
+    
+    //中抜きの場合はこっち。
+    //CGContextAddRect (context, self.bounds);
+    //CGContextEOClip(context);
+    
+    //ここから以下に描画したものがマスク対象になる。
+    const CGFloat *c = CGColorGetComponents(_maskColor.CGColor);
+    CGContextSetRGBFillColor(context, c[0], c[1], c[2], 1.0f);
+    CGContextFillRect(context, CGRectMake(0, 0, rect.size.width, rect.size.height));
+    
 }
-*/
 
 @end

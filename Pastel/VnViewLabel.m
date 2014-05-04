@@ -18,13 +18,20 @@
         self.backgroundColor = [UIColor clearColor];
         self.textColor = [UIColor whiteColor];
         self.numberOfLines = 0;
-        if([UIDevice isCurrentLanguageJapanese]) {
-            self.font = [UIFont fontWithName:@"mplus-1c-bold" size:15.0f];
-        } else {
-            self.font = [UIFont fontWithName:@"Aller-Bold" size:16.0f];
-        }
+        self.textAlignment = NSTextAlignmentCenter;
+        self.fontSize = 15.0f;
+        self.minimumScaleFactor = 0.50f;
     }
     return self;
+}
+
+- (void)setFontSize:(float)fontSize
+{
+    if([UIDevice isCurrentLanguageJapanese]) {
+        self.font = [UIFont fontWithName:@"mplus-1c-bold" size:fontSize];
+    } else {
+        self.font = [UIFont fontWithName:@"Aller-Bold" size:fontSize + 1.0f];
+    }
 }
 
 /*

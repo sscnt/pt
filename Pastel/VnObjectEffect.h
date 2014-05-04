@@ -13,5 +13,7 @@
 @property (nonatomic, assign) VnEffectId effectId;
 @property (nonatomic, strong) UIImage* previewImage;
 @property (nonatomic, strong) NSString* name;
+@property (nonatomic, strong) UIColor* previewColor;
+@property (nonatomic, strong) UIColor* selectionColor;
 
 @end

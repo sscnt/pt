@@ -16,11 +16,6 @@
     if ([UIDevice isiPad]) {
         size = CGSizeMake(MAX(size.width, size.height), MIN(size.width, size.height));
     }
-    if ([UIDevice underIOS7]) {
-        
-    }else{
-        size = CGSizeMake(size.width, size.height - 20.0f);
-    }
     return size;
 }
 

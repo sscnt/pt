@@ -40,6 +40,7 @@
 
 - (void)layout;
 - (void)layoutLayerBars;
+- (void)layoutLayerButtons;
 - (void)layoutPreview;
 
 - (void)setPreviewImage:(UIImage*)image;

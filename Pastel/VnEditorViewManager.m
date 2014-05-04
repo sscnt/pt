@@ -76,6 +76,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 {
     self.view.backgroundColor = [UIColor colorWithRed:s255(37.0f) green:s255(37.0f) blue:s255(37.0f) alpha:1.0f];
     [self layoutLayerBars];
+    [self layoutLayerButtons];
     [self layoutPreview];
 }
 
@@ -108,6 +109,51 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _resizingProgressView = [[VnViewProgress alloc] initWithFrame:[VnEditorViewManager previewBounds] Radius:[VnCurrentSettings previewProgressRadius]];
     [_resizingProgressView setY:[VnCurrentSettings topBarHeight]];
     [self.view addSubview:_resizingProgressView];
+}
+
+- (void)layoutLayerButtons
+{
+    VnObjectEffect* effect;
+    CGSize size = [VnCurrentSettings colorLayerButtonSize];
+    
+    //// Color
+    for (int i = 0; i < [VnDataLayers colorCount]; i++) {
+        effect = [VnDataLayers colorAtIndex:i];
+        if (effect) {
+            VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
+            button.maskColor = [VnCurrentSettings colorBarBgColor];
+            button.previewColor = effect.previewColor;
+            button.title = effect.name;
+            button.maskRadius = [VnCurrentSettings colorLayerButtonMaskRadius];
+            [_colorBar appendButton:button];
+        }
+    }
+    
+    //// Effects
+    size = [VnCurrentSettings effectLayerButtonSize];
+    for (int i = 0; i < [VnDataLayers effectsCount]; i++) {
+        effect = [VnDataLayers effectAtIndex:i];
+        if (effect) {
+            VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
+            button.maskColor = [VnCurrentSettings effectsBarBgColor];
+            button.title = effect.name;
+            [_effectBar appendButton:button];
+        }
+
+    }
+    
+    //// Overlay
+    size = [VnCurrentSettings overlayLayerButtonSize];
+    for (int i = 0; i < [VnDataLayers overlaysCount]; i++) {
+        effect = [VnDataLayers overlayAtIndex:i];
+        if (effect) {
+            VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
+            button.maskColor = [VnCurrentSettings overlayBarBgColor];
+            button.title = effect.name;
+            [_overlayBar appendButton:button];
+        }
+
+    }
 }
 
 #pragma mark set

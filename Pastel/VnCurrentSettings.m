@@ -51,14 +51,44 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
     return 60.0f;
 }
 
++ (CGSize)colorLayerButtonSize
+{
+    return CGSizeMake(50.0f, [self colorBarHeight]);
+}
+
++ (float)colorLayerButtonMaskRadius
+{
+    return 20.0f;
+}
+
 + (float)effectsBarHeight
 {
     return 70.0f;
 }
 
++ (CGSize)effectLayerButtonSize
+{
+    return CGSizeMake(60.0f, [self effectsBarHeight]);
+}
+
++ (float)effectLayerButtonMaskRadius
+{
+    return 25.0f;
+}
+
 + (float)overlayBarHeight
 {
     return 60.0f;
+}
+
++ (CGSize)overlayLayerButtonSize
+{
+    return CGSizeMake(50.0f, [self overlayBarHeight]);
+}
+
++ (float)overlayLayerButtonMaskRadius
+{
+    return 20.0f;
 }
 
 + (float)topBarHeight

@@ -16,7 +16,10 @@
     if (self) {
         _right = 0.0f;
         self.backgroundColor = [UIColor clearColor];
-        _view = [[UIScrollView alloc] init];
+        _view = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height)];
+        _view.contentSize = frame.size;
+        _view.showsVerticalScrollIndicator = NO;
+        _view.showsHorizontalScrollIndicator = NO;
         [self addSubview:_view];
     }
     return self;

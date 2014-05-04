@@ -11,5 +11,6 @@
 @interface VnViewEditorLayerBarButtonMaskView : UIView
 
 @property (nonatomic, strong) UIColor* maskColor;
+@property (nonatomic, assign) float radius;
 
 @end

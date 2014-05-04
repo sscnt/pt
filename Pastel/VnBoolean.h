@@ -15,5 +15,6 @@
 + (BOOL)isEditorToolBarButtonTouchable;
 
 @property (nonatomic, assign) BOOL homeSettingsScrolling;
+@property (nonatomic, assign) BOOL editorIsReady;
 
 @end

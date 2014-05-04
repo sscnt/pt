@@ -23,6 +23,8 @@ typedef NS_ENUM(NSInteger, VnViewEditorLayerBarButtonSelectionType){
 @interface VnViewEditorLayerBarButton : UIButton
 {
     VnViewEditorLayerBarButtonMaskView* _maskView;
+    UIImageView* _imageView;
+    VnViewLabel* _titleLabel;
 }
 
 @property (nonatomic, strong) UIColor* maskColor;
@@ -30,8 +32,9 @@ typedef NS_ENUM(NSInteger, VnViewEditorLayerBarButtonSelectionType){
 @property (nonatomic, strong) UIColor* previewColor;
 @property (nonatomic, strong) UIColor* titleColor;
 @property (nonatomic, strong) UIColor* selectionColor;
+@property (nonatomic, strong) NSString* title;
+@property (nonatomic, assign) float maskRadius;
 @property (nonatomic, assign) VnViewEditorLayerBarButtonSelectionType selectionType;
-@property (nonatomic, assign) float previewRadius;
 @property (nonatomic, weak) id<VnViewEditorLayerBarButtonDelegate> delegate;
 
 - (void)didTouchUpInside:(VnViewEditorLayerBarButton*)sender;

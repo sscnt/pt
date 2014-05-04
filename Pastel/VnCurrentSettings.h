@@ -18,6 +18,14 @@ typedef NS_ENUM(NSInteger, VnCurrentSettingsWorkspaceOrientation){
 + (float)previewProgressRadius;
 + (float)thumbnailProgressRadius;
 
++ (CGSize)colorLayerButtonSize;
++ (CGSize)effectLayerButtonSize;
++ (CGSize)overlayLayerButtonSize;
+
++ (float)colorLayerButtonMaskRadius;
++ (float)effectLayerButtonMaskRadius;
++ (float)overlayLayerButtonMaskRadius;
+
 + (float)colorBarHeight;
 + (float)effectsBarHeight;
 + (float)overlayBarHeight;

@@ -39,16 +39,22 @@ static VnBoolean* sharedVnBoolean = nil;
 {
     self = [super init];
     if (self) {
-        _homeSettingsScrolling = false;
+        _homeSettingsScrolling = NO;
+        _editorIsReady = NO;
     }
     return self;
 }
 
 #pragma mark editor
 
-+ (BOOL)isEditorToolBarButtonTouchable
++ (BOOL)isEditorReady
 {
-    return YES;
+    return [self instance].editorIsReady;
+}
+
++ (void)setEditorIsReady:(BOOL)flag
+{
+    [self instance].editorIsReady = flag;
 }
 
 @end
