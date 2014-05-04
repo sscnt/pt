@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5802D1E81915F6D200E258F3 /* VnEffectGentleColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5802D1E71915F6D200E258F3 /* VnEffectGentleColor.m */; };
 		580434E319148F6300B84896 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 580434E519148F6300B84896 /* Localizable.strings */; };
 		580434E91914985E00B84896 /* VnEffectColorBronze.m in Sources */ = {isa = PBXBuildFile; fileRef = 580434E81914985E00B84896 /* VnEffectColorBronze.m */; };
 		580434ED19149CC400B84896 /* clbs.acv in Resources */ = {isa = PBXBuildFile; fileRef = 580434EC19149CC400B84896 /* clbs.acv */; };
@@ -141,6 +142,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5802D1E61915F6D200E258F3 /* VnEffectGentleColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectGentleColor.h; sourceTree = "<group>"; };
+		5802D1E71915F6D200E258F3 /* VnEffectGentleColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectGentleColor.m; sourceTree = "<group>"; };
 		580434DE19148F3800B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPhone.strings; sourceTree = "<group>"; };
 		580434DF19148F3800B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main_iPad.strings; sourceTree = "<group>"; };
 		580434E019148F3800B84896 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 		580434DA19148D5E00B84896 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				5802D1E61915F6D200E258F3 /* VnEffectGentleColor.h */,
+				5802D1E71915F6D200E258F3 /* VnEffectGentleColor.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -928,6 +933,7 @@
 				580434F019149D0100B84896 /* VnEffectColorLittleBlueSecret.m in Sources */,
 				5805FD331910044C0010C13A /* VnBlendingDarkerColor.m in Sources */,
 				584F06561912739C00C3467C /* VnViewProgress.m in Sources */,
+				5802D1E81915F6D200E258F3 /* VnEffectGentleColor.m in Sources */,
 				584F06681912771C00C3467C /* VnViewEditorPhotoPreview.m in Sources */,
 				5805FD78191009AF0010C13A /* VnObjectProcessingQueue.m in Sources */,
 				5805FCF0191003C60010C13A /* VnAdjustmentLayerGradientMap.m in Sources */,

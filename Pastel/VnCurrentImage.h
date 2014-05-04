@@ -12,12 +12,14 @@
 
 @property (nonatomic, assign) CGSize originalImageSize;
 @property (nonatomic, assign) CGSize tmpImageSize;
+@property (nonatomic, assign) CGSize tmpImage2Size;
 
 + (VnCurrentImage*)instance;
 + (BOOL)lastSavedImageExists;
 + (BOOL)originalImageExists;
 + (UIImage*)imageAtPath:(NSString*)path;
 + (UIImage*)tmpImage;
++ (UIImage*)tmpImage2;
 + (UIImage*)originalPreviewImage;
 + (UIImage*)processedColorPreviewImage;
 + (UIImage*)processedEffectPreviewImage;
@@ -28,6 +30,7 @@
 + (UIImage*)dialogBgImage;
 + (UIImage*)presetBaseImage;
 + (BOOL)saveTmpImage:(UIImage*)image;
++ (BOOL)saveTmpImage2:(UIImage*)image;
 + (BOOL)saveOriginalImage:(UIImage*)image;
 + (BOOL)saveOriginalPreviewImage:(UIImage*)image;
 + (BOOL)saveProcessedPreviewImage:(UIImage*)image;
@@ -40,9 +43,11 @@
 + (CGSize)previewImageViewSize;
 + (CGSize)presetBaseImageSize;
 + (CGSize)tmpImageSize;
++ (CGSize)tmpImage2Size;
 + (float)tmpImageAndOriginalImageRatio;
 + (BOOL)deleteImageAtPath:(NSString*)path;
 + (BOOL)deleteTmpImage;
++ (BOOL)deleteTmpImage2;
 + (BOOL)deleteLastSavedImage;
 + (BOOL)deleteOriginalImage;
 + (BOOL)deleteDialogBgImage;

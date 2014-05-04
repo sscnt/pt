@@ -19,6 +19,8 @@
 - (UIImage*)process;
 - (void)mergeAndSaveTmpImageWithOverlayImage:(UIImage*)overlayImage opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode;
 - (void)mergeAndSaveTmpImageWithOverlayFilter:(GPUImageFilter*)overlayFilter opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode;
+- (void)mergeAndSaveTmpImage2WithOverlayImage:(UIImage*)overlayImage opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode;
+- (void)mergeAndSaveTmpImage2WithOverlayFilter:(GPUImageFilter*)overlayFilter opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode;
 
 
 @end

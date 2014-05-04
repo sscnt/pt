@@ -14,6 +14,7 @@ static VnCurrentImage* sharedVnCurrentImage = nil;
 
 NSString* const pathForOriginalImage = @"tmp/original_image";
 NSString* const pathForTmpImage = @"tmp/tmp_image";
+NSString* const pathForTmpImage2 = @"tmp/tmp_image_2";
 NSString* const pathForPreviewImage = @"tmp/preview_image";
 NSString* const pathForBlurredPreviewImage = @"tmp/blurred_preview_image";
 NSString* const pathForProcessedPreviewImage = @"tmp/processed_preview_image";
@@ -67,6 +68,12 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 + (UIImage*)tmpImage
 {
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage];
+    return [self imageAtPath:filePath];
+}
+
++ (UIImage*)tmpImage2
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage2];
     return [self imageAtPath:filePath];
 }
 
@@ -149,6 +156,14 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [imageData writeToFile:filePath atomically:YES];
 }
 
++ (BOOL)saveTmpImage2:(UIImage *)image
+{
+    [VnCurrentImage instance].tmpImage2Size = image.size;
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage];
+    return [imageData writeToFile:filePath atomically:YES];
+}
+
 + (BOOL)saveBlurredPreviewImage:(UIImage *)image
 {
     NSData *imageData = UIImageJPEGRepresentation(image, 0.99f);
@@ -183,6 +198,11 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 + (CGSize)tmpImageSize
 {
     return [VnCurrentImage instance].tmpImageSize;
+}
+
++ (CGSize)tmpImage2Size
+{
+    return [VnCurrentImage instance].tmpImage2Size;
 }
 
 + (CGSize)previewImageViewSize
@@ -251,6 +271,12 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [self deleteImageAtPath:filePath];
 }
 
++ (BOOL)deleteTmpImage2
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage2];
+    return [self deleteImageAtPath:filePath];
+}
+
 + (BOOL)deleteOriginalImage
 {
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForOriginalImage];
@@ -289,14 +315,15 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (void)clean
 {
-    [VnCurrentImage deleteOriginalPreviewImage];
-    [VnCurrentImage deleteOriginalImage];
-    [VnCurrentImage deleteLastSavedImage];
-    [VnCurrentImage deleteDialogBgImage];
-    [VnCurrentImage deleteBlurredPreviewImage];
-    [VnCurrentImage deleteProcessedPreviewImage];
-    [VnCurrentImage deleteTmpImage];
-    [VnCurrentImage deletePresetBaseImage];
+    [self deleteOriginalPreviewImage];
+    [self deleteOriginalImage];
+    [self deleteLastSavedImage];
+    [self deleteDialogBgImage];
+    [self deleteBlurredPreviewImage];
+    [self deleteProcessedPreviewImage];
+    [self deleteTmpImage];
+    [self deleteTmpImage2];
+    [self deletePresetBaseImage];
 }
 
 @end

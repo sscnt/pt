@@ -187,6 +187,14 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
+    
+    //// Effects
+    if (effectId == VnEffectIdGentleColor) {
+        VnEffectGentleColor* effect = [[VnEffectGentleColor alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    
     return nil;
 }
 
