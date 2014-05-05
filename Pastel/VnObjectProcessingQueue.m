@@ -14,7 +14,6 @@
 {
     self = [super init];
     if (self) {
-        _toolId = 0;
         _effectId = 0;
     }
     return self;

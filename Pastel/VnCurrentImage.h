@@ -15,8 +15,12 @@
 @property (nonatomic, assign) CGSize tmpImage2Size;
 
 + (VnCurrentImage*)instance;
++ (BOOL)imageExistsAtPath:(NSString*)path;
 + (BOOL)lastSavedImageExists;
 + (BOOL)originalImageExists;
++ (BOOL)processedColorImageExists;
++ (BOOL)processedEffectImageExists;
++ (BOOL)processedOverlayImageExists;
 + (UIImage*)imageAtPath:(NSString*)path;
 + (UIImage*)tmpImage;
 + (UIImage*)tmpImage2;

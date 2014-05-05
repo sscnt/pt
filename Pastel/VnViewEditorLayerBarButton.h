@@ -32,6 +32,7 @@
 @property (nonatomic, assign) float maskRadius;
 @property (nonatomic, assign) VnViewEditorLayerBarButtonMaskSelectionType selectionType;
 @property (nonatomic, weak) id<VnViewEditorLayerBarButtonDelegate> delegate;
+@property (nonatomic, assign) VnEffectId effectId;
 
 - (void)didTouchUpInside:(VnViewEditorLayerBarButton*)sender;
 

@@ -75,7 +75,6 @@
 		5805FD67191009760010C13A /* VnDataLayers.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD61191009760010C13A /* VnDataLayers.m */; };
 		5805FD711910098B0010C13A /* VnEditorSliderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD6A1910098B0010C13A /* VnEditorSliderManager.m */; };
 		5805FD721910098B0010C13A /* VnEditorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD6C1910098B0010C13A /* VnEditorViewManager.m */; };
-		5805FD741910098B0010C13A /* VnEditorProgressManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD701910098B0010C13A /* VnEditorProgressManager.m */; };
 		5805FD78191009AF0010C13A /* VnObjectProcessingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD77191009AF0010C13A /* VnObjectProcessingQueue.m */; };
 		5805FD7B191009C10010C13A /* VnObjectEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD7A191009C10010C13A /* VnObjectEffect.m */; };
 		58232A4319168D310001E3CD /* Aller_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58232A4019168D310001E3CD /* Aller_Bd.ttf */; };
@@ -275,8 +274,6 @@
 		5805FD6A1910098B0010C13A /* VnEditorSliderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEditorSliderManager.m; sourceTree = "<group>"; };
 		5805FD6B1910098B0010C13A /* VnEditorViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEditorViewManager.h; sourceTree = "<group>"; };
 		5805FD6C1910098B0010C13A /* VnEditorViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEditorViewManager.m; sourceTree = "<group>"; };
-		5805FD6F1910098B0010C13A /* VnEditorProgressManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEditorProgressManager.h; sourceTree = "<group>"; };
-		5805FD701910098B0010C13A /* VnEditorProgressManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEditorProgressManager.m; sourceTree = "<group>"; };
 		5805FD76191009AF0010C13A /* VnObjectProcessingQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnObjectProcessingQueue.h; sourceTree = "<group>"; };
 		5805FD77191009AF0010C13A /* VnObjectProcessingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnObjectProcessingQueue.m; sourceTree = "<group>"; };
 		5805FD79191009C10010C13A /* VnObjectEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnObjectEffect.h; sourceTree = "<group>"; };
@@ -627,8 +624,6 @@
 				5805FD6A1910098B0010C13A /* VnEditorSliderManager.m */,
 				5805FD6B1910098B0010C13A /* VnEditorViewManager.h */,
 				5805FD6C1910098B0010C13A /* VnEditorViewManager.m */,
-				5805FD6F1910098B0010C13A /* VnEditorProgressManager.h */,
-				5805FD701910098B0010C13A /* VnEditorProgressManager.m */,
 			);
 			name = Editor;
 			sourceTree = "<group>";
@@ -1018,7 +1013,6 @@
 				5805FCC7191002350010C13A /* VnViewControllerHome.m in Sources */,
 				580434F31914A15100B84896 /* VnEffectColorOphelia.m in Sources */,
 				580434E91914985E00B84896 /* VnEffectColorBronze.m in Sources */,
-				5805FD741910098B0010C13A /* VnEditorProgressManager.m in Sources */,
 				58F73B1F190F942A0056D7D6 /* AppDelegate.m in Sources */,
 				5805FD321910044C0010C13A /* VnBlendingColor.m in Sources */,
 				582919FE1913E4B3007052B3 /* VnViewHomeBg.m in Sources */,

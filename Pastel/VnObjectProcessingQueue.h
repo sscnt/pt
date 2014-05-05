@@ -11,14 +11,14 @@
 
 typedef NS_ENUM(NSInteger, VnObjectProcessingQueueType){
     VnObjectProcessingQueueTypePreset = 1,
-    VnObjectProcessingQueueTypePreview
+    VnObjectProcessingQueueTypePreview,
+    VnObjectProcessingQueueTypeOriginal
 };
 
 @interface VnObjectProcessingQueue : NSObject
 
 @property (nonatomic, assign) VnObjectProcessingQueueType type;
 @property (nonatomic, strong) NSString* queueId;
-@property (nonatomic, assign) VnAdjustmentToolId toolId;
 @property (nonatomic, strong) UIImage* image;
 @property (nonatomic, assign) VnEffectId effectId;
 

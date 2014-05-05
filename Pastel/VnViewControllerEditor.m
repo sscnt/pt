@@ -24,6 +24,7 @@
     vm.delegate = self;
     [vm commonInit];
     [vm layout];
+    [vm lock];
     
     VnProcessingQueueManager* qm = [VnProcessingQueueManager instance];
     [qm commonInit];
@@ -32,9 +33,10 @@
 
 - (void)didFinishResizing
 {
-    [VnEditorProgressManager setResizingProgress:1.0f];
+    [VnEditorViewManager setResizingProgress:1.0f];
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm setPreviewImage:[VnCurrentImage originalPreviewImage]];
+    [vm unlock];
     
     //UIImage* image = [VnProcessor applyEffect:VnEffectIdOverlayRetroSun ToImage:[VnCurrentImage originalImage]];
     //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
@@ -51,8 +53,28 @@
 
 - (void)queueDidFinished:(VnObjectProcessingQueue *)queue
 {
-
-    
+    LOG(@"Queue did finished.");
+    switch (queue.type) {
+        case VnObjectProcessingQueueTypePreview:
+        {
+            VnEditorViewManager* vm = [VnEditorViewManager instance];
+            [vm setPreviewImage:queue.image];
+            [vm hidePreviewProgressView];
+        }
+            break;
+        case VnObjectProcessingQueueTypePreset:
+        {
+            
+        }
+            break;
+        case VnObjectProcessingQueueTypeOriginal:
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton *)button
@@ -60,6 +82,11 @@
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm selectLayerButtonWithButton:button];
     [vm lock];
+    [vm showPreviewProgressView];
+    
+    VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
+    queue.type = VnObjectProcessingQueueTypePreview;
+    [VnProcessingQueueManager addQueue:queue];
 }
 
 - (void)didReceiveMemoryWarning

@@ -236,9 +236,9 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [VnCurrentImage tmpImageSize].width / [VnCurrentImage originalImageSize].width;
 }
 
-+ (BOOL)lastSavedImageExists
++ (BOOL)imageExistsAtPath:(NSString *)path
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForLastSavedImage];
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
     if( [filemgr fileExistsAtPath:filePath] ){
@@ -247,15 +247,29 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return NO;
 }
 
++ (BOOL)lastSavedImageExists
+{
+    return [self imageExistsAtPath:pathForLastSavedImage];
+}
+
 + (BOOL)originalImageExists
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForOriginalImage];
-    NSFileManager *filemgr = [NSFileManager defaultManager];
-    
-    if([filemgr fileExistsAtPath:filePath]){
-        return YES;
-    }
-    return NO;
+    return [self imageExistsAtPath:pathForOriginalImage];
+}
+
++ (BOOL)processedColorImageExists
+{
+    return [self imageExistsAtPath:pathForProcessedColorPreviewImage];
+}
+
++ (BOOL)processedEffectImageExists
+{
+    return [self imageExistsAtPath:pathForProcessedEffectPreviewImage];
+}
+
++ (BOOL)processedOverlayImageExists
+{
+    return [self imageExistsAtPath:pathForProcessedOverlayPreviewImage];
 }
 
 + (BOOL)deleteImageAtPath:(NSString *)path

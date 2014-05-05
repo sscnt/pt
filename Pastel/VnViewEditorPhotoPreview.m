@@ -30,6 +30,7 @@
         
         _progressView = [[VnViewProgress alloc] initWithFrame:self.bounds Radius:[VnCurrentSettings previewProgressRadius]];
         [self addSubview:_progressView];
+        [self hidePregressView];
     }
     return self;
 }

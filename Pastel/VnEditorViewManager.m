@@ -151,6 +151,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.delegate = self.delegate;
             button.selectionColor = effect.selectionColor;
             button.group = effect.effectGroup;
+            button.effectId = effect.effectId;
             [_colorBar appendButton:button];
             [_colorLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
@@ -166,6 +167,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.maskColor = [VnCurrentSettings effectsBarBgColor];
             button.title = effect.name;
             button.delegate = self.delegate;
+            button.effectId = effect.effectId;
             [_effectBar appendButton:button];
             [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
@@ -186,6 +188,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.delegate = self.delegate;
             button.selectionColor = effect.selectionColor;
             button.group = effect.effectGroup;
+            button.effectId = effect.effectId;
             [_overlayBar appendButton:button];
             [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
@@ -193,6 +196,11 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 }
 
 #pragma mark preview
+
++ (void)setResizingProgress:(float)value
+{
+    [self instance].resizingProgressView.progress = value;
+}
 
 - (void)showPreviewProgressView
 {
@@ -268,6 +276,9 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             }
             button.selected = YES;
             self.currentSelectedLayerButtonColor = button;
+            [VnCurrentImage deleteProcessedColorPreviewImage];
+            [VnCurrentImage deleteProcessedEffectPreviewImage];
+            [VnCurrentImage deleteProcessedOverlayPreviewImage];
         }
             break;
         case VnEffectGroupOverlays:
@@ -277,6 +288,8 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             }
             button.selected = YES;
             self.currentSelectedLayerButtonOverlay = button;
+            [VnCurrentImage deleteProcessedEffectPreviewImage];
+            [VnCurrentImage deleteProcessedOverlayPreviewImage];
         }
             break;
         case VnEffectGroupEffects:
@@ -286,12 +299,45 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             }
             button.selected = YES;
             self.currentSelectedLayerButtonEffect = button;
+            [VnCurrentImage deleteProcessedOverlayPreviewImage];
         }
             break;
             
         default:
             break;
     }
+}
+
+#pragma mark effect id
+
++ (VnEffectId)currentSelectedColorLayerEffectId
+{
+    return [[self instance] currentSelectedColorLayerEffectId];
+}
+
+- (VnEffectId)currentSelectedColorLayerEffectId
+{
+    return [self currentSelectedLayerButtonColor].effectId;
+}
+
++ (VnEffectId)currentSelectedEffectLayerEffectId
+{
+    return [[self instance] currentSelectedEffectLayerEffectId];
+}
+
+- (VnEffectId)currentSelectedEffectLayerEffectId
+{
+    return [self currentSelectedLayerButtonEffect].effectId;
+}
+
++ (VnEffectId)currentSelectedOverlayLayerEffectId
+{
+    return [[self instance] currentSelectedOverlayLayerEffectId];
+}
+
+- (VnEffectId)currentSelectedOverlayLayerEffectId
+{
+    return [self currentSelectedLayerButtonOverlay].effectId;
 }
 
 + (void)clean

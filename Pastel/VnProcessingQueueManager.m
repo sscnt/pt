@@ -127,7 +127,25 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
 
 - (void)processQueueTypePreview:(VnObjectProcessingQueue *)queue
 {
-    
+    if ([VnCurrentImage processedColorImageExists] == NO) {
+        @autoreleasepool {
+            UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedColorLayerEffectId] ToImage:[VnCurrentImage originalPreviewImage]];
+            [VnCurrentImage saveProcessedColorPreviewImage:image];
+        }
+    }
+    if ([VnCurrentImage processedEffectImageExists] == NO) {
+        @autoreleasepool {
+            UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedEffectLayerEffectId] ToImage:[VnCurrentImage processedColorPreviewImage]];
+            [VnCurrentImage saveProcessedEffectPreviewImage:image];
+        }
+    }
+    if ([VnCurrentImage processedOverlayImageExists] == NO) {
+        @autoreleasepool {
+            UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedOverlayLayerEffectId] ToImage:[VnCurrentImage processedEffectPreviewImage]];
+            [VnCurrentImage saveProcessedOverlayPreviewImage:image];
+        }
+    }
+    queue.image = [VnCurrentImage processedOverlayPreviewImage];
 }
 
 - (void)processQueueTypePreset:(VnObjectProcessingQueue *)queue

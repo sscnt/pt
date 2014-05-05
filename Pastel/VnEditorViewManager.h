@@ -35,7 +35,6 @@
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonEffect;
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonOverlay;
 
-
 + (VnEditorViewManager*)instance;
 
 + (CGRect)presetImageBounds;
@@ -54,6 +53,7 @@
 - (void)layoutLayerButtons;
 - (void)layoutPreview;
 
++ (void)setResizingProgress:(float)value;
 - (void)setPreviewImage:(UIImage*)image;
 - (void)showPreviewProgressView;
 - (void)hidePreviewProgressView;
@@ -65,5 +65,12 @@
 - (VnViewEditorLayerBarButton*)buttonByEffectId:(VnEffectId)effectId;
 - (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton*)button;
 - (void)selectLayerButtonWithEffectId:(VnEffectId)effectId;
+
++ (VnEffectId)currentSelectedColorLayerEffectId;
+- (VnEffectId)currentSelectedColorLayerEffectId;
++ (VnEffectId)currentSelectedEffectLayerEffectId;
+- (VnEffectId)currentSelectedEffectLayerEffectId;
++ (VnEffectId)currentSelectedOverlayLayerEffectId;
+- (VnEffectId)currentSelectedOverlayLayerEffectId;
 
 @end
