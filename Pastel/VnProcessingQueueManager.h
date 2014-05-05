@@ -12,6 +12,7 @@
 
 @protocol VnProcessingQueueManagerDelegate
 - (void)queueDidFinished:(VnObjectProcessingQueue*)queue;
+- (void)dispatchPreviewprogress:(float)progress;
 @end
 
 @interface VnProcessingQueueManager : NSObject

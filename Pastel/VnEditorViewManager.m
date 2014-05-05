@@ -77,9 +77,6 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _colorBar.locked = YES;
     _effectBar.locked = YES;
     _overlayBar.locked = YES;
-    _colorBar.alpha = 0.50f;
-    _effectBar.alpha = 0.50f;
-    _overlayBar.alpha = 0.50f;
 }
 
 - (void)unlock
@@ -87,9 +84,6 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _colorBar.locked = NO;
     _effectBar.locked = NO;
     _overlayBar.locked = NO;
-    _colorBar.alpha = 1.0f;
-    _effectBar.alpha = 1.0f;
-    _overlayBar.alpha = 1.0f;
 }
 
 #pragma mark layout
@@ -210,6 +204,16 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 - (void)hidePreviewProgressView
 {
     [_photoPreview hidePregressView];
+}
+
+- (void)setPreviewProgressValue:(float)value
+{
+    _photoPreview.progress = value;
+}
+
+- (void)resetPreviewProgress
+{
+    _photoPreview.progress = 0.0f;
 }
 
 #pragma mark set

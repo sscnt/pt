@@ -20,5 +20,6 @@
 - (id)initWithFrame:(CGRect)frame Radius:(float)radius;
 
 - (void)setProgress:(float)progress animated:(BOOL)animated;
+- (void)resetProgress;
 
 @end

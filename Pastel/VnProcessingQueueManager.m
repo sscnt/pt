@@ -128,24 +128,36 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
 - (void)processQueueTypePreview:(VnObjectProcessingQueue *)queue
 {
     if ([VnCurrentImage processedColorImageExists] == NO) {
+        [self.delegate dispatchPreviewprogress:0.1f];
         @autoreleasepool {
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedColorLayerEffectId] ToImage:[VnCurrentImage originalPreviewImage]];
             [VnCurrentImage saveProcessedColorPreviewImage:image];
         }
     }
     if ([VnCurrentImage processedEffectImageExists] == NO) {
+        [self.delegate dispatchPreviewprogress:0.3f];
         @autoreleasepool {
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedEffectLayerEffectId] ToImage:[VnCurrentImage processedColorPreviewImage]];
             [VnCurrentImage saveProcessedEffectPreviewImage:image];
         }
     }
     if ([VnCurrentImage processedOverlayImageExists] == NO) {
+        [self.delegate dispatchPreviewprogress:0.6f];
         @autoreleasepool {
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedOverlayLayerEffectId] ToImage:[VnCurrentImage processedEffectPreviewImage]];
             [VnCurrentImage saveProcessedOverlayPreviewImage:image];
         }
     }
+    [self.delegate dispatchPreviewprogress:0.9f];
     queue.image = [VnCurrentImage processedOverlayPreviewImage];
+    
+    @autoreleasepool {
+        VnFilterLensBlur* filter = [[VnFilterLensBlur alloc] init];
+        filter.blurRadiusInPixels = 10.0f;
+        UIImage* image = [VnProcessor mergeBaseImage:queue.image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
+        [VnCurrentImage saveBlurredPreviewImage:image];
+    }
+    [self.delegate dispatchPreviewprogress:1.0f];
 }
 
 - (void)processQueueTypePreset:(VnObjectProcessingQueue *)queue

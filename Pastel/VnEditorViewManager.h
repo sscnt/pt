@@ -58,6 +58,7 @@
 - (void)showPreviewProgressView;
 - (void)hidePreviewProgressView;
 - (void)setPreviewProgressValue:(float)value;
+- (void)resetPreviewProgress;
 
 + (VnViewEditorLayerBarButton*)buttonByEffectId:(VnEffectId)effectId;
 + (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton*)button;

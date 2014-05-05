@@ -50,6 +50,12 @@
     _progressView.hidden = YES;
 }
 
+- (void)setProgress:(float)progress
+{
+    _progressView.progress = progress;
+    LOG(@"%f", progress);
+}
+
 #pragma mark delegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView

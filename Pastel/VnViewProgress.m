@@ -16,7 +16,7 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         _progressView = [[EVCircularProgressView alloc] initWithRadius:radius];
-        _progressView.progressTintColor = [UIColor colorWithWhite:1.0f alpha:0.80f];
+        _progressView.progressTintColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
         _progressView.progress = 0.0f;
         _progressView.center = self.center;
         [self addSubview:_progressView];
@@ -31,7 +31,11 @@
 
 - (void)setProgress:(float)progress
 {
-    _progressView.progress = progress;
+    if (progress == 0.0f) {
+        [_progressView setProgress:0.0f animated:NO];
+        return;
+    }
+    [_progressView setProgress:progress animated:YES];
 }
 
 - (void)setTintColor:(UIColor *)tintColor
@@ -42,6 +46,11 @@
 - (void)setProgress:(float)progress animated:(BOOL)animated
 {
     [_progressView setProgress:progress animated:YES];
+}
+
+- (void)resetProgress
+{
+    [_progressView setProgress:0.0f animated:NO];
 }
 
 @end

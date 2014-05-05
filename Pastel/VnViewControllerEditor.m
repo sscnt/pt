@@ -59,6 +59,7 @@
         {
             VnEditorViewManager* vm = [VnEditorViewManager instance];
             [vm setPreviewImage:queue.image];
+            [vm unlock];
             [vm hidePreviewProgressView];
         }
             break;
@@ -77,11 +78,21 @@
     }
 }
 
+- (void)dispatchPreviewprogress:(float)progress
+{
+    dispatch_queue_t q_main = dispatch_get_main_queue();
+    dispatch_async(q_main, ^{
+        VnEditorViewManager* vm = [VnEditorViewManager instance];
+        [vm setPreviewProgressValue:progress];
+    });
+}
+
 - (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton *)button
 {
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm selectLayerButtonWithButton:button];
     [vm lock];
+    [vm resetPreviewProgress];
     [vm showPreviewProgressView];
     
     VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
