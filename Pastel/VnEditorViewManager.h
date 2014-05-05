@@ -19,7 +19,7 @@
 
 @interface VnEditorViewManager : NSObject
 
-@property (nonatomic, weak) id<VnEditorViewManagerDelegate> delegate;
+@property (nonatomic, weak) id<VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate> delegate;
 @property (nonatomic, weak) UIView* view;
 @property (nonatomic, strong) VnViewEditorLayerBar* colorBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* effectBar;
@@ -46,15 +46,24 @@
 - (void)commonInit;
 - (void)initButtons;
 
+- (void)lock;
+- (void)unlock;
+
 - (void)layout;
 - (void)layoutLayerBars;
 - (void)layoutLayerButtons;
 - (void)layoutPreview;
 
 - (void)setPreviewImage:(UIImage*)image;
+- (void)showPreviewProgressView;
+- (void)hidePreviewProgressView;
+- (void)setPreviewProgressValue:(float)value;
 
 + (VnViewEditorLayerBarButton*)buttonByEffectId:(VnEffectId)effectId;
 + (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton*)button;
 + (void)selectLayerButtonWithEffectId:(VnEffectId)effectId;
+- (VnViewEditorLayerBarButton*)buttonByEffectId:(VnEffectId)effectId;
+- (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton*)button;
+- (void)selectLayerButtonWithEffectId:(VnEffectId)effectId;
 
 @end

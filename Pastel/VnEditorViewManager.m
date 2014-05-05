@@ -70,6 +70,28 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     return bounds;
 }
 
+#pragma mark lock
+
+- (void)lock
+{
+    _colorBar.locked = YES;
+    _effectBar.locked = YES;
+    _overlayBar.locked = YES;
+    _colorBar.alpha = 0.50f;
+    _effectBar.alpha = 0.50f;
+    _overlayBar.alpha = 0.50f;
+}
+
+- (void)unlock
+{
+    _colorBar.locked = NO;
+    _effectBar.locked = NO;
+    _overlayBar.locked = NO;
+    _colorBar.alpha = 1.0f;
+    _effectBar.alpha = 1.0f;
+    _overlayBar.alpha = 1.0f;
+}
+
 #pragma mark layout
 
 - (void)layout
@@ -126,11 +148,11 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.previewColor = effect.previewColor;
             button.title = effect.name;
             button.maskRadius = [VnCurrentSettings colorLayerButtonMaskRadius];
-            button.delegate = [VnEditorButtonManager instance];
+            button.delegate = self.delegate;
             button.selectionColor = effect.selectionColor;
             button.group = effect.effectGroup;
             [_colorBar appendButton:button];
-            [_colorLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%ld", effect.effectId]];
+            [_colorLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
     }
     
@@ -143,9 +165,9 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
             button.maskColor = [VnCurrentSettings effectsBarBgColor];
             button.title = effect.name;
-            button.delegate = [VnEditorButtonManager instance];
+            button.delegate = self.delegate;
             [_effectBar appendButton:button];
-            [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%ld", effect.effectId]];
+            [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
 
     }
@@ -161,13 +183,25 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.title = effect.name;
             button.previewColor = effect.previewColor;
             button.maskRadius = [VnCurrentSettings overlayLayerButtonMaskRadius];
-            button.delegate = [VnEditorButtonManager instance];
+            button.delegate = self.delegate;
             button.selectionColor = effect.selectionColor;
             button.group = effect.effectGroup;
             [_overlayBar appendButton:button];
-            [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%ld", effect.effectId]];
+            [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
     }
+}
+
+#pragma mark preview
+
+- (void)showPreviewProgressView
+{
+    [_photoPreview showPregressView];
+}
+
+- (void)hidePreviewProgressView
+{
+    [_photoPreview hidePregressView];
 }
 
 #pragma mark set
@@ -181,35 +215,77 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 #pragma mark button
 
++ (VnViewEditorLayerBarButton *)buttonByEffectId:(VnEffectId)effectId
+{
+    return [[self instance] buttonByEffectId:effectId];
+}
+- (VnViewEditorLayerBarButton *)buttonByEffectId:(VnEffectId)effectId
+{
+    VnViewEditorLayerBarButton* button;
+    button = [self.colorLayerButtonsList objectForKey:[NSString stringWithFormat:@"%d", (int)effectId]];
+    if (button) {
+        return button;
+    }
+    button = [self.effectLayerButtonsList objectForKey:[NSString stringWithFormat:@"%d", (int)effectId]];
+    if (button) {
+        return button;
+    }
+    button = [self.overlayLayerButtonsList objectForKey:[NSString stringWithFormat:@"%d", (int)effectId]];
+    if (button) {
+        return button;
+    }
+    return nil;
+}
+
++ (void)selectLayerButtonWithEffectId:(VnEffectId)effectId
+{
+    [[self instance] selectLayerButtonWithEffectId:effectId];
+}
+
+- (void)selectLayerButtonWithEffectId:(VnEffectId)effectId
+{
+    VnViewEditorLayerBarButton* button = [self buttonByEffectId:effectId];
+    if (button) {
+        [self selectLayerButtonWithButton:button];
+    }
+}
+
 + (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton *)button
 {
-    VnEditorViewManager* vm = [self instance];
+    [[self instance] selectLayerButtonWithButton:button];
+}
+
+- (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton *)button
+{
+    if (button == nil) {
+        return;
+    }
     switch (button.group) {
         case VnEffectGroupColor:
         {
-            if (vm.currentSelectedLayerButtonColor) {
-                vm.currentSelectedLayerButtonColor.selected = NO;
+            if (self.currentSelectedLayerButtonColor) {
+                self.currentSelectedLayerButtonColor.selected = NO;
             }
             button.selected = YES;
-            vm.currentSelectedLayerButtonColor = button;
+            self.currentSelectedLayerButtonColor = button;
         }
             break;
         case VnEffectGroupOverlays:
         {
-            if (vm.currentSelectedLayerButtonOverlay) {
-                vm.currentSelectedLayerButtonOverlay.selected = NO;
+            if (self.currentSelectedLayerButtonOverlay) {
+                self.currentSelectedLayerButtonOverlay.selected = NO;
             }
             button.selected = YES;
-            vm.currentSelectedLayerButtonOverlay = button;
+            self.currentSelectedLayerButtonOverlay = button;
         }
             break;
         case VnEffectGroupEffects:
         {
-            if (vm.currentSelectedLayerButtonEffect) {
-                vm.currentSelectedLayerButtonEffect.selected = NO;
+            if (self.currentSelectedLayerButtonEffect) {
+                self.currentSelectedLayerButtonEffect.selected = NO;
             }
             button.selected = YES;
-            vm.currentSelectedLayerButtonEffect = button;
+            self.currentSelectedLayerButtonEffect = button;
         }
             break;
             

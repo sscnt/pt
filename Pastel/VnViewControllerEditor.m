@@ -55,6 +55,13 @@
     
 }
 
+- (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton *)button
+{
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
+    [vm selectLayerButtonWithButton:button];
+    [vm lock];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

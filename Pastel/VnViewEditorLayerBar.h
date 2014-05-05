@@ -15,6 +15,7 @@
 }
 @property (nonatomic, strong) UIScrollView* view;
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentOpeningButton;
+@property (nonatomic, assign) BOOL locked;
 
 - (void)appendButton:(VnViewEditorLayerBarButton*)button;
 

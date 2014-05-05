@@ -42,4 +42,16 @@
     }
 }
 
+- (void)setLocked:(BOOL)locked
+{
+    _locked = locked;
+    if (locked) {
+        _view.scrollEnabled = NO;
+        _view.userInteractionEnabled = NO;
+    }else{
+        _view.scrollEnabled = YES;
+        _view.userInteractionEnabled = YES;
+    }
+}
+
 @end

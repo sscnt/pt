@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "VnEditorViewManager.h"
 
-@interface VnViewControllerEditor : UIViewController <VnProcessingQueueManagerDelegate, VnEditorViewManagerDelegate>
+@interface VnViewControllerEditor : UIViewController <VnProcessingQueueManagerDelegate, VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate>
 
 - (void)didFinishResizing;
 

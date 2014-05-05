@@ -39,6 +39,16 @@
     _imageView.image = image;
 }
 
+- (void)showPregressView
+{
+    _progressView.hidden = NO;
+}
+
+- (void)hidePregressView
+{
+    _progressView.hidden = YES;
+}
+
 #pragma mark delegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
