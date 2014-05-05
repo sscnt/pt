@@ -17,14 +17,15 @@
         self.backgroundColor = [UIColor clearColor];
         [self addTarget:self action:@selector(didTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
         
-        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height)];
+        float labelHeight = 15.0f;
+        
+        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(1.0f, 1.0f, frame.size.width - 2.0f, frame.size.height - labelHeight - 2.0f)];
         [self addSubview:_imageView];
         
-        _maskView = [[VnViewEditorLayerBarButtonMaskView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height)];
+        _maskView = [[VnViewEditorLayerBarButtonMaskView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height - labelHeight)];
         [self addSubview:_maskView];
         
-        float height = 15.0f;
-        _titleLabel = [[VnViewLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - height, frame.size.width, height)];
+        _titleLabel = [[VnViewLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - labelHeight - 1.0f, frame.size.width, labelHeight)];
         _titleLabel.fontSize = 10.0f;
         [self addSubview:_titleLabel];
     }

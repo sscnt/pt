@@ -150,6 +150,8 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
             button.maskColor = [VnCurrentSettings overlayBarBgColor];
             button.title = effect.name;
+            button.previewColor = effect.previewColor;
+            button.maskRadius = [VnCurrentSettings overlayLayerButtonMaskRadius];
             [_overlayBar appendButton:button];
         }
 

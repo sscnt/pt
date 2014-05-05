@@ -45,7 +45,8 @@
     CGContextClosePath(context);
     
     float p = (rect.size.width - _radius * 2.0f) / 2.0f;
-    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(p, p, _radius * 2.0f, _radius * 2.0f)];
+    float t = (rect.size.height - _radius * 2.0f) / 2.0f;
+    UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(p, t, _radius * 2.0f, _radius * 2.0f)];
     ovalPath = [ovalPath bezierPathByReversingPath];
     [ovalPath addClip];
     

@@ -53,12 +53,12 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 
 + (CGSize)colorLayerButtonSize
 {
-    return CGSizeMake(50.0f, [self colorBarHeight]);
+    return CGSizeMake(60.0f, [self colorBarHeight]);
 }
 
 + (float)colorLayerButtonMaskRadius
 {
-    return 20.0f;
+    return 14.0f;
 }
 
 + (float)effectsBarHeight
@@ -88,7 +88,7 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 
 + (float)overlayLayerButtonMaskRadius
 {
-    return 20.0f;
+    return 14.0f;
 }
 
 + (float)topBarHeight
@@ -96,7 +96,7 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
     return 50.0f;
 }
 
-#pragma mark bar colo
+#pragma mark bar color
 
 + (UIColor *)colorBarBgColor
 {
