@@ -125,6 +125,8 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.previewColor = effect.previewColor;
             button.title = effect.name;
             button.maskRadius = [VnCurrentSettings colorLayerButtonMaskRadius];
+            button.delegate = [VnEditorButtonManager instance];
+            button.selectionColor = effect.selectionColor;
             [_colorBar appendButton:button];
         }
     }
@@ -137,6 +139,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
             button.maskColor = [VnCurrentSettings effectsBarBgColor];
             button.title = effect.name;
+            button.delegate = [VnEditorButtonManager instance];
             [_effectBar appendButton:button];
         }
 
@@ -152,6 +155,8 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.title = effect.name;
             button.previewColor = effect.previewColor;
             button.maskRadius = [VnCurrentSettings overlayLayerButtonMaskRadius];
+            button.delegate = [VnEditorButtonManager instance];
+            button.selectionColor = effect.selectionColor;
             [_overlayBar appendButton:button];
         }
 
@@ -165,6 +170,18 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _photoPreview.image = image;
     [_resizingProgressView removeFromSuperview];
     _resizingProgressView = nil;
+}
+
+#pragma mark button
+
++ (void)selectLayerButton:(VnViewEditorLayerBarButton *)button
+{
+    VnEditorViewManager* vm = [self instance];
+    if (vm.currentSelectedLayerButton) {
+        vm.currentSelectedLayerButton.selected = NO;
+    }
+    button.selected = YES;
+    vm.currentSelectedLayerButton = button;
 }
 
 + (void)clean

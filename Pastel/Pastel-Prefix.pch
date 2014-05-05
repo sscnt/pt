@@ -94,6 +94,13 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdOverlayRetroSun
 };
 
+
+typedef NS_ENUM(NSInteger, VnEffectGroup){
+    VnEffectGroupColor = 1,
+    VnEffectGroupEffects,
+    VnEffectGroupOverlays
+};
+
 typedef NS_ENUM(NSInteger, VnBlendingMode){
     VnBlendingModeNormal = 1,
     VnBlendingModeDarken,

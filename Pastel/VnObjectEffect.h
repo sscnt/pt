@@ -11,6 +11,7 @@
 @interface VnObjectEffect : NSObject
 
 @property (nonatomic, assign) VnEffectId effectId;
+@property (nonatomic, assign) VnEffectGroup effectGroup;
 @property (nonatomic, strong) UIImage* previewImage;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) UIColor* previewColor;

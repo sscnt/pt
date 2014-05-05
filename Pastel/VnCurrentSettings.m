@@ -58,7 +58,7 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 
 + (float)colorLayerButtonMaskRadius
 {
-    return 14.0f;
+    return 12.0f;
 }
 
 + (float)effectsBarHeight
@@ -88,7 +88,7 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 
 + (float)overlayLayerButtonMaskRadius
 {
-    return 14.0f;
+    return 12.0f;
 }
 
 + (float)topBarHeight

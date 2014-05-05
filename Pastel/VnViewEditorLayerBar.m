@@ -20,6 +20,10 @@
         _view.contentSize = frame.size;
         _view.showsVerticalScrollIndicator = NO;
         _view.showsHorizontalScrollIndicator = NO;
+        _view.userInteractionEnabled = YES;
+        _view.exclusiveTouch = YES;
+        _view.delaysContentTouches = YES;
+        _view.canCancelContentTouches = YES;
         [self addSubview:_view];
     }
     return self;

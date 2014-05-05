@@ -26,6 +26,7 @@
 @property (nonatomic, strong) VnViewEditorLayerBar* overlayBar;
 @property (nonatomic, strong) VnViewEditorPhotoPreview* photoPreview;
 @property (nonatomic, strong) VnViewProgress* resizingProgressView;
+@property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButton;
 
 
 + (VnEditorViewManager*)instance;
@@ -44,5 +45,7 @@
 - (void)layoutPreview;
 
 - (void)setPreviewImage:(UIImage*)image;
+
++ (void)selectLayerButton:(VnViewEditorLayerBarButton*)button;
 
 @end

@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, VnViewEditorLayerBarButtonMaskSelectionType){
+    VnViewEditorLayerBarButtonMaskSelectionTypeColor = 1,
+    VnViewEditorLayerBarButtonMaskSelectionTypePhoto
+};
+
 @interface VnViewEditorLayerBarButtonMaskView : UIView
 
 @property (nonatomic, strong) UIColor* maskColor;
+@property (nonatomic, strong) UIColor* selectionColor;
 @property (nonatomic, assign) float radius;
+@property (nonatomic, assign) BOOL selected;
 
 @end

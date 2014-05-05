@@ -9,15 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "VnViewEditorLayerBarButtonMaskView.h"
 
-typedef NS_ENUM(NSInteger, VnViewEditorLayerBarButtonSelectionType){
-    VnViewEditorLayerBarButtonSelectionTypeInside = 1,
-    VnViewEditorLayerBarButtonSelectionTypeOutside
-};
-
 @class VnViewEditorLayerBarButton;
 
 @protocol VnViewEditorLayerBarButtonDelegate
-- (void)didToolBarButtonTouchUpInside:(VnViewEditorLayerBarButton*)button;
+- (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton*)button;
 @end
 
 @interface VnViewEditorLayerBarButton : UIButton
@@ -27,6 +22,7 @@ typedef NS_ENUM(NSInteger, VnViewEditorLayerBarButtonSelectionType){
     VnViewLabel* _titleLabel;
 }
 
+@property (nonatomic, assign) VnEffectGroup group;
 @property (nonatomic, strong) UIColor* maskColor;
 @property (nonatomic, strong) UIImage* previewImage;
 @property (nonatomic, strong) UIColor* previewColor;
@@ -34,7 +30,7 @@ typedef NS_ENUM(NSInteger, VnViewEditorLayerBarButtonSelectionType){
 @property (nonatomic, strong) UIColor* selectionColor;
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, assign) float maskRadius;
-@property (nonatomic, assign) VnViewEditorLayerBarButtonSelectionType selectionType;
+@property (nonatomic, assign) VnViewEditorLayerBarButtonMaskSelectionType selectionType;
 @property (nonatomic, weak) id<VnViewEditorLayerBarButtonDelegate> delegate;
 
 - (void)didTouchUpInside:(VnViewEditorLayerBarButton*)sender;
