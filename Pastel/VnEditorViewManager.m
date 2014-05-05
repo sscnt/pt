@@ -117,6 +117,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     CGSize size = [VnCurrentSettings colorLayerButtonSize];
     
     //// Color
+    _colorLayerButtonsList = [NSMutableDictionary dictionary];
     for (int i = 0; i < [VnDataLayers colorCount]; i++) {
         effect = [VnDataLayers colorAtIndex:i];
         if (effect) {
@@ -127,11 +128,14 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.maskRadius = [VnCurrentSettings colorLayerButtonMaskRadius];
             button.delegate = [VnEditorButtonManager instance];
             button.selectionColor = effect.selectionColor;
+            button.group = effect.effectGroup;
             [_colorBar appendButton:button];
+            [_colorLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%ld", effect.effectId]];
         }
     }
     
     //// Effects
+    _effectLayerButtonsList = [NSMutableDictionary dictionary];
     size = [VnCurrentSettings effectLayerButtonSize];
     for (int i = 0; i < [VnDataLayers effectsCount]; i++) {
         effect = [VnDataLayers effectAtIndex:i];
@@ -141,11 +145,13 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.title = effect.name;
             button.delegate = [VnEditorButtonManager instance];
             [_effectBar appendButton:button];
+            [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%ld", effect.effectId]];
         }
 
     }
     
     //// Overlay
+    _overlayLayerButtonsList = [NSMutableDictionary dictionary];
     size = [VnCurrentSettings overlayLayerButtonSize];
     for (int i = 0; i < [VnDataLayers overlaysCount]; i++) {
         effect = [VnDataLayers overlayAtIndex:i];
@@ -157,9 +163,10 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.maskRadius = [VnCurrentSettings overlayLayerButtonMaskRadius];
             button.delegate = [VnEditorButtonManager instance];
             button.selectionColor = effect.selectionColor;
+            button.group = effect.effectGroup;
             [_overlayBar appendButton:button];
+            [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%ld", effect.effectId]];
         }
-
     }
 }
 
@@ -174,24 +181,61 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 #pragma mark button
 
-+ (void)selectLayerButton:(VnViewEditorLayerBarButton *)button
++ (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton *)button
 {
     VnEditorViewManager* vm = [self instance];
-    if (vm.currentSelectedLayerButton) {
-        vm.currentSelectedLayerButton.selected = NO;
+    switch (button.group) {
+        case VnEffectGroupColor:
+        {
+            if (vm.currentSelectedLayerButtonColor) {
+                vm.currentSelectedLayerButtonColor.selected = NO;
+            }
+            button.selected = YES;
+            vm.currentSelectedLayerButtonColor = button;
+        }
+            break;
+        case VnEffectGroupOverlays:
+        {
+            if (vm.currentSelectedLayerButtonOverlay) {
+                vm.currentSelectedLayerButtonOverlay.selected = NO;
+            }
+            button.selected = YES;
+            vm.currentSelectedLayerButtonOverlay = button;
+        }
+            break;
+        case VnEffectGroupEffects:
+        {
+            if (vm.currentSelectedLayerButtonEffect) {
+                vm.currentSelectedLayerButtonEffect.selected = NO;
+            }
+            button.selected = YES;
+            vm.currentSelectedLayerButtonEffect = button;
+        }
+            break;
+            
+        default:
+            break;
     }
-    button.selected = YES;
-    vm.currentSelectedLayerButton = button;
 }
 
 + (void)clean
 {
-    [[VnEditorViewManager instance] clean];
+    [[self instance] clean];
 }
 
 - (void)clean
 {
-    
+    [_colorBar removeFromSuperview];
+    [_effectBar removeFromSuperview];
+    [_overlayBar removeFromSuperview];
+    [_photoPreview removeFromSuperview];
+    [_overlayLayerButtonsList removeAllObjects];
+    [_effectLayerButtonsList removeAllObjects];
+    [_colorLayerButtonsList removeAllObjects];
+    _colorBar = nil;
+    _effectBar = nil;
+    _overlayBar = nil;
+    _photoPreview = nil;
 }
 
 @end

@@ -14,6 +14,13 @@
 
 @implementation VnViewControllerHome
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    LOG(@"Cleaned images.");
+    [VnCurrentImage clean];
+    [VnEditorViewManager clean];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

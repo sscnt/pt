@@ -23,7 +23,7 @@
 + (UIImage*)originalPreviewImage;
 + (UIImage*)processedColorPreviewImage;
 + (UIImage*)processedEffectPreviewImage;
-+ (UIImage*)processedLightPreviewImage;
++ (UIImage*)processedOverlayPreviewImage;
 + (UIImage*)blurredPreviewImage;
 + (UIImage*)originalImage;
 + (UIImage*)lastSavedImage;
@@ -34,7 +34,9 @@
 + (BOOL)saveTmpImage2:(UIImage*)image;
 + (BOOL)saveOriginalImage:(UIImage*)image;
 + (BOOL)saveOriginalPreviewImage:(UIImage*)image;
-+ (BOOL)saveProcessedPreviewImage:(UIImage*)image;
++ (BOOL)saveProcessedColorPreviewImage:(UIImage*)image;
++ (BOOL)saveProcessedEffectPreviewImage:(UIImage*)image;
++ (BOOL)saveProcessedOverlayPreviewImage:(UIImage*)image;
 + (BOOL)saveBlurredPreviewImage:(UIImage*)image;
 + (BOOL)saveLastSavedImage:(UIImage*)image;
 + (BOOL)saveDialogBgImage:(UIImage*)image;
@@ -53,7 +55,9 @@
 + (BOOL)deleteOriginalImage;
 + (BOOL)deleteDialogBgImage;
 + (BOOL)deleteOriginalPreviewImage;
-+ (BOOL)deleteProcessedPreviewImage;
++ (BOOL)deleteProcessedColorPreviewImage;
++ (BOOL)deleteProcessedEffectPreviewImage;
++ (BOOL)deleteProcessedOverlayPreviewImage;
 + (BOOL)deleteBlurredPreviewImage;
 + (BOOL)deletePresetBaseImage;
 + (void)clean;

@@ -71,7 +71,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectId = VnEffectIdNone;
     effect.effectGroup = VnEffectGroupColor;
     effect.name = NSLocalizedString(@"None", nil);
-    effect.previewColor = [UIColor colorWithWhite:0.0f alpha:1.0f];
+    effect.previewColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_colorList addObject:effect];
 
@@ -221,7 +221,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectId = VnEffectIdNone;
     effect.effectGroup = VnEffectGroupOverlays;
     effect.name = NSLocalizedString(@"None", nil);
-    effect.previewColor = [UIColor colorWithWhite:0.10f alpha:1.0f];
+    effect.previewColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
     

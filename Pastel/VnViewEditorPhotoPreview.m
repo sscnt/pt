@@ -27,6 +27,9 @@
         [_scrollView addSubview:_imageView];
         _scrollView.zoomScale = _scrollView.minimumZoomScale;
         [self addSubview:_scrollView];
+        
+        _progressView = [[VnViewProgress alloc] initWithFrame:self.bounds Radius:[VnCurrentSettings previewProgressRadius]];
+        [self addSubview:_progressView];
     }
     return self;
 }

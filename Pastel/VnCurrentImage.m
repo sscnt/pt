@@ -17,7 +17,9 @@ NSString* const pathForTmpImage = @"tmp/tmp_image";
 NSString* const pathForTmpImage2 = @"tmp/tmp_image_2";
 NSString* const pathForPreviewImage = @"tmp/preview_image";
 NSString* const pathForBlurredPreviewImage = @"tmp/blurred_preview_image";
-NSString* const pathForProcessedPreviewImage = @"tmp/processed_preview_image";
+NSString* const pathForProcessedColorPreviewImage = @"tmp/processed_color_preview_image";
+NSString* const pathForProcessedEffectPreviewImage = @"tmp/processed_effect_preview_image";
+NSString* const pathForProcessedOverlayPreviewImage = @"tmp/processed_overlay_preview_image";
 NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
 NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
 NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
@@ -109,7 +111,19 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (UIImage *)processedColorPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedPreviewImage];
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedColorPreviewImage];
+    return [self imageAtPath:filePath];
+}
+
++ (UIImage *)processedEffectPreviewImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedEffectPreviewImage];
+    return [self imageAtPath:filePath];
+}
+
++ (UIImage *)processedOverlayPreviewImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedOverlayPreviewImage];
     return [self imageAtPath:filePath];
 }
 
@@ -160,9 +174,19 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [self saveImage:image AtPath:pathForBlurredPreviewImage];
 }
 
-+ (BOOL)saveProcessedPreviewImage:(UIImage *)image
++ (BOOL)saveProcessedColorPreviewImage:(UIImage *)image
 {
-    return [self saveImage:image AtPath:pathForProcessedPreviewImage];
+    return [self saveImage:image AtPath:pathForProcessedColorPreviewImage];
+}
+
++ (BOOL)saveProcessedEffectPreviewImage:(UIImage *)image
+{
+    return [self saveImage:image AtPath:pathForProcessedEffectPreviewImage];
+}
+
++ (BOOL)saveProcessedOverlayPreviewImage:(UIImage *)image
+{
+    return [self saveImage:image AtPath:pathForProcessedOverlayPreviewImage];
 }
 
 + (CGSize)originalImageSize
@@ -288,15 +312,27 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [self deleteImageAtPath:filePath];
 }
 
-+ (BOOL)deleteProcessedPreviewImage
++ (BOOL)deleteProcessedColorPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedPreviewImage];
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedColorPreviewImage];
+    return [self deleteImageAtPath:filePath];
+}
+
++ (BOOL)deleteProcessedEffectPreviewImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedEffectPreviewImage];
+    return [self deleteImageAtPath:filePath];
+}
+
++ (BOOL)deleteProcessedOverlayPreviewImage
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedOverlayPreviewImage];
     return [self deleteImageAtPath:filePath];
 }
 
 + (BOOL)deletePresetBaseImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedPreviewImage];
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPresetBaseImage];
     return [self deleteImageAtPath:filePath];
 }
 
@@ -307,7 +343,9 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     [self deleteLastSavedImage];
     [self deleteDialogBgImage];
     [self deleteBlurredPreviewImage];
-    [self deleteProcessedPreviewImage];
+    [self deleteProcessedColorPreviewImage];
+    [self deleteProcessedOverlayPreviewImage];
+    [self deleteProcessedEffectPreviewImage];
     [self deleteTmpImage];
     [self deleteTmpImage2];
     [self deletePresetBaseImage];

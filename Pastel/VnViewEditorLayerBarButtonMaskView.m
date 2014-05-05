@@ -62,12 +62,12 @@
     CGContextFillRect(context, CGRectMake(0, 0, rect.size.width, rect.size.height));
     
     if (_selected) {
-        float r = _radius + 4.0f;
+        float r = _radius + 3.0f;
         p = (rect.size.width - r * 2.0f) / 2.0f;
         t = (rect.size.height - r * 2.0f) / 2.0f;
         ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(p, t, r * 2.0f, r * 2.0f)];
         [_selectionColor setStroke];
-        ovalPath.lineWidth = 3;
+        ovalPath.lineWidth = 2;
         [ovalPath stroke];
     }
 }

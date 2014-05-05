@@ -26,7 +26,14 @@
 @property (nonatomic, strong) VnViewEditorLayerBar* overlayBar;
 @property (nonatomic, strong) VnViewEditorPhotoPreview* photoPreview;
 @property (nonatomic, strong) VnViewProgress* resizingProgressView;
-@property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButton;
+
+@property (nonatomic, strong) NSMutableDictionary* colorLayerButtonsList;
+@property (nonatomic, strong) NSMutableDictionary* effectLayerButtonsList;
+@property (nonatomic, strong) NSMutableDictionary* overlayLayerButtonsList;
+
+@property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonColor;
+@property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonEffect;
+@property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonOverlay;
 
 
 + (VnEditorViewManager*)instance;
@@ -46,6 +53,8 @@
 
 - (void)setPreviewImage:(UIImage*)image;
 
-+ (void)selectLayerButton:(VnViewEditorLayerBarButton*)button;
++ (VnViewEditorLayerBarButton*)buttonByEffectId:(VnEffectId)effectId;
++ (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton*)button;
++ (void)selectLayerButtonWithEffectId:(VnEffectId)effectId;
 
 @end

@@ -39,7 +39,7 @@ static VnEditorButtonManager* sharedVnEditorButtonManager = nil;
 
 - (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton *)button
 {
-    [VnEditorViewManager selectLayerButton:button];
+    [VnEditorViewManager selectLayerButtonWithButton:button];
 }
 
 @end
