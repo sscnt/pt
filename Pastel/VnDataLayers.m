@@ -68,7 +68,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
 
     //// None
     effect = [[VnObjectEffect alloc] init];
-    effect.effectId = VnEffectIdNone;
+    effect.effectId = VnEffectIdCOlorNone;
     effect.effectGroup = VnEffectGroupColor;
     effect.name = NSLocalizedString(@"None", nil);
     effect.previewColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
@@ -218,7 +218,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     
     //// None
     effect = [[VnObjectEffect alloc] init];
-    effect.effectId = VnEffectIdNone;
+    effect.effectId = VnEffectIdOverlayNone;
     effect.effectGroup = VnEffectGroupOverlays;
     effect.name = NSLocalizedString(@"None", nil);
     effect.previewColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
@@ -240,6 +240,33 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupOverlays;
     effect.name = NSLocalizedString(@"Retro Sun", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(221.0f) blue:s255(201.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Hazy Light Warm Pink
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayHazyLightWarmPink;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Warm Pink", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(216.0f) blue:s255(212.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Light Bright Pop
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayLightBrightPop;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Bright Pop", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(241.0f) blue:s255(227.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Light Bright Haze
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayLightBrightHaze;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Bright Haze", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(224.0f) blue:s255(245.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
 

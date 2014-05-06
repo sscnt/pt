@@ -110,6 +110,12 @@ static VnProcessor* sharedVnProcessor = nil;
     if (effectId == VnEffectIdNone) {
         return image;
     }
+    if (effectId == VnEffectIdOverlayNone) {
+        return image;
+    }
+    if (effectId == VnEffectIdCOlorNone) {
+        return image;
+    }
     
     //// Color
     if (effectId == VnEffectIdColorBronze) {
@@ -208,6 +214,21 @@ static VnProcessor* sharedVnProcessor = nil;
     }
     if (effectId == VnEffectIdOverlayRetroSun) {
         VnEffectOverlayRetroSun* effect = [[VnEffectOverlayRetroSun alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdOverlayHazyLightWarmPink) {
+        VnEffectOverlayHazyLightWarmPink* effect = [[VnEffectOverlayHazyLightWarmPink alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdOverlayLightBrightPop) {
+        VnEffectOverlayLightBrightPop* effect = [[VnEffectOverlayLightBrightPop alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdOverlayLightBrightHaze) {
+        VnEffectOverlayLightBrightHaze* effect = [[VnEffectOverlayLightBrightHaze alloc] init];
         effect.imageToProcess = image;
         return [effect process];
     }
