@@ -269,6 +269,15 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(224.0f) blue:s255(245.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
+    
+    //// Blue Haze
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayBlueHaze;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Blue Haze", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(191.0f) green:s255(191.0f) blue:s255(255.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
 
 }
 

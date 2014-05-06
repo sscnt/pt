@@ -232,6 +232,11 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
+    if (effectId == VnEffectIdOverlayBlueHaze) {
+        VnEffectOverlayBlueHaze* effect = [[VnEffectOverlayBlueHaze alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
     
     return nil;
 }

@@ -334,6 +334,12 @@
                         [VnProcessor instance].faceDetected = YES;
                     }
                     
+                    {
+                        VnFilterLensBlur* filter = [[VnFilterLensBlur alloc] init];
+                        filter.blurRadiusInPixels = 10.0f;
+                        [VnCurrentImage saveBlurredPreviewImage:[VnProcessor mergeBaseImage:image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal]];
+                    }
+                    
                     //// Progress
                     [_self dispatchResizingProgress:0.80f];
                     
@@ -358,6 +364,7 @@
                 }
                 image = [image croppedImage:CGRectMake(x, y, presetImageSize.width, presetImageSize.height)];
                 [VnCurrentImage savePrestBaseImage:image];
+                
                 [self dispatchResizingProgress:1.0f];
                 
             }

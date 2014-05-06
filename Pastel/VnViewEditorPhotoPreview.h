@@ -16,9 +16,13 @@
 @property (nonatomic, strong) UIImageView* progressImageView;
 @property (nonatomic, strong) VnViewProgress* progressView;
 @property (nonatomic, strong) UIImage* image;
+@property (nonatomic, strong) UIImage* progressimage;
 @property (nonatomic, assign) float progress;
 
 - (void)showPregressView;
 - (void)hidePregressView;
+
+- (void)showPregressImageView;
+- (void)hidePregressImageView;
 
 @end

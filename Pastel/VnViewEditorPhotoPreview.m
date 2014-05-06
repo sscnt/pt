@@ -25,8 +25,13 @@
         
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
         [_scrollView addSubview:_imageView];
-        _scrollView.zoomScale = _scrollView.minimumZoomScale;
         [self addSubview:_scrollView];
+        
+        _progressImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
+        _progressImageView.hidden = YES;
+        [_imageView addSubview:_progressImageView];
+        
+        _scrollView.zoomScale = _scrollView.minimumZoomScale;
         
         _progressView = [[VnViewProgress alloc] initWithFrame:self.bounds Radius:[VnCurrentSettings previewProgressRadius]];
         [self addSubview:_progressView];
@@ -38,6 +43,11 @@
 - (void)setImage:(UIImage *)image
 {
     _imageView.image = image;
+}
+
+- (void)setProgressimage:(UIImage *)progressimage
+{
+    _progressImageView.image = progressimage;
 }
 
 - (void)showPregressView
@@ -54,6 +64,16 @@
 {
     _progressView.progress = progress;
     LOG(@"%f", progress);
+}
+
+- (void)showPregressImageView
+{
+    _progressImageView.hidden = NO;
+}
+
+- (void)hidePregressImageView
+{
+    _progressImageView.hidden = YES;
 }
 
 #pragma mark delegate

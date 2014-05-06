@@ -216,6 +216,18 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _photoPreview.progress = 0.0f;
 }
 
+- (void)showBlureedPreviewImage
+{
+    _photoPreview.progressimage = [VnCurrentImage blurredPreviewImage];
+    [_photoPreview showPregressImageView];
+}
+
+- (void)hideBlureedPreviewImage
+{
+    _photoPreview.progressimage = nil;
+    [_photoPreview hidePregressImageView];
+}
+
 #pragma mark set
 
 - (void)setPreviewImage:(UIImage *)image

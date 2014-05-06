@@ -59,6 +59,7 @@
         {
             VnEditorViewManager* vm = [VnEditorViewManager instance];
             [vm setPreviewImage:queue.image];
+            [vm hideBlureedPreviewImage];
             [vm unlock];
             [vm hidePreviewProgressView];
         }
@@ -93,6 +94,7 @@
     [vm selectLayerButtonWithButton:button];
     [vm lock];
     [vm resetPreviewProgress];
+    [vm showBlureedPreviewImage];
     [vm showPreviewProgressView];
     
     VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
