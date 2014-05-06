@@ -37,12 +37,15 @@
     CGContextClearRect(context, rect);
     
     //マスクするパスを作成。
+    /*
     CGContextBeginPath(context);
     CGContextMoveToPoint(context, 0.0f, 0.0f);
     CGContextAddLineToPoint(context, rect.size.width, 0.0f);
     CGContextAddLineToPoint(context, rect.size.width, rect.size.height);
     CGContextAddLineToPoint(context, 0.0f, rect.size.height);
     CGContextClosePath(context);
+     */
+    CGContextAddRect(context, rect);
     
     float p = (rect.size.width - _radius * 2.0f) / 2.0f;
     float t = (rect.size.height - _radius * 2.0f) / 2.0f;
