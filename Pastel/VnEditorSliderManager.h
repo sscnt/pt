@@ -16,8 +16,10 @@
 
 + (VnEditorSliderManager*)instance;
 
-+ (void)setColorOpacity:(float)oapcity;
-+ (void)setEffectOpacity:(float)oapcity;
-+ (void)setOverlayOpacity:(float)oapcity;
++ (void)setColorOpacity:(float)opacity;
++ (void)setEffectOpacity:(float)opacity;
++ (void)setOverlayOpacity:(float)opacity;
+
+- (void)commonInit;
 
 @end

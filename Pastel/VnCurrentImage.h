@@ -13,7 +13,9 @@
 @property (nonatomic, assign) CGSize originalImageSize;
 @property (nonatomic, assign) CGSize tmpImageSize;
 @property (nonatomic, assign) CGSize tmpImage2Size;
+@property (nonatomic, assign) BOOL faceDetected;
 
++ (BOOL)faceDetected;
 + (VnCurrentImage*)instance;
 + (BOOL)imageExistsAtPath:(NSString*)path;
 + (BOOL)lastSavedImageExists;

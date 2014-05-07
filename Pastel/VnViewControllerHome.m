@@ -19,6 +19,7 @@
     LOG(@"Cleaned images.");
     [VnCurrentImage clean];
     [VnEditorViewManager clean];
+    [[VnEditorSliderManager instance] commonInit];
 }
 
 - (void)viewDidLoad
@@ -331,7 +332,7 @@
                     
                     if([array count] > 0){
                         LOG(@"Face detected!");
-                        [VnProcessor instance].faceDetected = YES;
+                        [VnCurrentImage instance].faceDetected = YES;
                     }
                     
                     {

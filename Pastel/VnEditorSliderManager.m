@@ -39,10 +39,32 @@ static VnEditorSliderManager* sharedVnEditorSliderManager = nil;
 {
     self = [super init];
     if (self) {
-        _colorOpacity = 1.0f;
-        _effectOpacity = 1.0f;
-        _overlayOpacity = 1.0f;
+        [self commonInit];
     }
     return self;
 }
+
+- (void)commonInit
+{
+    _colorOpacity = 1.0f;
+    _effectOpacity = 1.0f;
+    _overlayOpacity = 1.0f;
+}
+
++ (void)setEffectOpacity:(float)opacity
+{
+    [self instance].effectOpacity = opacity;
+}
+
++ (void)setOverlayOpacity:(float)opacity
+{
+    [self instance].overlayOpacity = opacity;
+}
+
++ (void)setColorOpacity:(float)opacity
+{
+    [self instance].colorOpacity = opacity;
+}
+
+
 @end

@@ -350,6 +350,11 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [self deleteImageAtPath:filePath];
 }
 
++ (BOOL)faceDetected
+{
+    return [self instance].faceDetected;
+}
+
 + (void)clean
 {
     [self deleteOriginalPreviewImage];

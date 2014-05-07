@@ -20,6 +20,111 @@
     return self;
 }
 
++ (float)defalutOpacityByEffectId:(VnEffectId)effectId
+{
+    VnEffect* effect = [self effectById:effectId];
+    if (effect) {
+        return effect.defaultOpacity;
+    }
+    return 0.0f;
+}
+
++ (float)faceOpacityByEffectId:(VnEffectId)effectId
+{
+    VnEffect* effect = [self effectById:effectId];
+    if (effect) {
+        return effect.faceOpacity;
+    }
+    return 0.0f;
+}
+
++ (VnEffect*)effectById:(VnEffectId)effectId
+{
+    VnEffect* effect;
+    
+    //// Color
+    if (effectId == VnEffectIdColorBronze) {
+        effect = [[VnEffectColorBronze alloc] init];
+    }
+    if (effectId == VnEffectIdColorLittleBlueSecret) {
+        effect = [[VnEffectColorLittleBlueSecret alloc] init];
+    }
+    if (effectId == VnEffectIdColorOphelia) {
+        effect = [[VnEffectColorOphelia alloc] init];
+    }
+    if (effectId == VnEffectIdColorPinkMilk) {
+        effect = [[VnEffectColorPinkMilk alloc] init];
+    }
+    if (effectId == VnEffectIdColorPotion9) {
+        effect = [[VnEffectColorPotion9 alloc] init];
+    }
+    if (effectId == VnEffectIdColorPurePeach) {
+        effect = [[VnEffectColorPurePeach alloc] init];
+    }
+    if (effectId == VnEffectIdColorPurrr) {
+        effect = [[VnEffectColorPurrr alloc] init];
+    }
+    if (effectId == VnEffectIdColorRosyVintage) {
+        effect = [[VnEffectColorRosyVintage alloc] init];
+    }
+    if (effectId == VnEffectIdColorSerenity) {
+        effect = [[VnEffectColorSerenity alloc] init];
+    }
+    if (effectId == VnEffectIdColorSummerSkin) {
+        effect = [[VnEffectColorSummerSkin alloc] init];
+    }
+    if (effectId == VnEffectIdColorSunnyLight) {
+        effect = [[VnEffectColorSunnyLight alloc] init];
+    }
+    if (effectId == VnEffectIdColorWildHoney) {
+        effect = [[VnEffectColorWildHoney alloc] init];
+    }
+    if (effectId == VnEffectIdColorUrbanCandy) {
+        effect = [[VnEffectColorUrbanCandy alloc] init];
+    }
+    if (effectId == VnEffectIdColorVintageMatte) {
+        effect = [[VnEffectColorVintageMatte alloc] init];
+    }
+    if (effectId == VnEffectIdColorWarmHaze) {
+        effect = [[VnEffectColorWarmHaze alloc] init];
+    }
+    
+    //// Effects
+    if (effectId == VnEffectIdGentleColor) {
+        effect = [[VnEffectGentleColor alloc] init];
+    }
+    if (effectId == VnEffectIdVelvetColor) {
+        effect = [[VnEffectVelvetColor alloc] init];
+    }
+    if (effectId == VnEffectIdBeachVintage) {
+        effect = [[VnEffectBeachVintage alloc] init];
+    }
+    
+    //// Overlay
+    if (effectId == VnEffectIdOverlayLightBrightMatte) {
+        effect = [[VnEffectOverlayLightBrightMatte alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayRetroSun) {
+        effect = [[VnEffectOverlayRetroSun alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayHazyLightWarmPink) {
+        effect = [[VnEffectOverlayHazyLightWarmPink alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayLightBrightPop) {
+        effect = [[VnEffectOverlayLightBrightPop alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayLightBrightHaze) {
+        effect = [[VnEffectOverlayLightBrightHaze alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayBlueHaze) {
+        effect = [[VnEffectOverlayBlueHaze alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayWarmVintage) {
+        effect = [[VnEffectOverlayWarmVintage alloc] init];
+    }
+    return effect;
+}
+
 - (UIImage*)process
 {
     return nil;

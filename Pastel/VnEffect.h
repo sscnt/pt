@@ -16,6 +16,10 @@
 @property (nonatomic, assign) CGFloat defaultOpacity;
 @property (nonatomic, assign) CGFloat faceOpacity;
 
++ (VnEffect*)effectById:(VnEffectId)effectId;
++ (float)faceOpacityByEffectId:(VnEffectId)effectId;
++ (float)defalutOpacityByEffectId:(VnEffectId)effectId;
+
 - (UIImage*)process;
 - (void)mergeAndSaveTmpImageWithOverlayImage:(UIImage*)overlayImage opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode;
 - (void)mergeAndSaveTmpImageWithOverlayFilter:(GPUImageFilter*)overlayFilter opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode;

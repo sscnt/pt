@@ -18,7 +18,6 @@
 @interface VnProcessor : NSObject
 
 @property (nonatomic, assign) VnEffectId effectId;
-@property (nonatomic, assign) BOOL faceDetected;
 @property (nonatomic, assign) float opacity;
 @property (nonatomic, assign) float temp;
 @property (nonatomic, assign) float tint;

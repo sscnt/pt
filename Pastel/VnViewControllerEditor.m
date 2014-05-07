@@ -104,6 +104,25 @@
     [vm showBlureedPreviewImage];
     [vm showPreviewProgressView];
     
+    float opacity = [VnEffect defalutOpacityByEffectId:button.effectId];
+    if ([VnCurrentImage faceDetected]) {
+        opacity  = [VnEffect faceOpacityByEffectId:button.effectId];
+    }
+    
+    switch (button.group) {
+        case VnEffectGroupColor:
+            [VnEditorSliderManager setColorOpacity:opacity];
+            break;
+        case VnEffectGroupEffects:
+            [VnEditorSliderManager setEffectOpacity:opacity];
+            break;
+        case VnEffectGroupOverlays:
+            [VnEditorSliderManager setOverlayOpacity:opacity];
+            break;
+        default:
+            break;
+    }
+    
     VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
     queue.type = VnObjectProcessingQueueTypePreview;
     [VnProcessingQueueManager addQueue:queue];
