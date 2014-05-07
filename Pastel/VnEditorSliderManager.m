@@ -46,9 +46,9 @@ static VnEditorSliderManager* sharedVnEditorSliderManager = nil;
 
 - (void)commonInit
 {
-    _colorOpacity = 1.0f;
-    _effectOpacity = 1.0f;
-    _overlayOpacity = 1.0f;
+    _colorOpacity = 0.0f;
+    _effectOpacity = 0.0f;
+    _overlayOpacity = 0.0f;
 }
 
 + (void)setEffectOpacity:(float)opacity

@@ -113,7 +113,7 @@ static VnProcessor* sharedVnProcessor = nil;
     if (effectId == VnEffectIdOverlayNone) {
         return image;
     }
-    if (effectId == VnEffectIdCOlorNone) {
+    if (effectId == VnEffectIdColorNone) {
         return image;
     }
     VnEffect* effect = [VnEffect effectById:effectId];

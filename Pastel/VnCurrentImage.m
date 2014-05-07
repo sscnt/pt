@@ -47,9 +47,24 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 	return self;  // シングルトン状態を保持するため何もせず self を返す
 }
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _cache = [NSMutableDictionary dictionary];
+    }
+    return self;
+}
+
 + (UIImage*)imageAtPath:(NSString *)path
 {
-    NSURL *fileURL = [NSURL fileURLWithPath:path];
+    //// Search cache
+    UIImage* image = [[self instance].cache objectForKey:[NSString stringWithFormat:@"%@", path]];
+    if (image) {
+        return image;
+    }
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPreviewImage];
+    NSURL *fileURL = [NSURL fileURLWithPath:filePath];
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
     if( [filemgr fileExistsAtPath:path] ){
@@ -63,73 +78,67 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (UIImage*)originalPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPreviewImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForPreviewImage];
 }
 
 + (UIImage*)tmpImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForTmpImage];
 }
 
 + (UIImage*)tmpImage2
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage2];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForTmpImage2];
 }
 
 + (UIImage*)originalImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForOriginalImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForOriginalImage];
 }
 
 + (UIImage*)lastSavedImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForLastSavedImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForLastSavedImage];
 }
 
 + (UIImage*)dialogBgImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForDialogBgImage];
 }
 
 + (UIImage*)presetBaseImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPresetBaseImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForPresetBaseImage];
 }
 
 + (UIImage *)blurredPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForBlurredPreviewImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForBlurredPreviewImage];
 }
 
 + (UIImage *)processedColorPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedColorPreviewImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForProcessedColorPreviewImage];
 }
 
 + (UIImage *)processedEffectPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedEffectPreviewImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForProcessedEffectPreviewImage];
 }
 
 + (UIImage *)processedOverlayPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedOverlayPreviewImage];
-    return [self imageAtPath:filePath];
+    return [self imageAtPath:pathForProcessedOverlayPreviewImage];
 }
 
 + (BOOL)saveImage:(UIImage *)image AtPath:(NSString *)path
 {
-    
+    [[self instance].cache setObject:image forKey:[NSString stringWithFormat:@"%@", path]];
+    return YES;
+}
+
++ (BOOL)writeImage:(UIImage *)image AtPath:(NSString *)path
+{
     NSData *imageData = UIImagePNGRepresentation(image);
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     return [imageData writeToFile:filePath atomically:YES];
@@ -354,6 +363,18 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 + (BOOL)faceDetected
 {
     return [self instance].faceDetected;
+}
+
++ (void)writeCacheToFile
+{
+    for (NSString* path in [[self instance].cache allKeys]) {
+        [self writeImage:[[self instance].cache objectForKey:path] AtPath:path];
+    }
+}
+
++ (void)cleanCache
+{
+    [[self instance].cache removeAllObjects];
 }
 
 + (void)clean

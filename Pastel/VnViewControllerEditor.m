@@ -36,6 +36,9 @@
     [VnEditorViewManager setResizingProgress:1.0f];
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm setPreviewImage:[VnCurrentImage originalPreviewImage]];
+    [vm selectLayerButtonWithEffectId:VnEffectIdNone];
+    [vm selectLayerButtonWithEffectId:VnEffectIdColorNone];
+    [vm selectLayerButtonWithEffectId:VnEffectIdOverlayNone];
     [vm unlock];
     
     VnObjectProcessingQueue* queue = [VnProcessingQueueManager shiftEffectQueue];
@@ -63,6 +66,7 @@
         {
             [vm setPreviewImage:queue.image];
             [vm hideBlureedPreviewImage];
+            [vm resetPreviewProgress];
             [vm unlock];
             [vm hidePreviewProgressView];
         }
@@ -100,7 +104,6 @@
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm selectLayerButtonWithButton:button];
     [vm lock];
-    [vm resetPreviewProgress];
     [vm showBlureedPreviewImage];
     [vm showPreviewProgressView];
     

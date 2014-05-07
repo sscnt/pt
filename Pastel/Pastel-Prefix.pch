@@ -73,7 +73,7 @@ typedef NS_ENUM(NSInteger, VnAdjustmentToolId){
 
 typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdNone = 0,
-    VnEffectIdCOlorNone,
+    VnEffectIdColorNone,
     VnEffectIdOverlayNone,
     VnEffectIdColorBronze,
     VnEffectIdColorLittleBlueSecret,

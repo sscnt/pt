@@ -14,6 +14,7 @@
 @property (nonatomic, assign) CGSize tmpImageSize;
 @property (nonatomic, assign) CGSize tmpImage2Size;
 @property (nonatomic, assign) BOOL faceDetected;
+@property (nonatomic, strong) NSMutableDictionary* cache;
 
 + (BOOL)faceDetected;
 + (VnCurrentImage*)instance;
@@ -36,6 +37,7 @@
 + (UIImage*)dialogBgImage;
 + (UIImage*)presetBaseImage;
 + (BOOL)saveImage:(UIImage*)image AtPath:(NSString*)path;
++ (BOOL)writeImage:(UIImage*)image AtPath:(NSString*)path;
 + (BOOL)saveTmpImage:(UIImage*)image;
 + (BOOL)saveTmpImage2:(UIImage*)image;
 + (BOOL)saveOriginalImage:(UIImage*)image;
@@ -66,6 +68,8 @@
 + (BOOL)deleteProcessedOverlayPreviewImage;
 + (BOOL)deleteBlurredPreviewImage;
 + (BOOL)deletePresetBaseImage;
++ (void)writeCacheToFile;
++ (void)cleanCache;
 + (void)clean;
 
 @end

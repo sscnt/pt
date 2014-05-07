@@ -14,8 +14,8 @@
 {
     self = [super init];
     if(self){
-        self.defaultOpacity = 1.0f;
-        self.faceOpacity = 1.0f;
+        _defaultOpacity = 1.0f;
+        _faceOpacity = 1.0f;
     }
     return self;
 }

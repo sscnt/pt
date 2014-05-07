@@ -90,7 +90,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
 
     //// None
     effect = [[VnObjectEffect alloc] init];
-    effect.effectId = VnEffectIdCOlorNone;
+    effect.effectId = VnEffectIdColorNone;
     effect.effectGroup = VnEffectGroupColor;
     effect.name = NSLocalizedString(@"None", nil);
     effect.previewColor = [UIColor colorWithWhite:1.0f alpha:1.0f];

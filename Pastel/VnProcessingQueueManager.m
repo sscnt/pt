@@ -128,43 +128,52 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
 - (void)processQueueTypePreview:(VnObjectProcessingQueue *)queue
 {
     VnEditorSliderManager* sm = [VnEditorSliderManager instance];
-    
+    [self.delegate dispatchPreviewprogress:0.1f];
+    LOG(@"=================");
     if ([VnCurrentImage processedColorImageExists] == NO) {
-        [self.delegate dispatchPreviewprogress:0.1f];
+        LOG(@"1");
         @autoreleasepool {
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedColorLayerEffectId] ToImage:[VnCurrentImage originalPreviewImage]];
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.colorOpacity != 1.0f) {
+            LOG(@"2");
             UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage originalPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.colorOpacity blendingMode:VnBlendingModeNormal];
             [VnCurrentImage saveProcessedColorPreviewImage:image];
         }else{
+            LOG(@"3");
             [VnCurrentImage saveProcessedColorPreviewImage:[VnCurrentImage tmpImage]];
         }
     }
     if ([VnCurrentImage processedEffectImageExists] == NO) {
+        LOG(@"4");
         [self.delegate dispatchPreviewprogress:0.3f];
         @autoreleasepool {
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedEffectLayerEffectId] ToImage:[VnCurrentImage processedColorPreviewImage]];
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.effectOpacity != 1.0f) {
+            LOG(@"5");
             UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedColorPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.effectOpacity blendingMode:VnBlendingModeNormal];
             [VnCurrentImage saveProcessedEffectPreviewImage:image];
         }else{
+            LOG(@"6");
             [VnCurrentImage saveProcessedEffectPreviewImage:[VnCurrentImage tmpImage]];
         }
     }
     if ([VnCurrentImage processedOverlayImageExists] == NO) {
+        LOG(@"7");
         [self.delegate dispatchPreviewprogress:0.6f];
         @autoreleasepool {
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedOverlayLayerEffectId] ToImage:[VnCurrentImage processedEffectPreviewImage]];
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.overlayOpacity != 1.0f) {
+            LOG(@"8");
             UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedEffectPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.overlayOpacity blendingMode:VnBlendingModeNormal];
             [VnCurrentImage saveProcessedOverlayPreviewImage:image];
         }else{
+            LOG(@"9");
             [VnCurrentImage saveProcessedOverlayPreviewImage:[VnCurrentImage tmpImage]];
         }
     }
