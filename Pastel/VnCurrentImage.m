@@ -129,7 +129,8 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (BOOL)saveImage:(UIImage *)image AtPath:(NSString *)path
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     return [imageData writeToFile:filePath atomically:YES];
 }
