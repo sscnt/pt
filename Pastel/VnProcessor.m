@@ -205,6 +205,11 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
+    if (effectId == VnEffectIdBeachVintage) {
+        VnEffectBeachVintage* effect = [[VnEffectBeachVintage alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {

@@ -67,6 +67,13 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
+    //// Beach Vintage
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdBeachVintage;
+    effect.name = NSLocalizedString(@"Beach", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
     //// Velvet Color
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdVelvetColor;

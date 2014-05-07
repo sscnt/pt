@@ -127,6 +127,7 @@
 		58F73B3B190F942A0056D7D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F73B39190F942A0056D7D6 /* InfoPlist.strings */; };
 		58F73B3D190F942A0056D7D6 /* PastelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F73B3C190F942A0056D7D6 /* PastelTests.m */; };
 		58F89D3A19129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */; };
+		58FA6A3D191A22B7007AD815 /* VnEffectBeachVintage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -368,6 +369,8 @@
 		58F73B3C190F942A0056D7D6 /* PastelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PastelTests.m; sourceTree = "<group>"; };
 		58F89D3819129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBarButtonMaskView.h; sourceTree = "<group>"; };
 		58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBarButtonMaskView.m; sourceTree = "<group>"; };
+		58FA6A3B191A22B7007AD815 /* VnEffectBeachVintage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectBeachVintage.h; sourceTree = "<group>"; };
+		58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectBeachVintage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +407,8 @@
 		580434DA19148D5E00B84896 /* Effects */ = {
 			isa = PBXGroup;
 			children = (
+				58FA6A3B191A22B7007AD815 /* VnEffectBeachVintage.h */,
+				58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */,
 				5802D1E61915F6D200E258F3 /* VnEffectGentleColor.h */,
 				5802D1E71915F6D200E258F3 /* VnEffectGentleColor.m */,
 				5802D1EC1916018E00E258F3 /* VnEffectVelvetColor.h */,
@@ -1024,6 +1029,7 @@
 				5805FD371910044C0010C13A /* VnBlendingSaturation.m in Sources */,
 				5805FD261910044C0010C13A /* VnBlendingDarken.m in Sources */,
 				58F3F53E19150BF9003A5A03 /* VnEffectColorSummerSkin.m in Sources */,
+				58FA6A3D191A22B7007AD815 /* VnEffectBeachVintage.m in Sources */,
 				5805FCED191003C60010C13A /* VnAdjustmentLayerPhotoFilter.m in Sources */,
 				580434F71914A43C00B84896 /* VnEffectColorPinkMilk.m in Sources */,
 				58F3F5491915121F003A5A03 /* VnEffectColorWildHoney.m in Sources */,

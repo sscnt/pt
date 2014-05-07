@@ -220,25 +220,18 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     _queueList = [NSMutableArray array];
     _effectsPresetQueueList = [NSMutableArray array];
     VnObjectProcessingQueue* queue;
+    VnObjectEffect* effect;
     
-    //// None
-    queue = [[VnObjectProcessingQueue alloc] init];
-    queue.effectId = VnEffectIdNone;
-    queue.type = VnObjectProcessingQueueTypePreset;
-    [_effectsPresetQueueList addObject:queue];
+    for (int i = 0; i < [VnDataLayers effectsCount]; i++) {
+        effect = [VnDataLayers effectAtIndex:i];
+        if (effect) {
+            queue = [[VnObjectProcessingQueue alloc] init];
+            queue.effectId = effect.effectId;
+            queue.type = VnObjectProcessingQueueTypePreset;
+            [_effectsPresetQueueList addObject:queue];
+        }
+    }
     
-    //// Gentle Color
-    queue = [[VnObjectProcessingQueue alloc] init];
-    queue.effectId = VnEffectIdGentleColor;
-    queue.type = VnObjectProcessingQueueTypePreset;
-    [_effectsPresetQueueList addObject:queue];
-    
-    //// Velvet Color
-    queue = [[VnObjectProcessingQueue alloc] init];
-    queue.effectId = VnEffectIdVelvetColor;
-    queue.type = VnObjectProcessingQueueTypePreset;
-    [_effectsPresetQueueList addObject:queue];
-
 }
 
 - (void)reset
