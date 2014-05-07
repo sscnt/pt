@@ -143,6 +143,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.title = effect.name;
             button.maskRadius = [VnCurrentSettings colorLayerButtonMaskRadius];
             button.delegate = self.delegate;
+            button.titleColor = [VnCurrentSettings effectsBarBgColor];
             button.selectionColor = effect.selectionColor;
             button.group = effect.effectGroup;
             button.effectId = effect.effectId;
@@ -160,10 +161,15 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
             button.maskColor = [VnCurrentSettings effectsBarBgColor];
             button.title = effect.name;
+            button.maskRadius = [VnCurrentSettings effectLayerButtonMaskRadius];
+            button.titleColor = [VnCurrentSettings colorBarBgColor];
+            button.selectionColor = [VnCurrentSettings colorBarBgColor];
+            button.previewColor = [VnCurrentSettings overlayBarBgColor];
             button.delegate = self.delegate;
             button.effectId = effect.effectId;
+            button.group = effect.effectGroup;
             [_effectBar appendButton:button];
-            [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
+            [_effectLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
 
     }
@@ -177,6 +183,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             VnViewEditorLayerBarButton* button = [[VnViewEditorLayerBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, size.width, size.height)];
             button.maskColor = [VnCurrentSettings overlayBarBgColor];
             button.title = effect.name;
+            button.titleColor = [VnCurrentSettings effectsBarBgColor];
             button.previewColor = effect.previewColor;
             button.maskRadius = [VnCurrentSettings overlayLayerButtonMaskRadius];
             button.delegate = self.delegate;
@@ -239,6 +246,19 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 #pragma mark button
 
++ (void)setPresetImage:(UIImage *)image ToEffect:(VnEffectId)effectId
+{
+    [[self instance] setPresetImage:image ToEffect:effectId];
+}
+
+- (void)setPresetImage:(UIImage *)image ToEffect:(VnEffectId)effectId
+{
+    VnViewEditorLayerBarButton* button = [self buttonByEffectId:effectId];
+    if (button) {
+        button.previewImage = image;
+    }
+}
+
 + (VnViewEditorLayerBarButton *)buttonByEffectId:(VnEffectId)effectId
 {
     return [[self instance] buttonByEffectId:effectId];
@@ -297,17 +317,6 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
         }
             break;
-        case VnEffectGroupOverlays:
-        {
-            if (self.currentSelectedLayerButtonOverlay) {
-                self.currentSelectedLayerButtonOverlay.selected = NO;
-            }
-            button.selected = YES;
-            self.currentSelectedLayerButtonOverlay = button;
-            [VnCurrentImage deleteProcessedEffectPreviewImage];
-            [VnCurrentImage deleteProcessedOverlayPreviewImage];
-        }
-            break;
         case VnEffectGroupEffects:
         {
             if (self.currentSelectedLayerButtonEffect) {
@@ -315,10 +324,20 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             }
             button.selected = YES;
             self.currentSelectedLayerButtonEffect = button;
+            [VnCurrentImage deleteProcessedEffectPreviewImage];
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
         }
             break;
-            
+        case VnEffectGroupOverlays:
+        {
+            if (self.currentSelectedLayerButtonOverlay) {
+                self.currentSelectedLayerButtonOverlay.selected = NO;
+            }
+            button.selected = YES;
+            self.currentSelectedLayerButtonOverlay = button;
+            [VnCurrentImage deleteProcessedOverlayPreviewImage];
+        }
+            break;
         default:
             break;
     }

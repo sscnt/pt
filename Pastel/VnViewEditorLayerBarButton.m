@@ -49,6 +49,11 @@
     _maskView.maskColor = maskColor;
 }
 
+- (void)setTitleColor:(UIColor *)titleColor
+{
+    _titleLabel.textColor = titleColor;
+}
+
 - (void)setSelectionColor:(UIColor *)selectionColor
 {
     _maskView.selectionColor = selectionColor;

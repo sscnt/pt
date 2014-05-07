@@ -57,6 +57,21 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdNone;
     effect.name = NSLocalizedString(@"None", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Gentle Color
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdGentleColor;
+    effect.name = NSLocalizedString(@"Gentle Color", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Velvet Color
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdVelvetColor;
+    effect.name = NSLocalizedString(@"Velvet Color", nil);
+    effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
         
 }
@@ -203,7 +218,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     
     //// Warm Haze
     effect = [[VnObjectEffect alloc] init];
-    effect.effectId = VnEffectIdWarmHaze;
+    effect.effectId = VnEffectIdColorWarmHaze;
     effect.effectGroup = VnEffectGroupColor;
     effect.name = NSLocalizedString(@"Warm Haze", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(216.0f) blue:s255(191.0f) alpha:1.0f];
@@ -276,6 +291,15 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupOverlays;
     effect.name = NSLocalizedString(@"Blue Haze", nil);
     effect.previewColor = [UIColor colorWithRed:s255(191.0f) green:s255(191.0f) blue:s255(255.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Warm Vintage
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayWarmVintage;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Warm Vintage", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(245.0f) blue:s255(224.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
 

@@ -162,8 +162,8 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
 
 - (void)processQueueTypePreset:(VnObjectProcessingQueue *)queue
 {
-    UIImage* image = queue.image;
-    if (queue.effectId != 0) {
+    UIImage* image = [VnCurrentImage presetBaseImage];
+    if (queue.effectId != VnEffectIdNone) {
         image = [VnProcessor applyEffect:queue.effectId ToImage:queue.image];
     }
     queue.image = image;
@@ -221,6 +221,24 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     _effectsPresetQueueList = [NSMutableArray array];
     VnObjectProcessingQueue* queue;
     
+    //// None
+    queue = [[VnObjectProcessingQueue alloc] init];
+    queue.effectId = VnEffectIdNone;
+    queue.type = VnObjectProcessingQueueTypePreset;
+    [_effectsPresetQueueList addObject:queue];
+    
+    //// Gentle Color
+    queue = [[VnObjectProcessingQueue alloc] init];
+    queue.effectId = VnEffectIdGentleColor;
+    queue.type = VnObjectProcessingQueueTypePreset;
+    [_effectsPresetQueueList addObject:queue];
+    
+    //// Velvet Color
+    queue = [[VnObjectProcessingQueue alloc] init];
+    queue.effectId = VnEffectIdVelvetColor;
+    queue.type = VnObjectProcessingQueueTypePreset;
+    [_effectsPresetQueueList addObject:queue];
+
 }
 
 - (void)reset

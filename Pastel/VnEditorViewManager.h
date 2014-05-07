@@ -62,6 +62,8 @@
 - (void)showBlureedPreviewImage;
 - (void)hideBlureedPreviewImage;
 
++ (void)setPresetImage:(UIImage*)image ToEffect:(VnEffectId)effectId;
+- (void)setPresetImage:(UIImage*)image ToEffect:(VnEffectId)effectId;
 + (VnViewEditorLayerBarButton*)buttonByEffectId:(VnEffectId)effectId;
 + (void)selectLayerButtonWithButton:(VnViewEditorLayerBarButton*)button;
 + (void)selectLayerButtonWithEffectId:(VnEffectId)effectId;

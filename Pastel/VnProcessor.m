@@ -188,7 +188,7 @@ static VnProcessor* sharedVnProcessor = nil;
         effect.imageToProcess = image;
         return [effect process];
     }
-    if (effectId == VnEffectIdWarmHaze) {
+    if (effectId == VnEffectIdColorWarmHaze) {
         VnEffectColorWarmHaze* effect = [[VnEffectColorWarmHaze alloc] init];
         effect.imageToProcess = image;
         return [effect process];
@@ -234,6 +234,11 @@ static VnProcessor* sharedVnProcessor = nil;
     }
     if (effectId == VnEffectIdOverlayBlueHaze) {
         VnEffectOverlayBlueHaze* effect = [[VnEffectOverlayBlueHaze alloc] init];
+        effect.imageToProcess = image;
+        return [effect process];
+    }
+    if (effectId == VnEffectIdOverlayWarmVintage) {
+        VnEffectOverlayWarmVintage* effect = [[VnEffectOverlayWarmVintage alloc] init];
         effect.imageToProcess = image;
         return [effect process];
     }

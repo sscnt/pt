@@ -70,13 +70,13 @@
         [VnCurrentImage saveTmpImage2:[VnCurrentImage tmpImage]];
         {
             GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
-            [levelsFilter setMin:s255(40.0f) gamma:1.05f max:s255(250.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
+            [levelsFilter setMin:s255(0.0f) gamma:1.00f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
+            [levelsFilter setBlueMin:0.0f gamma:1.00f max:s255(255.0f) minOut:s255(71.0f) maxOut:s255(255.0f)];
             [self mergeAndSaveTmpImage2WithOverlayFilter:levelsFilter opacity:1.0f blendingMode:VnBlendingModeNormal];
         }
         {
             GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
             [levelsFilter setMin:s255(40.0f) gamma:1.05f max:s255(250.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
-            [levelsFilter setBlueMin:0.0f gamma:1.00f max:s255(255.0f) minOut:s255(71.0f) maxOut:s255(255.0f)];
             [self mergeAndSaveTmpImage2WithOverlayFilter:levelsFilter opacity:1.0f blendingMode:VnBlendingModeNormal];
         }
         [self mergeAndSaveTmpImageWithOverlayImage:[VnCurrentImage tmpImage2] opacity:0.10f blendingMode:VnBlendingModeNormal];

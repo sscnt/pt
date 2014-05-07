@@ -10,6 +10,14 @@
 
 @interface VnEditorSliderManager : NSObject
 
+@property (nonatomic, assign) float colorOpacity;
+@property (nonatomic, assign) float effectOpacity;
+@property (nonatomic, assign) float overlayOpacity;
+
 + (VnEditorSliderManager*)instance;
+
++ (void)setColorOpacity:(float)oapcity;
++ (void)setEffectOpacity:(float)oapcity;
++ (void)setOverlayOpacity:(float)oapcity;
 
 @end

@@ -38,6 +38,9 @@
     [vm setPreviewImage:[VnCurrentImage originalPreviewImage]];
     [vm unlock];
     
+    VnObjectProcessingQueue* queue = [VnProcessingQueueManager shiftEffectQueue];
+    [VnProcessingQueueManager addQueue:queue];
+    
     //UIImage* image = [VnProcessor applyEffect:VnEffectIdOverlayRetroSun ToImage:[VnCurrentImage originalImage]];
     //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
@@ -54,10 +57,10 @@
 - (void)queueDidFinished:(VnObjectProcessingQueue *)queue
 {
     LOG(@"Queue did finished.");
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
     switch (queue.type) {
         case VnObjectProcessingQueueTypePreview:
         {
-            VnEditorViewManager* vm = [VnEditorViewManager instance];
             [vm setPreviewImage:queue.image];
             [vm hideBlureedPreviewImage];
             [vm unlock];
@@ -66,7 +69,11 @@
             break;
         case VnObjectProcessingQueueTypePreset:
         {
-            
+            [vm setPresetImage:queue.image ToEffect:queue.effectId];
+            VnObjectProcessingQueue* queue = [VnProcessingQueueManager shiftEffectQueue];
+            if (queue) {
+                [VnProcessingQueueManager addQueue:queue];
+            }
         }
             break;
         case VnObjectProcessingQueueTypeOriginal:

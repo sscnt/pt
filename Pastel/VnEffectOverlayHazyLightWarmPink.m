@@ -13,6 +13,8 @@
 {
     self = [super init];
     if(self){
+        self.defaultOpacity = 0.60f;
+        self.faceOpacity = 0.60f;
         self.effectId = VnEffectIdOverlayHazyLightWarmPink;
     }
     return self;
@@ -28,14 +30,14 @@
         VnAdjustmentLayerGradientColorFill* gradientColor = [[VnAdjustmentLayerGradientColorFill alloc] init];
         [gradientColor forceProcessingAtSize:[VnCurrentImage tmpImageSize]];
         [gradientColor setStyle:GradientStyleLinear];
-        [gradientColor setAngleDegree:-104];
+        [gradientColor setAngleDegree:-110.0f];
         [gradientColor setScalePercent:101];
         [gradientColor setOffsetX:0.0f Y:0.0f];
         [gradientColor addColorRed:253.0f Green:210.0f Blue:128.0f Opacity:100.0f Location:0 Midpoint:50];
         [gradientColor addColorRed:249.0f Green:102.0f Blue:102.0f Opacity:100.0f Location:2159 Midpoint:50];
-        [gradientColor addColorRed:253.0f Green:223.0f Blue:207.0f Opacity:100.0f Location:4096 Midpoint:50];
+        [gradientColor addColorRed:253.0f Green:223.0f Blue:207.0f Opacity:0.0f Location:4096 Midpoint:50];
         
-        [self mergeAndSaveTmpImageWithOverlayFilter:gradientColor opacity:0.13f blendingMode:VnBlendingModeScreen];
+        [self mergeAndSaveTmpImageWithOverlayFilter:gradientColor opacity:1.0f blendingMode:VnBlendingModeScreen];
     }
     
     
