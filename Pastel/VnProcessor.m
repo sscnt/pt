@@ -117,7 +117,6 @@ static VnProcessor* sharedVnProcessor = nil;
         return image;
     }
     VnEffect* effect = [VnEffect effectById:effectId];
-    effect.effectId = effectId;
     effect.imageToProcess = image;
     return [effect process];
 }

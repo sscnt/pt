@@ -128,6 +128,23 @@
 		58F67AB5191B5EC10085DF18 /* VnEffectFaerieVintage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F67AB4191B5EC10085DF18 /* VnEffectFaerieVintage.m */; };
 		58F67AB8191B5ECF0085DF18 /* fv1.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67AB6191B5ECF0085DF18 /* fv1.acv */; };
 		58F67AB9191B5ECF0085DF18 /* fv2.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67AB7191B5ECF0085DF18 /* fv2.acv */; };
+		58F67ABC191B6DEB0085DF18 /* VnEffectGentleMemories.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F67ABB191B6DEB0085DF18 /* VnEffectGentleMemories.m */; };
+		58F67AC1191B6DF70085DF18 /* gm1.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ABD191B6DF70085DF18 /* gm1.acv */; };
+		58F67AC2191B6DF70085DF18 /* gm2.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ABE191B6DF70085DF18 /* gm2.acv */; };
+		58F67AC3191B6DF70085DF18 /* gm3.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ABF191B6DF70085DF18 /* gm3.acv */; };
+		58F67AC4191B6DF70085DF18 /* gm4.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67AC0191B6DF70085DF18 /* gm4.acv */; };
+		58F67AC7191B85E80085DF18 /* VnEffectGirder.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F67AC6191B85E80085DF18 /* VnEffectGirder.m */; };
+		58F67ACC191B85F80085DF18 /* gi4.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67AC8191B85F80085DF18 /* gi4.acv */; };
+		58F67ACD191B85F80085DF18 /* gi3.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67AC9191B85F80085DF18 /* gi3.acv */; };
+		58F67ACE191B85F80085DF18 /* gi2.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ACA191B85F80085DF18 /* gi2.acv */; };
+		58F67ACF191B85F80085DF18 /* gi1.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ACB191B85F80085DF18 /* gi1.acv */; };
+		58F67AD2191B8ABE0085DF18 /* VnEffectJoyful.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F67AD1191B8ABE0085DF18 /* VnEffectJoyful.m */; };
+		58F67AD5191B8AC90085DF18 /* jf1.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67AD3191B8AC90085DF18 /* jf1.acv */; };
+		58F67AD6191B8AC90085DF18 /* jf2.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67AD4191B8AC90085DF18 /* jf2.acv */; };
+		58F67AD9191B8C770085DF18 /* VnEffectPinkBubbleTea.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F67AD8191B8C770085DF18 /* VnEffectPinkBubbleTea.m */; };
+		58F67ADB191B8C810085DF18 /* pbt.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ADA191B8C810085DF18 /* pbt.acv */; };
+		58F67ADE191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F67ADD191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m */; };
+		58F67AE0191B8DA80085DF18 /* cr1.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ADF191B8DA80085DF18 /* cr1.acv */; };
 		58F73B0F190F942A0056D7D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B0E190F942A0056D7D6 /* Foundation.framework */; };
 		58F73B11190F942A0056D7D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B10190F942A0056D7D6 /* CoreGraphics.framework */; };
 		58F73B13190F942A0056D7D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B12190F942A0056D7D6 /* UIKit.framework */; };
@@ -387,6 +404,28 @@
 		58F67AB4191B5EC10085DF18 /* VnEffectFaerieVintage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectFaerieVintage.m; sourceTree = "<group>"; };
 		58F67AB6191B5ECF0085DF18 /* fv1.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = fv1.acv; sourceTree = "<group>"; };
 		58F67AB7191B5ECF0085DF18 /* fv2.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = fv2.acv; sourceTree = "<group>"; };
+		58F67ABA191B6DEB0085DF18 /* VnEffectGentleMemories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectGentleMemories.h; sourceTree = "<group>"; };
+		58F67ABB191B6DEB0085DF18 /* VnEffectGentleMemories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectGentleMemories.m; sourceTree = "<group>"; };
+		58F67ABD191B6DF70085DF18 /* gm1.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gm1.acv; sourceTree = "<group>"; };
+		58F67ABE191B6DF70085DF18 /* gm2.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gm2.acv; sourceTree = "<group>"; };
+		58F67ABF191B6DF70085DF18 /* gm3.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gm3.acv; sourceTree = "<group>"; };
+		58F67AC0191B6DF70085DF18 /* gm4.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gm4.acv; sourceTree = "<group>"; };
+		58F67AC5191B85E80085DF18 /* VnEffectGirder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectGirder.h; sourceTree = "<group>"; };
+		58F67AC6191B85E80085DF18 /* VnEffectGirder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectGirder.m; sourceTree = "<group>"; };
+		58F67AC8191B85F80085DF18 /* gi4.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gi4.acv; sourceTree = "<group>"; };
+		58F67AC9191B85F80085DF18 /* gi3.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gi3.acv; sourceTree = "<group>"; };
+		58F67ACA191B85F80085DF18 /* gi2.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gi2.acv; sourceTree = "<group>"; };
+		58F67ACB191B85F80085DF18 /* gi1.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = gi1.acv; sourceTree = "<group>"; };
+		58F67AD0191B8ABE0085DF18 /* VnEffectJoyful.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectJoyful.h; sourceTree = "<group>"; };
+		58F67AD1191B8ABE0085DF18 /* VnEffectJoyful.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectJoyful.m; sourceTree = "<group>"; };
+		58F67AD3191B8AC90085DF18 /* jf1.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = jf1.acv; sourceTree = "<group>"; };
+		58F67AD4191B8AC90085DF18 /* jf2.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = jf2.acv; sourceTree = "<group>"; };
+		58F67AD7191B8C770085DF18 /* VnEffectPinkBubbleTea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectPinkBubbleTea.h; sourceTree = "<group>"; };
+		58F67AD8191B8C770085DF18 /* VnEffectPinkBubbleTea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectPinkBubbleTea.m; sourceTree = "<group>"; };
+		58F67ADA191B8C810085DF18 /* pbt.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = pbt.acv; sourceTree = "<group>"; };
+		58F67ADC191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectCavalleriaRusticana.h; sourceTree = "<group>"; };
+		58F67ADD191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectCavalleriaRusticana.m; sourceTree = "<group>"; };
+		58F67ADF191B8DA80085DF18 /* cr1.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = cr1.acv; sourceTree = "<group>"; };
 		58F73B0B190F942A0056D7D6 /* Pastel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pastel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F73B0E190F942A0056D7D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58F73B10190F942A0056D7D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -449,6 +488,8 @@
 			children = (
 				58FA6A3B191A22B7007AD815 /* VnEffectBeachVintage.h */,
 				58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */,
+				58F67ADC191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.h */,
+				58F67ADD191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m */,
 				58F67A99191B57FC0085DF18 /* VnEffectDreamyCreamy.h */,
 				58F67A9A191B57FC0085DF18 /* VnEffectDreamyCreamy.m */,
 				58F67A89191B54500085DF18 /* VnEffectDreamyVintage.h */,
@@ -457,10 +498,18 @@
 				58F67AB4191B5EC10085DF18 /* VnEffectFaerieVintage.m */,
 				5802D1E61915F6D200E258F3 /* VnEffectGentleColor.h */,
 				5802D1E71915F6D200E258F3 /* VnEffectGentleColor.m */,
+				58F67ABA191B6DEB0085DF18 /* VnEffectGentleMemories.h */,
+				58F67ABB191B6DEB0085DF18 /* VnEffectGentleMemories.m */,
+				58F67AC5191B85E80085DF18 /* VnEffectGirder.h */,
+				58F67AC6191B85E80085DF18 /* VnEffectGirder.m */,
 				58F67AAC191B59A00085DF18 /* VnEffectHazelnut.h */,
 				58F67AAD191B59A00085DF18 /* VnEffectHazelnut.m */,
 				58F67AA9191B59250085DF18 /* VnEffectHazelnutPink.h */,
 				58F67AAA191B59250085DF18 /* VnEffectHazelnutPink.m */,
+				58F67AD0191B8ABE0085DF18 /* VnEffectJoyful.h */,
+				58F67AD1191B8ABE0085DF18 /* VnEffectJoyful.m */,
+				58F67AD7191B8C770085DF18 /* VnEffectPinkBubbleTea.h */,
+				58F67AD8191B8C770085DF18 /* VnEffectPinkBubbleTea.m */,
 				5802D1EC1916018E00E258F3 /* VnEffectVelvetColor.h */,
 				5802D1ED1916018E00E258F3 /* VnEffectVelvetColor.m */,
 				58F67A91191B56150085DF18 /* VnEffectWeekend.h */,
@@ -497,18 +546,30 @@
 				58F3F54219150D00003A5A03 /* csmsk.acv */,
 				580434EC19149CC400B84896 /* clbs.acv */,
 				58F3F553191527C4003A5A03 /* cvm.acv */,
+				58F67ADF191B8DA80085DF18 /* cr1.acv */,
 				58F67A9C191B58060085DF18 /* dc3.acv */,
 				58F67A9D191B58060085DF18 /* dc2.acv */,
 				58F67A9E191B58060085DF18 /* dc1.acv */,
 				58F67A8F191B545B0085DF18 /* dv1.acv */,
 				58F67AB6191B5ECF0085DF18 /* fv1.acv */,
 				58F67AB7191B5ECF0085DF18 /* fv2.acv */,
+				58F67AC8191B85F80085DF18 /* gi4.acv */,
+				58F67AC9191B85F80085DF18 /* gi3.acv */,
+				58F67ACA191B85F80085DF18 /* gi2.acv */,
+				58F67ACB191B85F80085DF18 /* gi1.acv */,
+				58F67ABD191B6DF70085DF18 /* gm1.acv */,
+				58F67ABE191B6DF70085DF18 /* gm2.acv */,
+				58F67ABF191B6DF70085DF18 /* gm3.acv */,
+				58F67AC0191B6DF70085DF18 /* gm4.acv */,
 				58F67AAF191B59AA0085DF18 /* Hzl1.acv */,
 				58F67AB0191B59AA0085DF18 /* Hzl2.acv */,
 				58F67AA5191B58F40085DF18 /* hzlp2.acv */,
 				58F67AA6191B58F40085DF18 /* hzlp1.acv */,
+				58F67AD3191B8AC90085DF18 /* jf1.acv */,
+				58F67AD4191B8AC90085DF18 /* jf2.acv */,
 				5802D1F219160BEB00E258F3 /* olbm.acv */,
 				582844861918B1BF008E3AEF /* olbp.acv */,
+				58F67ADA191B8C810085DF18 /* pbt.acv */,
 				58F67A94191B56240085DF18 /* wnd.acv */,
 			);
 			name = Curves;
@@ -1025,18 +1086,30 @@
 				58232A4319168D310001E3CD /* Aller_Bd.ttf in Resources */,
 				58F67A90191B545B0085DF18 /* dv1.acv in Resources */,
 				58232A4419168D310001E3CD /* ClearSans-Bold.ttf in Resources */,
+				58F67AD5191B8AC90085DF18 /* jf1.acv in Resources */,
+				58F67ADB191B8C810085DF18 /* pbt.acv in Resources */,
 				58F67AB8191B5ECF0085DF18 /* fv1.acv in Resources */,
+				58F67ACF191B85F80085DF18 /* gi1.acv in Resources */,
 				580434E319148F6300B84896 /* Localizable.strings in Resources */,
+				58F67AC2191B6DF70085DF18 /* gm2.acv in Resources */,
+				58F67ACD191B85F80085DF18 /* gi3.acv in Resources */,
 				58F67AB2191B59AA0085DF18 /* Hzl2.acv in Resources */,
 				5802D1F319160BEB00E258F3 /* olbm.acv in Resources */,
 				58F67A95191B56240085DF18 /* wnd.acv in Resources */,
 				58F73B22190F942A0056D7D6 /* Main_iPhone.storyboard in Resources */,
 				58232A4519168D310001E3CD /* mplus-1c-bold.ttf in Resources */,
+				58F67ACE191B85F80085DF18 /* gi2.acv in Resources */,
+				58F67AD6191B8AC90085DF18 /* jf2.acv in Resources */,
 				58F67AA1191B58060085DF18 /* dc1.acv in Resources */,
+				58F67ACC191B85F80085DF18 /* gi4.acv in Resources */,
+				58F67AE0191B8DA80085DF18 /* cr1.acv in Resources */,
 				58F67AB9191B5ECF0085DF18 /* fv2.acv in Resources */,
+				58F67AC3191B6DF70085DF18 /* gm3.acv in Resources */,
 				58F67A9F191B58060085DF18 /* dc3.acv in Resources */,
+				58F67AC4191B6DF70085DF18 /* gm4.acv in Resources */,
 				5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */,
 				58F73B19190F942A0056D7D6 /* InfoPlist.strings in Resources */,
+				58F67AC1191B6DF70085DF18 /* gm1.acv in Resources */,
 				58F67AB1191B59AA0085DF18 /* Hzl1.acv in Resources */,
 				582844871918B1BF008E3AEF /* olbp.acv in Resources */,
 				58F3F554191527C4003A5A03 /* cvm.acv in Resources */,
@@ -1077,14 +1150,17 @@
 				5805FD2F1910044C0010C13A /* VnBlendingDifference.m in Sources */,
 				580434F019149D0100B84896 /* VnEffectColorLittleBlueSecret.m in Sources */,
 				5805FD331910044C0010C13A /* VnBlendingDarkerColor.m in Sources */,
+				58F67AD9191B8C770085DF18 /* VnEffectPinkBubbleTea.m in Sources */,
 				584F06561912739C00C3467C /* VnViewProgress.m in Sources */,
 				5802D1E81915F6D200E258F3 /* VnEffectGentleColor.m in Sources */,
+				58F67ADE191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m in Sources */,
 				584F06681912771C00C3467C /* VnViewEditorPhotoPreview.m in Sources */,
 				5805FD78191009AF0010C13A /* VnObjectProcessingQueue.m in Sources */,
 				5805FCF0191003C60010C13A /* VnAdjustmentLayerGradientMap.m in Sources */,
 				5805FCF2191003C60010C13A /* VnAdjustmentLayerColorBalance.m in Sources */,
 				5805FCD9191002690010C13A /* UIView+extend.m in Sources */,
 				58F3F54519150E7D003A5A03 /* VnEffectColorSunnyLight.m in Sources */,
+				58F67ABC191B6DEB0085DF18 /* VnEffectGentleMemories.m in Sources */,
 				5805FD711910098B0010C13A /* VnEditorSliderManager.m in Sources */,
 				58F444FE1914B35400A1E3E7 /* VnEffectColorPurePeach.m in Sources */,
 				5805FD3C191004870010C13A /* VnEffect.m in Sources */,
@@ -1119,6 +1195,7 @@
 				5828447E1918A67C008E3AEF /* VnEffectOverlayHazyLightWarmPink.m in Sources */,
 				58F3F5521915238A003A5A03 /* VnBlendingLuminosity.m in Sources */,
 				5805FCDA191002690010C13A /* UIScrollView+extend.m in Sources */,
+				58F67AD2191B8ABE0085DF18 /* VnEffectJoyful.m in Sources */,
 				5805FCFB191003FF0010C13A /* VnFilterBrightness.m in Sources */,
 				58F3F54F19151F68003A5A03 /* VnEffectColorVintageMatte.m in Sources */,
 				5802D1F1191606E500E258F3 /* VnEffectOverlayLightBrightMatte.m in Sources */,
@@ -1148,6 +1225,7 @@
 				5805FD291910044C0010C13A /* VnBlendingSoftLight.m in Sources */,
 				58F89D3A19129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m in Sources */,
 				58F445011914C30800A1E3E7 /* VnEffectColorPurrr.m in Sources */,
+				58F67AC7191B85E80085DF18 /* VnEffectGirder.m in Sources */,
 				58F73B1B190F942A0056D7D6 /* main.m in Sources */,
 				5805FD66191009760010C13A /* VnCurrentSettings.m in Sources */,
 				5805FD7B191009C10010C13A /* VnObjectEffect.m in Sources */,

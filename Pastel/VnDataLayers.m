@@ -122,6 +122,41 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.name = NSLocalizedString(@"Sienna", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
+    
+    //// Gentle Memories
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdGentleMemories;
+    effect.name = NSLocalizedString(@"Memories", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Girder
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdGirder;
+    effect.name = NSLocalizedString(@"Lime", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Joyful
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdJoyful;
+    effect.name = NSLocalizedString(@"Weekend", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Joyful
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdPinkBubbleTea;
+    effect.name = NSLocalizedString(@"Petunia", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Rusticana
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdCavalleriaRusticana;
+    effect.name = NSLocalizedString(@"Rusticana", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
         
 }
 

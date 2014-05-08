@@ -55,7 +55,7 @@
         [selectiveColor setCyansCyan:0 Magenta:0 Yellow:-1 Black:0];
         [selectiveColor setMagentasCyan:0 Magenta:0 Yellow:100 Black:0];
         [selectiveColor setWhitesCyan:0 Magenta:0 Yellow:-100 Black:0];
-        [selectiveColor setNeutralsCyan:0 Magenta:0 Yellow:-30 Black:0];
+        [selectiveColor setNeutralsCyan:0 Magenta:0 Yellow:-80 Black:0];
         
         [self mergeAndSaveTmpImageWithOverlayFilter:selectiveColor opacity:1.0f blendingMode:VnBlendingModeNormal];
     }
