@@ -67,10 +67,10 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
-    //// Gentle Color
+    //// Rusticana
     effect = [[VnObjectEffect alloc] init];
-    effect.effectId = VnEffectIdGentleColor;
-    effect.name = NSLocalizedString(@"Gentle Color", nil);
+    effect.effectId = VnEffectIdSweetFlower;
+    effect.name = NSLocalizedString(@"Rose", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
@@ -328,6 +328,15 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupOverlays;
     effect.name = NSLocalizedString(@"None", nil);
     effect.previewColor = [UIColor colorWithWhite:1.0f alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Gentle Color
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdGentleColor;
+    effect.name = NSLocalizedString(@"X2", nil);
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(241.0f) blue:s255(227.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
     

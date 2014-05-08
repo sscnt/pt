@@ -135,6 +135,9 @@
     if (effectId == VnEffectIdBlueBerry) {
         return [[VnEffectBlueBerry alloc] init];
     }
+    if (effectId == VnEffectIdSweetFlower) {
+        return [[VnEffectSweetFlower alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {
