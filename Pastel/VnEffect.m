@@ -138,6 +138,9 @@
     if (effectId == VnEffectIdSweetFlower) {
         return [[VnEffectSweetFlower alloc] init];
     }
+    if (effectId == VnEffectIdFruitPop) {
+        return [[VnEffectFruitPop alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {

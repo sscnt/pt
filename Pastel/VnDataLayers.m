@@ -60,17 +60,24 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
-    //// Rusticana
+    //// Blur Berry
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdBlueBerry;
     effect.name = NSLocalizedString(@"Blueberry", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
-    //// Rusticana
+    //// Sweet Flower
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdSweetFlower;
     effect.name = NSLocalizedString(@"Rose", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Fruit Pop
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdFruitPop;
+    effect.name = NSLocalizedString(@"Fruit", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     

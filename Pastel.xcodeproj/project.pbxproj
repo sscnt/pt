@@ -166,6 +166,8 @@
 		58F9B796191BA85A003104E9 /* VnEffectSweetFlower.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F9B795191BA85A003104E9 /* VnEffectSweetFlower.m */; };
 		58F9B798191BA9AB003104E9 /* swfl.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F9B797191BA9AB003104E9 /* swfl.acv */; };
 		58F9B79A191BAABD003104E9 /* swfl2.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F9B799191BAABD003104E9 /* swfl2.acv */; };
+		58F9B79D191BADC4003104E9 /* VnEffectFruitPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F9B79C191BADC4003104E9 /* VnEffectFruitPop.m */; };
+		58F9B79F191BBDE0003104E9 /* frpp.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F9B79E191BBDE0003104E9 /* frpp.acv */; };
 		58FA6A3D191A22B7007AD815 /* VnEffectBeachVintage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */; };
 /* End PBXBuildFile section */
 
@@ -460,6 +462,9 @@
 		58F9B795191BA85A003104E9 /* VnEffectSweetFlower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectSweetFlower.m; sourceTree = "<group>"; };
 		58F9B797191BA9AB003104E9 /* swfl.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = swfl.acv; sourceTree = "<group>"; };
 		58F9B799191BAABD003104E9 /* swfl2.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = swfl2.acv; sourceTree = "<group>"; };
+		58F9B79B191BADC4003104E9 /* VnEffectFruitPop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectFruitPop.h; sourceTree = "<group>"; };
+		58F9B79C191BADC4003104E9 /* VnEffectFruitPop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectFruitPop.m; sourceTree = "<group>"; };
+		58F9B79E191BBDE0003104E9 /* frpp.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = frpp.acv; sourceTree = "<group>"; };
 		58FA6A3B191A22B7007AD815 /* VnEffectBeachVintage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectBeachVintage.h; sourceTree = "<group>"; };
 		58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectBeachVintage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -510,6 +515,8 @@
 				58F67A8A191B54500085DF18 /* VnEffectDreamyVintage.m */,
 				58F67AB3191B5EC10085DF18 /* VnEffectFaerieVintage.h */,
 				58F67AB4191B5EC10085DF18 /* VnEffectFaerieVintage.m */,
+				58F9B79B191BADC4003104E9 /* VnEffectFruitPop.h */,
+				58F9B79C191BADC4003104E9 /* VnEffectFruitPop.m */,
 				5802D1E61915F6D200E258F3 /* VnEffectGentleColor.h */,
 				5802D1E71915F6D200E258F3 /* VnEffectGentleColor.m */,
 				58F67ABA191B6DEB0085DF18 /* VnEffectGentleMemories.h */,
@@ -570,6 +577,7 @@
 				58F67A8F191B545B0085DF18 /* dv1.acv */,
 				58F67AB6191B5ECF0085DF18 /* fv1.acv */,
 				58F67AB7191B5ECF0085DF18 /* fv2.acv */,
+				58F9B79E191BBDE0003104E9 /* frpp.acv */,
 				58F67AC8191B85F80085DF18 /* gi4.acv */,
 				58F67AC9191B85F80085DF18 /* gi3.acv */,
 				58F67ACA191B85F80085DF18 /* gi2.acv */,
@@ -1135,6 +1143,7 @@
 				582844871918B1BF008E3AEF /* olbp.acv in Resources */,
 				58F9B793191BA388003104E9 /* blbry.acv in Resources */,
 				58F3F554191527C4003A5A03 /* cvm.acv in Resources */,
+				58F9B79F191BBDE0003104E9 /* frpp.acv in Resources */,
 				58F67AA0191B58060085DF18 /* dc2.acv in Resources */,
 				5805FCC0190FFFED0010C13A /* Default-Landscape.png in Resources */,
 			);
@@ -1214,6 +1223,7 @@
 				58F67A93191B56150085DF18 /* VnEffectWeekend.m in Sources */,
 				5805FD67191009760010C13A /* VnDataLayers.m in Sources */,
 				58F67AAE191B59A00085DF18 /* VnEffectHazelnut.m in Sources */,
+				58F9B79D191BADC4003104E9 /* VnEffectFruitPop.m in Sources */,
 				5828447E1918A67C008E3AEF /* VnEffectOverlayHazyLightWarmPink.m in Sources */,
 				58F3F5521915238A003A5A03 /* VnBlendingLuminosity.m in Sources */,
 				5805FCDA191002690010C13A /* UIScrollView+extend.m in Sources */,
