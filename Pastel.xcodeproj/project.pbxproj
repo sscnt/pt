@@ -161,6 +161,8 @@
 		58F73B3B190F942A0056D7D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F73B39190F942A0056D7D6 /* InfoPlist.strings */; };
 		58F73B3D190F942A0056D7D6 /* PastelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F73B3C190F942A0056D7D6 /* PastelTests.m */; };
 		58F89D3A19129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */; };
+		58F9B78E191BA23A003104E9 /* VnEffectBlueBerry.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F9B78D191BA23A003104E9 /* VnEffectBlueBerry.m */; };
+		58F9B793191BA388003104E9 /* blbry.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F9B792191BA388003104E9 /* blbry.acv */; };
 		58FA6A3D191A22B7007AD815 /* VnEffectBeachVintage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */; };
 /* End PBXBuildFile section */
 
@@ -448,6 +450,9 @@
 		58F73B3C190F942A0056D7D6 /* PastelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PastelTests.m; sourceTree = "<group>"; };
 		58F89D3819129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBarButtonMaskView.h; sourceTree = "<group>"; };
 		58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBarButtonMaskView.m; sourceTree = "<group>"; };
+		58F9B78C191BA23A003104E9 /* VnEffectBlueBerry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectBlueBerry.h; sourceTree = "<group>"; };
+		58F9B78D191BA23A003104E9 /* VnEffectBlueBerry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectBlueBerry.m; sourceTree = "<group>"; };
+		58F9B792191BA388003104E9 /* blbry.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = blbry.acv; sourceTree = "<group>"; };
 		58FA6A3B191A22B7007AD815 /* VnEffectBeachVintage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectBeachVintage.h; sourceTree = "<group>"; };
 		58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectBeachVintage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -488,6 +493,8 @@
 			children = (
 				58FA6A3B191A22B7007AD815 /* VnEffectBeachVintage.h */,
 				58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */,
+				58F9B78C191BA23A003104E9 /* VnEffectBlueBerry.h */,
+				58F9B78D191BA23A003104E9 /* VnEffectBlueBerry.m */,
 				58F67ADC191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.h */,
 				58F67ADD191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m */,
 				58F67A99191B57FC0085DF18 /* VnEffectDreamyCreamy.h */,
@@ -542,6 +549,7 @@
 		580434EB19149CA800B84896 /* Curves */ = {
 			isa = PBXGroup;
 			children = (
+				58F9B792191BA388003104E9 /* blbry.acv */,
 				58F444F81914ACBD00A1E3E7 /* cpt.acv */,
 				58F3F54219150D00003A5A03 /* csmsk.acv */,
 				580434EC19149CC400B84896 /* clbs.acv */,
@@ -1112,6 +1120,7 @@
 				58F67AC1191B6DF70085DF18 /* gm1.acv in Resources */,
 				58F67AB1191B59AA0085DF18 /* Hzl1.acv in Resources */,
 				582844871918B1BF008E3AEF /* olbp.acv in Resources */,
+				58F9B793191BA388003104E9 /* blbry.acv in Resources */,
 				58F3F554191527C4003A5A03 /* cvm.acv in Resources */,
 				58F67AA0191B58060085DF18 /* dc2.acv in Resources */,
 				5805FCC0190FFFED0010C13A /* Default-Landscape.png in Resources */,
@@ -1212,6 +1221,7 @@
 				58F3F557191528A1003A5A03 /* VnEffectColorWarmHaze.m in Sources */,
 				5802D1EE1916018E00E258F3 /* VnEffectVelvetColor.m in Sources */,
 				5805FCC7191002350010C13A /* VnViewControllerHome.m in Sources */,
+				58F9B78E191BA23A003104E9 /* VnEffectBlueBerry.m in Sources */,
 				580434F31914A15100B84896 /* VnEffectColorOphelia.m in Sources */,
 				580434E91914985E00B84896 /* VnEffectColorBronze.m in Sources */,
 				58F73B1F190F942A0056D7D6 /* AppDelegate.m in Sources */,

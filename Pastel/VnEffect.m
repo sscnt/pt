@@ -132,6 +132,9 @@
     if (effectId == VnEffectIdCavalleriaRusticana) {
         return [[VnEffectCavalleriaRusticana alloc] init];
     }
+    if (effectId == VnEffectIdBlueBerry) {
+        return [[VnEffectBlueBerry alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {

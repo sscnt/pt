@@ -44,8 +44,8 @@
     VnObjectProcessingQueue* queue = [VnProcessingQueueManager shiftEffectQueue];
     [VnProcessingQueueManager addQueue:queue];
     
-    //UIImage* image = [VnProcessor applyEffect:VnEffectIdFaerieVintage ToImage:[VnCurrentImage originalImage]];
-    //UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    UIImage* image = [VnProcessor applyEffect:VnEffectIdBlueBerry ToImage:[VnCurrentImage originalImage]];
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 
 #pragma mark view delegate

@@ -60,6 +60,13 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
+    //// Rusticana
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdBlueBerry;
+    effect.name = NSLocalizedString(@"Blueberry", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
     //// Gentle Color
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdGentleColor;
