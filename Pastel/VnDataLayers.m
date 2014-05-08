@@ -67,6 +67,13 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
+    //// Hazelnut
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdHazelnut;
+    effect.name = NSLocalizedString(@"Almond", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
     //// Beach Vintage
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdBeachVintage;
@@ -77,7 +84,42 @@ static VnDataLayers* sharedVnDataEffects = nil;
     //// Velvet Color
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdVelvetColor;
-    effect.name = NSLocalizedString(@"Velvet Color", nil);
+    effect.name = NSLocalizedString(@"Veludo", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Dreamy Vintage
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdDreamyVintage;
+    effect.name = NSLocalizedString(@"Vintage", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Weekend
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdWeekend;
+    effect.name = NSLocalizedString(@"Evening", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Dreamy Creamy
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdDreamyCreamy;
+    effect.name = NSLocalizedString(@"Crepe", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Hazelnut Pink
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdHazelnutPink;
+    effect.name = NSLocalizedString(@"Coral", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Faerie Vintage
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdFaerieVintage;
+    effect.name = NSLocalizedString(@"Sienna", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
         

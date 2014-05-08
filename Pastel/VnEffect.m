@@ -99,6 +99,24 @@
     if (effectId == VnEffectIdBeachVintage) {
         effect = [[VnEffectBeachVintage alloc] init];
     }
+    if (effectId == VnEffectIdDreamyVintage) {
+        effect = [[VnEffectDreamyVintage alloc] init];
+    }
+    if (effectId == VnEffectIdWeekend) {
+        effect = [[VnEffectWeekend alloc] init];
+    }
+    if (effectId == VnEffectIdDreamyCreamy) {
+        effect = [[VnEffectDreamyCreamy alloc] init];
+    }
+    if (effectId == VnEffectIdHazelnut) {
+        effect = [[VnEffectHazelnut alloc] init];
+    }
+    if (effectId == VnEffectIdHazelnutPink) {
+        effect = [[VnEffectHazelnutPink alloc] init];
+    }
+    if (effectId == VnEffectIdFaerieVintage) {
+        effect = [[VnEffectFaerieVintage alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {
