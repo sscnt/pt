@@ -141,6 +141,18 @@
     if (effectId == VnEffectIdFruitPop) {
         return [[VnEffectFruitPop alloc] init];
     }
+    if (effectId == VnEffectIdDonut) {
+        return [[VnEffectDonut alloc] init];
+    }
+    if (effectId == VnEffectIdGreenApple) {
+        return [[VnEffectGreenApple alloc] init];
+    }
+    if (effectId == VnEffectIdBluishRose) {
+        return [[VnEffectBluishRose alloc] init];
+    }
+    if (effectId == VnEffectIdPurpleBerry) {
+        return [[VnEffectPurpleBerry alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {

@@ -67,6 +67,13 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
+    //// Donut
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdDonut;
+    effect.name = NSLocalizedString(@"Donut", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
     //// Sweet Flower
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdSweetFlower;
@@ -74,10 +81,31 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
+    //// Bluish Rose
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdBluishRose;
+    effect.name = NSLocalizedString(@"Tulip", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
     //// Fruit Pop
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdFruitPop;
-    effect.name = NSLocalizedString(@"Fruit", nil);
+    effect.name = NSLocalizedString(@"Pop", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Purple Berry
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdPurpleBerry;
+    effect.name = NSLocalizedString(@"Grape", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Green Apple
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdGreenApple;
+    effect.name = NSLocalizedString(@"Kiwi", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     

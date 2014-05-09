@@ -44,7 +44,7 @@
     VnObjectProcessingQueue* queue = [VnProcessingQueueManager shiftEffectQueue];
     [VnProcessingQueueManager addQueue:queue];
     
-    UIImage* image = [VnProcessor applyEffect:VnEffectIdFruitPop ToImage:[VnCurrentImage originalImage]];
+    UIImage* image = [VnProcessor applyEffect:VnEffectIdPurpleBerry ToImage:[VnCurrentImage originalImage]];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 

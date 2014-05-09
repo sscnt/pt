@@ -379,6 +379,7 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (void)clean
 {
+    [self cleanCache];
     [self deleteOriginalPreviewImage];
     [self deleteOriginalImage];
     [self deleteLastSavedImage];
