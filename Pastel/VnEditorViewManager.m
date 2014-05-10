@@ -396,6 +396,21 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     return [self currentSelectedLayerButtonOverlay].effectId;
 }
 
++ (int)numberOfSelectedLayers
+{
+    int n = 0;
+    if ([self currentSelectedColorLayerEffectId] != VnEffectIdColorNone) {
+        n++;
+    }
+    if ([self currentSelectedEffectLayerEffectId] != VnEffectIdNone) {
+        n++;
+    }
+    if ([self currentSelectedOverlayLayerEffectId] != VnEffectIdOverlayNone) {
+        n++;
+    }
+    return n;
+}
+
 + (void)clean
 {
     [[self instance] clean];

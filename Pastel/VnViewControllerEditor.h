@@ -12,5 +12,6 @@
 @interface VnViewControllerEditor : UIViewController <VnProcessingQueueManagerDelegate, VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate>
 
 - (void)didFinishResizing;
+- (void)shuffle;
 
 @end

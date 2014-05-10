@@ -101,15 +101,18 @@
     });
 }
 
-#pragma  mark delegate
-
-- (void)didToolBarButtonTouchUpInside:(VnViewEditorToolBarButton *)button
+- (void)shuffle
 {
-    button.selected = YES;
+    
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm lock];
     [vm showBlureedPreviewImage];
     [vm showPreviewProgressView];
+    
+    VnEditorSliderManager* sm = [VnEditorSliderManager instance];
+    sm.didUserModifiedEffect = NO;
+    sm.didUserModifiedColor = NO;
+    sm.didUserModifiedOverlay = NO;
     
     VnObjectEffect* effect;
     float opacity;
@@ -147,9 +150,40 @@
         [VnEditorSliderManager setOverlayOpacity:opacity];
     }
     
+    int n = [VnEditorViewManager numberOfSelectedLayers];
+    float op = 1.0f;
+    switch (n) {
+        case 2:
+            op = 0.9f;
+            break;
+        case 3:
+            op = 0.70f;
+            break;
+    }
+    
+    sm.colorOpacity *= op;
+    sm.effectOpacity *= op;
+    sm.overlayOpacity *= op;
+    
     VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
     queue.type = VnObjectProcessingQueueTypePreview;
     [VnProcessingQueueManager addQueue:queue];
+
+}
+
+#pragma  mark delegate
+
+- (void)didToolBarButtonTouchUpInside:(VnViewEditorToolBarButton *)button
+{
+    button.selected = YES;
+    switch (button.type) {
+        case VnViewEditorToolBarButtonTypeSlider:
+            ;
+            break;
+        case VnViewEditorToolBarButtonTypeShuffle:
+            [self shuffle];
+            break;
+    }
 }
 
 - (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton *)button
@@ -160,20 +194,37 @@
     [vm showBlureedPreviewImage];
     [vm showPreviewProgressView];
     
+    VnEditorSliderManager* sm = [VnEditorSliderManager instance];
+    
+    int n = [VnEditorViewManager numberOfSelectedLayers];
+    float op = 1.0f;
+    switch (n) {
+        case 2:
+            op = 0.9f;
+            break;
+        case 3:
+            op = 0.70f;
+            break;
+    }
+    
     float opacity = [VnEffect defalutOpacityByEffectId:button.effectId];
     if ([VnCurrentImage faceDetected]) {
         opacity  = [VnEffect faceOpacityByEffectId:button.effectId];
     }
+    opacity *= op;
     
     switch (button.group) {
         case VnEffectGroupColor:
             [VnEditorSliderManager setColorOpacity:opacity];
+            sm.didUserModifiedColor = YES;
             break;
         case VnEffectGroupEffects:
             [VnEditorSliderManager setEffectOpacity:opacity];
+            sm.didUserModifiedEffect = YES;
             break;
         case VnEffectGroupOverlays:
             [VnEditorSliderManager setOverlayOpacity:opacity];
+            sm.didUserModifiedOverlay = YES;
             break;
         default:
             break;

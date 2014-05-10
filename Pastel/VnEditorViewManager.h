@@ -81,4 +81,6 @@
 + (VnEffectId)currentSelectedOverlayLayerEffectId;
 - (VnEffectId)currentSelectedOverlayLayerEffectId;
 
++ (int)numberOfSelectedLayers;
+
 @end

@@ -13,6 +13,9 @@
 @property (nonatomic, assign) float colorOpacity;
 @property (nonatomic, assign) float effectOpacity;
 @property (nonatomic, assign) float overlayOpacity;
+@property (nonatomic, assign) BOOL didUserModifiedColor;
+@property (nonatomic, assign) BOOL didUserModifiedEffect;
+@property (nonatomic, assign) BOOL didUserModifiedOverlay;
 
 + (VnEditorSliderManager*)instance;
 
