@@ -29,7 +29,7 @@
     return self;
 }
 
-- (void)appendButton:(VnViewEditorLayerBarButton *)button
+- (void)appendLayerButton:(VnViewEditorLayerBarButton *)button
 {
     if (!button) {
         return;

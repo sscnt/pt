@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger, VnCurrentSettingsWorkspaceOrientation){
 + (float)previewProgressRadius;
 + (float)thumbnailProgressRadius;
 
++ (CGSize)toolBarButtonSize;
 + (CGSize)colorLayerButtonSize;
 + (CGSize)effectLayerButtonSize;
 + (CGSize)overlayLayerButtonSize;
@@ -26,6 +27,7 @@ typedef NS_ENUM(NSInteger, VnCurrentSettingsWorkspaceOrientation){
 + (float)effectLayerButtonMaskRadius;
 + (float)overlayLayerButtonMaskRadius;
 
++ (float)toolBarHeight;
 + (float)colorBarHeight;
 + (float)effectsBarHeight;
 + (float)overlayBarHeight;
@@ -34,6 +36,9 @@ typedef NS_ENUM(NSInteger, VnCurrentSettingsWorkspaceOrientation){
 + (UIColor*)homeBgColor;
 + (UIColor*)homeSourceButtonColor;
 
++ (UIColor*)editorBgColor;
+
++ (UIColor*)toolBarBgColor;
 + (UIColor*)colorBarBgColor;
 + (UIColor*)effectsBarBgColor;
 + (UIColor*)overlayBarBgColor;

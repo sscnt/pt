@@ -90,7 +90,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 - (void)layout
 {
-    self.view.backgroundColor = [UIColor colorWithRed:s255(37.0f) green:s255(37.0f) blue:s255(37.0f) alpha:1.0f];
+    self.view.backgroundColor = [VnCurrentSettings editorBgColor];
     [self layoutLayerBars];
     [self layoutLayerButtons];
     [self layoutPreview];
@@ -112,6 +112,11 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _overlayBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings overlayBarHeight])];
     _overlayBar.backgroundColor = [VnCurrentSettings overlayBarBgColor];
     [self.view addSubview:_overlayBar];
+    
+    y = _overlayBar.frame.origin.y - [VnCurrentSettings toolBarHeight];
+    _toolBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings toolBarHeight])];
+    _toolBar.backgroundColor = [VnCurrentSettings toolBarBgColor];
+    [self.view addSubview:_toolBar];
 }
 
 - (void)layoutPreview
@@ -147,7 +152,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.selectionColor = effect.selectionColor;
             button.group = effect.effectGroup;
             button.effectId = effect.effectId;
-            [_colorBar appendButton:button];
+            [_colorBar appendLayerButton:button];
             [_colorLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
     }
@@ -168,7 +173,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.delegate = self.delegate;
             button.effectId = effect.effectId;
             button.group = effect.effectGroup;
-            [_effectBar appendButton:button];
+            [_effectBar appendLayerButton:button];
             [_effectLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
 
@@ -190,7 +195,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.selectionColor = effect.selectionColor;
             button.group = effect.effectGroup;
             button.effectId = effect.effectId;
-            [_overlayBar appendButton:button];
+            [_overlayBar appendLayerButton:button];
             [_overlayLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
     }

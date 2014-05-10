@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VnViewEditorLayerBarButton.h"
+#import "VnViewEditorToolBarButton.h"
 
 @interface VnViewEditorLayerBar : UIView
 {
@@ -17,6 +18,7 @@
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentOpeningButton;
 @property (nonatomic, assign) BOOL locked;
 
-- (void)appendButton:(VnViewEditorLayerBarButton*)button;
+- (void)appendLayerButton:(VnViewEditorLayerBarButton*)button;
+- (void)appendToolButton:(VnViewEditorToolBarButton*)button;
 
 @end

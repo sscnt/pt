@@ -46,6 +46,16 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 
 #pragma mark bar
 
++ (float)toolBarHeight
+{
+    return 44.0f;
+}
+
++ (CGSize)toolBarButtonSize
+{
+    return CGSizeMake(54.0f, [self toolBarHeight]);
+}
+
 + (float)colorBarHeight
 {
     return 50.0f;
@@ -98,6 +108,11 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 
 #pragma mark bar color
 
++ (UIColor *)toolBarBgColor
+{
+    return [self editorBgColor];
+}
+
 + (UIColor *)colorBarBgColor
 {
     return [UIColor colorWithRed:s255(37.0f) green:s255(37.0f) blue:s255(37.0f) alpha:1.0f];
@@ -126,6 +141,11 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 }
 
 #pragma mark color
+
++ (UIColor *)editorBgColor
+{
+    return [UIColor colorWithRed:s255(37.0f) green:s255(37.0f) blue:s255(37.0f) alpha:1.0f];
+}
 
 + (UIColor *)homeBgColor
 {

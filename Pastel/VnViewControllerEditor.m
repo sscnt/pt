@@ -33,7 +33,7 @@
 
 - (void)didFinishResizing
 {
-    LOG(@"%d filters.", [VnDataLayers colorCount] * [VnDataLayers effectsCount] * [VnDataLayers overlaysCount]);
+    LOG(@"%d filters.", ([VnDataLayers colorCount] + 1) * ([VnDataLayers effectsCount] + 1) * ([VnDataLayers overlaysCount] + 1) - 1);
     
     [VnEditorViewManager setResizingProgress:1.0f];
     VnEditorViewManager* vm = [VnEditorViewManager instance];

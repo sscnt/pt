@@ -10,6 +10,7 @@
 #import "VnEditorSliderManager.h"
 #import "VnViewEditorLayerBar.h"
 #import "VnViewEditorLayerBarButton.h"
+#import "VnViewEditorToolBarButton.h"
 #import "VnViewEditorPhotoPreview.h"
 #import "VnViewProgress.h"
 
@@ -21,6 +22,7 @@
 
 @property (nonatomic, weak) id<VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate> delegate;
 @property (nonatomic, weak) UIView* view;
+@property (nonatomic, strong) VnViewEditorLayerBar* toolBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* colorBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* effectBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* overlayBar;
@@ -51,6 +53,7 @@
 - (void)layout;
 - (void)layoutLayerBars;
 - (void)layoutLayerButtons;
+- (void)layoutToolButtons;
 - (void)layoutPreview;
 
 + (void)setResizingProgress:(float)value;
