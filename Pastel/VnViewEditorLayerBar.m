@@ -55,6 +55,24 @@
     }
 }
 
+- (void)scrollToLayerButton:(VnViewEditorLayerBarButton *)button
+{
+    CGPoint cp = _view.contentOffset;
+    float bx = button.frame.origin.x;
+    float wx = bx + button.frame.size.width;
+    float cx = _view.contentOffset.x;
+    
+    if (bx < cx) {
+        [_view setContentOffset:CGPointMake(bx, cp.y) animated:YES];
+    }else{
+        float lx = _view.contentOffset.x + _view.frame.size.width;
+        if (wx > lx) {
+            [_view setContentOffset:CGPointMake(cp.x + (wx - lx), cp.y) animated:YES];
+        }
+    }
+    
+}
+
 - (void)setLocked:(BOOL)locked
 {
     _locked = locked;

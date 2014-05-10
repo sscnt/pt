@@ -329,6 +329,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
                 self.currentSelectedLayerButtonColor.selected = NO;
             }
             button.selected = YES;
+            [_colorBar scrollToLayerButton:button];
             self.currentSelectedLayerButtonColor = button;
             [VnCurrentImage deleteProcessedColorPreviewImage];
             [VnCurrentImage deleteProcessedEffectPreviewImage];
@@ -341,6 +342,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
                 self.currentSelectedLayerButtonEffect.selected = NO;
             }
             button.selected = YES;
+            [_effectBar scrollToLayerButton:button];
             self.currentSelectedLayerButtonEffect = button;
             [VnCurrentImage deleteProcessedEffectPreviewImage];
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
@@ -352,6 +354,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
                 self.currentSelectedLayerButtonOverlay.selected = NO;
             }
             button.selected = YES;
+            [_overlayBar scrollToLayerButton:button];
             self.currentSelectedLayerButtonOverlay = button;
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
         }

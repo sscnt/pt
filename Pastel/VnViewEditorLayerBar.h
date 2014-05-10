@@ -21,4 +21,6 @@
 - (void)appendLayerButton:(VnViewEditorLayerBarButton*)button;
 - (void)appendToolButton:(VnViewEditorToolBarButton*)button;
 
+- (void)scrollToLayerButton:(VnViewEditorLayerBarButton*)button;
+
 @end
