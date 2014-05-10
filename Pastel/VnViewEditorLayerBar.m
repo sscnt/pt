@@ -42,6 +42,19 @@
     }
 }
 
+- (void)appendToolButton:(VnViewEditorToolBarButton *)button
+{
+    if (!button) {
+        return;
+    }
+    [button setX:_right];
+    [self.view addSubview:button];
+    _right = [button right];
+    if (_right > self.view.contentSize.width) {
+        _view.contentSize = CGSizeMake(_right, self.view.contentSize.height);
+    }
+}
+
 - (void)setLocked:(BOOL)locked
 {
     _locked = locked;

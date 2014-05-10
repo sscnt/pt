@@ -101,6 +101,57 @@
     });
 }
 
+#pragma  mark delegate
+
+- (void)didToolBarButtonTouchUpInside:(VnViewEditorToolBarButton *)button
+{
+    button.selected = YES;
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
+    [vm lock];
+    [vm showBlureedPreviewImage];
+    [vm showPreviewProgressView];
+    
+    VnObjectEffect* effect;
+    float opacity;
+    
+    //// Color
+    effect = [VnDataLayers colorRandom];
+    if (effect) {
+        [vm selectLayerButtonWithEffectId:effect.effectId];
+        opacity = [VnEffect defalutOpacityByEffectId:effect.effectId];
+        if ([VnCurrentImage faceDetected]) {
+            opacity  = [VnEffect faceOpacityByEffectId:effect.effectId];
+        }
+        [VnEditorSliderManager setColorOpacity:opacity];
+    }
+    
+    //// Effect
+    effect = [VnDataLayers effectRandom];
+    if (effect) {
+        [vm selectLayerButtonWithEffectId:effect.effectId];
+        opacity = [VnEffect defalutOpacityByEffectId:effect.effectId];
+        if ([VnCurrentImage faceDetected]) {
+            opacity  = [VnEffect faceOpacityByEffectId:effect.effectId];
+        }
+        [VnEditorSliderManager setEffectOpacity:opacity];
+    }
+    
+    //// Overlay
+    effect = [VnDataLayers overlayRandom];
+    if (effect) {
+        [vm selectLayerButtonWithEffectId:effect.effectId];
+        opacity = [VnEffect defalutOpacityByEffectId:effect.effectId];
+        if ([VnCurrentImage faceDetected]) {
+            opacity  = [VnEffect faceOpacityByEffectId:effect.effectId];
+        }
+        [VnEditorSliderManager setOverlayOpacity:opacity];
+    }
+    
+    VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
+    queue.type = VnObjectProcessingQueueTypePreview;
+    [VnProcessingQueueManager addQueue:queue];
+}
+
 - (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton *)button
 {
     VnEditorViewManager* vm = [VnEditorViewManager instance];

@@ -20,7 +20,7 @@
 
 @interface VnEditorViewManager : NSObject
 
-@property (nonatomic, weak) id<VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate> delegate;
+@property (nonatomic, weak) id<VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate> delegate;
 @property (nonatomic, weak) UIView* view;
 @property (nonatomic, strong) VnViewEditorLayerBar* toolBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* colorBar;

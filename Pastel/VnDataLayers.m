@@ -516,6 +516,8 @@ static VnDataLayers* sharedVnDataEffects = nil;
     return (int)[[self instance].overlaysList count];
 }
 
+#pragma mark getter
+
 + (VnObjectEffect *)effectAtIndex:(int)index
 {
     if (index < [VnDataLayers effectsCount]) {
@@ -523,6 +525,13 @@ static VnDataLayers* sharedVnDataEffects = nil;
     }
     return nil;
 }
+
++ (VnObjectEffect *)effectRandom
+{
+    int index = arc4random_uniform([self effectsCount]);
+    return [self effectAtIndex:index];
+}
+
 + (VnObjectEffect *)colorAtIndex:(int)index
 {
     if (index < [VnDataLayers colorCount]) {
@@ -530,12 +539,25 @@ static VnDataLayers* sharedVnDataEffects = nil;
     }
     return nil;
 }
+
++ (VnObjectEffect *)colorRandom
+{
+    int index = arc4random_uniform([self colorCount]);
+    return [self colorAtIndex:index];
+}
+
 + (VnObjectEffect *)overlayAtIndex:(int)index
 {
     if (index < [VnDataLayers overlaysCount]) {
         return (VnObjectEffect*)[[VnDataLayers instance].overlaysList objectAtIndex:index];
     }
     return nil;
+}
+
++ (VnObjectEffect *)overlayRandom
+{
+    int index = arc4random_uniform([self overlaysCount]);
+    return [self overlayAtIndex:index];
 }
 
 @end

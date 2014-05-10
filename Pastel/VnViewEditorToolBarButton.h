@@ -21,6 +21,9 @@ typedef NS_ENUM(NSInteger, VnViewEditorToolBarButtonType){
 
 @interface VnViewEditorToolBarButton : UIButton
 
+@property (nonatomic, weak) id<VnViewEditorToolBarButtonDelegate> delegate;
 @property (nonatomic, assign) VnViewEditorToolBarButtonType type;
+
+- (void)didTouchUpInside:(VnViewEditorToolBarButton*)sender;
 
 @end

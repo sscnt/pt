@@ -65,7 +65,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 + (CGRect)previewBounds
 {
-    float height = [UIScreen height] - [VnCurrentSettings topBarHeight] - [VnCurrentSettings colorBarHeight] - [VnCurrentSettings effectsBarHeight] - [VnCurrentSettings overlayBarHeight];
+    float height = [UIScreen height] - [VnCurrentSettings topBarHeight] - [VnCurrentSettings toolBarHeight] - [VnCurrentSettings colorBarHeight] - [VnCurrentSettings effectsBarHeight] - [VnCurrentSettings overlayBarHeight];
     CGRect bounds = CGRectMake(0.0f, 0.0f, [UIScreen width], height);
     return bounds;
 }
@@ -93,6 +93,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     self.view.backgroundColor = [VnCurrentSettings editorBgColor];
     [self layoutLayerBars];
     [self layoutLayerButtons];
+    [self layoutToolButtons];
     [self layoutPreview];
 }
 
@@ -130,6 +131,18 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _resizingProgressView = [[VnViewProgress alloc] initWithFrame:[VnEditorViewManager previewBounds] Radius:[VnCurrentSettings previewProgressRadius]];
     [_resizingProgressView setY:[VnCurrentSettings topBarHeight]];
     [self.view addSubview:_resizingProgressView];
+}
+
+- (void)layoutToolButtons
+{
+    VnViewEditorToolBarButton* button;
+    CGRect frame = CGRectMake(0.0f, 0.0f, [VnCurrentSettings toolBarButtonSize].width, [VnCurrentSettings toolBarButtonSize].height);
+    
+    //// Shuffle
+    button = [[VnViewEditorToolBarButton alloc] initWithFrame:frame];
+    button.type = VnViewEditorToolBarButtonTypeShuffle;
+    button.delegate = self.delegate;
+    [_toolBar appendToolButton:button];
 }
 
 - (void)layoutLayerButtons

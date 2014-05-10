@@ -22,6 +22,10 @@
 + (int)overlaysCount;
 + (VnObjectEffect*)overlayAtIndex:(int)index;
 
++ (VnObjectEffect*)effectRandom;
++ (VnObjectEffect*)colorRandom;
++ (VnObjectEffect*)overlayRandom;
+
 - (void)initColorList;
 - (void)initEffectsList;
 - (void)initOverlayList;
