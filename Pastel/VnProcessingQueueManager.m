@@ -135,8 +135,10 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.colorOpacity != 1.0f) {
-            UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage originalPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.colorOpacity blendingMode:VnBlendingModeNormal];
-            [VnCurrentImage saveProcessedColorPreviewImage:image];
+            @autoreleasepool {
+                UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage originalPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.colorOpacity blendingMode:VnBlendingModeNormal];
+                [VnCurrentImage saveProcessedColorPreviewImage:image];
+            }
         }else{
             [VnCurrentImage saveProcessedColorPreviewImage:[VnCurrentImage tmpImage]];
         }
@@ -148,8 +150,10 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.effectOpacity != 1.0f) {
-            UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedColorPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.effectOpacity blendingMode:VnBlendingModeNormal];
-            [VnCurrentImage saveProcessedEffectPreviewImage:image];
+            @autoreleasepool {
+                UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedColorPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.effectOpacity blendingMode:VnBlendingModeNormal];
+                [VnCurrentImage saveProcessedEffectPreviewImage:image];
+            }
         }else{
             [VnCurrentImage saveProcessedEffectPreviewImage:[VnCurrentImage tmpImage]];
         }
@@ -161,8 +165,10 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.overlayOpacity != 1.0f) {
-            UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedEffectPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.overlayOpacity blendingMode:VnBlendingModeNormal];
-            [VnCurrentImage saveProcessedOverlayPreviewImage:image];
+            @autoreleasepool {
+                UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedEffectPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.overlayOpacity blendingMode:VnBlendingModeNormal];
+                [VnCurrentImage saveProcessedOverlayPreviewImage:image];
+            }
         }else{
             [VnCurrentImage saveProcessedOverlayPreviewImage:[VnCurrentImage tmpImage]];
         }
@@ -179,6 +185,7 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
         filter.blurRadiusInPixels = 10.0f;
         UIImage* image = [VnProcessor mergeBaseImage:queue.image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
         [VnCurrentImage saveBlurredPreviewImage:image];
+        image = nil;
     }
     [self.delegate dispatchPreviewprogress:1.0f];
 }

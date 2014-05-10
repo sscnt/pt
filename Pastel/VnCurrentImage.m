@@ -141,11 +141,15 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     if ([self instance].forceSkipCache) {
         BOOL success = [self writeImage:image AtPath:path];
         if (success) {
-            LOG(@"Saved adn byebye: %@", path);
+            //LOG(@"Saved adn byebye: %@", path);
             [[self instance].cache removeObjectForKey:[NSString stringWithFormat:@"%@", path]];            
         }
+        return YES;
     }
-    [[self instance].cache setObject:image forKey:[NSString stringWithFormat:@"%@", path]];
+    if (image) {
+        [[self instance].cache removeObjectForKey:[NSString stringWithFormat:@"%@", path]];
+        [[self instance].cache setObject:image forKey:[NSString stringWithFormat:@"%@", path]];
+    }
     return YES;
 }
 
@@ -153,7 +157,9 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 {
     NSData *imageData = UIImagePNGRepresentation(image);
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
-    return [imageData writeToFile:filePath atomically:YES];
+    BOOL success = [imageData writeToFile:filePath atomically:YES];
+    imageData = nil;
+    return success;
 }
 
 + (BOOL)saveOriginalImage:(UIImage*)image
@@ -198,17 +204,20 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (BOOL)saveProcessedColorPreviewImage:(UIImage *)image
 {
-    return [self saveImage:image AtPath:pathForProcessedColorPreviewImage];
+    return [self writeImage:image AtPath:pathForProcessedColorPreviewImage];
+    //return [self saveImage:image AtPath:pathForProcessedColorPreviewImage];
 }
 
 + (BOOL)saveProcessedEffectPreviewImage:(UIImage *)image
 {
-    return [self saveImage:image AtPath:pathForProcessedEffectPreviewImage];
+    return [self writeImage:image AtPath:pathForProcessedEffectPreviewImage];
+    //return [self saveImage:image AtPath:pathForProcessedEffectPreviewImage];
 }
 
 + (BOOL)saveProcessedOverlayPreviewImage:(UIImage *)image
 {
-    return [self saveImage:image AtPath:pathForProcessedOverlayPreviewImage];
+    return [self writeImage:image AtPath:pathForProcessedOverlayPreviewImage];
+    //return [self saveImage:image AtPath:pathForProcessedOverlayPreviewImage];
 }
 
 + (CGSize)originalImageSize
