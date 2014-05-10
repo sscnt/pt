@@ -15,6 +15,7 @@
 @property (nonatomic, assign) CGSize tmpImage2Size;
 @property (nonatomic, assign) BOOL faceDetected;
 @property (nonatomic, strong) NSMutableDictionary* cache;
+@property (nonatomic, assign) BOOL forceSkipCache;
 
 + (BOOL)faceDetected;
 + (VnCurrentImage*)instance;

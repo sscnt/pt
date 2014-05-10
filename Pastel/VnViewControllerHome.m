@@ -20,6 +20,7 @@
     [VnCurrentImage clean];
     [VnEditorViewManager clean];
     [[VnEditorSliderManager instance] commonInit];
+    [VnCurrentImage instance].forceSkipCache = NO;
 }
 
 - (void)viewDidLoad

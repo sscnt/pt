@@ -63,15 +63,17 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     if (image) {
         return image;
     }
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPreviewImage];
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     NSURL *fileURL = [NSURL fileURLWithPath:filePath];
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
-    if( [filemgr fileExistsAtPath:path] ){
+    if( [filemgr fileExistsAtPath:filePath] ){
         NSData *data = [NSData dataWithContentsOfURL:fileURL];
         UIImage *img = [[UIImage alloc] initWithData:data];
         return img;
     }
+    
+    LOG(@"Image not found at %@.", path);
     
     return nil;
 }
@@ -133,6 +135,16 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (BOOL)saveImage:(UIImage *)image AtPath:(NSString *)path
 {
+    if (image.imageOrientation != UIImageOrientationUp) {
+        image = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:UIImageOrientationUp];
+    }
+    if ([self instance].forceSkipCache) {
+        BOOL success = [self writeImage:image AtPath:path];
+        if (success) {
+            LOG(@"Saved adn byebye: %@", path);
+            [[self instance].cache removeObjectForKey:[NSString stringWithFormat:@"%@", path]];            
+        }
+    }
     [[self instance].cache setObject:image forKey:[NSString stringWithFormat:@"%@", path]];
     return YES;
 }

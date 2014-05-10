@@ -71,6 +71,10 @@
             [vm resetPreviewProgress];
             [vm unlock];
             [vm hidePreviewProgressView];
+            if ([VnCurrentImage instance].forceSkipCache) {
+                [VnCurrentImage writeCacheToFile];
+                [VnCurrentImage cleanCache];
+            }
         }
             break;
         case VnObjectProcessingQueueTypePreset:
@@ -239,6 +243,7 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [VnCurrentImage instance].forceSkipCache = YES;
 }
 
 - (void)dealloc

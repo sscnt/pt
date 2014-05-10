@@ -24,6 +24,7 @@
         _scrollView.minimumZoomScale = MIN(1.0, MIN(frame.size.width / [VnCurrentImage previewImageViewSize].width, frame.size.height / [VnCurrentImage previewImageViewSize].height));
         
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
+        _imageView.center = CGPointMake(frame.size.width / 2.0f, _imageView.center.y);
         [_scrollView addSubview:_imageView];
         [self addSubview:_scrollView];
         

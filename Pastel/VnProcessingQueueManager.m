@@ -189,9 +189,15 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     if (queue.effectId != VnEffectIdNone) {
         image = [VnProcessor applyEffect:queue.effectId ToImage:queue.image];
         float opacity = [VnEffect defalutOpacityByEffectId:queue.effectId];
+        if([VnCurrentImage faceDetected]){
+            opacity = [VnEffect faceOpacityByEffectId:queue.effectId];
+        }
         if (opacity < 1.0f) {
             image = [VnProcessor mergeBaseImage:[VnCurrentImage presetBaseImage] overlayImage:image opacity:opacity blendingMode:VnBlendingModeNormal];
         }
+    }
+    if (image.imageOrientation != UIImageOrientationUp) {
+        image = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:UIImageOrientationUp];
     }
     queue.image = image;
 }
