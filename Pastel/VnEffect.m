@@ -153,6 +153,9 @@
     if (effectId == VnEffectIdPurpleBerry) {
         return [[VnEffectPurpleBerry alloc] init];
     }
+    if (effectId == VnEffectIdBellerina) {
+        return [[VnEffectBellerina alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {
@@ -175,6 +178,9 @@
     }
     if (effectId == VnEffectIdOverlayWarmVintage) {
         return [[VnEffectOverlayWarmVintage alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayPinkHaze) {
+        return [[VnEffectOverlayPinkHaze alloc] init];
     }
     return nil;
 }

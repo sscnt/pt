@@ -157,6 +157,8 @@
 		58F67ADB191B8C810085DF18 /* pbt.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ADA191B8C810085DF18 /* pbt.acv */; };
 		58F67ADE191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F67ADD191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m */; };
 		58F67AE0191B8DA80085DF18 /* cr1.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F67ADF191B8DA80085DF18 /* cr1.acv */; };
+		58F70C22191DC2E200639E2A /* VnEffectBellerina.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F70C21191DC2E200639E2A /* VnEffectBellerina.m */; };
+		58F70C28191DC71A00639E2A /* VnEffectOverlayPinkHaze.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F70C27191DC71A00639E2A /* VnEffectOverlayPinkHaze.m */; };
 		58F73B0F190F942A0056D7D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B0E190F942A0056D7D6 /* Foundation.framework */; };
 		58F73B11190F942A0056D7D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B10190F942A0056D7D6 /* CoreGraphics.framework */; };
 		58F73B13190F942A0056D7D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F73B12190F942A0056D7D6 /* UIKit.framework */; };
@@ -461,6 +463,10 @@
 		58F67ADC191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectCavalleriaRusticana.h; sourceTree = "<group>"; };
 		58F67ADD191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectCavalleriaRusticana.m; sourceTree = "<group>"; };
 		58F67ADF191B8DA80085DF18 /* cr1.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = cr1.acv; sourceTree = "<group>"; };
+		58F70C20191DC2E200639E2A /* VnEffectBellerina.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectBellerina.h; sourceTree = "<group>"; };
+		58F70C21191DC2E200639E2A /* VnEffectBellerina.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectBellerina.m; sourceTree = "<group>"; };
+		58F70C26191DC71A00639E2A /* VnEffectOverlayPinkHaze.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectOverlayPinkHaze.h; sourceTree = "<group>"; };
+		58F70C27191DC71A00639E2A /* VnEffectOverlayPinkHaze.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectOverlayPinkHaze.m; sourceTree = "<group>"; };
 		58F73B0B190F942A0056D7D6 /* Pastel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pastel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58F73B0E190F942A0056D7D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		58F73B10190F942A0056D7D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -533,6 +539,8 @@
 			children = (
 				58FA6A3B191A22B7007AD815 /* VnEffectBeachVintage.h */,
 				58FA6A3C191A22B7007AD815 /* VnEffectBeachVintage.m */,
+				58F70C20191DC2E200639E2A /* VnEffectBellerina.h */,
+				58F70C21191DC2E200639E2A /* VnEffectBellerina.m */,
 				58F9B78C191BA23A003104E9 /* VnEffectBlueBerry.h */,
 				58F9B78D191BA23A003104E9 /* VnEffectBlueBerry.m */,
 				58F483C0191D069900028585 /* VnEffectBluishRose.h */,
@@ -590,6 +598,8 @@
 				5802D1F0191606E500E258F3 /* VnEffectOverlayLightBrightMatte.m */,
 				582844831918AEF7008E3AEF /* VnEffectOverlayLightBrightPop.h */,
 				582844841918AEF7008E3AEF /* VnEffectOverlayLightBrightPop.m */,
+				58F70C26191DC71A00639E2A /* VnEffectOverlayPinkHaze.h */,
+				58F70C27191DC71A00639E2A /* VnEffectOverlayPinkHaze.m */,
 				5802D1F41916168A00E258F3 /* VnEffectOverlayRetroSun.h */,
 				5802D1F51916168A00E258F3 /* VnEffectOverlayRetroSun.m */,
 				5828448E1918EBA4008E3AEF /* VnEffectOverlayWarmVintage.h */,
@@ -1260,6 +1270,8 @@
 				5805FD2D1910044C0010C13A /* VnBlendingOverlay.m in Sources */,
 				5805FD251910044C0010C13A /* VnBlendingNormal.m in Sources */,
 				5805FD341910044C0010C13A /* VnBlendingExclusion.m in Sources */,
+				58F70C22191DC2E200639E2A /* VnEffectBellerina.m in Sources */,
+				58F70C28191DC71A00639E2A /* VnEffectOverlayPinkHaze.m in Sources */,
 				5805FCDB191002690010C13A /* UIImage+extend.m in Sources */,
 				5805FD371910044C0010C13A /* VnBlendingSaturation.m in Sources */,
 				5805FD261910044C0010C13A /* VnBlendingDarken.m in Sources */,

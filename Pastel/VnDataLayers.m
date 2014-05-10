@@ -95,6 +95,13 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
+    //// Bellerina
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdBellerina;
+    effect.name = NSLocalizedString(@"Bellerina", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
     //// Purple Berry
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdPurpleBerry;
@@ -390,6 +397,15 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.effectGroup = VnEffectGroupOverlays;
     effect.name = NSLocalizedString(@"Retro Sun", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(221.0f) blue:s255(201.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Pink Haze
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayPinkHaze;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Pink Haze", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(229.0f) blue:s255(233.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
     

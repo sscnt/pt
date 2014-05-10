@@ -110,6 +110,7 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdBluishRose,
     VnEffectIdPinkBubbleTea,
     VnEffectIdFruitPop,
+    VnEffectIdBellerina,
     VnEffectIdGentleMemories,
     VnEffectIdOverlayBlueHaze,
     VnEffectIdOverlayHazyLightWarmPink,
@@ -117,6 +118,7 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdOverlayLightBrightMatte,
     VnEffectIdOverlayLightBrightPop,
     VnEffectIdOverlayRetroSun,
+    VnEffectIdOverlayPinkHaze,
     VnEffectIdOverlayWarmVintage
 };
 
@@ -199,12 +201,6 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectColorUrbanCandy.h"
 #import "VnEffectColorVintageMatte.h"
 #import "VnEffectColorWarmHaze.h"
-#import "VnEffectFruitPop.h"
-#import "VnEffectDonut.h"
-#import "VnEffectGreenApple.h"
-#import "VnEffectBluishRose.h"
-#import "VnEffectPurpleBerry.h"
-
 #import "VnEffectBeachVintage.h"
 #import "VnEffectDreamyCreamy.h"
 #import "VnEffectHazelnut.h"
@@ -221,6 +217,13 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectBlueBerry.h"
 #import "VnEffectPinkBubbleTea.h"
 #import "VnEffectSweetFlower.h"
+#import "VnEffectFruitPop.h"
+#import "VnEffectDonut.h"
+#import "VnEffectGreenApple.h"
+#import "VnEffectBluishRose.h"
+#import "VnEffectPurpleBerry.h"
+#import "VnEffectBellerina.h"
+
 
 #import "VnEffectOverlayLightBrightMatte.h"
 #import "VnEffectOverlayRetroSun.h"
@@ -229,6 +232,7 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectOverlayLightBrightHaze.h"
 #import "VnEffectOverlayBlueHaze.h"
 #import "VnEffectOverlayWarmVintage.h"
+#import "VnEffectOverlayPinkHaze.h"
 
 #import "UIDevice+extend.h"
 #import "UIScreen+extend.h"

@@ -33,6 +33,8 @@
 
 - (void)didFinishResizing
 {
+    LOG(@"%d filters.", [VnDataLayers colorCount] * [VnDataLayers effectsCount] * [VnDataLayers overlaysCount]);
+    
     [VnEditorViewManager setResizingProgress:1.0f];
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm setPreviewImage:[VnCurrentImage originalPreviewImage]];
@@ -44,7 +46,7 @@
     VnObjectProcessingQueue* queue = [VnProcessingQueueManager shiftEffectQueue];
     [VnProcessingQueueManager addQueue:queue];
     
-    UIImage* image = [VnProcessor applyEffect:VnEffectIdPurpleBerry ToImage:[VnCurrentImage originalImage]];
+    UIImage* image = [VnProcessor applyEffect:VnEffectIdBellerina ToImage:[VnCurrentImage originalImage]];
     UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
 }
 
