@@ -15,6 +15,7 @@
 }
 
 - (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
     if ([UIDevice isiPad]) {
         return UIInterfaceOrientationMaskLandscape;
     }

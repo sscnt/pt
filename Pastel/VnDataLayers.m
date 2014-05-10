@@ -98,7 +98,14 @@ static VnDataLayers* sharedVnDataEffects = nil;
     //// Bellerina
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdBellerina;
-    effect.name = NSLocalizedString(@"Bellerina", nil);
+    effect.name = NSLocalizedString(@"Giselle", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Carnival
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdCarnival;
+    effect.name = NSLocalizedString(@"Cruise", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
     
@@ -376,7 +383,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     //// Gentle Color
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdGentleColor;
-    effect.name = NSLocalizedString(@"X2", nil);
+    effect.name = NSLocalizedString(@"x2", nil);
     effect.effectGroup = VnEffectGroupOverlays;
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(241.0f) blue:s255(227.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
@@ -386,8 +393,17 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayLightBrightMatte;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Bright Matte", nil);
+    effect.name = NSLocalizedString(@"x3", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(229.0f) blue:s255(217.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Candy Haze
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayCandyHaze;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Wheat", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(231.0f) blue:s255(204.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
     
@@ -395,7 +411,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayRetroSun;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Retro Sun", nil);
+    effect.name = NSLocalizedString(@"Retro", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(221.0f) blue:s255(201.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
@@ -404,7 +420,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayPinkHaze;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Pink Haze", nil);
+    effect.name = NSLocalizedString(@"Pastel", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(229.0f) blue:s255(233.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
@@ -413,7 +429,16 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayHazyLightWarmPink;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Warm Pink", nil);
+    effect.name = NSLocalizedString(@"Ruby", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(216.0f) blue:s255(212.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Hazy Light Warm Pink
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlayHazyLightWarmPink2;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Ruby #2", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(216.0f) blue:s255(212.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
@@ -422,7 +447,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayLightBrightPop;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Bright Pop", nil);
+    effect.name = NSLocalizedString(@"Pop", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(241.0f) blue:s255(227.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
@@ -431,7 +456,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayLightBrightHaze;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Bright Haze", nil);
+    effect.name = NSLocalizedString(@"Haze", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(224.0f) blue:s255(245.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
@@ -440,7 +465,7 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayBlueHaze;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Blue Haze", nil);
+    effect.name = NSLocalizedString(@"Iceberg", nil);
     effect.previewColor = [UIColor colorWithRed:s255(191.0f) green:s255(191.0f) blue:s255(255.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];
@@ -449,7 +474,25 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect = [[VnObjectEffect alloc] init];
     effect.effectId = VnEffectIdOverlayWarmVintage;
     effect.effectGroup = VnEffectGroupOverlays;
-    effect.name = NSLocalizedString(@"Warm Vintage", nil);
+    effect.name = NSLocalizedString(@"Terracotta", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(245.0f) blue:s255(224.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Sunhaze Left
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlaySunhazeLeft;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Sunset", nil);
+    effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(245.0f) blue:s255(224.0f) alpha:1.0f];
+    effect.selectionColor = effect.previewColor;
+    [_overlaysList addObject:effect];
+    
+    //// Sunhaze Right
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdOverlaySunhazeRight;
+    effect.effectGroup = VnEffectGroupOverlays;
+    effect.name = NSLocalizedString(@"Sunset #2", nil);
     effect.previewColor = [UIColor colorWithRed:s255(255.0f) green:s255(245.0f) blue:s255(224.0f) alpha:1.0f];
     effect.selectionColor = effect.previewColor;
     [_overlaysList addObject:effect];

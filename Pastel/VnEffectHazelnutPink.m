@@ -14,6 +14,8 @@
 {
     self = [super init];
     if(self){
+        self.defaultOpacity = 0.80f;
+        self.faceOpacity = 0.60f;
         self.effectId = VnEffectIdHazelnutPink;
     }
     return self;

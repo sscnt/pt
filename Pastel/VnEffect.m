@@ -156,6 +156,9 @@
     if (effectId == VnEffectIdBellerina) {
         return [[VnEffectBellerina alloc] init];
     }
+    if (effectId == VnEffectIdCarnival) {
+        return [[VnEffectCarnival alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {
@@ -166,6 +169,9 @@
     }
     if (effectId == VnEffectIdOverlayHazyLightWarmPink) {
         return [[VnEffectOverlayHazyLightWarmPink alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayHazyLightWarmPink2) {
+        return [[VnEffectOverlayHazyLightWarmPink2 alloc] init];
     }
     if (effectId == VnEffectIdOverlayLightBrightPop) {
         return [[VnEffectOverlayLightBrightPop alloc] init];
@@ -181,6 +187,15 @@
     }
     if (effectId == VnEffectIdOverlayPinkHaze) {
         return [[VnEffectOverlayPinkHaze alloc] init];
+    }
+    if (effectId == VnEffectIdOverlayCandyHaze) {
+        return [[VnEffectOverlayCandyHaze alloc] init];
+    }
+    if (effectId == VnEffectIdOverlaySunhazeLeft) {
+        return [[VnEffectOverlaySunhazeLeft alloc] init];
+    }
+    if (effectId == VnEffectIdOverlaySunhazeRight) {
+        return [[VnEffectOverlaySunhazeRight alloc] init];
     }
     return nil;
 }
