@@ -112,6 +112,12 @@
 {
     
     VnEditorViewManager* vm = [VnEditorViewManager instance];
+    if (vm.locked) {
+        return;
+    }
+    if ([VnEditorViewManager canChooseLayer] == NO) {
+        return;
+    }
     [vm lock];
     [vm showBlureedPreviewImage];
     [vm showPreviewProgressView];
@@ -188,17 +194,32 @@
 
 - (void)didToolBarButtonTouchUpInside:(VnViewEditorToolBarButton *)button
 {
-    button.selected = YES;
-    switch (button.type) {
-        case VnViewEditorToolBarButtonTypeSlider:
-            ;
-            break;
-        case VnViewEditorToolBarButtonTypeShuffle:
-            [self shuffle];
-            break;
-        case VnViewEditorToolBarButtonTypeClose:
-            [self back];
-            break;
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
+    if (button.selected) {
+        button.selected = NO;
+        switch (button.type) {
+            case VnViewEditorToolBarButtonTypeSlider:
+                [VnEditorViewManager hideLayerSliders];
+                break;
+            case VnViewEditorToolBarButtonTypeClose:
+                [self back];
+                break;
+        }
+
+    } else {
+        button.selected = YES;
+        switch (button.type) {
+            case VnViewEditorToolBarButtonTypeSlider:
+                [VnEditorViewManager showLayerSliders];
+                break;
+            case VnViewEditorToolBarButtonTypeShuffle:
+                [self shuffle];
+                button.selected = NO;
+                break;
+            case VnViewEditorToolBarButtonTypeClose:
+                [self back];
+                break;
+        }
     }
 }
 

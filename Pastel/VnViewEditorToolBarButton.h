@@ -11,7 +11,9 @@
 typedef NS_ENUM(NSInteger, VnViewEditorToolBarButtonType){
     VnViewEditorToolBarButtonTypeShuffle = 1,
     VnViewEditorToolBarButtonTypeSlider,
-    VnViewEditorToolBarButtonTypeClose
+    VnViewEditorToolBarButtonTypeClose,
+    VnViewEditorToolBarButtonTypeSave,
+    VnViewEditorToolBarButtonTypeBrightness
 };
 
 @class VnViewEditorToolBarButton;

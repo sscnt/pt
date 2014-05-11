@@ -13,6 +13,14 @@
 #import "VnViewEditorToolBarButton.h"
 #import "VnViewEditorPhotoPreview.h"
 #import "VnViewProgress.h"
+#import "VnViewEditorLayerBarWrapper.h"
+#import "VnViewSlider.h"
+
+typedef NS_ENUM(NSInteger, VnEditorViewManagerViewState){
+    VnEditorViewManagerViewStateChoosingLayer = 1,
+    VnEditorViewManagerViewStateLayerOpacitySlider,
+    VnEditorViewManagerViewStateBrightnessSlider
+};
 
 @protocol VnEditorViewManagerDelegate
 - (void)adjustmentToolViewDidChange:(VnAdjustmentToolId)toolId;
@@ -27,6 +35,16 @@
 @property (nonatomic, strong) VnViewEditorLayerBar* colorBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* effectBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* overlayBar;
+
+@property (nonatomic, strong) VnViewEditorLayerBarWrapper* colorBarWrapper;
+@property (nonatomic, strong) VnViewEditorLayerBarWrapper* effectBarWrapper;
+@property (nonatomic, strong) VnViewEditorLayerBarWrapper* overlayBarWrapper;
+
+@property (nonatomic, strong) VnViewSlider* colorOpacitySlider;
+@property (nonatomic, strong) VnViewSlider* effectOpacitySlider;
+@property (nonatomic, strong) VnViewSlider* overlayOpacitySlider;
+@property (nonatomic, strong) VnViewSlider* brightnessSlider;
+
 @property (nonatomic, strong) VnViewEditorPhotoPreview* photoPreview;
 @property (nonatomic, strong) VnViewProgress* resizingProgressView;
 
@@ -39,6 +57,7 @@
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonOverlay;
 
 @property (nonatomic, assign) BOOL locked;
+@property (nonatomic, assign) VnEditorViewManagerViewState state;
 
 + (VnEditorViewManager*)instance;
 
@@ -56,8 +75,14 @@
 - (void)layout;
 - (void)layoutLayerBars;
 - (void)layoutLayerButtons;
+- (void)layoutSliders;
 - (void)layoutToolButtons;
 - (void)layoutPreview;
+
++ (void)showLayerSliders;
+- (void)showLayerSliders;
++ (void)hideLayerSliders;
+- (void)hideLayerSliders;
 
 + (void)setResizingProgress:(float)value;
 - (void)setPreviewImage:(UIImage*)image;
@@ -85,5 +110,7 @@
 - (VnEffectId)currentSelectedOverlayLayerEffectId;
 
 + (int)numberOfSelectedLayers;
+
++ (BOOL)canChooseLayer;
 
 @end
