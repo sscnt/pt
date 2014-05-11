@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, VnEditorViewManagerViewState){
 - (void)adjustmentToolViewDidChange:(VnAdjustmentToolId)toolId;
 @end
 
-@interface VnEditorViewManager : NSObject <VnViewEditorPhotoPreviewDelegate>
+@interface VnEditorViewManager : NSObject <VnViewEditorPhotoPreviewDelegate, VnViewEditorLayerBarWrapperDelegate>
 
 @property (nonatomic, weak) id<VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate> delegate;
 @property (nonatomic, weak) UIView* view;
@@ -79,10 +79,10 @@ typedef NS_ENUM(NSInteger, VnEditorViewManagerViewState){
 - (void)layoutToolButtons;
 - (void)layoutPreview;
 
-+ (void)showLayerSliders;
-- (void)showLayerSliders;
-+ (void)hideLayerSliders;
-- (void)hideLayerSliders;
++ (BOOL)showLayerSliders;
+- (BOOL)showLayerSliders;
++ (BOOL)hideLayerSliders;
+- (BOOL)hideLayerSliders;
 
 + (void)setResizingProgress:(float)value;
 - (void)setPreviewImage:(UIImage*)image;
@@ -112,5 +112,7 @@ typedef NS_ENUM(NSInteger, VnEditorViewManagerViewState){
 + (int)numberOfSelectedLayers;
 
 + (BOOL)canChooseLayer;
+
++ (VnViewEditorLayerBarButton*)copyButtonWithButton:(VnViewEditorLayerBarButton*)button;
 
 @end

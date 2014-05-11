@@ -36,7 +36,13 @@
 
 - (void)setPreviewColor:(UIColor *)previewColor
 {
+    _previewColor = previewColor;
     _imageView.backgroundColor = previewColor;
+}
+
+- (UIImage *)previewImage
+{
+    return _imageView.image;
 }
 
 - (void)setPreviewImage:(UIImage *)previewImage
@@ -46,26 +52,31 @@
 
 - (void)setMaskColor:(UIColor *)maskColor
 {
+    _maskColor = maskColor;
     _maskView.maskColor = maskColor;
 }
 
 - (void)setTitleColor:(UIColor *)titleColor
 {
+    _titleColor = titleColor;
     _titleLabel.textColor = titleColor;
 }
 
 - (void)setSelectionColor:(UIColor *)selectionColor
 {
+    _selectionColor = selectionColor;
     _maskView.selectionColor = selectionColor;
 }
 
 - (void)setTitle:(NSString *)title
 {
+    _title = title;
     _titleLabel.text = title;
 }
 
 - (void)setMaskRadius:(float)maskRadius
 {
+    _maskRadius = maskRadius;
     _maskView.radius = maskRadius;
 }
 

@@ -196,10 +196,11 @@
 {
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     if (button.selected) {
-        button.selected = NO;
         switch (button.type) {
             case VnViewEditorToolBarButtonTypeSlider:
-                [VnEditorViewManager hideLayerSliders];
+                if([VnEditorViewManager hideLayerSliders]){                    
+                    button.selected = NO;
+                }
                 break;
             case VnViewEditorToolBarButtonTypeClose:
                 [self back];
@@ -207,10 +208,11 @@
         }
 
     } else {
-        button.selected = YES;
         switch (button.type) {
             case VnViewEditorToolBarButtonTypeSlider:
-                [VnEditorViewManager showLayerSliders];
+                if([VnEditorViewManager showLayerSliders]){
+                    button.selected = YES;
+                }
                 break;
             case VnViewEditorToolBarButtonTypeShuffle:
                 [self shuffle];

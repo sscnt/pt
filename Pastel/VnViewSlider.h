@@ -23,7 +23,7 @@
 @interface VnViewSlider : UIView
 
 @property (nonatomic, strong) UISliderView* sliderView;
-@property (nonatomic, strong) VnViewEditorLayerBarButton* button;
+@property (nonatomic, weak) VnViewEditorLayerBarButton* button;
 @property (nonatomic, assign) CGFloat value;
 @property (nonatomic, assign) CGFloat defaultValue;
 @property (nonatomic, assign) CGFloat alpha;

@@ -105,12 +105,14 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     float y = [UIScreen height] - [VnCurrentSettings colorBarHeight];
     _colorBarWrapper = [[VnViewEditorLayerBarWrapper alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings colorBarHeight])];
     _colorBarWrapper.backgroundColor = [VnCurrentSettings colorBarBgColor];
+    _colorBarWrapper.delegate = self;
     _colorBar = [[VnViewEditorLayerBar alloc] initWithFrame:_colorBarWrapper.bounds];
     [self.view addSubview:_colorBarWrapper];
     _colorBarWrapper.bar = _colorBar;
     
     y = _colorBarWrapper.frame.origin.y - [VnCurrentSettings effectsBarHeight];
     _effectBarWrapper = [[VnViewEditorLayerBarWrapper alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings effectsBarHeight])];
+    _effectBarWrapper.delegate = self;
     _effectBarWrapper.backgroundColor = [VnCurrentSettings effectsBarBgColor];
     _effectBar = [[VnViewEditorLayerBar alloc] initWithFrame:_effectBarWrapper.bounds];
     [self.view addSubview:_effectBarWrapper];
@@ -118,6 +120,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     
     y = _effectBarWrapper.frame.origin.y - [VnCurrentSettings overlayBarHeight];
     _overlayBarWrapper = [[VnViewEditorLayerBarWrapper alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings overlayBarHeight])];
+    _overlayBarWrapper.delegate = self;
     _overlayBarWrapper.backgroundColor = [VnCurrentSettings overlayBarBgColor];
     _overlayBar = [[VnViewEditorLayerBar alloc] initWithFrame:_overlayBarWrapper.bounds];
     [self.view addSubview:_overlayBarWrapper];
@@ -140,17 +143,17 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     y = [_colorBarWrapper height];
     _colorOpacitySlider = [[VnViewSlider alloc] initWithFrame:_colorBarWrapper.bounds];
     [_colorOpacitySlider setY:y];
-    [_colorBarWrapper.view addSubview:_colorOpacitySlider];
+    _colorBarWrapper.layerSlider = _colorOpacitySlider;
     
     y = [_effectBarWrapper height];
     _effectOpacitySlider = [[VnViewSlider alloc] initWithFrame:_effectBarWrapper.bounds];
     [_effectOpacitySlider setY:y];
-    [_effectBarWrapper.view addSubview:_effectOpacitySlider];
+    _effectBarWrapper.layerSlider = _effectOpacitySlider;
     
     y = [_overlayBarWrapper height];
     _overlayOpacitySlider = [[VnViewSlider alloc] initWithFrame:_overlayBarWrapper.bounds];
     [_overlayOpacitySlider setY:y];
-    [_overlayBarWrapper.view addSubview:_overlayOpacitySlider];
+    _overlayBarWrapper.layerSlider = _overlayOpacitySlider;
 }
 
 - (void)layoutPreview
@@ -268,18 +271,18 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 #pragma mark sliders
 
-+ (void)showLayerSliders
++ (BOOL)showLayerSliders
 {
-    [[self instance] showLayerSliders];
+    return [[self instance] showLayerSliders];
 }
 
-- (void)showLayerSliders
+- (BOOL)showLayerSliders
 {
     if (_locked) {
-        return;
+        LOG(@"Sorry now locked...");
+        return NO;
     }
     _locked = YES;
-    _state = VnEditorViewManagerViewStateLayerOpacitySlider;
     _effectOpacitySlider.hidden = NO;
     _overlayOpacitySlider.hidden = NO;
     _colorOpacitySlider.hidden = NO;
@@ -296,25 +299,39 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     [_effectBarWrapper slideUp];
     [_overlayBarWrapper slideUp];
     [_colorBarWrapper slideUp];
-    _locked = NO;
+    return YES;
 }
 
-+ (void)hideLayerSliders
++ (BOOL)hideLayerSliders
 {
-    [[self instance] hideLayerSliders];
+    return [[self instance] hideLayerSliders];
 }
 
-- (void)hideLayerSliders
+- (BOOL)hideLayerSliders
 {
     if (_locked) {
-        return;
+        LOG(@"Sorry now locked...");
+        return NO;
     }
     _locked = YES;
     [_effectBarWrapper slideDown];
     [_overlayBarWrapper slideDown];
     [_colorBarWrapper slideDown];
-    _state = VnEditorViewManagerViewStateChoosingLayer;
+    return YES;
+}
+
+- (void)wrapperDidSlideUp
+{
+    LOG(@"slideup!");
     _locked = NO;
+    _state = VnEditorViewManagerViewStateLayerOpacitySlider;
+}
+
+- (void)wrapperDidSlideDown
+{
+    LOG(@"slidedown!");
+    _locked = NO;
+    _state = VnEditorViewManagerViewStateChoosingLayer;
 }
 
 #pragma mark preview
@@ -425,6 +442,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     if (button == nil) {
         return;
     }
+    VnViewEditorLayerBarButton* iconBtn = [VnEditorViewManager copyButtonWithButton:button];
     switch (button.group) {
         case VnEffectGroupColor:
         {
@@ -437,6 +455,11 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             [VnCurrentImage deleteProcessedColorPreviewImage];
             [VnCurrentImage deleteProcessedEffectPreviewImage];
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
+            if (button.effectId == VnEffectIdColorNone) {
+                _colorOpacitySlider.hidden = YES;
+            }else{
+                _colorOpacitySlider.button = iconBtn;
+            }
         }
             break;
         case VnEffectGroupEffects:
@@ -449,6 +472,11 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             self.currentSelectedLayerButtonEffect = button;
             [VnCurrentImage deleteProcessedEffectPreviewImage];
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
+            if (button.effectId == VnEffectIdNone) {
+                _effectOpacitySlider.hidden = YES;
+            }else{
+                _effectOpacitySlider.button = iconBtn;
+            }
         }
             break;
         case VnEffectGroupOverlays:
@@ -460,6 +488,11 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             [_overlayBar scrollToLayerButton:button];
             self.currentSelectedLayerButtonOverlay = button;
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
+            if (button.effectId == VnEffectIdOverlayNone) {
+                _overlayOpacitySlider.hidden = YES;
+            }else{
+                _overlayOpacitySlider.button = iconBtn;
+            }
         }
             break;
         default:
@@ -537,6 +570,32 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
         return YES;
     }
     return NO;
+}
+
++ (VnViewEditorLayerBarButton *)copyButtonWithButton:(VnViewEditorLayerBarButton *)button
+{
+    VnViewEditorLayerBarButton* newButton = [[VnViewEditorLayerBarButton alloc] initWithFrame:button.bounds];
+    newButton.maskRadius = button.maskRadius;
+    newButton.maskColor = button.maskColor;
+    newButton.titleColor = button.titleColor;
+    newButton.title = button.title;
+    newButton.effectId = button.effectId;
+    newButton.group = button.group;
+    newButton.userInteractionEnabled = NO;
+    switch (button.group) {
+        case VnEffectGroupColor:
+        case VnEffectGroupOverlays:
+        {
+            newButton.previewColor = button.previewColor;
+        }
+            break;
+        case VnEffectGroupEffects:
+        {
+            newButton.previewImage = button.previewImage;
+        }
+            break;
+    }
+    return newButton;
 }
 
 + (void)clean

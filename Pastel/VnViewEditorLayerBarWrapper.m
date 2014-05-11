@@ -32,49 +32,53 @@
     [_view addSubview:bar];
 }
 
+- (void)setLayerSlider:(VnViewSlider *)layerSlider
+{
+    _layerSlider = layerSlider;
+    [_view addSubview:_layerSlider];
+}
+
 - (void)slideUp
 {
     if (_sliding) {
+        LOG(@"Sorry now sliding...");
         return;
     }
     _sliding = YES;
+    _layerSlider.alpha = 0.0f;
+    _bar.alpha = 1.0f;
     __block VnViewEditorLayerBarWrapper* _self = self;
-    [UIView animateWithDuration:0.1f
+    [UIView animateWithDuration:0.2f
                      animations:^{
-                         [_self.view setY:-_self.frame.size.height / 2.0f];
-                         _self.bar.alpha = 0.0f;
+                         [_self.view setY:-_self.frame.size.height];
+                         _layerSlider.alpha = 1.0f;
+                         _bar.alpha = 0.0f;
                      }
                      completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.1f
-                                          animations:^{
-                                              [_self.view setY:-_self.frame.size.height];
-                                          }
-                                          completion:^(BOOL finished){
-                                              _self.sliding = NO;
-                                          }];
+                         _self.sliding = NO;
+                         [_self.delegate wrapperDidSlideUp];
                      }];
 }
 
 - (void)slideDown
 {
     if (_sliding) {
+        LOG(@"Sorry now sliding...");
         return;
     }
     _sliding = YES;
+    _layerSlider.alpha = 1.0f;
+    _bar.alpha = 0.0f;
     __block VnViewEditorLayerBarWrapper* _self = self;
-    [UIView animateWithDuration:0.1f
+    [UIView animateWithDuration:0.2f
                      animations:^{
-                         [_self.view setY:-_self.frame.size.height / 2.0f];
+                         [_self.view setY:0];
+                         _layerSlider.alpha = 0.0f;
+                         _bar.alpha = 1.0f;
                      }
                      completion:^(BOOL finished){
-                         [UIView animateWithDuration:0.1f
-                                          animations:^{
-                                              [_self.view setY:0.0f];
-                                              _self.bar.alpha = 1.0f;
-                                          }
-                                          completion:^(BOOL finished){
-                                              _self.sliding = NO;
-                                          }];
+                         _self.sliding = NO;
+                         [_self.delegate wrapperDidSlideDown];
                      }];
 }
 
