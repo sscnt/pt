@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:self.bounds];
+        _scrollView = [[VnViewEditorPhotoPreviewScrollView alloc] initWithFrame:self.bounds];
         _scrollView.contentSize = [VnCurrentImage previewImageViewSize];
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
@@ -22,15 +22,21 @@
         _scrollView.bounces = YES;
         _scrollView.maximumZoomScale = 1.0f;
         _scrollView.minimumZoomScale = MIN(1.0, MIN(frame.size.width / [VnCurrentImage previewImageViewSize].width, frame.size.height / [VnCurrentImage previewImageViewSize].height));
-        
+        if ([UIDevice isiPad]) {
+            _scrollView.minimumZoomScale = 1.0f;
+        }
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
-        _imageView.center = CGPointMake(frame.size.width / 2.0f, _imageView.center.y);
+        _imageView.center = CGPointMake(_scrollView.contentSize.width / 2.0f, _imageView.center.y);
         [_scrollView addSubview:_imageView];
         [self addSubview:_scrollView];
         
         _progressImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
         _progressImageView.hidden = YES;
         [_imageView addSubview:_progressImageView];
+        
+        _originalImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
+        _originalImageView.hidden = YES;
+        [_imageView addSubview:_originalImageView];
         
         _scrollView.zoomScale = _scrollView.minimumZoomScale;
         
@@ -49,6 +55,11 @@
 - (void)setProgressimage:(UIImage *)progressimage
 {
     _progressImageView.image = progressimage;
+}
+
+- (void)setOriginalImage:(UIImage *)originalImage
+{
+    _originalImageView.image = originalImage;
 }
 
 - (void)showPregressView
@@ -75,6 +86,24 @@
 - (void)hidePregressImageView
 {
     _progressImageView.hidden = YES;
+}
+
+- (void)showOriginalImageView
+{
+    _originalImageView.hidden = NO;
+}
+
+- (void)hideOriginalImageView
+{
+    _originalImageView.hidden = YES;
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.delegate didPreviewTouchesEnd:self];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.delegate didPreviewTouchesBegin:self];
 }
 
 #pragma mark delegate

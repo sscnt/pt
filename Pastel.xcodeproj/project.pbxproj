@@ -77,6 +77,7 @@
 		5805FD721910098B0010C13A /* VnEditorViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD6C1910098B0010C13A /* VnEditorViewManager.m */; };
 		5805FD78191009AF0010C13A /* VnObjectProcessingQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD77191009AF0010C13A /* VnObjectProcessingQueue.m */; };
 		5805FD7B191009C10010C13A /* VnObjectEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5805FD7A191009C10010C13A /* VnObjectEffect.m */; };
+		58083667191F16B200012270 /* VnViewEditorPhotoPreviewScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58083666191F16B200012270 /* VnViewEditorPhotoPreviewScrollView.m */; };
 		58232A4319168D310001E3CD /* Aller_Bd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58232A4019168D310001E3CD /* Aller_Bd.ttf */; };
 		58232A4419168D310001E3CD /* ClearSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58232A4119168D310001E3CD /* ClearSans-Bold.ttf */; };
 		58232A4519168D310001E3CD /* mplus-1c-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58232A4219168D310001E3CD /* mplus-1c-bold.ttf */; };
@@ -347,6 +348,8 @@
 		5805FD77191009AF0010C13A /* VnObjectProcessingQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnObjectProcessingQueue.m; sourceTree = "<group>"; };
 		5805FD79191009C10010C13A /* VnObjectEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnObjectEffect.h; sourceTree = "<group>"; };
 		5805FD7A191009C10010C13A /* VnObjectEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnObjectEffect.m; sourceTree = "<group>"; };
+		58083665191F16B200012270 /* VnViewEditorPhotoPreviewScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorPhotoPreviewScrollView.h; sourceTree = "<group>"; };
+		58083666191F16B200012270 /* VnViewEditorPhotoPreviewScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorPhotoPreviewScrollView.m; sourceTree = "<group>"; };
 		58232A4019168D310001E3CD /* Aller_Bd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aller_Bd.ttf; sourceTree = "<group>"; };
 		58232A4119168D310001E3CD /* ClearSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClearSans-Bold.ttf"; sourceTree = "<group>"; };
 		58232A4219168D310001E3CD /* mplus-1c-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mplus-1c-bold.ttf"; sourceTree = "<group>"; };
@@ -951,6 +954,8 @@
 			children = (
 				584F06661912771C00C3467C /* VnViewEditorPhotoPreview.h */,
 				584F06671912771C00C3467C /* VnViewEditorPhotoPreview.m */,
+				58083665191F16B200012270 /* VnViewEditorPhotoPreviewScrollView.h */,
+				58083666191F16B200012270 /* VnViewEditorPhotoPreviewScrollView.m */,
 				584F065C1912750500C3467C /* Button */,
 				584F065B191274E600C3467C /* Toolbar */,
 			);
@@ -1342,6 +1347,7 @@
 				5805FCFD191003FF0010C13A /* VnFilterTemperature.m in Sources */,
 				5805FD311910044C0010C13A /* VnBlendingLinearLight.m in Sources */,
 				5805FCDD191002690010C13A /* UIImagePickerController+extend.m in Sources */,
+				58083667191F16B200012270 /* VnViewEditorPhotoPreviewScrollView.m in Sources */,
 				58F483AF191CF66F00028585 /* VnEffectDonut.m in Sources */,
 				58F3F557191528A1003A5A03 /* VnEffectColorWarmHaze.m in Sources */,
 				5802D1EE1916018E00E258F3 /* VnEffectVelvetColor.m in Sources */,

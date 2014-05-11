@@ -252,12 +252,45 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     CGRect bounds = [VnEditorViewManager previewBounds];
     CGSize originalImageSize = [VnCurrentImage originalImageSize];
     float width, height;
-    if (originalImageSize.width >= originalImageSize.height) {
-        height = bounds.size.height;
-        width = originalImageSize.width * height / originalImageSize.height;
-    } else {
-        width = bounds.size.width;
-        height = originalImageSize.height * width / originalImageSize.width;
+    if ([UIDevice isiPad]) {
+        float ratio = originalImageSize.width / originalImageSize.height;
+        float pr = bounds.size.width / bounds.size.height;
+        int  t = 0;
+        
+        if (originalImageSize.width >= originalImageSize.height) {
+            if (ratio >= pr) {
+                t = 1;
+            }else{
+                t = 2;
+            }
+        } else {
+            t = 3;
+        }
+        switch (t) {
+            case 1:
+            {
+                width = bounds.size.width;
+                height = originalImageSize.height * width / originalImageSize.width;
+            }
+                break;
+            case 2:
+            case 3:
+            {
+                height = bounds.size.height;
+                width = originalImageSize.width * height / originalImageSize.height;
+            }
+                break;
+            default:
+                break;
+        }
+    }else{
+        if (originalImageSize.width >= originalImageSize.height) {
+            height = bounds.size.height;
+            width = originalImageSize.width * height / originalImageSize.height;
+        } else {
+            width = bounds.size.width;
+            height = originalImageSize.height * width / originalImageSize.width;
+        }
     }
     return CGSizeMake(width, height);
 }

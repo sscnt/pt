@@ -77,6 +77,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _colorBar.locked = YES;
     _effectBar.locked = YES;
     _overlayBar.locked = YES;
+    _locked = YES;
 }
 
 - (void)unlock
@@ -84,6 +85,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _colorBar.locked = NO;
     _effectBar.locked = NO;
     _overlayBar.locked = NO;
+    _locked = NO;
 }
 
 #pragma mark layout
@@ -125,6 +127,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     //// Preview
     _photoPreview = [[VnViewEditorPhotoPreview alloc] initWithFrame:[VnEditorViewManager previewBounds]];
     [_photoPreview setY:[VnCurrentSettings topBarHeight]];
+    _photoPreview.delegate = self;
     [self.view addSubview:_photoPreview];
     
     //// Progress
@@ -409,6 +412,23 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
         n++;
     }
     return n;
+}
+
+#pragma mark delegate
+
+- (void)didPreviewTouchesBegin:(VnViewEditorPhotoPreview *)preview
+{
+    if (_locked) {
+        return;
+    }
+    _photoPreview.originalImage = [VnCurrentImage originalPreviewImage];
+    [_photoPreview showOriginalImageView];
+}
+
+- (void)didPreviewTouchesEnd:(VnViewEditorPhotoPreview *)preview
+{
+    [_photoPreview hideOriginalImageView];
+    _photoPreview.originalImage = nil;
 }
 
 + (void)clean

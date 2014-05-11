@@ -18,7 +18,7 @@
 - (void)adjustmentToolViewDidChange:(VnAdjustmentToolId)toolId;
 @end
 
-@interface VnEditorViewManager : NSObject
+@interface VnEditorViewManager : NSObject <VnViewEditorPhotoPreviewDelegate>
 
 @property (nonatomic, weak) id<VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate> delegate;
 @property (nonatomic, weak) UIView* view;
@@ -36,6 +36,8 @@
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonColor;
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonEffect;
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentSelectedLayerButtonOverlay;
+
+@property (nonatomic, assign) BOOL locked;
 
 + (VnEditorViewManager*)instance;
 
