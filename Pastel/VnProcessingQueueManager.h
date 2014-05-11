@@ -23,6 +23,7 @@
 @property (nonatomic, weak) id<VnProcessingQueueManagerDelegate> delegate;
 @property (nonatomic, assign) BOOL processing;
 @property (nonatomic, strong) NSMutableArray* effectsPresetQueueList;
+@property (nonatomic, assign) BOOL canceled;
 
 + (VnProcessingQueueManager*)instance;
 + (NSString*)generateQueueId;
@@ -41,6 +42,8 @@
 - (void)processQueueTypePreview:(VnObjectProcessingQueue*)queue;
 
 - (void)didFinishProcessingQueue:(VnObjectProcessingQueue*)queue;
+
++ (void)cancelAllQueue;
 
 - (void)commonInit;
 - (void)reset;

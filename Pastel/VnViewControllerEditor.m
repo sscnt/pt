@@ -13,6 +13,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
     if ([UIDevice isIOS6]) {
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
     }else{
@@ -175,6 +178,12 @@
 
 }
 
+- (void)back
+{
+    [VnProcessingQueueManager cancelAllQueue];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma  mark delegate
 
 - (void)didToolBarButtonTouchUpInside:(VnViewEditorToolBarButton *)button
@@ -186,6 +195,9 @@
             break;
         case VnViewEditorToolBarButtonTypeShuffle:
             [self shuffle];
+            break;
+        case VnViewEditorToolBarButtonTypeClose:
+            [self back];
             break;
     }
 }

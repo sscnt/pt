@@ -23,6 +23,7 @@
 @property (nonatomic, weak) id<VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate> delegate;
 @property (nonatomic, weak) UIView* view;
 @property (nonatomic, strong) VnViewEditorLayerBar* toolBar;
+@property (nonatomic, strong) VnViewEditorLayerBar* navBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* colorBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* effectBar;
 @property (nonatomic, strong) VnViewEditorLayerBar* overlayBar;

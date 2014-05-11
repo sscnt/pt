@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, VnCurrentSettingsWorkspaceOrientation){
 + (float)colorBarHeight;
 + (float)effectsBarHeight;
 + (float)overlayBarHeight;
-+ (float)topBarHeight;
++ (float)navBarHeight;
 
 + (UIColor*)homeBgColor;
 + (UIColor*)homeSourceButtonColor;

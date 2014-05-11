@@ -27,7 +27,7 @@
             _scrollView.minimumZoomScale = 1.0f;
         }
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
-        _imageView.center = CGPointMake(_scrollView.contentSize.width / 2.0f, _imageView.center.y);
+        _imageView.center = CGPointMake(MAX(_scrollView.contentSize.width, frame.size.width) / 2.0f, _imageView.center.y);
         [_scrollView addSubview:_imageView];
         [self addSubview:_scrollView];
         
@@ -108,6 +108,11 @@
 }
 
 #pragma mark delegate
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+{
+    [self.delegate didPreviewTouchesEnd:self];
+}
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {

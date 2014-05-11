@@ -121,6 +121,9 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     [self.delegate queueDidFinished:queue];
     _processing = NO;
     if ([_queueList count] != 0) {
+        if (self.canceled) {
+            return;
+        }
         [self processQueue];
     }
 }
@@ -131,11 +134,17 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     [self.delegate dispatchPreviewprogress:0.1f];
     if ([VnCurrentImage processedColorImageExists] == NO) {
         @autoreleasepool {
+            if (_canceled) {
+                return;
+            }
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedColorLayerEffectId] ToImage:[VnCurrentImage originalPreviewImage]];
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.colorOpacity != 1.0f) {
             @autoreleasepool {
+                if (_canceled) {
+                    return;
+                }
                 UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage originalPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.colorOpacity blendingMode:VnBlendingModeNormal];
                 [VnCurrentImage saveProcessedColorPreviewImage:image];
             }
@@ -146,11 +155,17 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     if ([VnCurrentImage processedEffectImageExists] == NO) {
         [self.delegate dispatchPreviewprogress:0.3f];
         @autoreleasepool {
+            if (_canceled) {
+                return;
+            }
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedEffectLayerEffectId] ToImage:[VnCurrentImage processedColorPreviewImage]];
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.effectOpacity != 1.0f) {
             @autoreleasepool {
+                if (_canceled) {
+                    return;
+                }
                 UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedColorPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.effectOpacity blendingMode:VnBlendingModeNormal];
                 [VnCurrentImage saveProcessedEffectPreviewImage:image];
             }
@@ -161,17 +176,26 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     if ([VnCurrentImage processedOverlayImageExists] == NO) {
         [self.delegate dispatchPreviewprogress:0.6f];
         @autoreleasepool {
+            if (_canceled) {
+                return;
+            }
             UIImage* image = [VnProcessor applyEffect:[VnEditorViewManager currentSelectedOverlayLayerEffectId] ToImage:[VnCurrentImage processedEffectPreviewImage]];
             [VnCurrentImage saveTmpImage:image];
         }
         if (sm.overlayOpacity != 1.0f) {
             @autoreleasepool {
+                if (_canceled) {
+                    return;
+                }
                 UIImage* image = [VnProcessor mergeBaseImage:[VnCurrentImage processedEffectPreviewImage] overlayImage:[VnCurrentImage tmpImage] opacity:sm.overlayOpacity blendingMode:VnBlendingModeNormal];
                 [VnCurrentImage saveProcessedOverlayPreviewImage:image];
             }
         }else{
             [VnCurrentImage saveProcessedOverlayPreviewImage:[VnCurrentImage tmpImage]];
         }
+    }
+    if (_canceled) {
+        return;
     }
     [self.delegate dispatchPreviewprogress:0.9f];
     queue.image = [VnCurrentImage processedOverlayPreviewImage];
@@ -181,6 +205,9 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     LOG(@"Overlay: %f", sm.overlayOpacity);
     
     @autoreleasepool {
+        if (_canceled) {
+            return;
+        }
         VnFilterLensBlur* filter = [[VnFilterLensBlur alloc] init];
         filter.blurRadiusInPixels = 10.0f;
         UIImage* image = [VnProcessor mergeBaseImage:queue.image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
@@ -194,14 +221,23 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
 {
     UIImage* image = [VnCurrentImage presetBaseImage];
     if (queue.effectId != VnEffectIdNone) {
+        if (_canceled) {
+            return;
+        }
         image = [VnProcessor applyEffect:queue.effectId ToImage:queue.image];
         float opacity = [VnEffect defalutOpacityByEffectId:queue.effectId];
         if([VnCurrentImage faceDetected]){
             opacity = [VnEffect faceOpacityByEffectId:queue.effectId];
         }
         if (opacity < 1.0f) {
+            if (_canceled) {
+                return;
+            }
             image = [VnProcessor mergeBaseImage:[VnCurrentImage presetBaseImage] overlayImage:image opacity:opacity blendingMode:VnBlendingModeNormal];
         }
+    }
+    if (_canceled) {
+        return;
     }
     if (image.imageOrientation != UIImageOrientationUp) {
         image = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:UIImageOrientationUp];
@@ -252,11 +288,17 @@ static VnProcessingQueueManager* sharedVnProcessingQueue = nil;
     return (int)[[self instance].effectsPresetQueueList count];
 }
 
++ (void)cancelAllQueue
+{
+    [self instance].canceled = YES;
+}
+
 #pragma mark init
 
 - (void)commonInit
 {
     _processing = NO;
+    _canceled = NO;
     _queueList = [NSMutableArray array];
     _effectsPresetQueueList = [NSMutableArray array];
     VnObjectProcessingQueue* queue;

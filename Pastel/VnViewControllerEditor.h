@@ -13,5 +13,6 @@
 
 - (void)didFinishResizing;
 - (void)shuffle;
+- (void)back;
 
 @end

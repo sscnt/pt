@@ -19,6 +19,7 @@
     return self;
 }
 
+
 // タッチ終了(タッチから外れた)イベント
 // touchesBegan をオーバーライドしておかないと、これは動かない
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {

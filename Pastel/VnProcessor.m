@@ -123,6 +123,9 @@ static VnProcessor* sharedVnProcessor = nil;
 
 + (UIImage*)mergeBaseImage:(UIImage *)baseImage overlayImage:(UIImage *)overlayImage opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode
 {
+    if (overlayImage == nil || baseImage == nil) {
+        return nil;
+    }
     GPUImagePicture* overlayPicture = [[GPUImagePicture alloc] initWithImage:overlayImage];
     GPUImageOpacityFilter* opacityFilter = [[GPUImageOpacityFilter alloc] init];
     opacityFilter.opacity = opacity;
@@ -142,6 +145,9 @@ static VnProcessor* sharedVnProcessor = nil;
 
 + (UIImage*)mergeBaseImage:(UIImage *)baseImage overlayFilter:(GPUImageFilter *)overlayFilter opacity:(CGFloat)opacity blendingMode:(VnBlendingMode)blendingMode
 {
+    if (baseImage == nil) {
+        return nil;
+    }
     if (opacity == 1.0f) {
         
         GPUImagePicture* picture = [[GPUImagePicture alloc] initWithImage:baseImage];

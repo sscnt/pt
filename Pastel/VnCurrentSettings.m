@@ -101,9 +101,9 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
     return 10.0f;
 }
 
-+ (float)topBarHeight
++ (float)navBarHeight
 {
-    return 50.0f;
+    return 44.0f;
 }
 
 #pragma mark bar color

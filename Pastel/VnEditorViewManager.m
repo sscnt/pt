@@ -65,7 +65,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 + (CGRect)previewBounds
 {
-    float height = [UIScreen height] - [VnCurrentSettings topBarHeight] - [VnCurrentSettings toolBarHeight] - [VnCurrentSettings colorBarHeight] - [VnCurrentSettings effectsBarHeight] - [VnCurrentSettings overlayBarHeight];
+    float height = [UIScreen height] - [VnCurrentSettings navBarHeight] - [VnCurrentSettings toolBarHeight] - [VnCurrentSettings colorBarHeight] - [VnCurrentSettings effectsBarHeight] - [VnCurrentSettings overlayBarHeight];
     CGRect bounds = CGRectMake(0.0f, 0.0f, [UIScreen width], height);
     return bounds;
 }
@@ -120,19 +120,23 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _toolBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, y, [UIScreen width], [VnCurrentSettings toolBarHeight])];
     _toolBar.backgroundColor = [VnCurrentSettings toolBarBgColor];
     [self.view addSubview:_toolBar];
+    
+    _navBar = [[VnViewEditorLayerBar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [UIScreen width], [VnCurrentSettings toolBarHeight])];
+    _navBar.backgroundColor = [VnCurrentSettings toolBarBgColor];
+    [self.view addSubview:_navBar];
 }
 
 - (void)layoutPreview
 {
     //// Preview
     _photoPreview = [[VnViewEditorPhotoPreview alloc] initWithFrame:[VnEditorViewManager previewBounds]];
-    [_photoPreview setY:[VnCurrentSettings topBarHeight]];
+    [_photoPreview setY:[VnCurrentSettings navBarHeight]];
     _photoPreview.delegate = self;
     [self.view addSubview:_photoPreview];
     
     //// Progress
     _resizingProgressView = [[VnViewProgress alloc] initWithFrame:[VnEditorViewManager previewBounds] Radius:[VnCurrentSettings previewProgressRadius]];
-    [_resizingProgressView setY:[VnCurrentSettings topBarHeight]];
+    [_resizingProgressView setY:[VnCurrentSettings navBarHeight]];
     [self.view addSubview:_resizingProgressView];
 }
 
@@ -146,6 +150,12 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     button.type = VnViewEditorToolBarButtonTypeShuffle;
     button.delegate = self.delegate;
     [_toolBar appendToolButton:button];
+    
+    //// Close
+    button = [[VnViewEditorToolBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentSettings toolBarButtonSize].height, [VnCurrentSettings toolBarButtonSize].height)];
+    button.type = VnViewEditorToolBarButtonTypeClose;
+    button.delegate = self.delegate;
+    [_navBar appendToolButton:button];
 }
 
 - (void)layoutLayerButtons

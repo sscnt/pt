@@ -111,6 +111,33 @@
             
             
         }
+            break;
+        case VnViewEditorToolBarButtonTypeClose:
+        {
+            //// Bezier Drawing
+            UIBezierPath* bezierPath = [UIBezierPath bezierPath];
+            [bezierPath moveToPoint: CGPointMake(22.76, 14.93)];
+            [bezierPath addLineToPoint: CGPointMake(27, 19.17)];
+            [bezierPath addLineToPoint: CGPointMake(31.24, 14.93)];
+            [bezierPath addCurveToPoint: CGPointMake(34.07, 14.93) controlPoint1: CGPointMake(32.02, 14.15) controlPoint2: CGPointMake(33.29, 14.15)];
+            [bezierPath addCurveToPoint: CGPointMake(34.07, 17.76) controlPoint1: CGPointMake(34.85, 15.71) controlPoint2: CGPointMake(34.85, 16.98)];
+            [bezierPath addLineToPoint: CGPointMake(29.83, 22)];
+            [bezierPath addLineToPoint: CGPointMake(34.07, 26.24)];
+            [bezierPath addCurveToPoint: CGPointMake(34.07, 29.07) controlPoint1: CGPointMake(34.85, 27.02) controlPoint2: CGPointMake(34.85, 28.29)];
+            [bezierPath addCurveToPoint: CGPointMake(31.24, 29.07) controlPoint1: CGPointMake(33.29, 29.85) controlPoint2: CGPointMake(32.02, 29.85)];
+            [bezierPath addLineToPoint: CGPointMake(27, 24.83)];
+            [bezierPath addLineToPoint: CGPointMake(22.76, 29.07)];
+            [bezierPath addCurveToPoint: CGPointMake(19.93, 29.07) controlPoint1: CGPointMake(21.98, 29.85) controlPoint2: CGPointMake(20.71, 29.85)];
+            [bezierPath addCurveToPoint: CGPointMake(19.93, 26.24) controlPoint1: CGPointMake(19.15, 28.29) controlPoint2: CGPointMake(19.15, 27.02)];
+            [bezierPath addLineToPoint: CGPointMake(24.17, 22)];
+            [bezierPath addLineToPoint: CGPointMake(19.93, 17.76)];
+            [bezierPath addCurveToPoint: CGPointMake(19.93, 14.93) controlPoint1: CGPointMake(19.15, 16.98) controlPoint2: CGPointMake(19.15, 15.71)];
+            [bezierPath addCurveToPoint: CGPointMake(22.76, 14.93) controlPoint1: CGPointMake(20.71, 14.15) controlPoint2: CGPointMake(21.98, 14.15)];
+            [bezierPath closePath];
+            [color setFill];
+            [bezierPath fill];
+        }
+            break;
         default:
             break;
     }
