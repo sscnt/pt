@@ -39,13 +39,19 @@
     }
     _sliding = YES;
     __block VnViewEditorLayerBarWrapper* _self = self;
-    [UIView animateWithDuration:0.2f
+    [UIView animateWithDuration:0.1f
                      animations:^{
-                         [_self.view setY:-_self.frame.size.height];
+                         [_self.view setY:-_self.frame.size.height / 2.0f];
                          _self.bar.alpha = 0.0f;
                      }
                      completion:^(BOOL finished){
-                         _self.sliding = NO;
+                         [UIView animateWithDuration:0.1f
+                                          animations:^{
+                                              [_self.view setY:-_self.frame.size.height];
+                                          }
+                                          completion:^(BOOL finished){
+                                              _self.sliding = NO;
+                                          }];
                      }];
 }
 
@@ -56,13 +62,19 @@
     }
     _sliding = YES;
     __block VnViewEditorLayerBarWrapper* _self = self;
-    [UIView animateWithDuration:0.2f
+    [UIView animateWithDuration:0.1f
                      animations:^{
-                         [_self.view setY:0.0f];
-                         _self.bar.alpha = 1.0f;
+                         [_self.view setY:-_self.frame.size.height / 2.0f];
                      }
                      completion:^(BOOL finished){
-                         _self.sliding = NO;
+                         [UIView animateWithDuration:0.1f
+                                          animations:^{
+                                              [_self.view setY:0.0f];
+                                              _self.bar.alpha = 1.0f;
+                                          }
+                                          completion:^(BOOL finished){
+                                              _self.sliding = NO;
+                                          }];
                      }];
 }
 

@@ -298,6 +298,7 @@
     [VnCurrentImage instance].originalImageSize = image.size;
     
     //// Present
+    [[VnEditorViewManager instance] lock];
     __block VnViewControllerHome* _self = self;
     __block VnViewControllerEditor* controller = [[VnViewControllerEditor alloc] init];
     [self.navigationController pushViewController:controller animated:YES];

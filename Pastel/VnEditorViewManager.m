@@ -39,7 +39,6 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 {
     self = [super init];
     if (self) {
-        _state = VnEditorViewManagerViewStateChoosingLayer;
     }
     return self;
 }
@@ -48,6 +47,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 - (void)commonInit
 {
     [self initButtons];
+    _state = VnEditorViewManagerViewStateChoosingLayer;
 }
 
 - (void)initButtons
