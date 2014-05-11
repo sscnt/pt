@@ -18,6 +18,7 @@
         _scrollView.contentSize = [VnCurrentImage previewImageViewSize];
         _scrollView.showsHorizontalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.delaysContentTouches = NO;
         _scrollView.delegate = self;
         _scrollView.bounces = YES;
         _scrollView.maximumZoomScale = 1.0f;
