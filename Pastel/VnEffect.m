@@ -159,6 +159,12 @@
     if (effectId == VnEffectIdCarnival) {
         return [[VnEffectCarnival alloc] init];
     }
+    if (effectId == VnEffectIdWaldenFaded) {
+        return [[VnEffectWaldenFaded alloc] init];
+    }
+    if (effectId == VnEffectIdAmaroFaded) {
+        return [[VnEffectAmaroFaded alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {

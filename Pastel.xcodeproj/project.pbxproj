@@ -93,6 +93,10 @@
 		582919FB1913DF80007052B3 /* VnButtonHomeSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 582919FA1913DF80007052B3 /* VnButtonHomeSource.m */; };
 		582919FE1913E4B3007052B3 /* VnViewHomeBg.m in Sources */ = {isa = PBXBuildFile; fileRef = 582919FD1913E4B3007052B3 /* VnViewHomeBg.m */; };
 		58291A011913F816007052B3 /* VnViewControllerEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 58291A001913F816007052B3 /* VnViewControllerEditor.m */; };
+		582BECDE1920ADFD00084C28 /* VnEffectWaldenFaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECDD1920ADFD00084C28 /* VnEffectWaldenFaded.m */; };
+		582BECE31920B0F000084C28 /* wldfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECE21920B0F000084C28 /* wldfd.acv */; };
+		582BECE61920BB4100084C28 /* VnEffectAmaroFaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECE51920BB4100084C28 /* VnEffectAmaroFaded.m */; };
+		582BECE81920BB9000084C28 /* amrfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECE71920BB9000084C28 /* amrfd.acv */; };
 		5835FBB7191F811B00AF5536 /* VnViewEditorLayerBarWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5835FBB6191F811B00AF5536 /* VnViewEditorLayerBarWrapper.m */; };
 		584F06551912739C00C3467C /* EVCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06521912739C00C3467C /* EVCircularProgressView.m */; };
 		584F06561912739C00C3467C /* VnViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06541912739C00C3467C /* VnViewProgress.m */; };
@@ -380,6 +384,12 @@
 		582919FD1913E4B3007052B3 /* VnViewHomeBg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewHomeBg.m; sourceTree = "<group>"; };
 		582919FF1913F816007052B3 /* VnViewControllerEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewControllerEditor.h; sourceTree = "<group>"; };
 		58291A001913F816007052B3 /* VnViewControllerEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewControllerEditor.m; sourceTree = "<group>"; };
+		582BECDC1920ADFD00084C28 /* VnEffectWaldenFaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectWaldenFaded.h; sourceTree = "<group>"; };
+		582BECDD1920ADFD00084C28 /* VnEffectWaldenFaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectWaldenFaded.m; sourceTree = "<group>"; };
+		582BECE21920B0F000084C28 /* wldfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = wldfd.acv; sourceTree = "<group>"; };
+		582BECE41920BB4100084C28 /* VnEffectAmaroFaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectAmaroFaded.h; sourceTree = "<group>"; };
+		582BECE51920BB4100084C28 /* VnEffectAmaroFaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectAmaroFaded.m; sourceTree = "<group>"; };
+		582BECE71920BB9000084C28 /* amrfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = amrfd.acv; sourceTree = "<group>"; };
 		5835FBB5191F811B00AF5536 /* VnViewEditorLayerBarWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBarWrapper.h; sourceTree = "<group>"; };
 		5835FBB6191F811B00AF5536 /* VnViewEditorLayerBarWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBarWrapper.m; sourceTree = "<group>"; };
 		584F06511912739C00C3467C /* EVCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCircularProgressView.h; sourceTree = "<group>"; };
@@ -629,6 +639,10 @@
 				58F67A92191B56150085DF18 /* VnEffectWeekend.m */,
 				58F9B794191BA85A003104E9 /* VnEffectSweetFlower.h */,
 				58F9B795191BA85A003104E9 /* VnEffectSweetFlower.m */,
+				582BECDC1920ADFD00084C28 /* VnEffectWaldenFaded.h */,
+				582BECDD1920ADFD00084C28 /* VnEffectWaldenFaded.m */,
+				582BECE41920BB4100084C28 /* VnEffectAmaroFaded.h */,
+				582BECE51920BB4100084C28 /* VnEffectAmaroFaded.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -667,6 +681,8 @@
 		580434EB19149CA800B84896 /* Curves */ = {
 			isa = PBXGroup;
 			children = (
+				582BECE21920B0F000084C28 /* wldfd.acv */,
+				582BECE71920BB9000084C28 /* amrfd.acv */,
 				58F9B792191BA388003104E9 /* blbry.acv */,
 				58F483C3191D083000028585 /* blrs.acv */,
 				58F444F81914ACBD00A1E3E7 /* cpt.acv */,
@@ -1222,6 +1238,7 @@
 				58F67AA7191B58F40085DF18 /* hzlp2.acv in Resources */,
 				58F73B25190F942A0056D7D6 /* Main_iPad.storyboard in Resources */,
 				58F9B79A191BAABD003104E9 /* swfl2.acv in Resources */,
+				582BECE31920B0F000084C28 /* wldfd.acv in Resources */,
 				58F483BC191D033D00028585 /* grap1.acv in Resources */,
 				58F483CB191D135300028585 /* plbr2.acv in Resources */,
 				580434ED19149CC400B84896 /* clbs.acv in Resources */,
@@ -1258,6 +1275,7 @@
 				58F67AC3191B6DF70085DF18 /* gm3.acv in Resources */,
 				58F67A9F191B58060085DF18 /* dc3.acv in Resources */,
 				58F67AC4191B6DF70085DF18 /* gm4.acv in Resources */,
+				582BECE81920BB9000084C28 /* amrfd.acv in Resources */,
 				58F483BF191D033D00028585 /* grap4.acv in Resources */,
 				5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */,
 				58F73B19190F942A0056D7D6 /* InfoPlist.strings in Resources */,
@@ -1305,6 +1323,7 @@
 				5805FD721910098B0010C13A /* VnEditorViewManager.m in Sources */,
 				5805FD361910044C0010C13A /* VnBlendingColorBurn.m in Sources */,
 				5805FD2F1910044C0010C13A /* VnBlendingDifference.m in Sources */,
+				582BECDE1920ADFD00084C28 /* VnEffectWaldenFaded.m in Sources */,
 				580434F019149D0100B84896 /* VnEffectColorLittleBlueSecret.m in Sources */,
 				5805FD331910044C0010C13A /* VnBlendingDarkerColor.m in Sources */,
 				58F67AD9191B8C770085DF18 /* VnEffectPinkBubbleTea.m in Sources */,
@@ -1317,6 +1336,7 @@
 				5805FCF2191003C60010C13A /* VnAdjustmentLayerColorBalance.m in Sources */,
 				5801FF4F191F9E78001CFD95 /* UISliderView.m in Sources */,
 				5835FBB7191F811B00AF5536 /* VnViewEditorLayerBarWrapper.m in Sources */,
+				582BECE61920BB4100084C28 /* VnEffectAmaroFaded.m in Sources */,
 				5805FCD9191002690010C13A /* UIView+extend.m in Sources */,
 				58F3F54519150E7D003A5A03 /* VnEffectColorSunnyLight.m in Sources */,
 				58F483B7191D023F00028585 /* VnEffectGreenApple.m in Sources */,
