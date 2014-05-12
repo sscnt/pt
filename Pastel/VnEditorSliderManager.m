@@ -49,25 +49,101 @@ static VnEditorSliderManager* sharedVnEditorSliderManager = nil;
     _didUserModifiedColor = NO;
     _didUserModifiedEffect = NO;
     _didUserModifiedOverlay = NO;
-    _colorOpacity = 0.0f;
-    _effectOpacity = 0.0f;
-    _overlayOpacity = 0.0f;
+}
+
+- (float)colorOpacity
+{
+    return [VnEditorViewManager instance].colorOpacitySlider.value;
+}
+
+- (float)effectOpacity
+{
+    return [VnEditorViewManager instance].effectOpacitySlider.value;
+}
+
+- (float)overlayOpacity
+{
+    return [VnEditorViewManager instance].overlayOpacitySlider.value;
+}
+
+- (void)setEffectOpacity:(float)effectOpacity
+{
+    [VnEditorViewManager setEffectSliderValue:effectOpacity];
+}
+
+- (void)setColorOpacity:(float)colorOpacity
+{
+    [VnEditorViewManager setColorSliderValue:colorOpacity];
+}
+
+- (void)setOverlayOpacity:(float)overlayOpacity
+{
+    [VnEditorViewManager setOverlaySliderValue:overlayOpacity];
 }
 
 + (void)setEffectOpacity:(float)opacity
 {
+    [VnEditorViewManager setEffectSliderValue:opacity];
     [self instance].effectOpacity = opacity;
 }
 
 + (void)setOverlayOpacity:(float)opacity
 {
+    [VnEditorViewManager setOverlaySliderValue:opacity];
     [self instance].overlayOpacity = opacity;
 }
 
 + (void)setColorOpacity:(float)opacity
 {
+    [VnEditorViewManager setColorSliderValue:opacity];
     [self instance].colorOpacity = opacity;
 }
 
+
+#pragma mark delegate
+
+- (void)slider:(VnViewSlider *)slider DidValueChange:(CGFloat)value
+{
+    LOG(@"%f", value);
+}
+
+- (void)touchesBeganWithSlider:(VnViewSlider *)slider
+{
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
+    if (vm.locked) {
+        return;
+    }
+    [vm lock];
+    [vm showBlureedPreviewImage];
+}
+
+- (void)touchesEndedWithSlider:(VnViewSlider *)slider
+{
+    
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
+    [vm lock];
+    [vm showPreviewProgressView];
+    
+    switch (slider.effectGroup) {
+        case VnEffectGroupColor:
+            [VnCurrentImage deleteProcessedColorPreviewImage];
+            [VnCurrentImage deleteProcessedEffectPreviewImage];
+            [VnCurrentImage deleteProcessedOverlayPreviewImage];
+            break;
+        case VnEffectGroupEffects:
+            [VnCurrentImage deleteProcessedEffectPreviewImage];
+            [VnCurrentImage deleteProcessedOverlayPreviewImage];
+            break;
+        case VnEffectGroupOverlays:
+            [VnCurrentImage deleteProcessedOverlayPreviewImage];
+            break;
+    }
+    
+    VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
+    queue.type = VnObjectProcessingQueueTypePreview;
+    [VnProcessingQueueManager addQueue:queue];
+    
+
+}
 
 @end

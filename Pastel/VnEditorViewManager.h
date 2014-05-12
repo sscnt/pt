@@ -111,6 +111,13 @@ typedef NS_ENUM(NSInteger, VnEditorViewManagerViewState){
 
 + (int)numberOfSelectedLayers;
 
++ (void)setColorSliderValue:(float)value;
++ (void)setEffectSliderValue:(float)value;
++ (void)setOverlaySliderValue:(float)value;
+- (void)setColorSliderValue:(float)value;
+- (void)setEffectSliderValue:(float)value;
+- (void)setOverlaySliderValue:(float)value;
+
 + (BOOL)canChooseLayer;
 
 + (VnViewEditorLayerBarButton*)copyButtonWithButton:(VnViewEditorLayerBarButton*)button;

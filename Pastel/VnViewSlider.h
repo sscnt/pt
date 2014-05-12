@@ -20,7 +20,10 @@
 - (void)touchesEndedWithSlider:(VnViewSlider*)slider;
 @end
 
-@interface VnViewSlider : UIView
+@interface VnViewSlider : UIView <UISliderViewDelegate>
+{
+    float _paddingLeft;
+}
 
 @property (nonatomic, strong) UISliderView* sliderView;
 @property (nonatomic, weak) VnViewEditorLayerBarButton* button;
@@ -31,6 +34,10 @@
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, assign) SliderViewTitlePosition titlePosition;
 @property (nonatomic, assign) BOOL locked;
+@property (nonatomic, assign) VnEffectGroup effectGroup;
 
+@property (nonatomic, strong) UIColor* sliderStrokeColor;
+@property (nonatomic, strong) UIColor* sliderBgColor;
+@property (nonatomic, strong) UIColor* sliderThumbColor;
 
 @end

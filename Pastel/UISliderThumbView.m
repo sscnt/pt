@@ -32,13 +32,9 @@
 {
     //// Oval Drawing
     UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(2.0f, 3.0f, _radius * 2.0 - 4.0f, _radius * 2.0 - 4.0f)];
-    if(_locked){
-        [[UIColor colorWithWhite:1.0f alpha:1.0f] setFill];
-    }else{
-        [[UIColor colorWithWhite:1.0f alpha:1.0f] setFill];
-    }
+    [_color setFill];
     [ovalPath fill];
-    [[UIColor colorWithWhite:26.0f/255.0f alpha:1.0f] setStroke];
+    [_strokeColor setStroke];
     ovalPath.lineWidth = 2;
     [ovalPath stroke];
 }

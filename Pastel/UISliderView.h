@@ -32,6 +32,7 @@ typedef NS_ENUM(NSInteger, SliderViewTitlePosition){
     CGFloat _thumbEndX;
     CGFloat _alpha;
     CGFloat _value;
+    CGFloat _radius;
 }
 
 @property (nonatomic, strong) NSString* title;
@@ -41,6 +42,10 @@ typedef NS_ENUM(NSInteger, SliderViewTitlePosition){
 @property (nonatomic, assign) CGFloat paddingHorizontal;
 @property (nonatomic, assign) CGFloat paddingVertical;
 @property (nonatomic, assign) BOOL locked;
+@property (nonatomic, strong) UIColor* strokeColor;
+@property (nonatomic, strong) UIColor* bgColor;
+@property (nonatomic, strong) UIColor* thumbColor;
+@property (nonatomic, strong) UIView* indicator;
 
 - (void)didDragThumb:(UIPanGestureRecognizer*)sender;
 - (CGFloat)calcValueByThumbPosition:(CGFloat)x;

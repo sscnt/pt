@@ -143,16 +143,31 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     y = [_colorBarWrapper height];
     _colorOpacitySlider = [[VnViewSlider alloc] initWithFrame:_colorBarWrapper.bounds];
     [_colorOpacitySlider setY:y];
+    _colorOpacitySlider.sliderStrokeColor = [VnCurrentSettings effectsBarBgColor];
+    _colorOpacitySlider.sliderThumbColor = [VnCurrentSettings effectsBarBgColor];
+    _colorOpacitySlider.sliderBgColor = [VnCurrentSettings colorBarBgColor];
+    _colorOpacitySlider.delegate = [VnEditorSliderManager instance];
+    _colorOpacitySlider.effectGroup = VnEffectGroupColor;
     _colorBarWrapper.layerSlider = _colorOpacitySlider;
     
     y = [_effectBarWrapper height];
     _effectOpacitySlider = [[VnViewSlider alloc] initWithFrame:_effectBarWrapper.bounds];
     [_effectOpacitySlider setY:y];
+    _effectOpacitySlider.sliderStrokeColor = [VnCurrentSettings overlayBarBgColor];
+    _effectOpacitySlider.sliderThumbColor = [VnCurrentSettings overlayBarBgColor];
+    _effectOpacitySlider.sliderBgColor = [VnCurrentSettings effectsBarBgColor];
+    _effectOpacitySlider.delegate = [VnEditorSliderManager instance];
+    _effectOpacitySlider.effectGroup = VnEffectGroupEffects;
     _effectBarWrapper.layerSlider = _effectOpacitySlider;
     
     y = [_overlayBarWrapper height];
     _overlayOpacitySlider = [[VnViewSlider alloc] initWithFrame:_overlayBarWrapper.bounds];
     [_overlayOpacitySlider setY:y];
+    _overlayOpacitySlider.sliderStrokeColor = [VnCurrentSettings effectsBarBgColor];
+    _overlayOpacitySlider.sliderThumbColor = [VnCurrentSettings effectsBarBgColor];
+    _overlayOpacitySlider.sliderBgColor = [VnCurrentSettings overlayBarBgColor];
+    _overlayOpacitySlider.delegate = [VnEditorSliderManager instance];
+    _overlayOpacitySlider.effectGroup = VnEffectGroupOverlays;
     _overlayBarWrapper.layerSlider = _overlayOpacitySlider;
 }
 
@@ -270,6 +285,37 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 }
 
 #pragma mark sliders
+
++ (void)setColorSliderValue:(float)value
+{
+    [[self instance] setColorSliderValue:value];
+}
+
+- (void)setColorSliderValue:(float)value
+{
+    _colorOpacitySlider.value = value;
+}
+
++ (void)setEffectSliderValue:(float)value
+{
+    [[self instance] setEffectSliderValue:value];
+}
+
+- (void)setEffectSliderValue:(float)value
+{
+    _effectOpacitySlider.value = value;
+}
+
++ (void)setOverlaySliderValue:(float)value
+
+{
+    [[self instance] setOverlaySliderValue:value];
+}
+
+- (void)setOverlaySliderValue:(float)value
+{
+    _overlayOpacitySlider.value = value;
+}
 
 + (BOOL)showLayerSliders
 {

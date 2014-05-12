@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VnViewSlider.h"
 
-@interface VnEditorSliderManager : NSObject
+@interface VnEditorSliderManager : NSObject <VnViewSliderDelegate>
 
 @property (nonatomic, assign) float colorOpacity;
 @property (nonatomic, assign) float effectOpacity;
