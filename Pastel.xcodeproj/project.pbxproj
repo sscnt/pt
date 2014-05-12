@@ -223,6 +223,10 @@
 		58FA89BE1920F7B10047F265 /* brzfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58FA89BD1920F7B10047F265 /* brzfd.acv */; };
 		58FA89C01920FA7F0047F265 /* fxifd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58FA89BF1920FA7F0047F265 /* fxifd.acv */; };
 		58FA89C21920FC360047F265 /* lngrfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58FA89C11920FC360047F265 /* lngrfd.acv */; };
+		58FA89C51920FF040047F265 /* VnEffectNashvilleFaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA89C41920FF040047F265 /* VnEffectNashvilleFaded.m */; };
+		58FA89C71920FF4F0047F265 /* nsvlfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58FA89C61920FF4F0047F265 /* nsvlfd.acv */; };
+		58FA89CA1920FFF80047F265 /* VnEffectXPro2Faded.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA89C91920FFF80047F265 /* VnEffectXPro2Faded.m */; };
+		58FA89CC192100940047F265 /* xp2fd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58FA89CB192100940047F265 /* xp2fd.acv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -606,6 +610,12 @@
 		58FA89BD1920F7B10047F265 /* brzfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = brzfd.acv; sourceTree = "<group>"; };
 		58FA89BF1920FA7F0047F265 /* fxifd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = fxifd.acv; sourceTree = "<group>"; };
 		58FA89C11920FC360047F265 /* lngrfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = lngrfd.acv; sourceTree = "<group>"; };
+		58FA89C31920FF040047F265 /* VnEffectNashvilleFaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectNashvilleFaded.h; sourceTree = "<group>"; };
+		58FA89C41920FF040047F265 /* VnEffectNashvilleFaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectNashvilleFaded.m; sourceTree = "<group>"; };
+		58FA89C61920FF4F0047F265 /* nsvlfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = nsvlfd.acv; sourceTree = "<group>"; };
+		58FA89C81920FFF80047F265 /* VnEffectXPro2Faded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectXPro2Faded.h; sourceTree = "<group>"; };
+		58FA89C91920FFF80047F265 /* VnEffectXPro2Faded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectXPro2Faded.m; sourceTree = "<group>"; };
+		58FA89CB192100940047F265 /* xp2fd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = xp2fd.acv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -729,6 +739,10 @@
 				58FA89B81920F67E0047F265 /* VnEffectFixieFaded.m */,
 				58FA89BA1920F71B0047F265 /* VnEffectLeningradFaded.h */,
 				58FA89BB1920F71B0047F265 /* VnEffectLeningradFaded.m */,
+				58FA89C31920FF040047F265 /* VnEffectNashvilleFaded.h */,
+				58FA89C41920FF040047F265 /* VnEffectNashvilleFaded.m */,
+				58FA89C81920FFF80047F265 /* VnEffectXPro2Faded.h */,
+				58FA89C91920FFF80047F265 /* VnEffectXPro2Faded.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -812,6 +826,7 @@
 				582BECF61920C29900084C28 /* kdptr800.acv */,
 				58FA89C11920FC360047F265 /* lngrfd.acv */,
 				582BECEC1920BD2D00084C28 /* lnkfd.acv */,
+				58FA89C61920FF4F0047F265 /* nsvlfd.acv */,
 				5802D1F219160BEB00E258F3 /* olbm.acv */,
 				582844861918B1BF008E3AEF /* olbp.acv */,
 				58F67ADA191B8C810085DF18 /* pbt.acv */,
@@ -822,6 +837,7 @@
 				58F9B797191BA9AB003104E9 /* swfl.acv */,
 				58F9B799191BAABD003104E9 /* swfl2.acv */,
 				58F67A94191B56240085DF18 /* wnd.acv */,
+				58FA89CB192100940047F265 /* xp2fd.acv */,
 				58F483B3191CF8E400028585 /* dnt.acv */,
 			);
 			name = Curves;
@@ -1386,9 +1402,11 @@
 				58FA89B61920F5700047F265 /* bnnfd.acv in Resources */,
 				58F67AC4191B6DF70085DF18 /* gm4.acv in Resources */,
 				582BED061920CC3200084C28 /* qzfd.acv in Resources */,
+				58FA89C71920FF4F0047F265 /* nsvlfd.acv in Resources */,
 				582BECE81920BB9000084C28 /* amrfd.acv in Resources */,
 				58F483BF191D033D00028585 /* grap4.acv in Resources */,
 				5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */,
+				58FA89CC192100940047F265 /* xp2fd.acv in Resources */,
 				58F73B19190F942A0056D7D6 /* InfoPlist.strings in Resources */,
 				58F67AC1191B6DF70085DF18 /* gm1.acv in Resources */,
 				58F67AB1191B59AA0085DF18 /* Hzl1.acv in Resources */,
@@ -1468,6 +1486,7 @@
 				5805FCD8191002690010C13A /* UIScreen+extend.m in Sources */,
 				5805FD65191009760010C13A /* VnBoolean.m in Sources */,
 				584F0659191273AC00C3467C /* VnViewLabel.m in Sources */,
+				58FA89CA1920FFF80047F265 /* VnEffectXPro2Faded.m in Sources */,
 				58F445041914C7BB00A1E3E7 /* VnEffectColorRosyVintage.m in Sources */,
 				5801FF49191F9E58001CFD95 /* VnViewSlider.m in Sources */,
 				5805FD2D1910044C0010C13A /* VnBlendingOverlay.m in Sources */,
@@ -1529,6 +1548,7 @@
 				58F5CB4B191DF4C9009FA56D /* VnEffectOverlaySunhazeRight.m in Sources */,
 				580434F31914A15100B84896 /* VnEffectColorOphelia.m in Sources */,
 				582BECF51920C24900084C28 /* VnEffectKodakPortra800.m in Sources */,
+				58FA89C51920FF040047F265 /* VnEffectNashvilleFaded.m in Sources */,
 				580434E91914985E00B84896 /* VnEffectColorBronze.m in Sources */,
 				58F73B1F190F942A0056D7D6 /* AppDelegate.m in Sources */,
 				5805FD321910044C0010C13A /* VnBlendingColor.m in Sources */,

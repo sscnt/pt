@@ -201,6 +201,12 @@
     if (effectId == VnEffectIdLeningradFaded) {
         return [[VnEffectLeningradFaded alloc] init];
     }
+    if (effectId == VnEffectIdNashvilleFaded) {
+        return [[VnEffectNashvilleFaded alloc] init];
+    }
+    if (effectId == VnEffectIdXPro2Faded) {
+        return [[VnEffectXPro2Faded alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {

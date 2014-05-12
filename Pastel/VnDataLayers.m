@@ -311,6 +311,20 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.name = NSLocalizedString(@"N5", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
+    
+    //// Nashville Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdNashvilleFaded;
+    effect.name = NSLocalizedString(@"N6", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// XPro 2 Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdXPro2Faded;
+    effect.name = NSLocalizedString(@"N7", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
         
 }
 

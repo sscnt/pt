@@ -124,8 +124,10 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdLanikaiFaded,
     VnEffectIdDeutanFaded,
     VnEffectIdBrannanFaded,
+    VnEffectIdXPro2Faded,
     VnEffectIdFixieFaded,
     VnEffectIdLeningradFaded,
+    VnEffectIdNashvilleFaded,
     VnEffectIdGentleMemories,
     VnEffectIdOverlayBlueHaze,
     VnEffectIdOverlayHazyLightWarmPink,
@@ -257,6 +259,8 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectBrannanFaded.h"
 #import "VnEffectFixieFaded.h"
 #import "VnEffectLeningradFaded.h"
+#import "VnEffectNashvilleFaded.h"
+#import "VnEffectXPro2Faded.h"
 
 #import "VnEffectOverlayLightBrightMatte.h"
 #import "VnEffectOverlayRetroSun.h"
