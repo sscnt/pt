@@ -189,6 +189,18 @@
     if (effectId == VnEffectIdFresnoFaded) {
         return [[VnEffectFresnoFaded alloc] init];
     }
+    if (effectId == VnEffectIdDeutanFaded) {
+        return [[VnEffectDeutanFaded alloc] init];
+    }
+    if (effectId == VnEffectIdBrannanFaded) {
+        return [[VnEffectBrannanFaded alloc] init];
+    }
+    if (effectId == VnEffectIdFixieFaded) {
+        return [[VnEffectFixieFaded alloc] init];
+    }
+    if (effectId == VnEffectIdLeningradFaded) {
+        return [[VnEffectLeningradFaded alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {

@@ -22,7 +22,14 @@
     GLuint blueGreenUniform;
     GLuint blueBlueUniform;
     GLuint blueConstantUniform;
+    GLuint greyRedUniform;
+    GLuint greyGreenUniform;
+    GLuint greyBlueUniform;
+    GLuint greyConstantUniform;
+    GLuint monochromeUniform;
 }
+
+@property (nonatomic, assign) BOOL monochrome;
 
 /*
  * percent
@@ -31,5 +38,7 @@
 - (void)setRedChannelRed:(int)red Green:(int)green Blue:(int)blue Constant:(int)constant;
 - (void)setGreenChannelRed:(int)red Green:(int)green Blue:(int)blue Constant:(int)constant;
 - (void)setBlueChannelRed:(int)red Green:(int)green Blue:(int)blue Constant:(int)constant;
+
+- (void)setGreyChannelRed:(int)red Green:(int)green Blue:(int)blue Constant:(int)constant;
 
 @end

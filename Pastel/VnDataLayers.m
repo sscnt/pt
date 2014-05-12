@@ -283,6 +283,34 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.name = NSLocalizedString(@"N1", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
+    
+    //// Deutan Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdDeutanFaded;
+    effect.name = NSLocalizedString(@"N2", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Brannan Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdBrannanFaded;
+    effect.name = NSLocalizedString(@"N3", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Fixie Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdFixieFaded;
+    effect.name = NSLocalizedString(@"N4", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Breeze Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdLeningradFaded;
+    effect.name = NSLocalizedString(@"N5", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
         
 }
 
