@@ -97,6 +97,16 @@
 		582BECE31920B0F000084C28 /* wldfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECE21920B0F000084C28 /* wldfd.acv */; };
 		582BECE61920BB4100084C28 /* VnEffectAmaroFaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECE51920BB4100084C28 /* VnEffectAmaroFaded.m */; };
 		582BECE81920BB9000084C28 /* amrfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECE71920BB9000084C28 /* amrfd.acv */; };
+		582BECEB1920BCD900084C28 /* VnEffectLanikaiFaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECEA1920BCD900084C28 /* VnEffectLanikaiFaded.m */; };
+		582BECED1920BD2D00084C28 /* lnkfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECEC1920BD2D00084C28 /* lnkfd.acv */; };
+		582BECF01920BF4600084C28 /* VnEffectFrontpageFaded.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECEF1920BF4600084C28 /* VnEffectFrontpageFaded.m */; };
+		582BECF21920BFFE00084C28 /* frpfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECF11920BFFE00084C28 /* frpfd.acv */; };
+		582BECF51920C24900084C28 /* VnEffectKodakPortra800.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECF41920C24900084C28 /* VnEffectKodakPortra800.m */; };
+		582BECF71920C37F00084C28 /* kdptr800.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECF61920C29900084C28 /* kdptr800.acv */; };
+		582BECFA1920C43A00084C28 /* VnEffectPx680.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECF91920C43A00084C28 /* VnEffectPx680.m */; };
+		582BECFC1920C55300084C28 /* px680.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BECFB1920C55300084C28 /* px680.acv */; };
+		582BECFF1920CA1100084C28 /* VnEffectFujiSuperia800.m in Sources */ = {isa = PBXBuildFile; fileRef = 582BECFE1920CA1100084C28 /* VnEffectFujiSuperia800.m */; };
+		582BED011920CA7500084C28 /* fs800.acv in Resources */ = {isa = PBXBuildFile; fileRef = 582BED001920CA7500084C28 /* fs800.acv */; };
 		5835FBB7191F811B00AF5536 /* VnViewEditorLayerBarWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5835FBB6191F811B00AF5536 /* VnViewEditorLayerBarWrapper.m */; };
 		584F06551912739C00C3467C /* EVCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06521912739C00C3467C /* EVCircularProgressView.m */; };
 		584F06561912739C00C3467C /* VnViewProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 584F06541912739C00C3467C /* VnViewProgress.m */; };
@@ -390,6 +400,21 @@
 		582BECE41920BB4100084C28 /* VnEffectAmaroFaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectAmaroFaded.h; sourceTree = "<group>"; };
 		582BECE51920BB4100084C28 /* VnEffectAmaroFaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectAmaroFaded.m; sourceTree = "<group>"; };
 		582BECE71920BB9000084C28 /* amrfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = amrfd.acv; sourceTree = "<group>"; };
+		582BECE91920BCD900084C28 /* VnEffectLanikaiFaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectLanikaiFaded.h; sourceTree = "<group>"; };
+		582BECEA1920BCD900084C28 /* VnEffectLanikaiFaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectLanikaiFaded.m; sourceTree = "<group>"; };
+		582BECEC1920BD2D00084C28 /* lnkfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = lnkfd.acv; sourceTree = "<group>"; };
+		582BECEE1920BF4600084C28 /* VnEffectFrontpageFaded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectFrontpageFaded.h; sourceTree = "<group>"; };
+		582BECEF1920BF4600084C28 /* VnEffectFrontpageFaded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectFrontpageFaded.m; sourceTree = "<group>"; };
+		582BECF11920BFFE00084C28 /* frpfd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = frpfd.acv; sourceTree = "<group>"; };
+		582BECF31920C24900084C28 /* VnEffectKodakPortra800.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectKodakPortra800.h; sourceTree = "<group>"; };
+		582BECF41920C24900084C28 /* VnEffectKodakPortra800.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectKodakPortra800.m; sourceTree = "<group>"; };
+		582BECF61920C29900084C28 /* kdptr800.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = kdptr800.acv; sourceTree = "<group>"; };
+		582BECF81920C43A00084C28 /* VnEffectPx680.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectPx680.h; sourceTree = "<group>"; };
+		582BECF91920C43A00084C28 /* VnEffectPx680.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectPx680.m; sourceTree = "<group>"; };
+		582BECFB1920C55300084C28 /* px680.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = px680.acv; sourceTree = "<group>"; };
+		582BECFD1920CA1100084C28 /* VnEffectFujiSuperia800.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectFujiSuperia800.h; sourceTree = "<group>"; };
+		582BECFE1920CA1100084C28 /* VnEffectFujiSuperia800.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectFujiSuperia800.m; sourceTree = "<group>"; };
+		582BED001920CA7500084C28 /* fs800.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = fs800.acv; sourceTree = "<group>"; };
 		5835FBB5191F811B00AF5536 /* VnViewEditorLayerBarWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBarWrapper.h; sourceTree = "<group>"; };
 		5835FBB6191F811B00AF5536 /* VnViewEditorLayerBarWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBarWrapper.m; sourceTree = "<group>"; };
 		584F06511912739C00C3467C /* EVCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EVCircularProgressView.h; sourceTree = "<group>"; };
@@ -643,6 +668,16 @@
 				582BECDD1920ADFD00084C28 /* VnEffectWaldenFaded.m */,
 				582BECE41920BB4100084C28 /* VnEffectAmaroFaded.h */,
 				582BECE51920BB4100084C28 /* VnEffectAmaroFaded.m */,
+				582BECE91920BCD900084C28 /* VnEffectLanikaiFaded.h */,
+				582BECEA1920BCD900084C28 /* VnEffectLanikaiFaded.m */,
+				582BECEE1920BF4600084C28 /* VnEffectFrontpageFaded.h */,
+				582BECEF1920BF4600084C28 /* VnEffectFrontpageFaded.m */,
+				582BECF31920C24900084C28 /* VnEffectKodakPortra800.h */,
+				582BECF41920C24900084C28 /* VnEffectKodakPortra800.m */,
+				582BECF81920C43A00084C28 /* VnEffectPx680.h */,
+				582BECF91920C43A00084C28 /* VnEffectPx680.m */,
+				582BECFD1920CA1100084C28 /* VnEffectFujiSuperia800.h */,
+				582BECFE1920CA1100084C28 /* VnEffectFujiSuperia800.m */,
 			);
 			name = Effects;
 			sourceTree = "<group>";
@@ -697,6 +732,8 @@
 				58F67AB6191B5ECF0085DF18 /* fv1.acv */,
 				58F67AB7191B5ECF0085DF18 /* fv2.acv */,
 				58F9B79E191BBDE0003104E9 /* frpp.acv */,
+				582BECF11920BFFE00084C28 /* frpfd.acv */,
+				582BED001920CA7500084C28 /* fs800.acv */,
 				58F67AC8191B85F80085DF18 /* gi4.acv */,
 				58F67AC9191B85F80085DF18 /* gi3.acv */,
 				58F67ACA191B85F80085DF18 /* gi2.acv */,
@@ -715,11 +752,14 @@
 				58F67AA6191B58F40085DF18 /* hzlp1.acv */,
 				58F67AD3191B8AC90085DF18 /* jf1.acv */,
 				58F67AD4191B8AC90085DF18 /* jf2.acv */,
+				582BECF61920C29900084C28 /* kdptr800.acv */,
+				582BECEC1920BD2D00084C28 /* lnkfd.acv */,
 				5802D1F219160BEB00E258F3 /* olbm.acv */,
 				582844861918B1BF008E3AEF /* olbp.acv */,
 				58F67ADA191B8C810085DF18 /* pbt.acv */,
 				58F483C8191D123F00028585 /* plbr1.acv */,
 				58F483CA191D135300028585 /* plbr2.acv */,
+				582BECFB1920C55300084C28 /* px680.acv */,
 				58F9B797191BA9AB003104E9 /* swfl.acv */,
 				58F9B799191BAABD003104E9 /* swfl2.acv */,
 				58F67A94191B56240085DF18 /* wnd.acv */,
@@ -1234,6 +1274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582BECFC1920C55300084C28 /* px680.acv in Resources */,
 				5805FCC2190FFFED0010C13A /* Default@2x.png in Resources */,
 				58F67AA7191B58F40085DF18 /* hzlp2.acv in Resources */,
 				58F73B25190F942A0056D7D6 /* Main_iPad.storyboard in Resources */,
@@ -1258,6 +1299,7 @@
 				580434E319148F6300B84896 /* Localizable.strings in Resources */,
 				58F67AC2191B6DF70085DF18 /* gm2.acv in Resources */,
 				58F67ACD191B85F80085DF18 /* gi3.acv in Resources */,
+				582BECED1920BD2D00084C28 /* lnkfd.acv in Resources */,
 				58F67AB2191B59AA0085DF18 /* Hzl2.acv in Resources */,
 				5802D1F319160BEB00E258F3 /* olbm.acv in Resources */,
 				58F67A95191B56240085DF18 /* wnd.acv in Resources */,
@@ -1270,10 +1312,12 @@
 				58F67AE0191B8DA80085DF18 /* cr1.acv in Resources */,
 				58F483B4191CF8E400028585 /* dnt.acv in Resources */,
 				58F483C4191D083000028585 /* blrs.acv in Resources */,
+				582BED011920CA7500084C28 /* fs800.acv in Resources */,
 				58F483C9191D123F00028585 /* plbr1.acv in Resources */,
 				58F67AB9191B5ECF0085DF18 /* fv2.acv in Resources */,
 				58F67AC3191B6DF70085DF18 /* gm3.acv in Resources */,
 				58F67A9F191B58060085DF18 /* dc3.acv in Resources */,
+				582BECF21920BFFE00084C28 /* frpfd.acv in Resources */,
 				58F67AC4191B6DF70085DF18 /* gm4.acv in Resources */,
 				582BECE81920BB9000084C28 /* amrfd.acv in Resources */,
 				58F483BF191D033D00028585 /* grap4.acv in Resources */,
@@ -1283,6 +1327,7 @@
 				58F67AB1191B59AA0085DF18 /* Hzl1.acv in Resources */,
 				582844871918B1BF008E3AEF /* olbp.acv in Resources */,
 				58F9B793191BA388003104E9 /* blbry.acv in Resources */,
+				582BECF71920C37F00084C28 /* kdptr800.acv in Resources */,
 				58F3F554191527C4003A5A03 /* cvm.acv in Resources */,
 				58F9B79F191BBDE0003104E9 /* frpp.acv in Resources */,
 				58F483BE191D033D00028585 /* grap3.acv in Resources */,
@@ -1312,6 +1357,7 @@
 				5805FD63191009760010C13A /* VnProcessingQueueManager.m in Sources */,
 				58F66A9D1917EB470069FD61 /* VnFilterLensBlur.m in Sources */,
 				582844901918EBA4008E3AEF /* VnEffectOverlayWarmVintage.m in Sources */,
+				582BECFF1920CA1100084C28 /* VnEffectFujiSuperia800.m in Sources */,
 				58F67A8B191B54500085DF18 /* VnEffectDreamyVintage.m in Sources */,
 				5805FD2E1910044C0010C13A /* VnBlendingColorDodge.m in Sources */,
 				58F3F54C191519AF003A5A03 /* VnEffectColorUrbanCandy.m in Sources */,
@@ -1405,9 +1451,11 @@
 				5802D1EE1916018E00E258F3 /* VnEffectVelvetColor.m in Sources */,
 				58F5CB3F191DEC2C009FA56D /* VnEffectOverlayCandyHaze.m in Sources */,
 				5805FCC7191002350010C13A /* VnViewControllerHome.m in Sources */,
+				582BECF01920BF4600084C28 /* VnEffectFrontpageFaded.m in Sources */,
 				58F9B78E191BA23A003104E9 /* VnEffectBlueBerry.m in Sources */,
 				58F5CB4B191DF4C9009FA56D /* VnEffectOverlaySunhazeRight.m in Sources */,
 				580434F31914A15100B84896 /* VnEffectColorOphelia.m in Sources */,
+				582BECF51920C24900084C28 /* VnEffectKodakPortra800.m in Sources */,
 				580434E91914985E00B84896 /* VnEffectColorBronze.m in Sources */,
 				58F73B1F190F942A0056D7D6 /* AppDelegate.m in Sources */,
 				5805FD321910044C0010C13A /* VnBlendingColor.m in Sources */,
@@ -1424,7 +1472,9 @@
 				58F67AC7191B85E80085DF18 /* VnEffectGirder.m in Sources */,
 				58F73B1B190F942A0056D7D6 /* main.m in Sources */,
 				5805FD66191009760010C13A /* VnCurrentSettings.m in Sources */,
+				582BECEB1920BCD900084C28 /* VnEffectLanikaiFaded.m in Sources */,
 				5805FD7B191009C10010C13A /* VnObjectEffect.m in Sources */,
+				582BECFA1920C43A00084C28 /* VnEffectPx680.m in Sources */,
 				5828448D1918C10B008E3AEF /* VnEffectOverlayBlueHaze.m in Sources */,
 				5805FCF3191003C60010C13A /* VnAdjustmentLayerGradientColorFill.m in Sources */,
 				584F065F1912752600C3467C /* VnViewEditorLayerBar.m in Sources */,

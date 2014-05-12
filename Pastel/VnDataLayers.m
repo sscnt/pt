@@ -227,6 +227,41 @@ static VnDataLayers* sharedVnDataEffects = nil;
     effect.name = NSLocalizedString(@"M2", nil);
     effect.effectGroup = VnEffectGroupEffects;
     [_effectsList addObject:effect];
+    
+    //// Lanikai Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdLanikaiFaded;
+    effect.name = NSLocalizedString(@"M3", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Frontpage Faded
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdFrontpageFaded;
+    effect.name = NSLocalizedString(@"M4", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Kodak Portra 800
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdKodakPortra800;
+    effect.name = NSLocalizedString(@"M5", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// PX 600
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdPx680;
+    effect.name = NSLocalizedString(@"M6", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
+    
+    //// Fuji Superia 800
+    effect = [[VnObjectEffect alloc] init];
+    effect.effectId = VnEffectIdFujiSuperia800;
+    effect.name = NSLocalizedString(@"M7", nil);
+    effect.effectGroup = VnEffectGroupEffects;
+    [_effectsList addObject:effect];
         
 }
 

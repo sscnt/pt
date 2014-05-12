@@ -111,9 +111,14 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdPinkBubbleTea,
     VnEffectIdFruitPop,
     VnEffectIdCarnival,
+    VnEffectIdFrontpageFaded,
+    VnEffectIdKodakPortra800,
+    VnEffectIdPx680,
+    VnEffectIdFujiSuperia800,
     VnEffectIdBellerina,
     VnEffectIdWaldenFaded,
     VnEffectIdAmaroFaded,
+    VnEffectIdLanikaiFaded,
     VnEffectIdGentleMemories,
     VnEffectIdOverlayBlueHaze,
     VnEffectIdOverlayHazyLightWarmPink,
@@ -233,6 +238,11 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectCarnival.h"
 #import "VnEffectWaldenFaded.h"
 #import "VnEffectAmaroFaded.h"
+#import "VnEffectLanikaiFaded.h"
+#import "VnEffectFrontpageFaded.h"
+#import "VnEffectKodakPortra800.h"
+#import "VnEffectPx680.h"
+#import "VnEffectFujiSuperia800.h"
 
 #import "VnEffectOverlayLightBrightMatte.h"
 #import "VnEffectOverlayRetroSun.h"

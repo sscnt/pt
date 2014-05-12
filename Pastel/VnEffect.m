@@ -165,6 +165,21 @@
     if (effectId == VnEffectIdAmaroFaded) {
         return [[VnEffectAmaroFaded alloc] init];
     }
+    if (effectId == VnEffectIdLanikaiFaded) {
+        return [[VnEffectLanikaiFaded alloc] init];
+    }
+    if (effectId == VnEffectIdFrontpageFaded) {
+        return [[VnEffectFrontpageFaded alloc] init];
+    }
+    if (effectId == VnEffectIdKodakPortra800) {
+        return [[VnEffectKodakPortra800 alloc] init];
+    }
+    if (effectId == VnEffectIdPx680) {
+        return [[VnEffectPx680 alloc] init];
+    }
+    if (effectId == VnEffectIdFujiSuperia800) {
+        return [[VnEffectFujiSuperia800 alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {
