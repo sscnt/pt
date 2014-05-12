@@ -14,7 +14,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _right = 0.0f;
+        _left = 0.0f;
+        _right = frame.size.width;
         self.backgroundColor = [UIColor clearColor];
         _view = [[UIScrollView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, frame.size.width, frame.size.height)];
         _view.contentSize = frame.size;
@@ -34,11 +35,11 @@
     if (!button) {
         return;
     }
-    [button setX:_right];
+    [button setX:_left];
     [self.view addSubview:button];
-    _right = [button right];
-    if (_right > self.view.contentSize.width) {
-        _view.contentSize = CGSizeMake(_right, self.view.contentSize.height);
+    _left = [button right];
+    if (_left > self.view.contentSize.width) {
+        _view.contentSize = CGSizeMake(_left, self.view.contentSize.height);
     }
 }
 
@@ -47,12 +48,22 @@
     if (!button) {
         return;
     }
-    [button setX:_right];
+    [button setX:_left];
     [self.view addSubview:button];
-    _right = [button right];
-    if (_right > self.view.contentSize.width) {
-        _view.contentSize = CGSizeMake(_right, self.view.contentSize.height);
+    _left = [button right];
+    if (_left > self.view.contentSize.width) {
+        _view.contentSize = CGSizeMake(_left, self.view.contentSize.height);
     }
+}
+
+- (void)appendToolButtonRight:(VnViewEditorToolBarButton *)button
+{
+    if (!button) {
+        return;
+    }
+    [button setX:_right - [button width]];
+    [self.view addSubview:button];
+    _right = button.frame.origin.x;
 }
 
 - (void)scrollToLayerButton:(VnViewEditorLayerBarButton *)button

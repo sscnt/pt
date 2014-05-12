@@ -12,7 +12,9 @@
 
 @interface VnViewEditorLayerBar : UIView
 {
+    float _left;
     float _right;
+
 }
 @property (nonatomic, strong) UIScrollView* view;
 @property (nonatomic, weak) VnViewEditorLayerBarButton* currentOpeningButton;
@@ -20,6 +22,7 @@
 
 - (void)appendLayerButton:(VnViewEditorLayerBarButton*)button;
 - (void)appendToolButton:(VnViewEditorToolBarButton*)button;
+- (void)appendToolButtonRight:(VnViewEditorToolBarButton*)button;
 
 - (void)scrollToLayerButton:(VnViewEditorLayerBarButton*)button;
 

@@ -212,7 +212,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     button = [[VnViewEditorToolBarButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentSettings toolBarButtonSize].height, [VnCurrentSettings toolBarButtonSize].height)];
     button.type = VnViewEditorToolBarButtonTypeSave;
     button.delegate = self.delegate;
-    [_navBar appendToolButton:button];
+    [_navBar appendToolButtonRight:button];
 }
 
 - (void)layoutLayerButtons
