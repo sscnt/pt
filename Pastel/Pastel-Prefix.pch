@@ -115,6 +115,9 @@ typedef NS_ENUM(NSInteger, VnEffectId){
     VnEffectIdKodakPortra800,
     VnEffectIdPx680,
     VnEffectIdFujiSuperia800,
+    VnEffectIdFujiSuperia1600,
+    VnEffectIdFresnoFaded,
+    VnEffectIdQouziFaded,
     VnEffectIdBellerina,
     VnEffectIdWaldenFaded,
     VnEffectIdAmaroFaded,
@@ -243,6 +246,9 @@ typedef NS_ENUM(NSInteger, VnBlendingMode){
 #import "VnEffectKodakPortra800.h"
 #import "VnEffectPx680.h"
 #import "VnEffectFujiSuperia800.h"
+#import "VnEffectFujiSuperia1600.h"
+#import "VnEffectQouziFaded.h"
+#import "VnEffectFresnoFaded.h"
 
 #import "VnEffectOverlayLightBrightMatte.h"
 #import "VnEffectOverlayRetroSun.h"

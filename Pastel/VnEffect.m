@@ -180,6 +180,15 @@
     if (effectId == VnEffectIdFujiSuperia800) {
         return [[VnEffectFujiSuperia800 alloc] init];
     }
+    if (effectId == VnEffectIdQouziFaded) {
+        return [[VnEffectQouziFaded alloc] init];
+    }
+    if (effectId == VnEffectIdFujiSuperia1600) {
+        return [[VnEffectFujiSuperia1600 alloc] init];
+    }
+    if (effectId == VnEffectIdFresnoFaded) {
+        return [[VnEffectFresnoFaded alloc] init];
+    }
     
     //// Overlay
     if (effectId == VnEffectIdOverlayLightBrightMatte) {
