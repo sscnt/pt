@@ -11,4 +11,7 @@
 
 @interface VnViewControllerRoot : UINavigationController
 
+- (void)pushFadeViewController:(UIViewController *)viewController;
+- (void)fadePopViewController;
+
 @end

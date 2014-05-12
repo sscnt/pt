@@ -227,6 +227,7 @@
 		58FA89C71920FF4F0047F265 /* nsvlfd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58FA89C61920FF4F0047F265 /* nsvlfd.acv */; };
 		58FA89CA1920FFF80047F265 /* VnEffectXPro2Faded.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA89C91920FFF80047F265 /* VnEffectXPro2Faded.m */; };
 		58FA89CC192100940047F265 /* xp2fd.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58FA89CB192100940047F265 /* xp2fd.acv */; };
+		58FA89D019211D870047F265 /* VnViewControllerExport.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FA89CF19211D870047F265 /* VnViewControllerExport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -616,6 +617,8 @@
 		58FA89C81920FFF80047F265 /* VnEffectXPro2Faded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectXPro2Faded.h; sourceTree = "<group>"; };
 		58FA89C91920FFF80047F265 /* VnEffectXPro2Faded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectXPro2Faded.m; sourceTree = "<group>"; };
 		58FA89CB192100940047F265 /* xp2fd.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = xp2fd.acv; sourceTree = "<group>"; };
+		58FA89CE19211D870047F265 /* VnViewControllerExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewControllerExport.h; sourceTree = "<group>"; };
+		58FA89CF19211D870047F265 /* VnViewControllerExport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewControllerExport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -852,6 +855,8 @@
 				5805FCC6191002350010C13A /* VnViewControllerHome.m */,
 				582919FF1913F816007052B3 /* VnViewControllerEditor.h */,
 				58291A001913F816007052B3 /* VnViewControllerEditor.m */,
+				58FA89CE19211D870047F265 /* VnViewControllerExport.h */,
+				58FA89CF19211D870047F265 /* VnViewControllerExport.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1557,6 +1562,7 @@
 				58F67AB5191B5EC10085DF18 /* VnEffectFaerieVintage.m in Sources */,
 				5805FCF1191003C60010C13A /* VnAdjustmentLayerSelectiveColor.m in Sources */,
 				58F5CB48191DF0BB009FA56D /* VnEffectOverlaySunhazeLeft.m in Sources */,
+				58FA89D019211D870047F265 /* VnViewControllerExport.m in Sources */,
 				5805FD2A1910044C0010C13A /* VnBlendingLighten.m in Sources */,
 				5805FCEF191003C60010C13A /* VnAdjustmentLayerChannelMixerFilter.m in Sources */,
 				582BED091920CD6F00084C28 /* VnEffectFujiSuperia1600.m in Sources */,

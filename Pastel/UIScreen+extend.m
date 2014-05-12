@@ -31,5 +31,34 @@
 {
     return [self screenSize].width;
 }
++ (UIImage *)screenCapture:(UIView *)view {
+    UIImage *capture;
+    UIGraphicsBeginImageContextWithOptions(view.frame.size , NO , 1.0 );
+    
+    if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+        [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    } else {
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    }
+    
+    capture = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return capture;
+}
+
++ (UIImage *)screenCaptureWithView:(UIView *)view rect:(CGRect)rect{
+    UIImage *capture;
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 1.0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, -rect.origin.x, -rect.origin.y);
+    if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
+        [view drawViewHierarchyInRect:view.frame afterScreenUpdates:YES];
+    } else {
+        [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    }
+    capture = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return capture;
+}
 
 @end

@@ -14,5 +14,6 @@
 +(CGRect)screenRect;
 +(CGFloat)height;
 +(CGFloat)width;
++ (UIImage*)screenCapture:(UIView *)view;
 
 @end

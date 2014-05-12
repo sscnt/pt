@@ -190,6 +190,28 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)switchToSavingScreen
+{
+    if ([UIDevice isiPad]) {
+        
+    }else{
+        UIImage* image = [UIScreen screenCapture:self.view];
+        {
+            VnFilterLensBlur* filter = [[VnFilterLensBlur alloc] init];
+            filter.blurRadiusInPixels = 4.0f;
+            image = [VnProcessor mergeBaseImage:image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
+        }
+        {
+            GPUImageGaussianBlurFilter* filter = [[GPUImageGaussianBlurFilter alloc] init];
+            filter.blurRadiusInPixels = 1.0f;
+            image = [VnProcessor mergeBaseImage:image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
+        }
+        [VnCurrentImage saveBlurredScreenImage:image];
+        VnViewControllerExport* controller = [[VnViewControllerExport alloc] init];
+        [((VnViewControllerRoot*)self.navigationController) pushFadeViewController:controller];
+    }
+}
+
 #pragma  mark delegate
 
 - (void)didToolBarButtonTouchUpInside:(VnViewEditorToolBarButton *)button
@@ -220,6 +242,9 @@
                 break;
             case VnViewEditorToolBarButtonTypeClose:
                 [self back];
+                break;
+            case VnViewEditorToolBarButtonTypeSave:
+                [self switchToSavingScreen];
                 break;
         }
     }

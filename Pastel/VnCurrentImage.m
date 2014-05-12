@@ -23,6 +23,7 @@ NSString* const pathForProcessedOverlayPreviewImage = @"tmp/processed_overlay_pr
 NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
 NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
 NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
+NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
 
 + (VnCurrentImage*)instance {
 	@synchronized(self) {
@@ -133,6 +134,11 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     return [self imageAtPath:pathForProcessedOverlayPreviewImage];
 }
 
++ (UIImage *)blurredScreenImage
+{
+    return [self imageAtPath:pathForBlurredScreenImage];
+}
+
 + (BOOL)saveImage:(UIImage *)image AtPath:(NSString *)path
 {
     if (image.imageOrientation != UIImageOrientationUp) {
@@ -218,6 +224,11 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 {
     return [self writeImage:image AtPath:pathForProcessedOverlayPreviewImage];
     //return [self saveImage:image AtPath:pathForProcessedOverlayPreviewImage];
+}
+
++ (BOOL)saveBlurredScreenImage:(UIImage *)image
+{
+    return [self writeImage:image AtPath:pathForBlurredScreenImage];
 }
 
 + (CGSize)originalImageSize
@@ -338,9 +349,11 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (BOOL)deleteImageAtPath:(NSString *)path
 {
+    [[self instance].cache removeObjectForKey:path];
+    
+    path = [NSHomeDirectory() stringByAppendingPathComponent:path];
     NSFileManager *filemgr = [NSFileManager defaultManager];
     NSURL *pathurl = [NSURL fileURLWithPath:path];
-    
     if( [filemgr fileExistsAtPath:path] ){
         LOG(@"deleting the image at %@" ,path);
         return [filemgr removeItemAtURL:pathurl error:nil];
@@ -350,68 +363,62 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 
 + (BOOL)deleteLastSavedImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForLastSavedImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForLastSavedImage];
 }
 
 + (BOOL)deleteTmpImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForTmpImage];
 }
 
 + (BOOL)deleteTmpImage2
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForTmpImage2];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForTmpImage2];
 }
 
 + (BOOL)deleteOriginalImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForOriginalImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForOriginalImage];
 }
 
 + (BOOL)deleteOriginalPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPreviewImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForPreviewImage];
 }
 
 + (BOOL)deleteDialogBgImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForDialogBgImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForDialogBgImage];
 }
 
 + (BOOL)deleteBlurredPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForBlurredPreviewImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForBlurredPreviewImage];
 }
 
 + (BOOL)deleteProcessedColorPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedColorPreviewImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForProcessedColorPreviewImage];
 }
 
 + (BOOL)deleteProcessedEffectPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedEffectPreviewImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForProcessedEffectPreviewImage];
 }
 
 + (BOOL)deleteProcessedOverlayPreviewImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForProcessedOverlayPreviewImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForProcessedOverlayPreviewImage];
 }
 
 + (BOOL)deletePresetBaseImage
 {
-    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForPresetBaseImage];
-    return [self deleteImageAtPath:filePath];
+    return [self deleteImageAtPath:pathForPresetBaseImage];
+}
+
++ (BOOL)deleteBlurredScreenImage
+{
+    return [self deleteImageAtPath:pathForBlurredScreenImage];
 }
 
 + (BOOL)faceDetected
@@ -445,6 +452,7 @@ NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
     [self deleteTmpImage];
     [self deleteTmpImage2];
     [self deletePresetBaseImage];
+    [self deleteBlurredScreenImage];
 }
 
 @end

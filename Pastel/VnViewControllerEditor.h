@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VnFilterLensBlur.h"
 #import "VnEditorViewManager.h"
+#import "VnViewControllerExport.h"
+#import "VnViewControllerRoot.h"
 
 @interface VnViewControllerEditor : UIViewController <VnProcessingQueueManagerDelegate, VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate>
 
 - (void)didFinishResizing;
 - (void)shuffle;
+- (void)switchToSavingScreen;
 - (void)back;
 
 @end
