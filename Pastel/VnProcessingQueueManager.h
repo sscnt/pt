@@ -40,6 +40,7 @@
 - (void)processQueue;
 - (void)processQueueTypePreset:(VnObjectProcessingQueue*)queue;
 - (void)processQueueTypePreview:(VnObjectProcessingQueue*)queue;
+- (void)processQueueTypeOriginal:(VnObjectProcessingQueue*)queue;
 
 - (void)didFinishProcessingQueue:(VnObjectProcessingQueue*)queue;
 

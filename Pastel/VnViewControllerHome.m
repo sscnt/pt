@@ -288,22 +288,26 @@
             image = [image resizedImage:CGSizeMake(maxLength, height) interpolationQuality:kCGInterpolationHigh];
         }
     }
-    if(image.size.height > maxLength){
-        @autoreleasepool {
-            CGFloat width = maxLength / image.size.height * image.size.width;
-            image = [image resizedImage:CGSizeMake(width, maxLength) interpolationQuality:kCGInterpolationHigh];
-        }
-    }
-    
     [VnCurrentImage instance].originalImageSize = image.size;
+    
+    
+    if([VnCurrentImage saveOriginalImage:image] == NO){
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Storage is full.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    if([VnCurrentImage saveResizedOriginalImage:image] == NO){
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Storage is full.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    image = nil;
     
     //// Present
     [[VnEditorViewManager instance] lock];
     __block VnViewControllerHome* _self = self;
     __block VnViewControllerEditor* controller = [[VnViewControllerEditor alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
-    
-    __block UIImage* originalImage = image;
     
     __block NSInteger errorCode = 1;
     
@@ -312,16 +316,13 @@
     dispatch_async(q_global, ^{
         @autoreleasepool {
             
-            //// Save to home dir
-            if([VnCurrentImage saveOriginalImage:originalImage]){
-                
-                //// Progress
-                [_self dispatchResizingProgress:0.20f];
-                
-                //// for editor image
-                UIImage* image = [originalImage resizedImage:[VnCurrentImage previewImageSize] interpolationQuality:kCGInterpolationHigh];
+            //// Progress
+            [_self dispatchResizingProgress:0.20f];
+            
+            //// for editor image
+            @autoreleasepool {
+                UIImage* image = [[VnCurrentImage originalImage] resizedImage:[VnCurrentImage previewImageSize] interpolationQuality:kCGInterpolationHigh];
                 if([VnCurrentImage saveOriginalPreviewImage:image]){
-                    
                     //// Progress
                     [_self dispatchResizingProgress:0.40f];
                     
@@ -348,7 +349,10 @@
                     
                     errorCode = 0;
                 }
-                
+            }
+            
+            @autoreleasepool {
+                UIImage* image = [VnCurrentImage originalPreviewImage];
                 //// for preset image
                 CGSize presetImageSizeWithAspect = [VnCurrentImage presetBaseImageSize];
                 if (image.size.width > image.size.height) {
@@ -369,9 +373,10 @@
                 [VnCurrentImage savePrestBaseImage:image];
                 
                 [self dispatchResizingProgress:1.0f];
-                
             }
         }
+        
+        
         dispatch_async(q_main, ^{
             if (errorCode == 0) {
                 [controller didFinishResizing];

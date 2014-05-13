@@ -25,7 +25,7 @@
     [VnCurrentImage saveTmpImage:self.imageToProcess];
     
     // Fill Layer
-    {
+    @autoreleasepool {
         GPUImageSolidColorGenerator* solidColor = [[GPUImageSolidColorGenerator alloc] init];
         [solidColor setColorRed:s255(4.0f) green:s255(46.0f) blue:s255(132.0f) alpha:1.0f];
         
@@ -33,7 +33,7 @@
     }
     
     // Levels
-    {
+    @autoreleasepool {
         [VnCurrentImage saveTmpImage2:[VnCurrentImage tmpImage]];
         {
             GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
@@ -47,6 +47,7 @@
             [self mergeAndSaveTmpImage2WithOverlayFilter:levelsFilter opacity:1.0f blendingMode:VnBlendingModeNormal];
         }
         [self mergeAndSaveTmpImageWithOverlayImage:[VnCurrentImage tmpImage2] opacity:0.18f blendingMode:VnBlendingModeScreen];
+        [VnCurrentImage deleteTmpImage2];
     }
     
     // Color Balance

@@ -25,7 +25,7 @@
     [VnCurrentImage saveTmpImage:self.imageToProcess];
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(13.0f) gamma:1.00f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
@@ -33,7 +33,7 @@
     }
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(40.0f) gamma:1.05f max:s255(250.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
@@ -41,7 +41,7 @@
     }
     
     // Photo Filter
-    {
+    @autoreleasepool {
         VnAdjustmentLayerPhotoFilter* filter = [[VnAdjustmentLayerPhotoFilter alloc] init];
         filter.color = (GPUVector3){s255(236.0f), s255(138.0f), 0.0f};
         filter.density = 0.25f;
@@ -51,7 +51,7 @@
     }
     
     // Gradient Map
-    {
+    @autoreleasepool {
         VnAdjustmentLayerGradientMap* gradientMap = [[VnAdjustmentLayerGradientMap alloc] init];
         [gradientMap addColorRed:38.0f Green:38.0f Blue:38.0f Opacity:100.0f Location:0 Midpoint:50];
         [gradientMap addColorRed:228.0f Green:227.0f Blue:226.0f Opacity:100.0f Location:4096 Midpoint:50];
@@ -60,7 +60,7 @@
     }
     
     // Fill Layer
-    {
+    @autoreleasepool {
         GPUImageSolidColorGenerator* solidColor = [[GPUImageSolidColorGenerator alloc] init];
         [solidColor setColorRed:s255(243.0f) green:s255(238.0f) blue:s255(230.0f) alpha:1.0f];
         
@@ -68,7 +68,7 @@
     }
     
     // Curve
-    {
+    @autoreleasepool {
         GPUImageToneCurveFilter* curveFilter = [[GPUImageToneCurveFilter alloc] initWithACV:@"olbm"];
         
         [self mergeAndSaveTmpImageWithOverlayFilter:curveFilter opacity:0.20f blendingMode:VnBlendingModeNormal];

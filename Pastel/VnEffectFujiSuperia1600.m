@@ -25,7 +25,7 @@
     [VnCurrentImage saveTmpImage:self.imageToProcess];
     
     // Hue/Saturation
-    {
+    @autoreleasepool {
         VnAdjustmentLayerHueSaturation* hueSaturation = [[VnAdjustmentLayerHueSaturation alloc] init];
         hueSaturation.hue = 0.0f;
         hueSaturation.saturation = -5;

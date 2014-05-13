@@ -25,7 +25,7 @@
     [VnCurrentImage saveTmpImage:self.imageToProcess];
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(0.0f) gamma:1.61f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
@@ -33,7 +33,7 @@
     }
     
     // Photo Filter
-    {
+    @autoreleasepool {
         VnAdjustmentLayerPhotoFilter* filter = [[VnAdjustmentLayerPhotoFilter alloc] init];
         filter.color = (GPUVector3){s255(236.0f), s255(138.0f), 0.0f};
         filter.density = 0.50f;
@@ -43,7 +43,7 @@
     }
     
     // Fill Layer
-    {
+    @autoreleasepool {
         GPUImageSolidColorGenerator* solidColor = [[GPUImageSolidColorGenerator alloc] init];
         [solidColor setColorRed:73.0f/255.0f green:9.0f/255.0f blue:133.0f/255.0 alpha:1.0f];
         
@@ -51,7 +51,7 @@
     }
     
     // Fill Layer
-    {
+    @autoreleasepool {
         GPUImageSolidColorGenerator* solidColor = [[GPUImageSolidColorGenerator alloc] init];
         [solidColor setColorRed:161.0f/255.0f green:135.0f/255.0f blue:105.0f/255.0 alpha:1.0f];
         
@@ -59,7 +59,7 @@
     }
     
     // Fill Layer
-    {
+    @autoreleasepool {
         VnAdjustmentLayerGradientColorFill* gradientColor = [[VnAdjustmentLayerGradientColorFill alloc] init];
         [gradientColor forceProcessingAtSize:[VnCurrentImage tmpImageSize]];
         [gradientColor setStyle:GradientStyleRadial];
@@ -73,7 +73,7 @@
     }
     
     // Fill Layer
-    {
+    @autoreleasepool {
         VnAdjustmentLayerGradientColorFill* gradientColor = [[VnAdjustmentLayerGradientColorFill alloc] init];
         [gradientColor forceProcessingAtSize:[VnCurrentImage tmpImageSize]];
         [gradientColor setStyle:GradientStyleRadial];
@@ -87,7 +87,7 @@
     }
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(16.0f) gamma:1.00f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
@@ -95,7 +95,7 @@
     }
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(40.0f) gamma:1.05f max:s255(247.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         

@@ -25,7 +25,7 @@
     [VnCurrentImage saveTmpImage:self.imageToProcess];
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(0.0f) gamma:0.92f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
@@ -33,7 +33,7 @@
     }
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(0.0f) gamma:1.65f max:s255(255.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
@@ -41,7 +41,7 @@
     }
     
     // Photo Filter
-    {
+    @autoreleasepool {
         VnAdjustmentLayerPhotoFilter* filter = [[VnAdjustmentLayerPhotoFilter alloc] init];
         filter.color = (GPUVector3){s255(236.0f), s255(138.0f), 0.0f};
         filter.density = 0.50f;
@@ -51,7 +51,7 @@
     }
     
     // Hue/Saturation
-    {
+    @autoreleasepool {
         VnAdjustmentLayerHueSaturation* hueSaturation = [[VnAdjustmentLayerHueSaturation alloc] init];
         hueSaturation.hue = 0.0f;
         hueSaturation.saturation = 25;

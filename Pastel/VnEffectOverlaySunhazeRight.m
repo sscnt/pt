@@ -25,7 +25,7 @@
     [VnCurrentImage saveTmpImage:self.imageToProcess];
     
     // Fill Layer
-    {
+    @autoreleasepool {
         VnAdjustmentLayerGradientColorFill* gradientColor = [[VnAdjustmentLayerGradientColorFill alloc] init];
         [gradientColor forceProcessingAtSize:[VnCurrentImage tmpImageSize]];
         [gradientColor setStyle:GradientStyleLinear];

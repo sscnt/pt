@@ -6,13 +6,24 @@
 //  Copyright (c) 2014年 SSC. All rights reserved.
 //
 #import <Foundation/Foundation.h>
+#import <Social/Social.h>
+#import "ShareInstagramViewController.h"
+#import "SVProgressHUD.h"
 #import "VnViewControllerRoot.h"
+#import "UIResolutionSelectorView.h"
+#import "UISaveDialogView.h"
 
-@interface VnViewControllerExport : UIViewController
+@interface VnViewControllerExport : UIViewController <UIResolutionSelectorViewDelegate, UISaveDialogViewDelegate>
 {
-    UIImageView* _bgImageView;
+    BOOL _locked;
+    SaveTo _currentSelectedSaveTo;
 }
 
+@property (nonatomic, strong) UISaveDialogView* dialogView;
+@property (nonatomic, strong) UIResolutionSelectorView* resolutionView;
+
 - (void)bgDidTouchUpInside:(id)sender;
+- (void)saveImage;
+- (void)didSaveImage;
 
 @end

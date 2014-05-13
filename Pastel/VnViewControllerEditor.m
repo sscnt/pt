@@ -7,6 +7,7 @@
 //
 
 #import "VnViewControllerEditor.h"
+#import "VnViewControllerExport.h"
 
 @implementation VnViewControllerEditor
 
@@ -70,14 +71,14 @@
         case VnObjectProcessingQueueTypePreview:
         {
             [vm setPreviewImage:queue.image];
-            [vm hideBlureedPreviewImage];
-            [vm resetPreviewProgress];
-            [vm unlock];
-            [vm hidePreviewProgressView];
             if ([VnCurrentImage instance].forceSkipCache) {
                 [VnCurrentImage writeCacheToFile];
                 [VnCurrentImage cleanCache];
             }
+            [vm hideBlureedPreviewImage];
+            [vm resetPreviewProgress];
+            [vm unlock];
+            [vm hidePreviewProgressView];
         }
             break;
         case VnObjectProcessingQueueTypePreset:
@@ -91,7 +92,7 @@
             break;
         case VnObjectProcessingQueueTypeOriginal:
         {
-            
+            [_viewControllerExport didSaveImage];
         }
             break;
         default:
@@ -192,24 +193,8 @@
 
 - (void)switchToSavingScreen
 {
-    if ([UIDevice isiPad]) {
-        
-    }else{
-        UIImage* image = [UIScreen screenCapture:self.view];
-        {
-            VnFilterLensBlur* filter = [[VnFilterLensBlur alloc] init];
-            filter.blurRadiusInPixels = 4.0f;
-            image = [VnProcessor mergeBaseImage:image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
-        }
-        {
-            GPUImageGaussianBlurFilter* filter = [[GPUImageGaussianBlurFilter alloc] init];
-            filter.blurRadiusInPixels = 1.0f;
-            image = [VnProcessor mergeBaseImage:image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
-        }
-        [VnCurrentImage saveBlurredScreenImage:image];
-        VnViewControllerExport* controller = [[VnViewControllerExport alloc] init];
-        [((VnViewControllerRoot*)self.navigationController) pushFadeViewController:controller];
-    }
+    _viewControllerExport = [[VnViewControllerExport alloc] init];
+    [((VnViewControllerRoot*)self.navigationController) pushViewController:_viewControllerExport animated:YES];
 }
 
 #pragma  mark delegate
@@ -303,7 +288,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-    [VnCurrentImage instance].forceSkipCache = YES;
 }
 
 - (void)dealloc

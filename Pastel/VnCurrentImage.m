@@ -24,6 +24,7 @@ NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
 NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
 NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
+NSString* const pathForResizedOriginalImage = @"tmp/resized_original_image";
 
 + (VnCurrentImage*)instance {
 	@synchronized(self) {
@@ -69,8 +70,7 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
     NSFileManager *filemgr = [NSFileManager defaultManager];
     
     if( [filemgr fileExistsAtPath:filePath] ){
-        NSData *data = [NSData dataWithContentsOfURL:fileURL];
-        UIImage *img = [[UIImage alloc] initWithData:data];
+        UIImage *img = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:fileURL]];
         return img;
     }
     
@@ -139,6 +139,11 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
     return [self imageAtPath:pathForBlurredScreenImage];
 }
 
++ (UIImage *)resizedOriginalImage
+{
+    return [self imageAtPath:pathForResizedOriginalImage];
+}
+
 + (BOOL)saveImage:(UIImage *)image AtPath:(NSString *)path
 {
     if (image.imageOrientation != UIImageOrientationUp) {
@@ -161,7 +166,7 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
 
 + (BOOL)writeImage:(UIImage *)image AtPath:(NSString *)path
 {
-    NSData *imageData = UIImagePNGRepresentation(image);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.96);
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     BOOL success = [imageData writeToFile:filePath atomically:YES];
     imageData = nil;
@@ -170,17 +175,22 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
 
 + (BOOL)saveOriginalImage:(UIImage*)image
 {
-    return [self saveImage:image AtPath:pathForOriginalImage];
+    return [self writeImage:image AtPath:pathForOriginalImage];
+}
+
++ (BOOL)saveResizedOriginalImage:(UIImage *)image
+{
+    return [self writeImage:image AtPath:pathForResizedOriginalImage];
 }
 
 + (BOOL)saveOriginalPreviewImage:(UIImage*)image
 {
-    return [self saveImage:image AtPath:pathForPreviewImage];
+    return [self writeImage:image AtPath:pathForPreviewImage];
 }
 
 + (BOOL)saveLastSavedImage:(UIImage*)image
 {
-    return [self saveImage:image AtPath:pathForLastSavedImage];
+    return [self writeImage:image AtPath:pathForLastSavedImage];
 }
 
 + (BOOL)savePrestBaseImage:(UIImage *)image
@@ -229,6 +239,18 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
 + (BOOL)saveBlurredScreenImage:(UIImage *)image
 {
     return [self writeImage:image AtPath:pathForBlurredScreenImage];
+}
+
++ (void)copyPath:(NSString *)fromPath ToPath:(NSString *)toPath
+{
+    if ( [[NSFileManager defaultManager] isReadableFileAtPath:[NSHomeDirectory() stringByAppendingPathComponent:fromPath]] ){
+        [[NSFileManager defaultManager] copyItemAtURL:[NSURL fileURLWithPath:[NSHomeDirectory() stringByAppendingPathComponent:fromPath]] toURL:[NSURL fileURLWithPath:[NSHomeDirectory() stringByAppendingPathComponent:toPath]] error:nil];
+    }
+}
+
++ (void)copyOriginalImageToResizedOriginalImage
+{
+    [self copyPath:pathForOriginalImage ToPath:pathForResizedOriginalImage];
 }
 
 + (CGSize)originalImageSize
@@ -332,6 +354,11 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
     return [self imageExistsAtPath:pathForOriginalImage];
 }
 
++ (BOOL)resizedOriginalImageExists
+{
+    return [self imageExistsAtPath:pathForResizedOriginalImage];
+}
+
 + (BOOL)processedColorImageExists
 {
     return [self imageExistsAtPath:pathForProcessedColorPreviewImage];
@@ -421,6 +448,11 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
     return [self deleteImageAtPath:pathForBlurredScreenImage];
 }
 
++ (BOOL)deleteResizedOriginalImage
+{
+    return [self deleteImageAtPath:pathForResizedOriginalImage];
+}
+
 + (BOOL)faceDetected
 {
     return [self instance].faceDetected;
@@ -453,6 +485,7 @@ NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
     [self deleteTmpImage2];
     [self deletePresetBaseImage];
     [self deleteBlurredScreenImage];
+    [self deleteResizedOriginalImage];
 }
 
 @end

@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VnFilterLensBlur.h"
 #import "VnEditorViewManager.h"
-#import "VnViewControllerExport.h"
 #import "VnViewControllerRoot.h"
 
+@class VnViewControllerExport;
+
 @interface VnViewControllerEditor : UIViewController <VnProcessingQueueManagerDelegate, VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate>
+
+@property (nonatomic, strong) VnViewControllerExport* viewControllerExport;
 
 - (void)didFinishResizing;
 - (void)shuffle;

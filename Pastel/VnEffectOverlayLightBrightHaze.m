@@ -25,14 +25,14 @@
     [VnCurrentImage saveTmpImage:self.imageToProcess];
     
     // Curve
-    {
+    @autoreleasepool {
         GPUImageToneCurveFilter* curveFilter = [[GPUImageToneCurveFilter alloc] initWithACV:@"olbp"];
         
         [self mergeAndSaveTmpImageWithOverlayFilter:curveFilter opacity:1.0f blendingMode:VnBlendingModeNormal];
     }
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(40.0f) gamma:1.05f max:s255(250.0f) minOut:s255(0.0f) maxOut:s255(255.0f)];
         
@@ -40,7 +40,7 @@
     }
     
     // Photo Filter
-    {
+    @autoreleasepool {
         VnAdjustmentLayerPhotoFilter* filter = [[VnAdjustmentLayerPhotoFilter alloc] init];
         filter.color = (GPUVector3){s255(235.0f), s255(145.0f), 0.0f};
         filter.density = 0.25f;
@@ -50,7 +50,7 @@
     }
     
     // Levels
-    {
+    @autoreleasepool {
         GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
         [levelsFilter setMin:s255(3.0f) gamma:0.87f max:s255(253.0f) minOut:s255(80.0f) maxOut:s255(255.0f)];
         
@@ -66,7 +66,7 @@
     }
     
     // Levels
-    {
+    @autoreleasepool {
         [VnCurrentImage saveTmpImage2:[VnCurrentImage tmpImage]];
         {
             GPUImageLevelsFilter* levelsFilter = [[GPUImageLevelsFilter alloc] init];
@@ -80,6 +80,7 @@
             [self mergeAndSaveTmpImage2WithOverlayFilter:levelsFilter opacity:1.0f blendingMode:VnBlendingModeNormal];
         }
         [self mergeAndSaveTmpImageWithOverlayImage:[VnCurrentImage tmpImage2] opacity:0.10f blendingMode:VnBlendingModeNormal];
+        [VnCurrentImage deleteTmpImage2];
     }
     
     return [VnCurrentImage tmpImage];

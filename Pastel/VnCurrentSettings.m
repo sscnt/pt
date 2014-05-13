@@ -128,6 +128,11 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
     return [UIColor colorWithRed:s255(51.0f) green:s255(51.0f) blue:s255(51.0f) alpha:1.0f];
 }
 
++ (UIColor *)exportBgColor
+{
+    return [UIColor colorWithRed:s255(243.0f) green:s255(241.0f) blue:s255(226.0f) alpha:1.0f];
+}
+
 #pragma mark progress
 
 + (float)previewProgressRadius
@@ -154,7 +159,7 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
 
 + (UIColor *)homeSourceButtonColor
 {
-    return [UIColor colorWithRed:s255(20.0f) green:s255(18.0f) blue:s255(18.0f) alpha:1.0f];
+    return [UIColor colorWithRed:s255(65.0f) green:s255(63.0f) blue:s255(60.0f) alpha:1.0f];
 }
 
 #pragma mark 
