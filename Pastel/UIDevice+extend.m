@@ -231,6 +231,14 @@
     return NO;
 }
 
++ (BOOL)canOpenFacebook{
+    NSURL *instagramURL = [NSURL URLWithString:@"fb://app"];
+    if ([[UIApplication sharedApplication] canOpenURL:instagramURL]) {
+        return YES;
+    }
+    return NO;
+}
+
 + (BOOL)isCurrentLanguageJapanese
 {
     NSArray *langs = [NSLocale preferredLanguages];

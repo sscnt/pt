@@ -42,6 +42,7 @@ typedef NS_ENUM(NSInteger, UIDeviceMachineType){
 + (BOOL)underIPhone4s;
 + (BOOL)canOpenInstagram;
 + (BOOL)canOpenTwitter;
++ (BOOL)canOpenFacebook;
 + (BOOL)isCurrentLanguageJapanese;
 
 

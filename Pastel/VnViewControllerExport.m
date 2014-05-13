@@ -102,7 +102,6 @@
 - (void)didSaveImage
 {
     LOG(@"Saved!");
-    [SVProgressHUD dismiss];
     switch (_currentSelectedSaveTo) {
         case SaveToCameraRoll:
         {
@@ -111,10 +110,14 @@
                 image = [UIImage imageWithCGImage:image.CGImage scale:image.scale orientation:UIImageOrientationUp];
             }
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+            [SVProgressHUD dismiss];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Save complete.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+            [alert show];
         }
             break;
             
         case SaveToInstagram:
+            [SVProgressHUD dismiss];
             if([VnCurrentImage lastSavedImageExists]){
                 [self shareOnInstagram];
                 return;
@@ -125,14 +128,20 @@
             }
             break;
         case SaveToTwitter:
+            [SVProgressHUD dismiss];
             if([VnCurrentImage lastSavedImageExists]){
                 [self shareOnTwitter];
                 return;
             }
-            if(![UIDevice canOpenTwitter]){
-                [self shareOnTwitter];
+            break;
+        case SaveToFacebook:
+            [SVProgressHUD dismiss];
+            if([VnCurrentImage lastSavedImageExists]){
+                [self shareOnFacebook];
                 return;
             }
+            break;
+        case SaveToOthers:
             break;
         default:
             break;
@@ -164,8 +173,10 @@
                 [self shareOnTwitter];
                 return;
             }
-            if(![UIDevice canOpenTwitter]){
-                [self shareOnTwitter];
+            break;
+        case SaveToFacebook:
+            if([VnCurrentImage lastSavedImageExists]){
+                [self shareOnFacebook];
                 return;
             }
             break;
@@ -185,22 +196,32 @@
 
 - (void)shareOnTwitter
 {
-    if([UIDevice canOpenTwitter]){
-        if([VnCurrentImage lastSavedImageExists]){
-            SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-            [vc setInitialText:@""];
-            [vc addImage:[VnCurrentImage lastSavedImage]];
-            [self presentViewController:vc animated:YES completion:nil];
-        }else{
-            [SVProgressHUD dismiss];
-            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Could not save the image.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
-            [alert show];
-        }
+    
+    if([VnCurrentImage lastSavedImageExists]){
+        SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [vc setInitialText:@""];
+        [vc addImage:[VnCurrentImage lastSavedImage]];
+        [self presentViewController:vc animated:YES completion:nil];
     }else{
-        [SVProgressHUD dismiss];
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Twitter not installed.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Could not save the image.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
         [alert show];
     }
+    
+}
+
+- (void)shareOnFacebook
+{
+    
+    if([VnCurrentImage lastSavedImageExists]){
+        SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [vc setInitialText:@""];
+        [vc addImage:[VnCurrentImage lastSavedImage]];
+        [self presentViewController:vc animated:YES completion:nil];
+    }else{
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Could not save the image.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+        [alert show];
+    }
+    
 }
 
 - (void)shareOnInstagram
@@ -210,7 +231,6 @@
             return;
         }
     }else{
-        [SVProgressHUD dismiss];
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Instagram not installed.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
         [alert show];
     }

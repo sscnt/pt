@@ -14,7 +14,7 @@
 - (id)init
 {
     CGFloat buttonHeight = 50.0f;
-    CGRect frame = CGRectMake(20.0f, 0.0f, [UIScreen screenSize].width - 40.0f, buttonHeight * 3.0f + 2.0f);
+    CGRect frame = CGRectMake(20.0f, 0.0f, [UIScreen screenSize].width - 40.0f, buttonHeight * 5.0f + 2.0f);
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
