@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <Social/Social.h>
 #import "ShareInstagramViewController.h"
+#import "ShareOtherAppViewController.h"
 #import "SVProgressHUD.h"
 #import "VnViewControllerRoot.h"
 #import "UIResolutionSelectorView.h"

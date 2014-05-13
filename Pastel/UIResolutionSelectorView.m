@@ -14,7 +14,13 @@
 {
     CGFloat buttonHeight = 50.0f;
     CGFloat labelHeight = 40.0f;
-    CGRect frame = CGRectMake(20.0f, 0.0f, [UIScreen screenSize].width - 40.0f, buttonHeight * 2.0f + labelHeight);
+    CGRect frame;
+    if ([UIDevice isiPad]) {
+        float width = 320.0f;
+        frame = CGRectMake([UIScreen width] / 2.0f - width / 2.0f, 0.0f, width, buttonHeight * 2.0f + labelHeight);
+    }else{
+        frame = CGRectMake(20.0f, 0.0f, [UIScreen screenSize].width - 40.0f, buttonHeight * 2.0f + labelHeight);
+    }
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.70f];

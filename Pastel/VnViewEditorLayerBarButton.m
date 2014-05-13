@@ -27,7 +27,7 @@
         _maskView.userInteractionEnabled = NO;
         [self addSubview:_maskView];
         
-        _titleLabel = [[VnViewLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - labelHeight - 1.0f, frame.size.width, labelHeight)];
+        _titleLabel = [[VnViewLabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - labelHeight - 2.0f, frame.size.width, labelHeight)];
         _titleLabel.fontSize = 10.0f;
         [self addSubview:_titleLabel];
     }

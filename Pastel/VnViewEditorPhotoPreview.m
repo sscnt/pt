@@ -35,6 +35,15 @@
         _progressImageView.hidden = YES;
         [_imageView addSubview:_progressImageView];
         
+        _percentageLabel = [[VnViewLabel alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [_imageView width], 30.0f)];
+        _percentageLabel.text = @"0%";
+        _percentageLabel.shadowColor = [UIColor blackColor];
+        _percentageLabel.shadowOffset = CGSizeMake(1, 1);
+        _percentageLabel.center = CGPointMake(_imageView.width / 2.0f, _imageView.height / 2.0f);
+        _percentageLabel.fontSize = 30.0f;
+        _percentageLabel.hidden = YES;
+        [_imageView addSubview:_percentageLabel];
+        
         _originalImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, [VnCurrentImage previewImageViewSize].width, [VnCurrentImage previewImageViewSize].height)];
         _originalImageView.hidden = YES;
         [_imageView addSubview:_originalImageView];
@@ -46,6 +55,11 @@
         [self hidePregressView];
     }
     return self;
+}
+
+- (void)setPercentage:(float)percentage
+{
+    _percentageLabel.text = [NSString stringWithFormat:@"%d%%", (int)(percentage * 100.0f)];
 }
 
 - (void)setImage:(UIImage *)image
@@ -61,6 +75,16 @@
 - (void)setOriginalImage:(UIImage *)originalImage
 {
     _originalImageView.image = originalImage;
+}
+
+- (void)showPercentageLabel
+{
+    _percentageLabel.hidden = NO;
+}
+
+- (void)hidePercentageLabel
+{
+    _percentageLabel.hidden = YES;
 }
 
 - (void)showPregressView

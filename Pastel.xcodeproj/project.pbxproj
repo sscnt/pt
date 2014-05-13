@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5800341A1921F92300C6AB98 /* others@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 580034191921F92300C6AB98 /* others@2x.png */; };
+		580034201922032C00C6AB98 /* ShareOtherAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5800341F1922032C00C6AB98 /* ShareOtherAppViewController.m */; };
 		5801FF49191F9E58001CFD95 /* VnViewSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801FF48191F9E58001CFD95 /* VnViewSlider.m */; };
 		5801FF4F191F9E78001CFD95 /* UISliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801FF4C191F9E78001CFD95 /* UISliderView.m */; };
 		5801FF50191F9E78001CFD95 /* UISliderThumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5801FF4E191F9E78001CFD95 /* UISliderThumbView.m */; };
@@ -158,7 +160,6 @@
 		58F643F21921A43600B194CC /* UISaveToButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F643EE1921A43600B194CC /* UISaveToButton.m */; };
 		58F643F81921AF8100B194CC /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F643F31921AF8100B194CC /* facebook@2x.png */; };
 		58F643F91921AF8100B194CC /* instagram@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F643F41921AF8100B194CC /* instagram@2x.png */; };
-		58F643FA1921AF8100B194CC /* others@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F643F51921AF8100B194CC /* others@2x.png */; };
 		58F643FB1921AF8100B194CC /* photos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F643F61921AF8100B194CC /* photos@2x.png */; };
 		58F643FC1921AF8100B194CC /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 58F643F71921AF8100B194CC /* twitter@2x.png */; };
 		58F644011921B25100B194CC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 58F643FE1921B25100B194CC /* SVProgressHUD.bundle */; };
@@ -267,6 +268,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		580034191921F92300C6AB98 /* others@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "others@2x.png"; sourceTree = "<group>"; };
+		5800341E1922032C00C6AB98 /* ShareOtherAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareOtherAppViewController.h; sourceTree = "<group>"; };
+		5800341F1922032C00C6AB98 /* ShareOtherAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareOtherAppViewController.m; sourceTree = "<group>"; };
 		5801FF47191F9E58001CFD95 /* VnViewSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewSlider.h; sourceTree = "<group>"; };
 		5801FF48191F9E58001CFD95 /* VnViewSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewSlider.m; sourceTree = "<group>"; };
 		5801FF4B191F9E78001CFD95 /* UISliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISliderView.h; sourceTree = "<group>"; };
@@ -533,7 +537,6 @@
 		58F643EE1921A43600B194CC /* UISaveToButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISaveToButton.m; sourceTree = "<group>"; };
 		58F643F31921AF8100B194CC /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
 		58F643F41921AF8100B194CC /* instagram@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instagram@2x.png"; sourceTree = "<group>"; };
-		58F643F51921AF8100B194CC /* others@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "others@2x.png"; sourceTree = "<group>"; };
 		58F643F61921AF8100B194CC /* photos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photos@2x.png"; sourceTree = "<group>"; };
 		58F643F71921AF8100B194CC /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		58F643FE1921B25100B194CC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
@@ -1189,7 +1192,7 @@
 				5805FCBD190FFFED0010C13A /* Default-Landscape@2x.png */,
 				58F643F31921AF8100B194CC /* facebook@2x.png */,
 				58F643F41921AF8100B194CC /* instagram@2x.png */,
-				58F643F51921AF8100B194CC /* others@2x.png */,
+				580034191921F92300C6AB98 /* others@2x.png */,
 				58F643F61921AF8100B194CC /* photos@2x.png */,
 				58F643F71921AF8100B194CC /* twitter@2x.png */,
 			);
@@ -1226,6 +1229,8 @@
 			children = (
 				58F644031921B29200B194CC /* ShareInstagramViewController.h */,
 				58F644041921B29200B194CC /* ShareInstagramViewController.m */,
+				5800341E1922032C00C6AB98 /* ShareOtherAppViewController.h */,
+				5800341F1922032C00C6AB98 /* ShareOtherAppViewController.m */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -1457,6 +1462,7 @@
 				58FA89C21920FC360047F265 /* lngrfd.acv in Resources */,
 				58F67ACD191B85F80085DF18 /* gi3.acv in Resources */,
 				582BECED1920BD2D00084C28 /* lnkfd.acv in Resources */,
+				5800341A1921F92300C6AB98 /* others@2x.png in Resources */,
 				58F67AB2191B59AA0085DF18 /* Hzl2.acv in Resources */,
 				58FA89BE1920F7B10047F265 /* brzfd.acv in Resources */,
 				5802D1F319160BEB00E258F3 /* olbm.acv in Resources */,
@@ -1483,7 +1489,6 @@
 				582BED061920CC3200084C28 /* qzfd.acv in Resources */,
 				58FA89C71920FF4F0047F265 /* nsvlfd.acv in Resources */,
 				582BECE81920BB9000084C28 /* amrfd.acv in Resources */,
-				58F643FA1921AF8100B194CC /* others@2x.png in Resources */,
 				58F483BF191D033D00028585 /* grap4.acv in Resources */,
 				58F643F81921AF8100B194CC /* facebook@2x.png in Resources */,
 				5805FCBF190FFFED0010C13A /* Default-568h@2x.png in Resources */,
@@ -1544,6 +1549,7 @@
 				5805FD331910044C0010C13A /* VnBlendingDarkerColor.m in Sources */,
 				58F67AD9191B8C770085DF18 /* VnEffectPinkBubbleTea.m in Sources */,
 				584F06561912739C00C3467C /* VnViewProgress.m in Sources */,
+				580034201922032C00C6AB98 /* ShareOtherAppViewController.m in Sources */,
 				5802D1E81915F6D200E258F3 /* VnEffectGentleColor.m in Sources */,
 				58F67ADE191B8D9B0085DF18 /* VnEffectCavalleriaRusticana.m in Sources */,
 				584F06681912771C00C3467C /* VnViewEditorPhotoPreview.m in Sources */,

@@ -14,7 +14,13 @@
 - (id)init
 {
     CGFloat buttonHeight = 50.0f;
-    CGRect frame = CGRectMake(20.0f, 0.0f, [UIScreen screenSize].width - 40.0f, buttonHeight * 5.0f + 2.0f);
+    CGRect frame;
+    if ([UIDevice isiPad]) {
+        float width = 320.0f;
+        frame = CGRectMake([UIScreen width] / 2.0f - width / 2.0f, 0.0f, width, buttonHeight * 5.0f + 2.0f);
+    }else{
+        frame = CGRectMake(20.0f, 0.0f, [UIScreen screenSize].width - 40.0f, buttonHeight * 5.0f + 2.0f);
+    }
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code

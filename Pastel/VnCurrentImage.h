@@ -26,6 +26,7 @@
 + (BOOL)processedColorImageExists;
 + (BOOL)processedEffectImageExists;
 + (BOOL)processedOverlayImageExists;
++ (NSURL*)lastSavedImageUrl;
 + (UIImage*)imageAtPath:(NSString*)path;
 + (UIImage*)tmpImage;
 + (UIImage*)tmpImage2;

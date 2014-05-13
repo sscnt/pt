@@ -38,7 +38,7 @@
     [self.view addSubview:_photosButton];
     
     _cameraButton = [[VnButtonHomeSource alloc] initWithFrame:CGRectZero];
-    [_cameraButton addTarget:self action:@selector(didTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+    [_cameraButton addTarget:self action:@selector(didButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_cameraButton];
     
     //// Splash Image
@@ -127,7 +127,7 @@
     UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
     pickerController.delegate = self;
     [pickerController setSourceType:UIImagePickerControllerSourceTypeCamera];
-    pickerController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    //pickerController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:pickerController animated:YES completion:nil];
 }
 
@@ -136,7 +136,7 @@
     UIImagePickerController *pickerController = [[UIImagePickerController alloc] init];
     pickerController.delegate = self;
     [pickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    pickerController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    //pickerController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:pickerController animated:YES completion:nil];
 }
 

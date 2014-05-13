@@ -138,10 +138,16 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 
 - (void)layoutSliders
 {
-    float y;
+    float x, y, width;
     
     y = [_colorBarWrapper height];
-    _colorOpacitySlider = [[VnViewSlider alloc] initWithFrame:_colorBarWrapper.bounds];
+    if ([UIDevice isiPad]) {
+        width = 320.0f;
+        x = _colorBarWrapper.bounds.size.width / 2.0f - width / 2.0f;
+        _colorOpacitySlider = [[VnViewSlider alloc] initWithFrame:CGRectMake(x, 0.0f, width, _colorBarWrapper.bounds.size.height)];
+    }else{
+        _colorOpacitySlider = [[VnViewSlider alloc] initWithFrame:_colorBarWrapper.bounds];
+    }
     [_colorOpacitySlider setY:y];
     _colorOpacitySlider.sliderStrokeColor = [VnCurrentSettings effectsBarBgColor];
     _colorOpacitySlider.sliderThumbColor = [VnCurrentSettings effectsBarBgColor];
@@ -151,7 +157,13 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _colorBarWrapper.layerSlider = _colorOpacitySlider;
     
     y = [_effectBarWrapper height];
-    _effectOpacitySlider = [[VnViewSlider alloc] initWithFrame:_effectBarWrapper.bounds];
+    if ([UIDevice isiPad]) {
+        width = 320.0f;
+        x = _effectBarWrapper.bounds.size.width / 2.0f - width / 2.0f;
+        _effectOpacitySlider = [[VnViewSlider alloc] initWithFrame:CGRectMake(x, 0.0f, width, _effectBarWrapper.bounds.size.height)];
+    }else{
+        _effectOpacitySlider = [[VnViewSlider alloc] initWithFrame:_effectBarWrapper.bounds];
+    }
     [_effectOpacitySlider setY:y];
     _effectOpacitySlider.sliderStrokeColor = [VnCurrentSettings overlayBarBgColor];
     _effectOpacitySlider.sliderThumbColor = [VnCurrentSettings overlayBarBgColor];
@@ -161,7 +173,13 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     _effectBarWrapper.layerSlider = _effectOpacitySlider;
     
     y = [_overlayBarWrapper height];
-    _overlayOpacitySlider = [[VnViewSlider alloc] initWithFrame:_overlayBarWrapper.bounds];
+    if ([UIDevice isiPad]) {
+        width = 320.0f;
+        x = _overlayBarWrapper.bounds.size.width / 2.0f - width / 2.0f;
+        _overlayOpacitySlider = [[VnViewSlider alloc] initWithFrame:CGRectMake(x, 0.0f, width, _overlayBarWrapper.bounds.size.height)];
+    }else{
+        _overlayOpacitySlider = [[VnViewSlider alloc] initWithFrame:_overlayBarWrapper.bounds];
+    }
     [_overlayOpacitySlider setY:y];
     _overlayOpacitySlider.sliderStrokeColor = [VnCurrentSettings effectsBarBgColor];
     _overlayOpacitySlider.sliderThumbColor = [VnCurrentSettings effectsBarBgColor];
@@ -381,6 +399,21 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
 }
 
 #pragma mark preview
+
+- (void)setPercentage:(float)value
+{
+    _photoPreview.percentage = value;
+}
+
+- (void)showPercentageLabel
+{
+    [_photoPreview showPercentageLabel];
+}
+
+- (void)hidePercentageLabel
+{
+    [_photoPreview hidePercentageLabel];
+}
 
 + (void)setResizingProgress:(float)value
 {

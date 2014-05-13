@@ -104,7 +104,8 @@ static VnEditorSliderManager* sharedVnEditorSliderManager = nil;
 
 - (void)slider:(VnViewSlider *)slider DidValueChange:(CGFloat)value
 {
-    LOG(@"%f", value);
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
+    [vm setPercentage:value];
 }
 
 - (void)touchesBeganWithSlider:(VnViewSlider *)slider
@@ -115,6 +116,8 @@ static VnEditorSliderManager* sharedVnEditorSliderManager = nil;
     }
     [vm lock];
     [vm showBlureedPreviewImage];
+    [vm showPercentageLabel];
+    [vm setPercentage:slider.value];
 }
 
 - (void)touchesEndedWithSlider:(VnViewSlider *)slider
@@ -122,6 +125,7 @@ static VnEditorSliderManager* sharedVnEditorSliderManager = nil;
     
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm lock];
+    [vm hidePercentageLabel];
     [vm showPreviewProgressView];
     
     switch (slider.effectGroup) {
@@ -138,6 +142,7 @@ static VnEditorSliderManager* sharedVnEditorSliderManager = nil;
             [VnCurrentImage deleteProcessedOverlayPreviewImage];
             break;
     }
+    
     
     VnObjectProcessingQueue* queue = [[VnObjectProcessingQueue alloc] init];
     queue.type = VnObjectProcessingQueueTypePreview;

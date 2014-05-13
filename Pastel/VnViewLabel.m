@@ -31,7 +31,6 @@
         self.font = [UIFont fontWithName:@"mplus-1c-bold" size:fontSize];
     } else {
         self.font = [UIFont fontWithName:@"ClearSans-Bold" size:fontSize];
-        [self setY:self.frame.origin.y - 1.0f];
     }
 }
 

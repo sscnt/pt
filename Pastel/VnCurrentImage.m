@@ -20,7 +20,7 @@ NSString* const pathForBlurredPreviewImage = @"tmp/blurred_preview_image";
 NSString* const pathForProcessedColorPreviewImage = @"tmp/processed_color_preview_image";
 NSString* const pathForProcessedEffectPreviewImage = @"tmp/processed_effect_preview_image";
 NSString* const pathForProcessedOverlayPreviewImage = @"tmp/processed_overlay_preview_image";
-NSString* const pathForLastSavedImage = @"tmp/last_saved_image";
+NSString* const pathForLastSavedImage = @"tmp/last_saved_image.jpg";
 NSString* const pathForDialogBgImage = @"tmp/dialog_bg_image";
 NSString* const pathForPresetBaseImage = @"tmp/preset_base_image";
 NSString* const pathForBlurredScreenImage = @"tmp/blurred_screen_image";
@@ -56,6 +56,13 @@ NSString* const pathForResizedOriginalImage = @"tmp/resized_original_image";
         _cache = [NSMutableDictionary dictionary];
     }
     return self;
+}
+
++ (NSURL *)lastSavedImageUrl
+{
+    NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:pathForLastSavedImage];
+    NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+    return fileURL;
 }
 
 + (UIImage*)imageAtPath:(NSString *)path
@@ -166,7 +173,7 @@ NSString* const pathForResizedOriginalImage = @"tmp/resized_original_image";
 
 + (BOOL)writeImage:(UIImage *)image AtPath:(NSString *)path
 {
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.96);
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.98);
     NSString *filePath = [NSHomeDirectory() stringByAppendingPathComponent:path];
     BOOL success = [imageData writeToFile:filePath atomically:YES];
     imageData = nil;

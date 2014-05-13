@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "VnViewEditorPhotoPreviewScrollView.h"
 #import "VnViewProgress.h"
+#import "VnViewLabel.h"
 
 @class VnViewEditorPhotoPreview;
 
@@ -18,6 +19,9 @@
 @end
 
 @interface VnViewEditorPhotoPreview : UIView <UIScrollViewDelegate>
+{
+    VnViewLabel* _percentageLabel;
+}
 
 @property (nonatomic, weak) id<VnViewEditorPhotoPreviewDelegate> delegate;
 @property (nonatomic, strong) VnViewEditorPhotoPreviewScrollView* scrollView;
@@ -29,6 +33,10 @@
 @property (nonatomic, strong) UIImage* progressimage;
 @property (nonatomic, strong) UIImage* originalImage;
 @property (nonatomic, assign) float progress;
+@property (nonatomic, assign) float percentage;
+
+- (void)showPercentageLabel;
+- (void)hidePercentageLabel;
 
 - (void)showPregressView;
 - (void)hidePregressView;

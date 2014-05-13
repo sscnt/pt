@@ -142,6 +142,11 @@
             }
             break;
         case SaveToOthers:
+            [SVProgressHUD dismiss];
+            if([VnCurrentImage lastSavedImageExists]){
+                [self shareOnOtherApps];
+                return;
+            }
             break;
         default:
             break;
@@ -177,6 +182,12 @@
         case SaveToFacebook:
             if([VnCurrentImage lastSavedImageExists]){
                 [self shareOnFacebook];
+                return;
+            }
+            break;
+        case SaveToOthers:
+            if([VnCurrentImage lastSavedImageExists]){
+                [self shareOnOtherApps];
                 return;
             }
             break;
@@ -231,7 +242,7 @@
             return;
         }
     }else{
-        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:NSLocalizedString(@"Instagram not installed.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Instagram not installed.", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"Close", nil) otherButtonTitles:nil];
         [alert show];
     }
 }
@@ -255,10 +266,19 @@
             [SVProgressHUD dismiss];
             [_self.view addSubview:instagramViewController.view];
             [_self addChildViewController:instagramViewController];
+            [instagramViewController didMoveToParentViewController:_self];
         });
         
     });
     return YES;
+}
+
+- (void)shareOnOtherApps
+{
+    ShareOtherAppViewController* controller = [[ShareOtherAppViewController alloc] init];
+    [self.view addSubview:controller.view];
+    [self addChildViewController:controller];
+    [controller didMoveToParentViewController:self];
 }
 
 - (void)didReceiveMemoryWarning
