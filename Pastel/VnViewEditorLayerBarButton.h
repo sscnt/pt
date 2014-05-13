@@ -33,6 +33,8 @@
 @property (nonatomic, assign) VnViewEditorLayerBarButtonMaskSelectionType selectionType;
 @property (nonatomic, weak) id<VnViewEditorLayerBarButtonDelegate> delegate;
 @property (nonatomic, assign) VnEffectId effectId;
+@property (nonatomic, assign) BOOL locked;
+
 
 - (void)didTouchUpInside:(VnViewEditorLayerBarButton*)sender;
 

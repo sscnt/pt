@@ -274,6 +274,7 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.delegate = self.delegate;
             button.effectId = effect.effectId;
             button.group = effect.effectGroup;
+            button.locked = YES;
             [_effectBar appendLayerButton:button];
             [_effectLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
