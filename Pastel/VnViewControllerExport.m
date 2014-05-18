@@ -24,7 +24,9 @@
     }
     
     _resolutionView = [[UIResolutionSelectorView alloc] init];
+    _resolutionView.alpha = 0.90f;
     _dialogView = [[UISaveDialogView alloc] init];
+    _dialogView.alpha = 0.90f;
     
     _resolutionView.delegate = self;
     _dialogView.delegate = self;
@@ -84,6 +86,8 @@
 
 - (void)saveImage
 {
+    _dialogView.alpha = 0.50f;
+    _resolutionView.alpha = 0.50f;
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -112,6 +116,8 @@
 - (void)didSaveImage
 {
     LOG(@"Saved!");
+    _dialogView.alpha = 0.90f;
+    _resolutionView.alpha = 0.90f;
     switch (_currentSelectedSaveTo) {
         case SaveToCameraRoll:
         {

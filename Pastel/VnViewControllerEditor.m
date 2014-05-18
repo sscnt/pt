@@ -206,13 +206,17 @@
 
 - (void)back
 {
+    VnEditorViewManager* vm = [VnEditorViewManager instance];
+    if (vm.locked) {
+        return;
+    }
     [VnProcessingQueueManager cancelAllQueue];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)switchToSavingScreen
 {
-    if ([UIDevice isiPad]) {
+    if (NO) {
         _viewControllerExport = [[VnViewControllerExport alloc] init];
         [((VnViewControllerRoot*)self.navigationController) pushViewController:_viewControllerExport animated:YES];
     }else{

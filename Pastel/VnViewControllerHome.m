@@ -358,7 +358,7 @@
                 if (image.size.width > image.size.height) {
                     presetImageSizeWithAspect.width = image.size.width * presetImageSizeWithAspect.height / image.size.height;
                 } else {
-                    presetImageSizeWithAspect.height = image.size.width * presetImageSizeWithAspect.width / image.size.width;
+                    presetImageSizeWithAspect.height = image.size.height * presetImageSizeWithAspect.width / image.size.width;
                 }
                 image = [image resizedImage:presetImageSizeWithAspect interpolationQuality:kCGInterpolationHigh];
                 float x = 0.0f;
