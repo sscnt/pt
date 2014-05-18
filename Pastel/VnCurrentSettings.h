@@ -18,6 +18,9 @@ typedef NS_ENUM(NSInteger, VnCurrentSettingsWorkspaceOrientation){
 + (float)previewProgressRadius;
 + (float)thumbnailProgressRadius;
 
++ (BOOL)didUnlockExtraEffects;
++ (void)unlockExtraEffects;
+
 + (CGSize)toolBarButtonSize;
 + (CGSize)colorLayerButtonSize;
 + (CGSize)effectLayerButtonSize;

@@ -106,6 +106,8 @@ typedef NS_ENUM(NSInteger, VnEditorViewManagerViewState){
 - (void)showPercentageLabel;
 - (void)hidePercentageLabel;
 
++ (void)unlockEffects;
+
 + (VnEffectId)currentSelectedColorLayerEffectId;
 - (VnEffectId)currentSelectedColorLayerEffectId;
 + (VnEffectId)currentSelectedEffectLayerEffectId;

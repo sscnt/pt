@@ -219,6 +219,8 @@
 		58F73B3B190F942A0056D7D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58F73B39190F942A0056D7D6 /* InfoPlist.strings */; };
 		58F73B3D190F942A0056D7D6 /* PastelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F73B3C190F942A0056D7D6 /* PastelTests.m */; };
 		58F89D3A19129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */; };
+		58F90E9E192255090085A505 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F90E9D192255090085A505 /* Social.framework */; };
+		58F90EA119225FD30085A505 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F90EA019225FD30085A505 /* Crashlytics.framework */; };
 		58F9B78E191BA23A003104E9 /* VnEffectBlueBerry.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F9B78D191BA23A003104E9 /* VnEffectBlueBerry.m */; };
 		58F9B793191BA388003104E9 /* blbry.acv in Resources */ = {isa = PBXBuildFile; fileRef = 58F9B792191BA388003104E9 /* blbry.acv */; };
 		58F9B796191BA85A003104E9 /* VnEffectSweetFlower.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F9B795191BA85A003104E9 /* VnEffectSweetFlower.m */; };
@@ -619,6 +621,8 @@
 		58F73B3C190F942A0056D7D6 /* PastelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PastelTests.m; sourceTree = "<group>"; };
 		58F89D3819129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnViewEditorLayerBarButtonMaskView.h; sourceTree = "<group>"; };
 		58F89D3919129350009E9B21 /* VnViewEditorLayerBarButtonMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnViewEditorLayerBarButtonMaskView.m; sourceTree = "<group>"; };
+		58F90E9D192255090085A505 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		58F90EA019225FD30085A505 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		58F9B78C191BA23A003104E9 /* VnEffectBlueBerry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VnEffectBlueBerry.h; sourceTree = "<group>"; };
 		58F9B78D191BA23A003104E9 /* VnEffectBlueBerry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VnEffectBlueBerry.m; sourceTree = "<group>"; };
 		58F9B792191BA388003104E9 /* blbry.acv */ = {isa = PBXFileReference; lastKnownFileType = file; path = blbry.acv; sourceTree = "<group>"; };
@@ -659,6 +663,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58F90E9E192255090085A505 /* Social.framework in Frameworks */,
 				5805FD541910078D0010C13A /* AssetsLibrary.framework in Frameworks */,
 				5805FD521910077F0010C13A /* QuartzCore.framework in Frameworks */,
 				5805FD50191007540010C13A /* AVFoundation.framework in Frameworks */,
@@ -668,6 +673,7 @@
 				5805FD48191006A10010C13A /* libGPUImage.a in Frameworks */,
 				58F73B11190F942A0056D7D6 /* CoreGraphics.framework in Frameworks */,
 				58F73B13190F942A0056D7D6 /* UIKit.framework in Frameworks */,
+				58F90EA119225FD30085A505 /* Crashlytics.framework in Frameworks */,
 				58F73B0F190F942A0056D7D6 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1257,6 +1263,8 @@
 		58F73B0D190F942A0056D7D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58F90EA019225FD30085A505 /* Crashlytics.framework */,
+				58F90E9D192255090085A505 /* Social.framework */,
 				5805FD531910078D0010C13A /* AssetsLibrary.framework */,
 				5805FD511910077F0010C13A /* QuartzCore.framework */,
 				5805FD4F191007540010C13A /* AVFoundation.framework */,
@@ -1338,6 +1346,7 @@
 				58F73B07190F942A0056D7D6 /* Sources */,
 				58F73B08190F942A0056D7D6 /* Frameworks */,
 				58F73B09190F942A0056D7D6 /* Resources */,
+				58F90E9F19225F680085A505 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1519,6 +1528,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58F90E9F19225F680085A505 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run a8f7ec67dfb4ba747a4f4ed2d8a07acd5b1e5bf6 6da32613a4c81e1205b39618c7d17c20f7af78812d8f016a777dcf98ae62ce65";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58F73B07190F942A0056D7D6 /* Sources */ = {
@@ -1816,6 +1841,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Toshiki Nakanishi (WRHUFP3254)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pastel/Pastel-Prefix.pch";
 				INFOPLIST_FILE = "Pastel/Pastel-Info.plist";
@@ -1834,6 +1863,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Toshiki Nakanishi (7FY9ETDU35)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Pastel/Pastel-Prefix.pch";
 				INFOPLIST_FILE = "Pastel/Pastel-Info.plist";

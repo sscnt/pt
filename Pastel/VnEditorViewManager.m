@@ -274,7 +274,21 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
             button.delegate = self.delegate;
             button.effectId = effect.effectId;
             button.group = effect.effectGroup;
-            button.locked = YES;
+            if ([VnCurrentSettings didUnlockExtraEffects] == NO) {
+                switch (effect.effectId) {
+                    case VnEffectIdFresnoFaded:
+                    case VnEffectIdDeutanFaded:
+                    case VnEffectIdFixieFaded:
+                    case VnEffectIdLeningradFaded:
+                    case VnEffectIdNashvilleFaded:
+                    case VnEffectIdXPro2Faded:
+                    case VnEffectIdBrannanFaded:
+                        button.locked = YES;
+                        break;                        
+                    default:
+                        break;
+                }
+            }
             [_effectBar appendLayerButton:button];
             [_effectLayerButtonsList setObject:button forKey:[NSString stringWithFormat:@"%d", (int)effect.effectId]];
         }
@@ -365,6 +379,40 @@ static VnEditorViewManager* sharedVnEditorViewManager = nil;
     [_overlayBarWrapper slideUp];
     [_colorBarWrapper slideUp];
     return YES;
+}
+
++ (void)unlockEffects
+{
+    VnViewEditorLayerBarButton* button;
+    
+    button = [self buttonByEffectId:VnEffectIdFresnoFaded];
+    if (button) {
+        button.locked = NO;
+    }
+    button = [self buttonByEffectId:VnEffectIdFixieFaded];
+    if (button) {
+        button.locked = NO;
+    }
+    button = [self buttonByEffectId:VnEffectIdLeningradFaded];
+    if (button) {
+        button.locked = NO;
+    }
+    button = [self buttonByEffectId:VnEffectIdDeutanFaded];
+    if (button) {
+        button.locked = NO;
+    }
+    button = [self buttonByEffectId:VnEffectIdBrannanFaded];
+    if (button) {
+        button.locked = NO;
+    }
+    button = [self buttonByEffectId:VnEffectIdNashvilleFaded];
+    if (button) {
+        button.locked = NO;
+    }
+    button = [self buttonByEffectId:VnEffectIdXPro2Faded];
+    if (button) {
+        button.locked = NO;
+    }
 }
 
 + (BOOL)hideLayerSliders

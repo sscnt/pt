@@ -144,11 +144,30 @@
     
     //// Effect
     effect = [VnDataLayers effectRandom];
+    VnEffectId currentEffectId = VnEffectIdNone;
     if (effect) {
-        [vm selectLayerButtonWithEffectId:effect.effectId];
-        opacity = [VnEffect defalutOpacityByEffectId:effect.effectId];
+        if ([VnCurrentSettings didUnlockExtraEffects] == NO) {
+            switch (effect.effectId) {
+                case VnEffectIdFresnoFaded:
+                case VnEffectIdDeutanFaded:
+                case VnEffectIdFixieFaded:
+                case VnEffectIdLeningradFaded:
+                case VnEffectIdNashvilleFaded:
+                case VnEffectIdXPro2Faded:
+                case VnEffectIdBrannanFaded:
+                    break;
+                default:
+                    currentEffectId = effect.effectId;
+                    break;
+            }
+
+        }else{
+            currentEffectId = effect.effectId;
+        }
+        [vm selectLayerButtonWithEffectId:currentEffectId];
+        opacity = [VnEffect defalutOpacityByEffectId:currentEffectId];
         if ([VnCurrentImage faceDetected]) {
-            opacity  = [VnEffect faceOpacityByEffectId:effect.effectId];
+            opacity  = [VnEffect faceOpacityByEffectId:currentEffectId];
         }
         [VnEditorSliderManager setEffectOpacity:opacity];
     }
@@ -193,8 +212,33 @@
 
 - (void)switchToSavingScreen
 {
-    _viewControllerExport = [[VnViewControllerExport alloc] init];
-    [((VnViewControllerRoot*)self.navigationController) pushViewController:_viewControllerExport animated:YES];
+    if ([UIDevice isiPad]) {
+        _viewControllerExport = [[VnViewControllerExport alloc] init];
+        [((VnViewControllerRoot*)self.navigationController) pushViewController:_viewControllerExport animated:YES];
+    }else{
+        UIImage* image = [UIScreen screenCapture:self.view];
+        {
+            //VnFilterLensBlur* filter = [[VnFilterLensBlur alloc] init];
+            //filter.blurRadiusInPixels = 4.0f;
+            //image = [VnProcessor mergeBaseImage:image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
+        }
+        {
+            GPUImageGaussianBlurFilter* filter = [[GPUImageGaussianBlurFilter alloc] init];
+            filter.blurRadiusInPixels = 6.0f;
+            image = [VnProcessor mergeBaseImage:image overlayFilter:filter opacity:1.0f blendingMode:VnBlendingModeNormal];
+        }
+        {
+            GPUImageSolidColorGenerator* solidColor = [[GPUImageSolidColorGenerator alloc] init];
+            [solidColor setColorRed:40.0f/255.0f green:40.0f/255.0f blue:40.0f/255.0f alpha:1.0f];
+            image = [VnProcessor mergeBaseImage:image overlayFilter:solidColor opacity:0.80f blendingMode:VnBlendingModeNormal];
+        }
+        [VnCurrentImage saveBlurredScreenImage:image];
+        VnViewControllerExport* controller = [[VnViewControllerExport alloc] init];
+        controller.useBlurredBg = YES;
+        _viewControllerExport = controller;
+        [((VnViewControllerRoot*)self.navigationController) pushFadeViewController:controller];
+    }
+    
 }
 
 #pragma  mark delegate
@@ -235,8 +279,89 @@
     }
 }
 
+- (void)suggestUnlock
+{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"share_on_twitter", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"No Thanks", nil) otherButtonTitles:NSLocalizedString(@"Tweet", nil), nil];
+    alert.tag = 9702;
+    [alert show];
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 9702) {
+        switch (buttonIndex) {
+            case 0:
+                LOG(@"0");
+                break;
+            case 1:
+            {
+                LOG(@"1");
+                
+                __block int code = 0;
+                __block VnViewControllerEditor* _self = self;
+                SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                
+                vc.completionHandler = ^(SLComposeViewControllerResult result) {
+                    switch(result) {
+                            //  This means the user cancelled without sending the Tweet
+                        case SLComposeViewControllerResultCancelled:
+                            break;
+                            //  This means the user hit 'Send'
+                        case SLComposeViewControllerResultDone:
+                            code = 1;
+                            break;
+                    }
+                    
+                    //  dismiss the Tweet Sheet
+                    [_self dismissViewControllerAnimated:NO completion:^{
+                        NSLog(@"Tweet Sheet has been dismissed.");
+                        if (code == 1) {
+                            [VnCurrentSettings unlockExtraEffects];
+                            [VnEditorViewManager unlockEffects];
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:NSLocalizedString(@"Thank you!", nil) delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles: nil];
+                            [alert show];
+                        }
+                    }];
+                };
+                NSString* text = NSLocalizedString(@"Pastel: 10,000 Effects", nil);
+                NSString* url = @"https://itunes.apple.com/us/app/pastel-10-000-effects/id878037992";
+                if ([UIDevice isCurrentLanguageJapanese]) {
+                    url = @"https://itunes.apple.com/jp/app/pastel-10-000-effects/id878037992";
+                }
+                [vc setInitialText:[NSString stringWithFormat:@"%@ %@", text, url]];
+                [self presentViewController:vc animated:YES completion:nil];
+                
+            }
+                break;
+            default:
+                break;
+        }
+    }
+}
+
 - (void)didLayerBarButtonTouchUpInside:(VnViewEditorLayerBarButton *)button
 {
+    if ([VnCurrentSettings didUnlockExtraEffects] == NO) {
+        switch (button.effectId) {
+            case VnEffectIdFresnoFaded:
+            case VnEffectIdDeutanFaded:
+            case VnEffectIdFixieFaded:
+            case VnEffectIdLeningradFaded:
+            case VnEffectIdNashvilleFaded:
+            case VnEffectIdXPro2Faded:
+            case VnEffectIdBrannanFaded:
+            {
+                [self suggestUnlock];
+                return;
+            }
+                break;
+            default:
+                break;
+        }
+
+    }
     VnEditorViewManager* vm = [VnEditorViewManager instance];
     [vm selectLayerButtonWithButton:button];
     [vm lock];

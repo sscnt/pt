@@ -44,6 +44,26 @@ static VnCurrentSettings* sharedVnCurrentSettings = nil;
     return self;
 }
 
+#pragma mark lock
+
++ (BOOL)didUnlockExtraEffects
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    BOOL f = [ud boolForKey:@"unlocked"];
+    if (f == YES) {
+        return YES;
+    }
+    return NO;
+}
+
++ (void)unlockExtraEffects
+{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setBool:YES forKey:@"unlocked"];
+    [ud synchronize];
+    
+}
+
 #pragma mark bar
 
 + (float)toolBarHeight

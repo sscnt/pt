@@ -20,6 +20,12 @@
 "FACEBOOK" = "Facebook";
 "OTHER APPS" = "他のアプリへ送る";
 
+"share_on_twitter" = "Twitterの友達にPastelを紹介すると7種類のエフェクトを追加できます";
+"Tweet" = "ツイートする";
+"No Thanks" = "いらない";
+"Thank you!" = "追加しました";
+
+"Pastel: 10,000 Effects" = "Pastel: 10,000エフェクト";
 
 "no_access_to_your_photos" = "写真およびビデオへのアクセス権がありません。iPhoneの「設定」から、「プライバシー」→「写真」→「Pastel」をオンにしてください。";
 "no_access_due_to_parental_controls" = "写真およびビデオへのアクセス権がありません。ペアレンタルコントロールによりブロックされている可能性があります。";

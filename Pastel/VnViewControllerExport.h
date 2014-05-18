@@ -22,9 +22,11 @@
 
 @property (nonatomic, strong) UISaveDialogView* dialogView;
 @property (nonatomic, strong) UIResolutionSelectorView* resolutionView;
+@property (nonatomic, assign) BOOL useBlurredBg;
 
 - (void)bgDidTouchUpInside:(id)sender;
 - (void)saveImage;
 - (void)didSaveImage;
+
 
 @end

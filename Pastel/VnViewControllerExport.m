@@ -17,6 +17,12 @@
     [self.view addGestureRecognizer:tapGesture];
     self.view.backgroundColor = [VnCurrentSettings exportBgColor];
     
+    if (_useBlurredBg) {
+        self.view.backgroundColor = [UIColor clearColor];
+        UIImageView* imgView = [[UIImageView alloc] initWithImage:[VnCurrentImage blurredScreenImage]];
+        [self.view addSubview:imgView];
+    }
+    
     _resolutionView = [[UIResolutionSelectorView alloc] init];
     _dialogView = [[UISaveDialogView alloc] init];
     
@@ -69,6 +75,10 @@
         return;
     }
     [VnCurrentImage deleteLastSavedImage];
+    if (_useBlurredBg) {
+        [((VnViewControllerRoot*)self.navigationController) fadePopViewController];
+        return;
+    }
     [((VnViewControllerRoot*)self.navigationController) popViewControllerAnimated:YES];
 }
 

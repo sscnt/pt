@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Social/Social.h>
 #import "VnEditorViewManager.h"
+#import "VnViewControllerRoot.h"
+#import "VnFilterLensBlur.h"
+#import "VnViewControllerExport.h"
 #import "VnViewControllerRoot.h"
 
 @class VnViewControllerExport;
 
-@interface VnViewControllerEditor : UIViewController <VnProcessingQueueManagerDelegate, VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate>
+@interface VnViewControllerEditor : UIViewController <VnProcessingQueueManagerDelegate, VnEditorViewManagerDelegate, VnViewEditorLayerBarButtonDelegate, VnViewEditorToolBarButtonDelegate, UIAlertViewDelegate>
 
 @property (nonatomic, strong) VnViewControllerExport* viewControllerExport;
 
@@ -20,5 +24,7 @@
 - (void)shuffle;
 - (void)switchToSavingScreen;
 - (void)back;
+
+- (void)suggestUnlock;
 
 @end
